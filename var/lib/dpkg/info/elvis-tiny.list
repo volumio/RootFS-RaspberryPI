@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/elvis-tiny
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/elvis-tiny.1.gz
+/usr/share/doc/elvis-tiny
+/usr/share/doc/elvis-tiny/changelog.Debian.gz
+/usr/share/doc/elvis-tiny/changelog.gz
+/usr/share/doc/elvis-tiny/KNOWN.BUGS
+/usr/share/doc/elvis-tiny/copyright
+/bin
+/bin/vi
+/bin/elvis-tiny

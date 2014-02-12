@@ -1,0 +1,5 @@
+php5-cli: package-contains-empty-directory usr/lib/php5/20100525+lfs/
+php5-cli: spelling-error-in-binary * ment meant
+php5-cli: spelling-error-in-binary * taht that
+php5-cli: embedded-library usr/bin/php5: file
+php5-cli: embedded-library ./usr/bin/php5: file

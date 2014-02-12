@@ -1,0 +1,34 @@
+### This file is part of the dictionaries-common package.
+### It has been automatically generated.
+### DO NOT EDIT!
+
+package Debian::DictionariesCommon::dbfile;
+
+%dictionaries = (
+  'american (American English)' => {
+     'auto-compat' => 'american',
+     'casechars' => '[A-Za-z]',
+     'coding-system' => 'iso-8859-1',
+     'emacsen-name' => 'american',
+     'hash-name' => 'american',
+     'ispell-args' => '-B -d american',
+     'locale' => 'en_US',
+     'not-casechars' => '[^A-Za-z]',
+     'otherchars' => '[\']',
+     'pspell-ispell' => 'en-american iso8859-1'
+  },
+  'british (British English)' => {
+     'auto-compat' => 'british',
+     'casechars' => '[A-Za-z]',
+     'coding-system' => 'iso-8859-1',
+     'emacsen-name' => 'british',
+     'hash-name' => 'british',
+     'ispell-args' => '-B -d british',
+     'locale' => 'en_GB',
+     'not-casechars' => '[^A-Za-z]',
+     'otherchars' => '[\']',
+     'pspell-ispell' => 'en-british iso8859-1'
+  }
+);
+
+1;

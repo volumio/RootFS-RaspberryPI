@@ -1,0 +1,8 @@
+9454b08306c3f9599ab8ba87e28fccf3  usr/include/libmodplug/it_defs.h
+f422a1fa10d6d2ccbeffc65b36f6c30c  usr/include/libmodplug/modplug.h
+1ddb010bf9f606f8bad3e9cccd4ac368  usr/include/libmodplug/sndfile.h
+a1d27c7d8f5f8a322752db6a8d98c80d  usr/include/libmodplug/stdafx.h
+3ed26cc383f448ee22742f62e22e03c4  usr/lib/pkgconfig/libmodplug.pc
+52fda9c67498c750982b09dee0d9e5b1  usr/share/doc/libmodplug-dev/changelog.Debian.gz
+22aa90a3c3a2ff82ebcdee3e40d39554  usr/share/doc/libmodplug-dev/changelog.gz
+f1a958018f8c2166f2e16560191eb881  usr/share/doc/libmodplug-dev/copyright

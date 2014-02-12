@@ -1,0 +1,7 @@
+/etc/dbus-1/system.d/avahi-dbus.conf
+/etc/network/if-up.d/avahi-daemon
+/etc/resolvconf/update-libc.d/avahi-daemon
+/etc/default/avahi-daemon
+/etc/avahi/hosts
+/etc/avahi/avahi-daemon.conf
+/etc/init.d/avahi-daemon

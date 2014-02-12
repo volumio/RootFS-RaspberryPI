@@ -1,0 +1,16 @@
+[mc.shared.search]
+0=display_errors
+1=5.3
+
+[cmdline]
+0=cd /etc/php5
+1=
+
+[Dir Hist New Right Panel]
+0=/var/www
+
+[Dir Hist New Left Panel]
+0=/var/www/inc
+1=/var/www
+2=/etc/php5
+3=/etc/php5/conf.d

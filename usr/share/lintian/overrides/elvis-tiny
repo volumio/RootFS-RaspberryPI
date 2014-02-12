@@ -1,0 +1,3 @@
+elvis-tiny binary: unknown-section base
+elvis-tiny binary: binary-without-manpage bin/vi
+elvis-tiny binary: command-with-path-in-maintainer-script postinst:24 /bin/ls

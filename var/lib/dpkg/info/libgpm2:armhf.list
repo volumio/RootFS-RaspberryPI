@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libgpm2
+/usr/share/doc/libgpm2/changelog.Debian.gz
+/usr/share/doc/libgpm2/copyright
+/usr/share/doc/libgpm2/changelog.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libgpm.so.2

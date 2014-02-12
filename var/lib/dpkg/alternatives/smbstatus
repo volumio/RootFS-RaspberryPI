@@ -1,0 +1,9 @@
+auto
+/usr/bin/smbstatus
+smbstatus.1.gz
+/usr/share/man/man1/smbstatus.1.gz
+
+/usr/bin/smbstatus.samba3
+10
+/usr/share/man/man1/smbstatus.samba3.1.gz
+

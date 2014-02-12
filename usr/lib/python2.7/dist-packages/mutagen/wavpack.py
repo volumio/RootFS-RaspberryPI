@@ -1,0 +1,1 @@
+../../../../share/pyshared/mutagen/wavpack.py

@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/share
+/usr/share/doc/libtirpc1
+/usr/share/doc/libtirpc1/changelog.Debian.gz
+/usr/share/doc/libtirpc1/changelog.gz
+/usr/share/doc/libtirpc1/copyright
+/usr/share/man
+/usr/share/man/man5
+/usr/share/man/man5/netconfig.5.gz
+/lib
+/lib/arm-linux-gnueabihf
+/lib/arm-linux-gnueabihf/libtirpc.so.1.0.10
+/etc
+/etc/netconfig
+/lib/arm-linux-gnueabihf/libtirpc.so.1

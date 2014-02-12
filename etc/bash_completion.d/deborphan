@@ -1,0 +1,69 @@
+have deborphan &&
+_deborphan()
+{
+
+  local last_item_in_list
+  local cur=$2 prev=$3
+  local options='--add-keep --all-packages --del-keep
+    --exclude --find-config --force-hold --guess-all
+    --guess-common --guess-data --guess-debug --guess-dev
+    --guess-doc --guess-dummy --guess-interpreters
+    --guess-kernel --guess-mono --guess-only --guess-perl
+    --guess-pike --guess-python --guess-ruby --guess-section
+    --help --ignore-recommends --ignore-suggests --keep-file
+    --libdevel --list-keep --nice-mode --no-show-section
+    --priority --show-deps --show-priority --show-section
+    --show-size --status-file --version --zero-keep -A -H -L
+    -P -R -Z -a -d -e -f -h -k -n -p -s -v -z
+    '
+
+  COMPREPLY=()
+
+  case "$prev" in
+    # previous option asks for a file
+    -@(-status-file|f|-keep-file|k))
+      _filedir
+      return 0
+      ;;
+    # previous option asks for a package or "-"
+    # if there's more than 1 package listed, use the default below
+    # for package completion
+    # could maybe use /var/lib/deborphan/keep for -R|--del-keep
+    # but tricky if -f|--status-file is given
+    -@(-add-keep|A|-del-keep|R))
+      COMPREPLY=( $( compgen -W "$( _xfunc dpkg _comp_dpkg_installed_packages $cur ) -" -- $cur ) )
+      return 0
+      ;;
+    # previous option asks for a priority
+    -@(-priority|p))
+      COMPREPLY=( $( compgen -W '1 2 3 4 5 required important standard optional extra' -- $cur) )
+      return 0
+      ;;
+    # previous option asks for a commaseparated list of packages
+    -@(-exclude|e))
+      last_item_in_list="${cur##*,}"
+      list_before_item="${cur%$last_item_in_list}"
+      #add "," to the list and take care of already existing listed packages
+      COMPREPLY=(
+                  $(
+                   compgen -S "," -P "$list_before_item" -W "$( _xfunc dpkg _comp_dpkg_installed_packages $last_item_in_list )"
+                  )
+                )
+
+      return 0
+      ;;
+  esac
+
+  if [[ "$cur" == -* ]]; then
+    # return one of the possible options
+    COMPREPLY=( $( compgen -W "$options" -- $cur ) )
+  else
+    # return matching installed packages
+    # (default and for -A or -R package lis
+    COMPREPLY=( $( _xfunc dpkg _comp_dpkg_installed_packages $cur ) )
+  fi
+
+  return 0
+}
+[ -n "${have:-}" ] && complete -F _deborphan $filenames deborphan
+

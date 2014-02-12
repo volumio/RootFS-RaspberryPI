@@ -1,0 +1,8 @@
+/.
+/usr
+/usr/share
+/usr/share/keyrings
+/usr/share/keyrings/raspbian-archive-keyring.gpg
+/usr/share/doc/raspbian-archive-keyring
+/usr/share/doc/raspbian-archive-keyring/changelog.gz
+/usr/share/doc/raspbian-archive-keyring/copyright

@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libdirac_encoder.so.0.1.0
+/usr/share
+/usr/share/doc/libdirac-encoder0
+/usr/share/doc/libdirac-encoder0/changelog.Debian.gz
+/usr/share/doc/libdirac-encoder0/changelog.gz
+/usr/share/doc/libdirac-encoder0/copyright
+/usr/lib/arm-linux-gnueabihf/libdirac_encoder.so.0

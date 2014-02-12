@@ -1,0 +1,6 @@
+/etc/Muttrc
+/etc/Muttrc.d/charset.rc
+/etc/Muttrc.d/colors.rc
+/etc/Muttrc.d/compressed-folders.rc
+/etc/Muttrc.d/gpg.rc
+/etc/Muttrc.d/smime.rc

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+# Automatically added by installdeb-ispell
+dico_class="ispell"
+dico_compat="american.compat"
+
+[ -d "/var/lib/$dico_class" ] || mkdir -p "/var/lib/$dico_class"
+
+for i in $dico_compat; do
+    >"/var/lib/$dico_class/$i"
+done
+# End automatically added section

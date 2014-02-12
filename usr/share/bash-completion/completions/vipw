@@ -1,0 +1,21 @@
+# vipw(8) and vigr completion                              -*- shell-script -*-
+
+_vipw()
+{
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help)
+            return 0
+            ;;
+    esac
+
+    if [[ "$cur" == -* ]]; then
+        COMPREPLY=( $( compgen -W '$( _parse_help "$1" )' -- "$cur" ) )
+        return 0
+    fi
+} &&
+complete -F _vipw vipw vigr
+
+# ex: ts=4 sw=4 et filetype=sh

@@ -1,0 +1,6 @@
+/etc
+/etc/subversion
+/etc/subversion/config
+/etc/subversion/servers
+/etc/bash_completion.d
+/etc/bash_completion.d/subversion

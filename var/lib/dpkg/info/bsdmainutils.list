@@ -1,0 +1,7 @@
+/etc
+/etc/cron.daily
+/etc/cron.daily/bsdmainutils
+/etc/default
+/etc/default/bsdmainutils
+/etc/calendar
+/etc/calendar/default

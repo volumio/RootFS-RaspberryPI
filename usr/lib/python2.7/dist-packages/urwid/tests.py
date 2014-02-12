@@ -1,0 +1,1 @@
+../../../../share/pyshared/urwid/tests.py

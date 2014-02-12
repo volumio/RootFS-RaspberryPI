@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libmikmod.so.2.0.4
+/usr/share
+/usr/share/doc/libmikmod2
+/usr/share/doc/libmikmod2/changelog.gz
+/usr/share/doc/libmikmod2/changelog.Debian.gz
+/usr/share/doc/libmikmod2/README.gz
+/usr/share/doc/libmikmod2/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libmikmod2
+/usr/lib/arm-linux-gnueabihf/libmikmod.so.2

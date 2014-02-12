@@ -1,0 +1,3 @@
+libgpgme-pthread 11 libgpgme11 (>= 1.2.0)
+libgpgme-pth 11 libgpgme11 (>= 1.2.0)
+libgpgme 11 libgpgme11 (>= 1.2.0)

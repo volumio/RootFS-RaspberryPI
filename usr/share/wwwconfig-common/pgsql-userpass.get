@@ -1,0 +1,25 @@
+# File:		pgsql-userpass.get
+# Changes:
+#	20010224 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	        Changed the piped commands with a single psql command using -A -q -t
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Added pgsql.get call.
+#		Removed check for reinclusion.
+# Needs:	$pgsqlcmd  - the base sql command.
+#		$dbuser    - the user to show the password for.
+#		$systemdb  - the system db to use (optional)
+#		psql
+# Description:	Gets a password from 
+# Sets:		$userpass = the fetched password.
+#		$status = {error, get}
+
+userpass=""
+status=error
+if $pgsqlcmd -d $systemdb -c "select passwd from pg_shadow where usename='$dbuser'" > /dev/null 2>&1 ; then
+    status=get
+    userpass=$($pgsqlcmd -d $systemdb -q -t -A -c "select passwd from pg_shadow where usename='$dbuser'")
+fi

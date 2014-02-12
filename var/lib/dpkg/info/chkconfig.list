@@ -1,0 +1,11 @@
+/.
+/sbin
+/sbin/chkconfig
+/usr
+/usr/share
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/chkconfig.8.gz
+/usr/share/doc/chkconfig
+/usr/share/doc/chkconfig/changelog.Debian.gz
+/usr/share/doc/chkconfig/copyright

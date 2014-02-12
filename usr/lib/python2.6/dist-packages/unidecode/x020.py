@@ -1,0 +1,1 @@
+../../../../share/pyshared/unidecode/x020.py

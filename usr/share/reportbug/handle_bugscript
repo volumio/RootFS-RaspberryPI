@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Adapted from bits and pieces of /usr/bin/bug, to provide the functions
+# that package says are permitted.
+#
+# /usr/bin/bug is:
+# (C) 1996-2000 Christoph Lameter <clameter@debian.org>
+#               Nicolás Lichtmaier <nick@debian.org> 
+# Modifications:
+# Copyright (C) 2000 Chris Lawrence <lawrencc@debian.org>
+#
+# You may freely redistribute, use and modify this software under the terms
+# of the GNU General Public License.
+
+set -e
+
+# Wait for a keypress and put it in $KEY
+getkey()
+{
+	stty -icanon min 1 || true 2> /dev/null
+	KEY=$(dd bs=1 count=1 2> /dev/null)
+	stty icanon || true 2> /dev/null
+	KEY="${KEY:0:1}"
+	echo
+}
+
+export -f getkey
+export YESNO="yYnN"
+
+# Usage: yesno <prompt> "yep"|"nop" (<- default)
+#	output: REPLY
+yesno()
+{
+	while true; do
+		echo -n "$1"
+
+		getkey
+
+		# if 'n'
+		if [ "$KEY" = "${YESNO:2:1}" ] || [ "$KEY" = "${YESNO:3:1}" ]; then
+			REPLY=nop
+			return
+		fi
+
+		# if 'y'
+		if [ "$KEY" = "${YESNO:0:1}" ] || [ "$KEY" = "${YESNO:1:1}" ]; then
+			REPLY=yep
+			return
+		fi
+
+		# if \n
+		if [ "$KEY" = "" ]; then
+			REPLY=$2
+			return
+		fi
+	done
+}
+
+export -f yesno
+
+#&>3
+$1 3>|$2

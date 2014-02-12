@@ -1,0 +1,12 @@
+d661bd5df38065b1de3e9b75309cb78b  usr/include/yajl/yajl_common.h
+e57e21bda1283a3a6a178845096b5d9c  usr/include/yajl/yajl_gen.h
+0228c8475f782e9af916ac61d51ae4b3  usr/include/yajl/yajl_parse.h
+69650cd70a46ddf7541401203b22f00d  usr/include/yajl/yajl_tree.h
+4194a43380dfaef3ca94cb2ba30da1f2  usr/include/yajl/yajl_version.h
+5368b34fb3b433c5f77e9722b33719c8  usr/lib/arm-linux-gnueabihf/libyajl_s.a
+4d7c50c60b2288fa1a6a5f4dc79c43ea  usr/lib/arm-linux-gnueabihf/pkgconfig/yajl.pc
+de2e7faa6d1c6401efe5b514928584a4  usr/share/doc/libyajl-dev/README
+4908b33db875f1ab46c065277dcfc18d  usr/share/doc/libyajl-dev/TODO
+a473a96d483dc9cff03a8705e5fef4b8  usr/share/doc/libyajl-dev/changelog.Debian.gz
+60f258412a53eb2506f2cbf6630022ae  usr/share/doc/libyajl-dev/changelog.gz
+78f888e5d76904b88005dcb2109b6283  usr/share/doc/libyajl-dev/copyright

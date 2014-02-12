@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/include
+/usr/include/libcue-1.4
+/usr/include/libcue-1.4/libcue
+/usr/include/libcue-1.4/libcue/time.h
+/usr/include/libcue-1.4/libcue/libcue.h
+/usr/include/libcue-1.4/libcue/cdtext.h
+/usr/include/libcue-1.4/libcue/cd.h
+/usr/include/libcue-1.4/libcue/rem.h
+/usr/lib
+/usr/lib/pkgconfig
+/usr/lib/pkgconfig/libcue.pc
+/usr/share
+/usr/lib/libcue.so
+/usr/share/doc/libcue-dev

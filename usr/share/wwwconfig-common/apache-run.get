@@ -1,0 +1,22 @@
+# File:		apache-run.get
+# Changes:
+#	20010219 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+# Needs:	/usr/share/wwwconfig-common/apache.func
+#		$server - the apache server to use,
+#			anything that matches /etc/$server/*.conf.
+# Description:	Sets the webuser and webgroup that apache runs as.
+# Sets:		apache_run_get=done to allow reinclusion.
+
+if [ -z "$apache_run_get" ] ; then
+    . /usr/share/wwwconfig-common/apache.func
+    
+    getwwwoption User /etc/$server/httpd.conf
+    webuser=$(echo "$getwwwoption" | sed -e "q")
+    getwwwoption Group /etc/$server/httpd.conf
+    webgroup=$(echo "$getwwwoption" | sed -e "q")
+    apache_run_get="done"
+fi

@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/php5
+/usr/share/php5/curl
+/usr/share/php5/curl/curl.ini
+/usr/lib
+/usr/lib/php5
+/usr/lib/php5/20100525+lfs
+/usr/lib/php5/20100525+lfs/curl.so
+/usr/share/doc/php5-curl

@@ -1,0 +1,13 @@
+#!/bin/sh
+# postrm script for icelib
+# Runs after removal of icelib
+
+
+echo "icelib postrm starting"
+
+echo "updating shared library cache"
+ldconfig
+
+echo "icelib postrm finished"
+
+exit 0

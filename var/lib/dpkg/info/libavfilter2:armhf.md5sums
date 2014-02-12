@@ -1,0 +1,6 @@
+888f8f0beeddb98575a35c06ffc6340c  usr/lib/arm-linux-gnueabihf/libavfilter.so.2.15.0
+812ae049e35a77fbe9da612a1284c3c5  usr/share/doc/libavfilter2/README.Debian.gz
+519617b163f58cc815bbcfabcaafd7f5  usr/share/doc/libavfilter2/changelog.Debian.gz
+7e96676b3cceea582ab27f92ef922394  usr/share/doc/libavfilter2/changelog.gz
+e51de741ce5932946736d2b8ef235b80  usr/share/doc/libavfilter2/copyright
+ab7c11b6e4c022054b7e2eab4f19911b  usr/share/lintian/overrides/libavfilter2

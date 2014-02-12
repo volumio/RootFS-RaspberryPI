@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+dpkg-maintscript-helper rm_conffile /etc/mc/mc.charsets  3:4.8-1 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/mc/mc.lib       3:4.8-1 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/mc/Syntax       3:4.8-1 -- "$@"
+dpkg-maintscript-helper mv_conffile \
+		/etc/mc/cedit.menu    /etc/mc/mcedit.menu        3:4.8-1 -- "$@"
+
+case "$1" in
+	purge)
+
+		rm -f \
+			/etc/mc/cedit.menu \
+			/etc/mc/*.ini \
+			/etc/mc/mc.* \
+			/etc/mc/*.rc \
+			/etc/mc/Syntax
+
+		rmdir /etc/mc 2>/dev/null || true
+
+	;;
+esac
+
+# Automatically added by dh_installmenu
+if [ -x "`which update-menus 2>/dev/null`" ]; then update-menus ; fi
+# End automatically added section
+

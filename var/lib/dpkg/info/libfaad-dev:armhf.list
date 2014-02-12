@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/include
+/usr/include/neaacdec.h
+/usr/include/faad.h
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libfaad.a
+/usr/share
+/usr/share/doc/libfaad-dev
+/usr/share/doc/libfaad-dev/changelog.Debian.gz
+/usr/share/doc/libfaad-dev/changelog.gz
+/usr/share/doc/libfaad-dev/copyright
+/usr/lib/arm-linux-gnueabihf/libfaad.so

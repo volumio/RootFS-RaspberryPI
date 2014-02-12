@@ -1,0 +1,36 @@
+#!/bin/sh
+set -e
+
+# Version 0.1 included an initramfs hook. If we're upgrading from that
+# version, we no longer have that hook. Update the generated initramfs
+# now so that we don't have to in future.
+
+cleanup_initramfs() {
+  if command -v update-initramfs >/dev/null 2>&1; then
+    update-initramfs -u
+  fi
+}
+
+# We'll also need to clean up links to make sure that our new start
+# link is installed by update-rc.d. Grotty. :-(
+force_remove_old_init_links() {
+  rm -f /etc/rc?.d/[SK]*fake-hwclock
+}
+
+case "${1:-}" in
+  configure)
+    if [ "$2"x = "0.1"x ] ; then
+      cleanup_initramfs
+      force_remove_old_init_links
+    fi
+    ;;
+
+  *) :;;
+esac
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/fake-hwclock" ]; then
+	update-rc.d fake-hwclock start 02 S . stop 02 0 1 6 . >/dev/null || exit $?
+fi
+# End automatically added section
+

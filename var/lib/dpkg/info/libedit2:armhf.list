@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libedit.so.2.11
+/usr/share
+/usr/share/doc/libedit2
+/usr/share/doc/libedit2/changelog.Debian.gz
+/usr/share/doc/libedit2/copyright
+/usr/lib/arm-linux-gnueabihf/libedit.so.2

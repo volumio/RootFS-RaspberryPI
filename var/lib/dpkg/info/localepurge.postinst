@@ -1,0 +1,186 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+##############################################
+# The debconf routine for creating $CONFIGFILE
+generate_config() {
+    
+    cat <<EOF
+####################################################
+# This is the configuration file for localepurge(8).
+EOF
+    if [ "x$1" = "x1" ]; then
+        # Include the old don't modify message
+        cat <<EOF
+#
+#      DO NOT EDIT!
+#
+# localepurge(8) uses debconf for storing all its 
+# configuration. Manual entries to this file will be 
+# irreversibly lost after upgrade or reinstallation 
+# of localepurge. Configuration should only be done
+# using the command
+#
+#       dpkg-reconfigure localepurge
+#
+EOF
+    fi
+    cat <<EOF
+####################################################
+
+####################################################
+# Uncommenting this string enables removal of localized 
+# man pages based on the configuration information for
+# locale files defined below:
+
+EOF
+
+    db_get localepurge/mandelete
+
+    if [ "$RET" = "true" ]; then
+        echo MANDELETE
+    else
+        echo '#MANDELETE'
+    fi
+
+    cat <<EOF
+
+####################################################
+# Uncommenting this string causes localepurge to simply delete
+# locales which have newly appeared on the system without
+# bothering you about it:
+
+EOF
+
+    db_get localepurge/dontbothernew
+
+    if [ "$RET" = "true" ]; then
+        echo '#DONTBOTHERNEWLOCALE'
+    else
+        echo DONTBOTHERNEWLOCALE
+    fi
+
+    cat <<EOF
+
+####################################################
+# Uncommenting this string enables display of freed disk
+# space if localepurge has purged any superfluous data:
+
+EOF
+
+    db_get localepurge/showfreedspace
+
+    if [ "$RET" = "true" ]; then
+        echo SHOWFREEDSPACE
+    else
+        echo '#SHOWFREEDSPACE'
+    fi
+
+    cat <<EOF
+
+#####################################################
+# Commenting out this string enables faster but less
+# accurate calculation of freed disk space:
+
+EOF
+
+    db_get localepurge/quickndirtycalc
+
+    if [ "$RET" = "true" ]; then
+        echo '#QUICKNDIRTYCALC'
+    else
+        echo QUICKNDIRTYCALC
+    fi
+
+cat <<EOF
+
+#####################################################
+# Commenting out this string disables verbose output:
+
+EOF
+
+    db_get localepurge/verbose
+
+    if [ "$RET" = "true" ]; then
+        echo VERBOSE
+    else
+        echo '#VERBOSE'
+    fi
+ 
+    db_get localepurge/nopurge
+
+    if [ "$RET" = "" ] || [ "$RET" = "PURGE_ALL" ]; then
+        db_get localepurge/none_selected
+        if [ "$RET" = "false" ]; then
+            db_set localepurge/nopurge NEEDSCONFIGFIRST
+            cat <<EOF
+
+#################################################################
+# Unless configured, the system's locale directories won't be
+# touched. Execute "dpkg-reconfigure localepurge" to reconfigure 
+# localepurge to make it actually start functioning.
+#
+# WARNING: Only commenting out the marker line "NEEDSCONFIGFIRST"
+#          without having defined *any* locale files to keep below
+#          will result in deletion of *all* locale files present
+#          on the system. So *first* define which locale files you 
+#          want to keep before commenting out the following line.
+
+EOF
+        elif [ "$RET" = "yes" ]; then
+            db_set localepurge/nopurge PURGE_ALL
+            cat <<EOF
+
+#################################################################
+# It has explicitly been requested to delete *all* locale files 
+# present on the system and this will result in the definite loss 
+# of all locale data in "/usr/share/locale/". You should know what
+# you are doing or reconfigure "localepurge" as described above.
+#################################################################
+
+EOF
+        fi
+    else
+        cat <<EOF
+
+#####################################################
+# Following locales won't be deleted from this system
+# after package installations done with apt-get(8):
+
+EOF
+    fi
+    
+    db_get localepurge/nopurge
+    echo "$RET" | grep -v PURGE_ALL | sed 's/,//g' | tr ' ' '\n'
+}
+
+######################################################
+# Only act when we are called to configure the package
+if [ "$1" != "configure" ]; then
+    exit 0
+fi
+
+##############################################
+# Now deal with the configuration file
+CONFIGFILE=/etc/locale.nopurge
+TMPFILE="$CONFIGFILE.$$"
+
+# Generate new configuration file
+generate_config 0 > "$TMPFILE" 2>&1
+# Use ucf to move it into place while preserving user changes
+/usr/bin/ucf --debconf-ok "$TMPFILE" "$CONFIGFILE"
+# And register the file with dpkg
+/usr/bin/ucfr localepurge $CONFIGFILE
+
+# Clean up and ensure permissions are sane
+rm -f $TMPFILE
+if [ -f "$CONFIGFILE" ]; then
+  chown root: $CONFIGFILE
+  chmod 0644 $CONFIGFILE
+fi
+
+
+

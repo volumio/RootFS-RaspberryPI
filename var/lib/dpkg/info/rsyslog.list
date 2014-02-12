@@ -1,0 +1,11 @@
+/etc
+/etc/logrotate.d
+/etc/logrotate.d/rsyslog
+/etc/rsyslog.conf
+/etc/logcheck
+/etc/logcheck/ignore.d.server
+/etc/logcheck/ignore.d.server/rsyslog
+/etc/init.d
+/etc/init.d/rsyslog
+/etc/default
+/etc/default/rsyslog

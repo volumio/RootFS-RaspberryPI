@@ -1,0 +1,4 @@
+executable-not-elf-or-script
+
+# cons.saver has to be sgid tty to access vcsa
+setgid-binary

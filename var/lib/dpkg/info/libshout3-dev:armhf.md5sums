@@ -1,0 +1,9 @@
+906d1585c799c7eca9889ed8c5cc8987  usr/include/shout/shout.h
+80f1486637c1d4a9222a865bdc77f399  usr/lib/arm-linux-gnueabihf/libshout.a
+e4d5a7f78ec7d491c3c3c9ee38f5243c  usr/lib/arm-linux-gnueabihf/pkgconfig/shout.pc
+a3954f0da0dcd8f6cb335ee2197e2729  usr/share/aclocal/shout.m4
+4ade20c84d39ac06b2fa2a2c4f5c3a6e  usr/share/doc/libshout3-dev/NEWS.gz
+ca69db5eb6c24e99734df3768beccfc5  usr/share/doc/libshout3-dev/README
+ae5fcdcca0cad2ce9be3714750df8255  usr/share/doc/libshout3-dev/changelog.Debian.gz
+d1f4567431bda7daea735f17b6655fd6  usr/share/doc/libshout3-dev/copyright
+b55bf72162fe83d942f12df1607840da  usr/share/doc/libshout3-dev/examples/example.c

@@ -1,0 +1,9 @@
+b1305e8b88b00a54074ef41900cc8b10  lib/udev/rules.d/60-triggerhappy.rules
+803cf5cfa8d4c047418fd130407c4d0b  usr/sbin/th-cmd
+de2b2367e5f66c45487d45bd60531920  usr/sbin/thd
+56ccd2158b6d63f96116406b79c3685b  usr/share/doc/triggerhappy/README
+f33dcc969d40db0f13dbb7004aa56ee3  usr/share/doc/triggerhappy/changelog.Debian.gz
+924115401e7355e66ee2c8b6085e4556  usr/share/doc/triggerhappy/copyright
+b6ebcfa0dccad50159ba2cea6643f2eb  usr/share/doc/triggerhappy/triggerhappy.conf.examples
+48de37cdc7c7577b3b1a5126b0062f81  usr/share/man/man1/th-cmd.1.gz
+09a7a44e4aaca11f16470a8c4bd0ed0c  usr/share/man/man1/thd.1.gz

@@ -1,0 +1,16 @@
+#!/bin/sh
+# postinst script for icelib-dev
+# This runs /after/ the icelib-dev has been unpacked.
+# If you want things to happen before it's unpacked, you need a preinst script.
+
+
+echo "icelib-dev postinstall starting"
+# <--- THINGS YOU MAY WISH TO CHANGE --->
+
+
+
+# <--- END --->
+echo "icelib-dev postinstall finished"
+
+
+exit 0

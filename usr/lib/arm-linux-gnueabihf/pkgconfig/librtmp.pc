@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/arm-linux-gnueabihf
+incdir=${prefix}/include
+
+Name: librtmp
+Description: RTMP implementation
+Version: v2.4
+Requires: gnutls
+URL: http://rtmpdump.mplayerhq.hu
+Libs: -L${libdir} -lrtmp -lz
+Libs.private: 
+Cflags: -I${incdir}

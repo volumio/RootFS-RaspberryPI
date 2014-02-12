@@ -1,0 +1,1076 @@
+ver 0.17.4 (2013/04/08)
+* protocol:
+  - allow to omit END in ranges (START:END)
+  - don't emit IDLE_PLAYER before audio format is known
+* decoder:
+  - ffmpeg: support float planar audio (ffmpeg 1.1)
+  - ffmpeg: fix AVFrame allocation
+* player:
+  - implement missing "idle" events on output errors
+* clock: fix build failure
+
+
+ver 0.17.3 (2013/01/06)
+* output:
+  - osx: fix pops during playback
+  - recorder: fix I/O error check
+  - shout: fix memory leak in error handler
+  - recorder, shout: support Ogg packets that span more than one page
+* decoder:
+  - ffmpeg: ignore negative time stamps
+  - ffmpeg: support planar audio
+* playlist:
+  - cue: fix memory leak
+  - cue: fix CUE files with only one track
+
+ver 0.17.2 (2012/09/30)
+* protocol:
+  - fix crash in local file check
+* decoder:
+  - fluidsynth: remove throttle (requires libfluidsynth 1.1)
+  - fluidsynth: stop playback at end of file
+  - fluidsynth: check MIDI file format while scanning
+  - fluidsynth: add sample rate setting
+  - wavpack: support all APEv2 tags
+* output:
+  - httpd: use monotonic clock, avoid hiccups after system clock adjustment
+  - httpd: fix throttling bug after resuming playback
+* playlist:
+  - cue: map "PERFORMER" to "artist" or "album artist"
+* mapper: fix non-UTF8 music directory name
+* mapper: fix potential crash in file permission check
+* playlist: fix use-after-free bug
+* playlist: fix memory leak
+* state_file: save song priorities
+* player: disable cross-fading in "single" mode
+* update: fix unsafe readlink() usage
+* configure.ac:
+  - don't auto-detect the vorbis encoder when Tremor is enabled
+
+ver 0.17.1 (2012/07/31)
+* protocol:
+  - require appropriate permissions for searchadd{,pl}
+* tags:
+  - aiff: support the AIFC format
+  - ape: check for ID3 if no usable APE tag was found
+* playlist:
+  - cue: support file types "MP3", "AIFF"
+* output:
+  - fix noisy playback with conversion and software volume
+
+ver 0.17 (2012/06/27)
+* protocol:
+  - support client-to-client communication
+  - "update" and "rescan" need only "CONTROL" permission
+  - new command "seekcur" for simpler seeking within current song
+  - new command "config" dumps location of music directory
+  - add range parameter to command "load"
+  - print extra "playlist" object for embedded CUE sheets
+  - new commands "searchadd", "searchaddpl"
+* input:
+  - cdio_paranoia: new input plugin to play audio CDs
+  - curl: enable CURLOPT_NETRC
+  - curl: non-blocking I/O
+  - soup: new input plugin based on libsoup
+* tags:
+  - RVA2: support separate album/track replay gain
+* decoder:
+  - mpg123: implement seeking
+  - ffmpeg: drop support for pre-0.5 ffmpeg
+  - ffmpeg: support WebM
+  - oggflac: delete this obsolete plugin
+  - dsdiff: new decoder plugin
+* output:
+  - alsa: support DSD-over-USB (dCS suggested standard)
+  - httpd: support for streaming to a DLNA client
+  - openal: improve buffer cancellation
+  - osx: allow user to specify other audio devices
+  - osx: implement 32 bit playback
+  - shout: add possibility to set url
+  - roar: new output plugin for RoarAudio
+  - winmm: fail if wrong device specified instead of using default device
+* mixer:
+  - alsa: listen for external volume changes
+* playlist:
+  - allow references to songs outside the music directory
+  - new CUE parser, without libcue
+  - soundcloud: new plugin for accessing soundcloud.com
+* state_file: add option "restore_paused"
+* cue: show CUE track numbers
+* allow port specification in "bind_to_address" settings
+* support floating point samples
+* systemd socket activation
+* improve --version output
+* WIN32: fix renaming of stored playlists with non-ASCII names
+
+
+ver 0.16.8 (2012/04/04)
+* fix for libsamplerate assertion failure
+* decoder:
+  - vorbis (and others): fix seeking at startup
+  - ffmpeg: read the "year" tag
+* encoder:
+  - vorbis: generate end-of-stream packet before tag
+  - vorbis: generate end-of-stream packet when playback ends
+* output:
+  - jack: check for connection failure before starting playback
+  - jack: workaround for libjack1 crash bug
+  - osx: fix stuttering due to buffering bug
+* fix endless loop in text file reader
+* update: skip symlinks in path that is to be updated
+
+
+ver 0.16.7 (2012/02/04)
+* input:
+  - ffmpeg: support libavformat 0.7
+* decoder:
+  - ffmpeg: support libavformat 0.8, libavcodec 0.9
+  - ffmpeg: support all MPD tags
+* output:
+  - httpd: fix excessive buffering
+  - openal: force 16 bit playback, as 8 bit doesn't work
+  - osx: remove sleep call from render callback
+  - osx: clear render buffer when there's not enough data
+* fix moving after current song
+
+
+ver 0.16.6 (2011/12/01)
+* decoder:
+  - fix assertion failure when resuming streams
+  - ffmpeg: work around bogus channel count
+* encoder:
+  - flac, null, wave: fix buffer corruption bug
+  - wave: support packed 24 bit samples
+* mapper: fix the bogus "not a directory" error message
+* mapper: check "x" and "r" permissions on music directory
+* log: print reason for failure
+* event_pipe: fix WIN32 regression
+* define WINVER in ./configure
+* WIN32: autodetect filesystem encoding
+
+
+ver 0.16.5 (2011/10/09)
+* configure.ac
+  - disable assertions in the non-debugging build
+  - show solaris plugin result correctly
+  - add option --enable-solaris-output
+* pcm_format: fix 32-to-24 bit conversion (the "silence" bug)
+* input:
+  - rewind: reduce heap usage
+* decoder:
+  - ffmpeg: higher precision timestamps
+  - ffmpeg: don't require key frame for seeking
+  - fix CUE track seeking
+* output:
+  - openal: auto-fallback to mono if channel count is unsupported
+* player:
+  - make seeking to CUE track more reliable
+  - the "seek" command works when MPD is stopped
+  - restore song position from state file (bug fix)
+  - fix crash that sometimes occurred when audio device fails on startup
+  - fix absolute path support in playlists
+* WIN32: close sockets properly
+* install systemd service file if systemd is available
+
+
+ver 0.16.4 (2011/09/01)
+* don't abort configure when avahi is not found
+* auto-detect libmad without pkg-config
+* fix memory leaks
+* don't resume playback when seeking to another song while paused
+* apply follow_inside_symlinks to absolute symlinks
+* fix playback discontinuation after seeking
+* input:
+  - curl: limit the receive buffer size
+  - curl: implement a hard-coded timeout of 10 seconds
+* decoder:
+  - ffmpeg: workaround for semantic API change in recent ffmpeg versions
+  - flac: validate the sample rate when scanning the tag
+  - wavpack: obey all decoder commands, stop at CUE track border
+* encoder:
+  - vorbis: don't send end-of-stream on flush
+* output:
+  - alsa: fix SIGFPE when alsa announces a period size of 0
+  - httpd: don't warn on client disconnect
+  - osx: don't drain the buffer when closing
+  - pulse: fix deadlock when resuming the stream
+  - pulse: fix deadlock when the stream was suspended
+
+
+ver 0.16.3 (2011/06/04)
+* fix assertion failure in audio format mask parser
+* fix NULL pointer dereference in playlist parser
+* fix playlist files in base music directory
+* database: allow directories with just playlists
+* decoder:
+  - ffmpeg: support libavcodec 0.7
+
+
+ver 0.16.2 (2011/03/18)
+* configure.ac:
+  - fix bashism in tremor test
+* decoder:
+  - tremor: fix configure test
+  - gme: detect end of song
+* encoder:
+  - vorbis: reset the Ogg stream after flush
+* output:
+  - httpd: fix uninitialized variable
+  - httpd: include sys/socket.h
+  - oss: AFMT_S24_PACKED is little-endian
+  - oss: disable 24 bit playback on FreeBSD
+
+
+ver 0.16.1 (2011/01/09)
+* audio_check: fix parameter in prototype
+* add void casts to suppress "result unused" warnings (clang)
+* input:
+  - ffado: disable by default
+* decoder:
+  - mad: work around build failure on Solaris
+  - resolve modplug vs. libsndfile cflags/headers conflict
+* output:
+  - solaris: add missing parameter to open_cloexec() cal
+  - osx: fix up audio format first, then apply it to device
+* player_thread: discard empty chunks while cross-fading
+* player_thread: fix assertion failure due to early seek
+* output_thread: fix double lock
+
+
+ver 0.16 (2010/12/11)
+* protocol:
+  - send song modification time to client
+  - added "update" idle event
+  - removed the deprecated "volume" command
+  - added the "findadd" command
+  - range support for "delete"
+  - "previous" really plays the previous song
+  - "addid" with negative position is deprecated
+  - "load" supports remote playlists (extm3u, pls, asx, xspf, lastfm://)
+  - allow changing replay gain mode on-the-fly
+  - omitting the range end is possible
+  - "update" checks if the path is malformed
+* archive:
+  - iso: renamed plugin to "iso9660"
+  - zip: renamed plugin to "zzip"
+* input:
+  - lastfm: obsolete plugin removed
+  - ffmpeg: new input plugin using libavformat's "avio" library
+* tags:
+  - added tags "ArtistSort", "AlbumArtistSort"
+  - id3: revised "performer" tag support
+  - id3: support multiple values
+  - ape: MusicBrainz tags
+  - ape: support multiple values
+* decoders:
+  - don't try a plugin twice (MIME type & suffix)
+  - don't fall back to "mad" unless no plugin matches
+  - ffmpeg: support multiple tags
+  - ffmpeg: convert metadata to generic format
+  - ffmpeg: implement the libavutil log callback
+  - sndfile: new decoder plugin based on libsndfile
+  - flac: moved CUE sheet support to a playlist plugin
+  - flac: support streams without STREAMINFO block
+  - mikmod: sample rate is configurable
+  - mpg123: new decoder plugin based on libmpg123
+  - sidplay: support sub-tunes
+  - sidplay: implemented songlength database
+  - sidplay: support seeking
+  - sidplay: play monaural SID tunes in mono
+  - sidplay: play mus, str, prg, x00 files
+  - wavpack: activate 32 bit support
+  - wavpack: allow more than 2 channels
+  - mp4ff: rename plugin "mp4" to "mp4ff"
+* encoders:
+  - twolame: new encoder plugin based on libtwolame
+  - flac: new encoder plugin based on libFLAC
+  - wave: new encoder plugin for PCM WAV format
+* output:
+  - recorder: new output plugin for recording radio streams
+  - alsa: don't recover on CANCEL
+  - alsa: fill period buffer with silence before draining
+  - openal: new output plugin
+  - pulse: announce "media.role=music"
+  - pulse: renamed context to "Music Player Daemon"
+  - pulse: connect to server on MPD startup, implement pause
+  - jack: require libjack 0.100
+  - jack: don't disconnect during pause
+  - jack: connect to server on MPD startup
+  - jack: added options "client_name", "server_name"
+  - jack: clear ring buffers before activating
+  - jack: renamed option "ports" to "destination_ports"
+  - jack: support more than two audio channels
+  - httpd: bind port when output is enabled
+  - httpd: added name/genre/website configuration
+  - httpd: implement "pause"
+  - httpd: bind_to_address support (including IPv6)
+  - oss: 24 bit support via OSS4
+  - win32: new output plugin for Windows Wave
+  - shout, httpd: more responsive to control commands
+  - wildcards allowed in audio_format configuration
+  - consistently lock audio output objects
+* player:
+  - drain audio outputs at the end of the playlist
+* mixers:
+  - removed support for legacy mixer configuration
+  - reimplemented software volume as mixer+filter plugin
+  - per-device software/hardware mixer setting
+* commands:
+  - added new "status" line with more precise "elapsed time"
+* update:
+  - automatically update the database with Linux inotify
+  - support .mpdignore files in the music directory
+  - sort songs by album name first, then disc/track number
+  - rescan after metadata_to_use change
+* normalize: upgraded to AudioCompress 2.0
+  - automatically convert to 16 bit samples
+* replay gain:
+  - reimplemented as a filter plugin
+  - fall back to track gain if album gain is unavailable
+  - optionally use hardware mixer to apply replay gain
+  - added mode "auto"
+  - parse replay gain from APE tags
+* log unused/unknown block parameters
+* removed the deprecated "error_file" option
+* save state when stopped
+* renamed option "--stdout" to "--stderr"
+* removed options --create-db and --no-create-db
+* state_file: save only if something has changed
+* database: eliminated maximum line length
+* log: redirect stdout/stderr to /dev/null if syslog is used
+* set the close-on-exec flag on all file descriptors
+* pcm_volume, pcm_mix: implemented 32 bit support
+* support packed 24 bit samples
+* CUE sheet support
+* support for MixRamp tags
+* obey $(sysconfdir) for default mpd.conf location
+* build with large file support by default
+* added test suite ("make check")
+* require GLib 2.12
+* added libwrap support
+* make single mode 'sticky'
+
+
+ver 0.15.17 (2011/??/??)
+* encoder:
+  - vorbis: reset the Ogg stream after flush
+* decoders:
+  - vorbis: fix tremor support
+
+
+ver 0.15.16 (2011/03/13)
+* output:
+  - ao: initialize the ao_sample_format struct
+  - jack: fix crash with mono playback
+* encoders:
+  - lame: explicitly configure the output sample rate
+* update: log all file permission problems
+
+
+ver 0.15.15 (2010/11/08)
+* input:
+  - rewind: fix assertion failure
+* output:
+  - shout: artist comes first in stream title
+
+
+ver 0.15.14 (2010/11/06)
+* player_thread: fix assertion failure due to wrong music pipe on seek
+* output_thread: fix assertion failure due to race condition in OPEN
+* input:
+  - rewind: fix double free bug
+* decoders:
+  - mp4ff, ffmpeg: add extension ".m4b" (audio book)
+
+
+ver 0.15.13 (2010/10/10)
+* output_thread: fix race condition after CANCEL command
+* output:
+  - httpd: fix random data in stream title
+  - httpd: MIME type audio/ogg for Ogg Vorbis
+* input:
+  - rewind: update MIME not only once
+  - rewind: enable for MMS
+
+
+ver 0.15.12 (2010/07/20)
+* input:
+  - curl: remove assertion after curl_multi_fdset()
+* tags:
+  - rva2: set "gain", not "peak"
+* decoders:
+  - wildmidi: support version 0.2.3
+
+
+ver 0.15.11 (2010/06/14)
+* tags:
+  - ape: support album artist
+* decoders:
+  - mp4ff: support tags "album artist", "albumartist", "band"
+  - mikmod: fix memory leak
+  - vorbis: handle uri==NULL
+  - ffmpeg: fix memory leak
+  - ffmpeg: free AVFormatContext on error
+  - ffmpeg: read more metadata
+  - ffmpeg: fix libavformat 0.6 by using av_open_input_stream()
+* playlist: emit IDLE_OPTIONS when resetting single mode
+* listen: make get_remote_uid() work on BSD
+
+
+ver 0.15.10 (2010/05/30)
+* input:
+  - mms: fix memory leak in error handler
+  - mms: initialize the "eof" attribute
+* decoders:
+  - mad: properly calculate ID3 size without libid3tag
+
+
+ver 0.15.9 (2010/03/21)
+* decoders:
+  - mad: fix crash when seeking at end of song
+  - mpcdec: fix negative shift on fixed-point samples
+  - mpcdec: fix replay gain formula with v8
+* playlist: fix single+repeat in random mode
+* player: postpone song tags during cross-fade
+
+
+ver 0.15.8 (2010/01/17)
+* input:
+  - curl: allow rewinding with Icy-Metadata
+* decoders:
+  - ffmpeg, flac, vorbis: added more flac/vorbis MIME types
+  - ffmpeg: enabled libavformat's file name extension detection
+* dbUtils: return empty tag value only if no value was found
+* decoder_thread: fix CUE track playback
+* queue: don't repeat current song in consume mode
+
+
+ver 0.15.7 (2009/12/27)
+* archive:
+  - close archive when stream is closed
+  - iso, zip: fixed memory leak in destructor
+* input:
+  - file: don't fall back to parent directory
+  - archive: fixed memory leak in error handler
+* tags:
+  - id3: fix ID3v1 charset conversion
+* decoders:
+  - eliminate jitter after seek failure
+  - ffmpeg: don't try to force stereo
+  - wavpack: allow fine-grained seeking
+* mixer: explicitly close all mixers on shutdown
+* mapper: fix memory leak when playlist_directory is not set
+* mapper: apply filesystem_charset to playlists
+* command: verify playlist name in the "rm" command
+* database: return multiple tag values per song
+
+
+ver 0.15.6 (2009/11/18)
+* input:
+  - lastfm: fixed variable name in GLib<2.16 code path
+  - input/mms: require libmms 0.4
+* archive:
+  - zzip: require libzzip 0.13
+* tags:
+  - id3: allow 4 MB RIFF/AIFF tags
+* decoders:
+  - ffmpeg: convert metadata
+  - ffmpeg: align the output buffer
+  - oggflac: rewind stream after FLAC detection
+  - flac: fixed CUE seeking range check
+  - flac: fixed NULL pointer dereference in CUE code
+* output_thread: check again if output is open on PAUSE
+* update: delete ignored symlinks from database
+* database: increased maximum line length to 32 kB
+* sticker: added fallback for sqlite3_prepare_v2()
+
+
+ver 0.15.5 (2009/10/18)
+* input:
+  - curl: don't abort if a packet has only metadata
+  - curl: fixed endless loop during buffering
+* tags:
+  - riff, aiff: fixed "limited range" gcc warning
+* decoders:
+  - flac: fixed two memory leaks in the CUE tag loader
+* decoder_thread: change the fallback decoder name to "mad"
+* output_thread: check again if output is open on CANCEL
+* update: fixed memory leak during container scan
+
+
+ver 0.15.4 (2009/10/03)
+* decoders:
+  - vorbis: revert "faster tag scanning with ov_test_callback()"
+  - faad: skip assertion failure on large ID3 tags
+  - ffmpeg: use the "artist" tag if "author" is not present
+* output:
+  - osx: fix the OS X 10.6 build
+
+
+ver 0.15.3 (2009/08/29)
+* decoders:
+  - vorbis: faster tag scanning with ov_test_callback()
+* output:
+  - fix stuttering due to uninitialized variable
+* update: don't re-read unchanged container files
+
+
+ver 0.15.2 (2009/08/15)
+* tags:
+  - ape: check the tag size (fixes integer underflow)
+  - ape: added protection against large memory allocations
+* decoders:
+  - mad: skip ID3 frames when libid3tag is disabled
+  - flac: parse all replaygain tags
+  - flac: don't allocate cuesheet twice (memleak)
+* output:
+  - shout: fixed stuck pause bug
+  - shout: minimize the unpause latency
+* update: free empty path string (memleak)
+* update: free temporary string in container scan (memleak)
+* directory: free empty directories after removing them (memleak)
+
+
+ver 0.15.1 (2009/07/15)
+* decoders:
+  - flac: fix assertion failure in tag_free() call
+* output:
+  - httpd: include sys/types.h (fixes Mac OS X)
+* commands:
+  - don't resume playback when stopping during pause
+* database: fixed NULL pointer dereference after charset change
+* log: fix double free() bug during shutdown
+
+
+ver 0.15 (2009/06/23)
+* input:
+  - parse Icy-Metadata
+  - added support for the MMS protocol
+  - hide HTTP password in playlist
+  - lastfm: new input plugin for last.fm radio (experimental and incomplete!)
+  - curl: moved proxy settings to "input" block
+* tags:
+  - support the "album artist" tag
+  - support MusicBrainz tags
+  - parse RVA2 tags in mp3 files
+  - parse ID3 tags in AIFF/RIFF/WAV files
+  - ffmpeg: support new metadata API
+  - ffmpeg: added support for the tags comment, genre, year
+* decoders:
+  - audiofile: streaming support added
+  - audiofile: added 24 bit support
+  - modplug: another MOD plugin, based on libmodplug
+  - mikmod disabled by default, due to severe security issues in libmikmod
+  - sidplay: new decoder plugin for C64 SID (using libsidplay2)
+  - fluidsynth: new decoder plugin for MIDI files (using libfluidsynth,
+    experimental due to shortcomings in libfluidsynth)
+  - wildmidi: another decoder plugin for MIDI files (using libwildmidi)
+  - flac: parse stream tags
+  - mpcdec: support the new libmpcdec SV8 API
+  - added configuration option to disable decoder plugins
+  - flac: support embedded cuesheets
+  - ffmpeg: updated list of supported formats
+* audio outputs:
+  - added option to disable audio outputs by default
+  - wait 10 seconds before reopening after play failure
+  - shout: enlarged buffer size to 32 kB
+  - null: allow disabling synchronization
+  - mvp: fall back to stereo
+  - mvp: fall back to 16 bit audio samples
+  - mvp: check for reopen errors
+  - mvp: fixed default device detection
+  - pipe: new audio output plugin which runs a command
+  - alsa: better period_time default value for high sample rates
+  - solaris: new audio output plugin for Solaris /dev/audio
+  - httpd: new audio output plugin for web based streaming, similar to icecast
+     but built in.
+* commands:
+  - "playlistinfo" and "move" supports a range now
+  - added "sticker database", command "sticker", which allows clients
+     to implement features like "song rating"
+  - added "consume" command which removes a song after play
+  - added "single" command, if activated, stops playback after current song or
+     repeats the song if "repeat" is active.
+* mixers:
+  - rewritten mixer code to support multiple mixers
+  - new pulseaudio mixer
+  - alsa: new mixer_index option supports choosing between multiple
+    identically-named controls on a device.
+* Add audio archive extraction support:
+  - bzip2
+  - iso9660
+  - zip
+* the option "error_file" was removed, all messages are logged into
+   "log_file"
+* support logging to syslog
+* fall back to XDG music directory if no music_directory is configured
+* failure to read the state file is non-fatal
+* --create-db starts the MPD daemon instead of exiting
+* playlist_directory and music_directory are optional
+* playlist: recalculate the queued song after random is toggled
+* playlist: don't unpause on delete
+* pause when all audio outputs fail to play
+* daemon: ignore "user" setting if already running as that user
+* listen: fix broken client IP addresses in log
+* listen: bind failure on secondary address is non-fatal
+* 24/32 bit audio support
+* print available protocols in --version
+* fill buffer after seeking
+* choose the fallback resampler at runtime
+* steps taken towards win32 compatibility
+* require glib 2.6 or greater
+* built-in documentation using doxygen and docbook
+
+
+ver 0.14.2 (2009/02/13)
+* configure.ac:
+  - define HAVE_FFMPEG after all checks
+* decoders:
+  - ffmpeg: added support for the tags comment, genre, year
+  - ffmpeg: don't warn of empty packet output
+  - ffmpeg: check if the time stamp is valid
+  - ffmpeg: fixed seek integer overflow
+  - ffmpeg: enable WAV streaming
+  - ffmpeg: added TTA support
+  - wavpack: pass NULL if the .wvc file fails to open
+  - mikmod: call MikMod_Exit() only in the finish() method
+  - aac: fix stream metadata
+* audio outputs:
+  - jack: allocate ring buffers before connecting
+  - jack: clear "shutdown" flag on reconnect
+  - jack: reduced sleep time to 1ms
+  - shout: fixed memory leak in the mp3 encoder
+  - shout: switch to blocking mode
+  - shout: use libshout's synchronization
+  - shout: don't postpone metadata
+  - shout: clear buffer before calling the encoder
+* mapper: remove trailing slashes from music_directory
+* player: set player error when output device fails
+* update: recursively purge deleted directories
+* update: free deleted subdirectories
+
+ver 0.14.1 (2009/01/17)
+* decoders:
+  - mp4: support the writer/composer tag
+  - id3: strip leading and trailing whitespace from ID3 tags
+  - oggvorbis: fix tremor support
+  - oggvorbis: disable seeking on remote files
+* audio outputs:
+  - jack: allocate default port names (fixes a crash)
+* update:
+  - refresh stats after update
+  - save the database even if it is empty
+* input_curl:
+  - use select() to eliminate busy loop during connect
+  - honour http_proxy_* config directives
+  - fix assertion failure on "connection refused"
+  - fix assertion failure with empty HTTP responses
+* corrected the sample calculation in the fallback resampler
+* log: automatically append newline
+* fix setenv() conflict on Solaris
+* configure.ac: check for pkg-config before using it
+* fix minor memory leak in decoder_tag()
+* fix cross-fading bug: it used to play some chunks of the new song twice
+* playlist
+  - fix assertion failure during playlist load
+  - implement Fisher-Yates shuffle properly
+  - safely search the playlist for deleted song
+* use custom PRNG for volume dithering (speedup)
+* detect libid3tag without pkg-config
+
+ver 0.14 (2008/12/25)
+* audio outputs:
+  - wait 10 seconds before reopening a failed device
+  - fifo: new plugin
+  - null: new plugin
+  - shout: block while trying to connect instead of failing
+  - shout: new timeout parameter
+  - shout: support mp3 encoding and the shoutcast protocol
+  - shout: send silence during pause, so clients don't get disconnected
+* decoders:
+  - ffmpeg: new plugin
+  - wavpack: new plugin
+  - aac: stream support added
+  - mod: disabled by default due to critical bugs in all libmikmod versions
+* commands:
+  - "addid" takes optional second argument to specify position
+  - "idle" notifies the client when a notable change occurs
+* Zeroconf support using Bonjour
+* New zeroconf_enabled option so that Zeroconf support can be disabled
+* Stop the player/decode processes when not playing to allow the CPU to sleep
+* Fix a bug where closing an ALSA dmix device could cause MPD to hang
+* Support for reading ReplayGain from LAME tags on MP3s
+* MPD is now threaded, which greatly improves performance and stability
+* memory usage reduced by merging duplicate tags in the database
+* support connecting via unix domain socket
+* allow authenticated local users to add any local file to the playlist
+* 24 bit audio support
+* optimized PCM conversions and dithering
+* much code has been replaced by using GLib
+* the HTTP client has been replaced with libcurl
+* symbolic links in the music directory can be disabled; the default
+  is to ignore symlinks pointing outside the music directory
+
+ver 0.13.0 (2007/5/28)
+* New JACK audio output
+* Support for "file" as an alternative to "filename" in search, find, and list
+* FLAC 1.1.3 API support
+* New playlistadd command for adding to stored playlists
+* New playlistclear command for clearing stored playlists
+* Fix a bug where "find any" and "list <type> any" wouldn't return any results
+* Make "list any" return an error instead of no results and an OK
+* New gapless_mp3_playback option to disable gapless MP3 playback
+* Support for seeking HTTP streams
+* Zeroconf support using Avahi
+* libsamplerate support for high quality audio resampling
+* ID3v2 "Original Artist/Performer" tag support
+* New playlistsearch command for searching the playlist (similar to "search")
+* New playlistfind command for finding songs in the playlist (similar to "find")
+* libmikmod 3.2.0 beta support
+* New tagtypes command for retrieving a list of available tag types
+* Fix a bug where no ACK was returned if loading a playlist failed
+* Fix a bug where db_update in stats would be 0 after initial database creation
+* New count command for getting stats on found songs (similar to "find")
+* New playlistmove command for moving songs in stored playlists
+* New playlistdelete command for deleting songs from stored playlists
+* New rename command for renaming stored playlists
+* Increased default buffer_before_play from 0% to 10% to prevent skipping
+* Lots of bug fixes, cleaned up code, and performance improvements
+
+ver 0.12.2 (2007/3/20)
+* Fix a bug where clients could cause MPD to segfault
+
+ver 0.12.1 (2006/10/10)
+* Fix segfault when scanning an MP3 that has a Xing tag with 0 frames
+* Fix segfault when there's no audio output specified and one can't be detected
+* Fix handling of escaping in quotes
+* Allow a quality of -1 to be specified for shout outputs
+* A few minor cleanups
+
+ver 0.12.0 (2006/9/22)
+* New audio output code which supports:
+  * A plugin-like architecture
+  * Non-libao ("native") outputs:
+    * ALSA
+    * OSS
+    * OS X
+    * Media MVP
+    * PulseAudio
+    * Shout (Icecast or Shoutcast)
+  * Playing through multiple outputs at once
+  * Enabling/disabling outputs while MPD is running
+  * Saving output state (enabled/disabled) to the state_file
+* OggFLAC support
+* Musepack support
+* Gapless MP3 playback
+* MP3 ReplayGain support (using ID3v2 tags only)
+* Support for MP2 files if MP3 support is enabled
+* Composer, Performer, Comment, and Disc metadata support
+* New outputs command for listing available audio outputs
+* New enableoutput and disableoutput commands for enabling/disabling outputs
+* New plchangesposid command for a stripped down version of plchanges
+* New addid command for adding to the playlist and returning a song ID
+* New commands and notcommands commands for checking available commands
+* Can now specify any supported metadata type or "any" in search, find, and list
+* New volume_normalization parameter for enabling Audio Compress normalization
+* New metadata_to_use parameter for choosing supported metadata types
+* New pid_file parameter for saving the MPD process ID to the specified file
+* The db_file parameter is now required
+* The port parameter is now optional (defaults to 6600)
+* Can specify bind_to_address multiple times
+* New --kill argument for killing MPD if pid_file is specified
+* Removed --update-db argument (use the update function in your client instead)
+* New mpdconf.example
+* New mpd.conf man page 
+* Removed bundled libmad and libid3tag
+* Lots of bug fixes, cleaned up code, and performance improvements
+
+ver 0.11.5 (2004/11/1)
+1) New id3v1_encoding config option to configure the id3v1 tag encoding (patch
+from dottedmag)
+2) Strip '\r' from m3u playlists (thank you windows)
+3) Use random() instead of rand() for playlist randomizing
+4) Fix a bug trying skipping some commented lines in m3u playlist files
+5) Fix a bug when fetching metadata from streams that may cause certain
+weirdnesses
+6) Fix a bug where replaygain preamp was used on files w/o replaygain tags
+7) Fix a busy loop when trying to prebuffer a nonexistant or missing stream
+8) Fix a bug in forgetting to remove leading ' ' in content-type for http
+streams
+9) Check for ice-name in http headers
+10) Be sure the strip all '\n' chars in tags
+11) Set $HOME env variable when setuid'ing, this should fix the /root/.mcop
+errors triggered by arts/libao
+
+ver 0.11.4 (2004/7/26)
+1) Fixed a segfault when decoding mp3's with corrupt id3v2 tags
+2) Fixed a memory leak when encountering id3v2 tags in mp3 decoder
+
+ver 0.11.3 (2004/7/21)
+1) Add support for http authentication for streams
+2) Added replaygain pre-amp support
+3) Better error handling for fread() in inputStream_file
+4) Fixed a bug so that when a freeAllInterfaces is called, it sets
+max_interface_connections to 0.  This prevents potential segfaults and other
+nastiness for forked processes, like the player and update-er (do to
+interfacePrintWithFD()).
+5) Allow blockingWrite() to handle errors more gracefully (for example, if the
+disc is full, and thus the write() fails or can't be completed, we just skip
+this write() and continue, instead of getting stuck in an infinite loop until
+the write() becomes successful)
+6) Updated mpdconf.example from sbh/avuton
+7) If "user" is specified, then convert ~ in paths to the user's home path
+specified by "user" config paramter (not the actual current user running mpd).
+
+ver 0.11.2 (2004/7/5) 
+1) Work around in computing total time for mp3's whose first valid mpeg frame is
+not layer III
+2) Fix mp3 and mp4 decoders when seeking past the end of the file
+3) Fix replaygain for flac and vorbis
+4) Fix memory leaks in flac decoder (from normalperson)
+5) Fix Several other bugs in playlist.c and directory.c (from normalperson)
+
+ver 0.11.1 (2004/6/24)
+1) Fix a bug that caused "popping" at the beginning of mp3's
+2) Fix playlistid command
+3) Fix move commands so they don't mess up the song id's
+4) Added support for HTTP Proxy
+5) Detect and skip recursive links in the music directory
+6) Fix addPathToDB() so updating on a specific path doesn't exist correctly adds
+the parent directories to the DB
+
+ver 0.11.0 (2004/6/18)
+1) Support for playing mp3 and Ogg Vorbis streams
+2) Non-blocking Update
+3) Replaygain support for Ogg Vorbis and FLAC (by Eric Moore aka AliasMrJones)
+4) audio_output_format option that allows for all audio output to be converted
+to a format compatible with any sound card
+5) Own routines for to always support UTF-8 <-> ISO-8859-1 conversion
+6) Added "Id" and "Pos" metadata for songs in playlist
+7) Added commands: plchanges, currentsong, playid, seekid, playlistid, moveid,
+swapid, deleteid
+8) UTF-8 validation of all tags
+9) Update specific files/directories (for fast, incremental updating)
+10) Added ACK error codes
+11) Mod file support
+12) Added command_list_ok_begin
+13) Play after stop resumes from last position in the playlist
+14) Play while pause resumes playback
+15) Better signal handling by mackstann
+16) Cleanup decoder interface (now called InputPlugins)
+17) --create-db no long starts the daemon
+18) --no-daemon outputs to log files
+19) --stdout sends output to stdout/stderr
+20) Default port is now 6600
+21) Lots of other cleanups and Bugfixes
+
+ver 0.10.4 (2004/5/26)
+1) Fix configure problems on OpenBSD with langinfo and iconv
+2) Fix an infinte loop when writing to an interface and it has expired
+3) Fix a segfault in decoding flac's
+4) Ingore CRC stuff in mp3's since some encoders did not compute the CRC
+correctly
+5) Fix a segfault in processing faulty mp4 metadata
+
+ver 0.10.3 (2004/4/2)
+1) Fix a segfault when a blanck line is sent from a client
+2) Fix for loading playlists on platforms where char is unsigned
+3) When pausing, release audio device after we say pause is successful (this
+makes pause appear to not lag)
+4) When returning errors for unknown types by player, be sure to copy the
+filename
+5) add --disable-alsa for disabling alsa mixer support
+6) Use select() for a portable usleep()
+7) For alsa mixer, default to "Master' element, not first element
+
+ver 0.10.2 (2004/3/25)
+1) Add suport for AAC
+2) Substitute '\n' with ' ' in tag info
+3) Remove empty directories from db
+4) Resume from current position in song when using state file
+5) Pause now closes the music device, and reopens it on resuming
+6) Fix unnecessary big endian byte swapping
+7) If locale is "C" or "POSIX", then use ISO-8859-1 as the fs charset
+8) Fix a bug where alsa mixer wasn't detecting volume changes
+9) For alsa and software mixer, show volume to be the same as it was set (even
+if its not the exact volume)
+10) Report bitrate for wave files
+11) Compute song length of CBR mp3's more accurately
+
+ver 0.10.1 (2004/3/7)
+1) Check to see if we need to add "-lm" when linking mpd
+2) Fix issues with skipping bad frames in an mp3 (this way we get the correct
+samplerate and such)
+3) Fix crossfading bug with ogg's
+4) Updated libmad and libid3tag included w/ source to 0.15.1b
+
+ver 0.10.0 (2004/3/3)
+1) Use UTF-8 for all client communications
+2) Crossfading support
+3) Password Authentication (all in plaintext)
+4) Software mixer
+5) Buffer Size is configurable
+6) Reduced Memory consumption (use directory tree for search and find)
+7) Bitrate support for Flac
+8) setvol command (deprecates volume command)
+9) add command takes directories
+10) Path's in config file now work with ~
+11) Add samplerate,bits, and channels to status
+12) Reenable playTime in stats display
+13) Fix a segfault when doing: add ""
+14) Fix a segfault with flac vorbis comments simply being "="
+15) Fix a segfault/bug in queueNextSong with repeat+random
+16) Fix a bug, where one process may segfault, and cause more processes to spawn
+w/o killing ones that lost their parent.
+17) Fix a bug when the OSS device was unable to fetch the current volume,
+it would close the device (when it maybe previously closed by the exact same
+code)
+18) command.c cleanup by mackstann
+19) directory.c and command.c cleanup by tw-nym
+
+ver 0.9.4 (2004/1/21)
+1) Fix a bug where updated tag info wasn't being detected
+2) Set the default audio write size to 1024 bytes (should decrease cpu load a
+bit on some machines).
+3) Make audio write size configurable via "audio_write_size" config option
+4) Tweak output buffer size for connections by detecting the kernel output
+buffer size.
+
+ver 0.9.3 (2003/10/31)
+1) Store total time/length of songs in db and display in *info commands
+2) Display instantaneous bitrate in status command
+3) Add Wave Support using libaudiofile (Patch from normalperson)
+4) Command code cleanup (Patch from tw-nym)
+5) Optimize listing of playlists (10-100x faster)
+6) Optimize interface output (write in 4kB chunks instead of on every '\n')
+7) Fix bug that prevented rm command from working
+8) Fix bug where deleting current song skips the next song
+9) Use iconv to convert vorbis comments from UTF-8 to Latin1
+
+ver 0.9.2 (2003/10/6)
+1) Fix FreeBSD Compilation Problems
+2) Fix bug in move command
+3) Add mixer_control options to configure which mixer control/device mpd
+controls
+4) Randomize on play -1
+5) Fix a bug in toggling repeat off and at the end of the playlist
+
+ver 0.9.1 (2003/9/30)
+1) Fix a statement in the middle of declarations in listen.c, causes error for
+gcc 2.7
+
+ver 0.9.0 (2003/9/30)
+1) Random play mode
+2) Alsa Mixer Support
+3) Save and Restore "state"
+4) Default config file locations (.mpdconf and /etc/mpd.conf)
+5) Make db file locations configurable
+6) Move songs around in the playlist
+7) Gapless playback
+8) Use Xing tags for mp3's
+9) Remove stop_on_error
+10) Seeking support
+11) Playlists can be loaded and deleted from subdirectories
+12) Complete rewrite of player layer (fork()'s only once, opens and closes
+audio device as needed).
+13) Eliminate use and dependence of SIGIO
+14) IPv6 support
+15) Solaris compilations fixes
+16) Support for different log levels
+17) Timestamps for log entries
+18) "user" config parameter for setuid (patch from Nagilum)
+19) Other misc features and bug fixes
+
+ver 0.8.7 (2003/9/3)
+1) Fix a memory leak.  When closing a interface, was called close() on the fd
+instead of calling fclose() on the fp that was opened with fdopen().
+
+ver 0.8.6 (2003/8/25)
+1) Fix a memory leak when a buffered existed, and a connection was unexpectedly
+closed, and i wasn't free'ing the buffer apropriatly.
+
+ver 0.8.5 (2003/8/17)
+1) Fix a bug where an extra end of line is returned when attempting to play a
+non existing file.  This causes parsing errors for clients.
+
+ver 0.8.4 (2003/8/13)
+1) Fix a bug where garbage is returned with errors in "list" command
+
+ver 0.8.3 (2003/8/12) 
+1) Fix a compilation error on older linux systems
+2) Fix a bug in searching by title
+3) Add "list" command
+4) Add config options for specifying libao driver/plugin and options
+5) Add config option to specify which address to bind to
+6) Add support for loading and saving absolute pathnames in saved playlists
+7) Playlist no longer creates duplicate entries for song data (more me
+efficient)
+8) Songs deleted from the db are now removed for the playlist as well
+
+ver 0.8.2 (2003/7/22)
+1) Increased the connection que for listen() from 0 to 5
+2) Cleanup configure makefiles so that mpd uses MPD_LIBS and MPD_CFLAGS
+rather than LIBS and CFLAGS
+3) Put a cap on the number of commands per command list
+4) Put a cap on the maximum number of buffered output lines
+5) Get rid of TIME_WAIT/EADDRINUSE socket problem
+6) Use asynchronious IO (i.e. trigger SIGIO instead so we can sleep in
+select() calls longer)
+
+ver 0.8.1 (2003/7/11)
+1) FreeBSD fixes
+2) Fix for rare segfault when updating
+3) Fix bug where client was being hungup on when done playing current song
+4) Fix bug when playing flac's where it incorrectly reports an error
+5) Make stop playlist on error configurable
+6) Configure checks for installed libmad and libid3tag and uses those if found
+7) Use buffer->finished in *_decode's instead of depending on catching signals
+
+ver 0.8.0 (2003/7/6)
+1) Flac support
+2) Make playlist max length configurable
+3) New backward compatible status (backward compatible for 0.8.0 on)
+4) listall command now can take a directory as an argument
+5) Buffer rewritten to use shared memory instead of sockets
+6) Playlist adding done using db
+7) Add sort to list, and use binary search for finding
+8) New "stats" command
+9) Command list (for faster adding of large batches of files)
+10) Add buffered chunks before play
+11) Useful error reporting to clients (part of status command)
+12) Use libid3tag for reading id3 tags (more stable)
+13) Non-blocking output to clients
+14) Fix bug when removing items from directory
+15) Fix bug when playing mono mp3's
+16) Fix bug when attempting to delete files when using samba
+17) Lots of other bug fixes I can't remember
+
+ver 0.7.0 (2003/6/20)
+1) use mad instead of mpg123 for mp3 decoding
+2) volume support
+3) repeate playlist support
+4) use autoconf/automake (i.e. "configure")
+5) configurable max connections
+
+ver 0.6.2 (2003/6/11)
+1) Buffer support for ogg
+2) new config file options: "connection_timeout" and "mpg123_ignore_junk"
+3) new commands: "next", "previous", and "listall"
+Thanks to Niklas Hofer for "next" and "previous" patches!
+4) Search by filename
+5) bug fix for pause when playing mp3's
+
+ver 0.6.1 (2003/5/29)
+1) Add conf file support
+2) Fix a bug when doing mp3stop (do wait3(NULL,WNOHANG|WUNTRACED,NULL))
+3) Fix a bug when fork'ing, fflush file buffers before forking so the
+child doesn't print the same stuff in the buffer.
+
+ver 0.6.0 (2003/5/25)
+1) Add ogg vorbis support
+2) Fix two bugs relating to tables, one for search by title, and one where we
+freed the tables before directories, causing a segfault
+3) The info command has been removed.
+
+ver 0.5.0-0.5.2
+Initial release(s).  Support for MP3 via mpg123

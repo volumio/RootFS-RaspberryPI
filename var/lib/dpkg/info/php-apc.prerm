@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/apc.ini \
+	/etc/php5/mods-available/apc.ini 3.1.10-1~ -- "$@"
+
+case "$1" in
+    remove|upgrade|deconfigure)
+	php5dismod apc
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+exit 0

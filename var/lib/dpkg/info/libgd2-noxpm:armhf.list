@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libgd2-noxpm
+/usr/share/doc/libgd2-noxpm/changelog.Debian.gz
+/usr/share/doc/libgd2-noxpm/README.html
+/usr/share/doc/libgd2-noxpm/copyright
+/usr/share/doc/libgd2-noxpm/changelog.gz
+/usr/share/doc/libgd2-noxpm/buildinfo_armhf.gz
+/usr/share/doc/libgd2-noxpm/README.gz
+/usr/share/doc/libgd2-noxpm/readme.jpn
+/usr/share/doc/libgd2-noxpm/NEWS.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libgd.so.2.0.0
+/usr/lib/arm-linux-gnueabihf/libgd.so.2

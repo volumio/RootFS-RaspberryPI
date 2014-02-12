@@ -1,0 +1,18 @@
+#!/bin/sh
+# TODO: remove this file after releasing Squeeze
+set -e
+if [ "$1" = upgrade ] && dpkg --compare-versions "$2" lt 1.2-3
+then
+        pycentral pkgremove python-chardet
+fi
+
+# Automatically added by dh_python2:
+# make sure python-central files are removed before new package is installed
+if [ "$1" = upgrade ] && [ -f /var/lib/pycentral/python-chardet.pkgremove ]
+then
+	pycentral pkgremove python-chardet
+	rm -f /var/lib/pycentral/python-chardet.pkgremove
+fi
+
+# End automatically added section
+

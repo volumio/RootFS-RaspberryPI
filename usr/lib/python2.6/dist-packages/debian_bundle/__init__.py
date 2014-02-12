@@ -1,0 +1,1 @@
+../../../../share/pyshared/debian_bundle/__init__.py

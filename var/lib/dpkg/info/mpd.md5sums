@@ -1,0 +1,13 @@
+863261ce169ab0d9e57654eec5e533c0  usr/bin/mpd
+aa3b73f45a5bf80f7ab2fcfb500e99db  usr/share/doc/mpd/AUTHORS
+2b8058deb8f574b95c597fabe2947074  usr/share/doc/mpd/NEWS.Debian.gz
+e43f020917d7c38b34bc07f290df4ae8  usr/share/doc/mpd/NEWS.gz
+3587c0ad7d28c6fc76788a2f15f74551  usr/share/doc/mpd/README
+16ec835cce015540952fd43b7ef4fc2f  usr/share/doc/mpd/README.Debian
+61bf67f85c74b9db1de5065049255533  usr/share/doc/mpd/UPGRADING
+896d52093a9cd8dd5536d4a909b81f4c  usr/share/doc/mpd/changelog.Debian.gz
+ebefd030c1fbe46cdf946affd64d8368  usr/share/doc/mpd/copyright
+4283706195602ae9d0580d9618faca8f  usr/share/doc/mpd/examples/mpd.conf.gz
+7721ffc04abf64e765fc5115d2cc1edb  usr/share/lintian/overrides/mpd
+4770357a3efa7be273cbe33891fc26b2  usr/share/man/man1/mpd.1.gz
+236e4ff5472112c1b33e79d2238708d5  usr/share/man/man5/mpd.conf.5.gz

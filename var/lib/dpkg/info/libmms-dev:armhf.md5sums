@@ -1,0 +1,11 @@
+0ce84f3fcdd7d1572172ebd37239076a  usr/include/libmms/mms.h
+a36c2e83b655f6975a87e6a9af5c9aaa  usr/include/libmms/mms_config.h
+421cea0af339be95b6b98110defeee22  usr/include/libmms/mmsh.h
+5e9360e40515a63f01a67ab9d2a85cda  usr/include/libmms/mmsio.h
+7dc3617ae5b37b414b0a4c154cb6c9b2  usr/include/libmms/mmsx.h
+2f75d1ba0123d9209c07cec9278a303c  usr/lib/arm-linux-gnueabihf/libmms.a
+594d7a96c15e09518db3be6c422544ab  usr/lib/arm-linux-gnueabihf/pkgconfig/libmms.pc
+616b19593de9ef2e0cc1b0d6d6a86c68  usr/share/doc/libmms-dev/README
+c3c5948f15b242edadf674a94b20c234  usr/share/doc/libmms-dev/changelog.Debian.gz
+b41192f10964d8b309e6aadd23f888a7  usr/share/doc/libmms-dev/changelog.gz
+e651235abb8a0ff5cca0868b976cbc72  usr/share/doc/libmms-dev/copyright

@@ -1,0 +1,10 @@
+0f7c38404decc3c794fd7f3e759dcd55  usr/include/id3tag.h
+0685473c3f3360f0d635da3fcef2e282  usr/lib/libid3tag.a
+6b3ec1a9fa1f5be2415ce862e5572027  usr/lib/libid3tag.la
+2f4b4576ff0c4ebe44200cb11f868c12  usr/lib/pkgconfig/id3tag.pc
+e695cca4f3377150b4693f05aad887c3  usr/share/doc/libid3tag0-dev/CREDITS
+897783f04dae2ddf5b95a6127800e1e4  usr/share/doc/libid3tag0-dev/README
+9ef26d6c76b9f884e603ed976ac55f10  usr/share/doc/libid3tag0-dev/TODO
+60ff9beeaf93674af116f1e1f8a703b4  usr/share/doc/libid3tag0-dev/changelog.Debian.gz
+0df3f78bbc701ce3e2dc6989a8ed1c88  usr/share/doc/libid3tag0-dev/changelog.gz
+4ec5a7dac22e088b5a5514ca18e12c6f  usr/share/doc/libid3tag0-dev/copyright

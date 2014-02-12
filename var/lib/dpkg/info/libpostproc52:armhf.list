@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libpostproc52
+/usr/share/doc
+/usr/share/doc/libpostproc52
+/usr/share/doc/libpostproc52/changelog.Debian.gz
+/usr/share/doc/libpostproc52/README.Debian.gz
+/usr/share/doc/libpostproc52/copyright
+/usr/share/doc/libpostproc52/changelog.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libpostproc.so.52.0.0
+/usr/lib/arm-linux-gnueabihf/libpostproc.so.52

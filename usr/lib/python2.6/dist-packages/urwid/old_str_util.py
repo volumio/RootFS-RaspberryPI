@@ -1,0 +1,1 @@
+../../../../share/pyshared/urwid/old_str_util.py

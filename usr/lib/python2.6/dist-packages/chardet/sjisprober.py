@@ -1,0 +1,1 @@
+../../../../share/pyshared/chardet/sjisprober.py

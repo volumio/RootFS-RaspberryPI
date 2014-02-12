@@ -1,0 +1,14 @@
+Language:         british (British English)
+Hash-Name:        british
+Emacsen-Name:     british
+Casechars:        [A-Za-z]
+Not-Casechars:    [^A-Za-z]
+Otherchars:       [']
+Many-Otherchars:
+Additionalchars:
+Ispell-Args:      -B -d british
+Extended-Character-Mode:
+Coding-System:    iso-8859-1
+Pspell-Ispell:    en-british iso8859-1
+auto-compat:      british
+Locale:           en_GB

@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libgpgme-pthread.so.11.7.0
+/usr/lib/libgpgme-pth.so.11.7.0
+/usr/lib/libgpgme.so.11.7.0
+/usr/share
+/usr/share/doc/libgpgme11
+/usr/share/doc/libgpgme11/changelog.Debian.gz
+/usr/share/doc/libgpgme11/changelog.gz
+/usr/share/doc/libgpgme11/copyright
+/usr/lib/libgpgme-pth.so.11
+/usr/lib/libgpgme.so.11
+/usr/lib/libgpgme-pthread.so.11

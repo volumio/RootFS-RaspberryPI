@@ -1,0 +1,293 @@
+#! /bin/bash
+
+# Deleting all locale files and localized man pages installed 
+# on system which are *not* listed in /etc/locale.nopurge
+
+set -e
+NOPURGECONF=/etc/locale.nopurge
+
+# Do nothing and report why if no valid configuration file exists:
+
+if [ ! -f $NOPURGECONF ]
+    then
+	echo " No $NOPURGECONF file present, exiting ..."
+	exit 0
+    else
+	if fgrep --quiet --line-regexp NEEDSCONFIGFIRST $NOPURGECONF
+	    then
+		echo
+		echo "	  You have to configure \"localepurge\" with the command"
+		echo
+		echo "	      dpkg-reconfigure localepurge"
+		echo
+		echo "	  to make $0 actually start to function."
+		echo
+		echo "	  Nothing to be done, exiting ..."
+		echo
+		exit 0
+	fi
+fi
+
+
+################################################################
+## Initialise variables
+
+# Make sure to exclude running under any locale other than C:
+export LC_ALL=C
+
+if [ "$1" = "-debug" ] || [ "$1" = "-d" ] \
+    || [ "$2" = "-debug" ] || [ "$2" = "-d" ]; then
+    set -x
+fi
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+   echo ""
+   echo "Verbose output is triggered with option '-v' or '-verbose'."
+   echo "Debugging output is triggered with option '-d' or '-debug'."
+   echo "To reconfigure it, run 'dpkg-reconfigure localepurge'."
+   echo "Documentation is either available via 'man localepurge'"
+   echo "or by reading the docs in /usr/share/doc/localepurge."
+   echo ""
+   exit 0
+fi
+
+# Initialise local variables
+VERBOSE=0
+DONTBOTHERNEWLOCALE=0
+SHOWFREEDSPACE=0
+MANDELETE=0
+globaltot=0
+
+if fgrep --quiet --line-regexp DONTBOTHERNEWLOCALE $NOPURGECONF; then
+    DONTBOTHERNEWLOCALE=1
+fi
+
+if fgrep --quiet --line-regexp SHOWFREEDSPACE $NOPURGECONF; then
+    SHOWFREEDSPACE=1
+fi
+
+if fgrep --quiet --line-regexp MANDELETE $NOPURGECONF; then
+    MANDELETE=1
+fi
+
+if fgrep --quiet --line-regexp VERBOSE $NOPURGECONF \
+    || [ "$1" = "-verbose" ] || [ "$1" = "-v" ] \
+    || [ "$2" = "-verbose" ] || [ "$2" = "-v" ]; then
+    VERBOSE=1
+fi
+
+
+################################################################
+## Manage the list of locales
+
+# First update $LOCALELIST with newly introduced locales if wanted
+
+LOCALECACHEDIR=/var/cache/localepurge
+LOCALELIST="$LOCALECACHEDIR"/localelist
+NEWLOCALELIST="$LOCALELIST"-new
+
+((VERBOSE)) && echo "localepurge: checking for existence of $LOCALECACHEDIR..."
+if [ ! -d $LOCALECACHEDIR ]; then
+	mkdir -m 644 -p $LOCALECACHEDIR
+fi
+
+((VERBOSE)) && echo "localepurge: checking for existence of $LOCALELIST..."
+if [ ! -f $LOCALELIST ]; then
+	touch $LOCALELIST && chmod 664 $LOCALELIST
+fi
+
+((VERBOSE)) && echo "localepurge: checking system for new locale ..."
+
+for NEWLOCALE in $(cd /usr/share/locale; ls .)
+do 
+ if [ -d /usr/share/locale/$NEWLOCALE/LC_MESSAGES ]; then
+    if [ ! "$(grep -cx $NEWLOCALE $LOCALELIST)" = "1" ]; then
+	echo "$NEWLOCALE" >> "$NEWLOCALELIST"
+    fi
+ fi
+done
+
+for NEWLOCALE in $(ls --ignore="man[1-9]*" /usr/share/man)
+do 
+ if [ -d /usr/share/man/$NEWLOCALE/man1 ] || [ -d /usr/share/man/$NEWLOCALE/man8 ]; then
+    if [ ! "$(grep -cx $NEWLOCALE $LOCALELIST)" = "1" ]; then
+	echo "$NEWLOCALE" >> "$NEWLOCALELIST"
+    fi
+ fi
+done
+
+if [ -f $NEWLOCALELIST ]; then
+  if ((DONTBOTHERNEWLOCALE)); then
+    mv "$NEWLOCALELIST" "$NEWLOCALELIST".temp
+    sort -u "$NEWLOCALELIST".temp "$LOCALELIST"> "$NEWLOCALELIST"
+    mv "$NEWLOCALELIST" "$LOCALELIST"
+    rm "$NEWLOCALELIST".temp
+   else
+    mv "$NEWLOCALELIST" "$NEWLOCALELIST".temp
+    sort -u "$NEWLOCALELIST".temp > "$NEWLOCALELIST"
+    rm "$NEWLOCALELIST".temp
+  fi
+fi
+
+if [ -f "$NEWLOCALELIST" ] && [ $DONTBOTHERNEWLOCALE != yes ]; then
+    echo "Some new locales have appeared on your system:"
+    echo
+    tr '\n' ' ' < "$NEWLOCALELIST" 
+    echo
+    echo
+    echo "They will not be touched until you reconfigure localepurge"
+    echo "with the following command:"
+    echo
+    echo "    dpkg-reconfigure localepurge"
+    echo
+fi
+
+## Create a Bash extended globbing pattern used to identify
+## superfluous locales: start by creating a pattern to match locales
+## not to be purged, use it to remove good locales from the list of
+## all locales and create a pattern matching superfluous locales.
+nopurge=$(
+    set -o noglob;		# Disable path expansion and use 'echo'
+				# below to change newlines into spaces
+    echo $(grep --invert-match --extended-regexp '^[ \t]*(#|$)' $NOPURGECONF)
+)
+nopurgepat='@(C|'"${nopurge// /|}"')'
+shopt -s extglob		# enable extended globbing to use $nopurgepat
+localelist=$(grep --invert-match --extended-regexp '^[ \t]*(#|$)' $LOCALELIST)
+superfluouslocalepat=$(
+    echo -n '@(nonexistent_locale_placeholder'
+    for l in $localelist; do
+	if [[ $l != $nopurgepat ]]; then echo -n "|$l"; fi
+    done
+    echo -n ')'
+)
+
+################################################################
+## Define utility functions 
+
+# Function for disk space calculation
+# Usage: get_used_space <dirname>
+if ! ((SHOWFREEDSPACE)); then
+    function get_used_space () { echo 0; }
+else
+    if fgrep --quiet --line-regexp QUICKNDIRTYCALC $NOPURGECONF; then
+	function get_used_space ()
+	{
+	    [ -d "$1" ] || return 1 # bail out if there's no such dir
+	    set - $(df -P $1); shift $(($# - 6)); echo $3
+	}
+    else
+	function get_used_space ()
+	{
+	    [ -d "$1" ] || return 1 # bail out if there's no such dir
+	    set - $(du -ks $1); echo $1
+	}
+    fi
+fi
+
+# If the first argument is a superfluous locale, removes the regular
+# files and the symbolic links given as subsequent arguments
+function remove_superfluous_files ()
+{
+    if [[ "$1" == $superfluouslocalepat ]]; then shift
+	local flag
+	((VERBOSE)) && flag=-v
+	for file; do
+	    if [ -f "$file" ] || [ -h "$file" ]; then 
+		echo "$file"
+	    fi
+	done | xargs rm $flag
+    fi
+}
+
+# If the first argument is a superfluous locale, removes regular files
+# and symbolic links under the dirs given as subsequent arguments
+function remove_superfluous_files_under ()
+{
+    if [[ "$1" == $superfluouslocalepat ]]; then shift
+	local flag
+	((VERBOSE)) && flag=-print
+	find "$@" -mindepth 1 \( -type f -o -type l \) $flag -delete
+    fi
+}
+
+# Compute space before removing files
+function spacebefore ()
+{
+    if ((SHOWFREEDSPACE)); then
+	local dir="$1"
+	before=$(get_used_space "$dir")
+    fi
+}
+
+# Compute space freed after removing files and updates global total
+function spaceafter ()
+{
+    if ((SHOWFREEDSPACE)); then
+	local dir="$1"
+	after=$(get_used_space "$dir")
+	tot=$((before < after ? 0 : before - after))
+	((tot > 0)) && ((globaltot += tot))
+	echo "localepurge: Disk space freed in $dir: ${tot} KiB"
+    fi
+}
+
+
+################################################################
+## Now, get the job done
+
+for LDIR in /usr/share/{locale,man,gnome/help,omf,doc/kde/HTML}; do
+    if [ ! -d "$LDIR" ]; then continue; fi
+    spacebefore "$LDIR"
+    case "$LDIR" in
+
+	/usr/share/locale)
+	    ((VERBOSE)) && echo "localepurge: processing locale files ..."
+	    for locale in $(cd "$LDIR"; echo *); do
+		remove_superfluous_files_under "$locale" "$LDIR/$locale"
+	    done ;;
+
+	/usr/share/man)
+	    if ! ((MANDELETE)); then continue; fi
+	    ((VERBOSE)) && echo "localepurge: processing man pages ..."
+	    for locale in $(ls --ignore="man[1-9]*" $LDIR); do
+		remove_superfluous_files_under "$locale" "$LDIR/$locale"/man[1-9]
+	    done ;;
+
+	/usr/share/gnome/help)
+	    ((VERBOSE)) && echo "localepurge: processing Gnome files ..."
+	    for localedir in "$LDIR"/*/*; do
+		locale=${localedir##*/}
+		if [ -d "$localedir/../C" ]; then
+		    remove_superfluous_files_under "$locale" "$localedir"
+		fi
+	    done ;;
+
+	/usr/share/omf)
+	    ((VERBOSE)) && echo "localepurge: processing Omf files ..."
+	    for file in "$LDIR"/*/*; do
+		locale=${file##*-}; locale=${locale%.omf}
+		if [ -f "${file/%-$locale.omf/-C.omf}" ]; then
+		    remove_superfluous_files "$locale" "$file"
+		fi
+	    done ;;
+
+	/usr/share/doc/kde/HTML)
+	    ((VERBOSE)) && echo "localepurge: processing KDE files ..."
+	    for locale in $(cd "$LDIR"; echo *); do
+		remove_superfluous_files_under "$locale" "$LDIR/$locale"
+	    done ;;
+
+	*)
+	    echo "localepurge: internal error, exiting"
+	    exit 1
+    esac
+    spaceafter "$LDIR"
+done
+
+# Report total disk space freed
+if ((SHOWFREEDSPACE)); then
+    echo
+    echo "Total disk space freed by localepurge: ${globaltot} KiB"
+    echo
+fi

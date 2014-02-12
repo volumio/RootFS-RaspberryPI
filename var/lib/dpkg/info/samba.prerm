@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e 
+
+if [ "x$1" != xupgrade ]; then
+	update-alternatives --remove smbstatus /usr/bin/smbstatus.samba3
+fi
+
+# Automatically added by dh_installdeb
+dpkg-maintscript-helper rm_conffile /etc/network/if-up.d/samba 2:3.6.5-6~ samba -- "$@"
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/samba" ]; then
+	invoke-rc.d samba stop || exit $?
+fi
+# End automatically added section
+
+
+exit 0

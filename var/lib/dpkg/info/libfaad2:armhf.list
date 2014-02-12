@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libfaad.so.2.0.0
+/usr/share
+/usr/share/doc/libfaad2
+/usr/share/doc/libfaad2/changelog.Debian.gz
+/usr/share/doc/libfaad2/changelog.gz
+/usr/share/doc/libfaad2/copyright
+/usr/lib/arm-linux-gnueabihf/libfaad.so.2

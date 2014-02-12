@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/geoip-database
+/usr/share/GeoIP
+/usr/share/GeoIP/GeoIP.dat
+/usr/share/GeoIP/GeoIPv6.dat
+/usr/share/doc/geoip-database
+/usr/share/doc/geoip-database/changelog.Debian.gz
+/usr/share/doc/geoip-database/copyright

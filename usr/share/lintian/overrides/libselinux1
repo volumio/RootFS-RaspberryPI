@@ -1,0 +1,1 @@
+libselinux1: package-contains-empty-directory selinux/

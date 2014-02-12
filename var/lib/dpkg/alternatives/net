@@ -1,0 +1,9 @@
+auto
+/usr/bin/net
+net.8.gz
+/usr/share/man/man8/net.8.gz
+
+/usr/bin/net.samba3
+10
+/usr/share/man/man8/net.samba3.8.gz
+

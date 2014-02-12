@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+KEEP="/var/lib/deborphan/keep"
+touch $KEEP
+
+# Here debhelper should add it's stuff if any:
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" ] && [ -x "`which update-menus 2>/dev/null`" ]; then
+	update-menus
+fi
+# End automatically added section
+
+
+
+# vim: set ts=2:

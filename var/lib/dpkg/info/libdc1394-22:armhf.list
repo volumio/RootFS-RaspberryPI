@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libdc1394.so.22.1.7
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdc1394-22
+/usr/share/doc/libdc1394-22/changelog.Debian.gz
+/usr/share/doc/libdc1394-22/changelog.gz
+/usr/share/doc/libdc1394-22/copyright
+/usr/lib/arm-linux-gnueabihf/libdc1394.so.22

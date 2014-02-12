@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libevent-2.0.so.5.1.7
+/usr/share
+/usr/share/doc/libevent-2.0-5
+/usr/share/doc/libevent-2.0-5/changelog.Debian.gz
+/usr/share/doc/libevent-2.0-5/changelog.gz
+/usr/share/doc/libevent-2.0-5/copyright
+/usr/lib/arm-linux-gnueabihf/libevent-2.0.so.5

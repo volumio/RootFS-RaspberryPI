@@ -1,0 +1,9 @@
+auto
+/usr/bin/lua
+lua-manual
+/usr/share/man/man1/lua.1.gz
+
+/usr/bin/lua5.1
+110
+/usr/share/man/man1/lua5.1.1.gz
+

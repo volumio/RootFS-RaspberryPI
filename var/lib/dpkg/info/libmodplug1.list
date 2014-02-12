@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libmodplug.so.1.0.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmodplug1
+/usr/share/doc/libmodplug1/TODO
+/usr/share/doc/libmodplug1/README.Debian
+/usr/share/doc/libmodplug1/changelog.Debian.gz
+/usr/share/doc/libmodplug1/changelog.gz
+/usr/share/doc/libmodplug1/copyright
+/usr/share/doc/libmodplug1/README.gz
+/usr/lib/libmodplug.so.1

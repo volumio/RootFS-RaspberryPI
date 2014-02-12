@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libtalloc.so.2.0.7
+/usr/share
+/usr/share/doc
+/usr/share/doc/libtalloc2
+/usr/share/doc/libtalloc2/changelog.Debian.gz
+/usr/share/doc/libtalloc2/copyright
+/usr/lib/arm-linux-gnueabihf/libtalloc.so.2

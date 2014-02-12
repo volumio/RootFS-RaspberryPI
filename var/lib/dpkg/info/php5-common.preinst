@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+
+
+for dsoname in pdo ; do
+    inifile=${dsoname}.ini
+
+    dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/${inifile} /etc/php5/mods-available/${inifile} 5.4.0~rc6-1 -- "$@";
+done
+
+exit 0

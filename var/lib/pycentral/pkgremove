@@ -1,0 +1,2 @@
+# the presence of this file allows calling pkgremove on upgrade
+# for packages which did create the symlinks in the preinst.

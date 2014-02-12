@@ -1,0 +1,60 @@
+#!/bin/sh
+# postrm script for minidlna
+
+set -e
+
+USER=minidlna
+GROUP=${USER}
+HOME=`getent passwd ${USER} | awk -F: '{ print $6 }'`
+CONFIG=/etc/minidlna.conf
+PIDDIR=/run/minidlna
+
+# Based on the mediatomb debian package.
+
+case "$1" in
+    remove)
+        rm -rf ${PIDDIR}
+        ;;
+
+    purge)
+        # Only remove the files we expect minidlna to have created, in case the
+        # user stored something valuable there.
+        for dir in "${HOME}" /var/lib/minidlna; do
+            rm -rf "${dir}/art_cache"
+            rm -f  "${dir}/files.db"
+            [ -d "${dir}" ] && rmdir --ignore-fail-on-non-empty "${dir}"
+        done
+        rm -f /var/log/minidlna.log ${CONFIG}
+
+        dpkg-statoverride --quiet --remove ${CONFIG} || true
+        dpkg-statoverride --quiet --remove /var/lib/minidlna || true
+
+        if getent passwd ${USER} >/dev/null; then
+            echo "Removing user '${USER}'..." >&2
+            deluser --quiet --system ${USER} \
+                && echo "Done." >&2 || echo "Failed." >&2
+        fi
+        if getent group ${GROUP} >/dev/null; then
+            echo "Removing group '${GROUP}'..." >&2
+            delgroup --quiet --system --only-if-empty ${GROUP} \
+                && echo "Done." >&2 || echo "Failed." >&2
+        fi
+        ;;
+
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d minidlna remove >/dev/null
+fi
+# End automatically added section
+
+
+exit 0

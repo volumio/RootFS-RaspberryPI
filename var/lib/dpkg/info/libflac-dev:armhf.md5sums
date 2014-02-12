@@ -1,0 +1,14 @@
+dbfc3b462d9cd4e8b2584bd97580e5d5  usr/include/FLAC/all.h
+49fd6ec5afe21a6a0a98bff76e69a3ae  usr/include/FLAC/assert.h
+705bc543872317a20dad4015c28552b2  usr/include/FLAC/callback.h
+2b163b495a5d20965431d61b8471bfac  usr/include/FLAC/export.h
+80c9b1e56c7311526c2c476ec807c8a7  usr/include/FLAC/format.h
+95294e45a9dab46d9964b17af61a9790  usr/include/FLAC/metadata.h
+b5875e9d5569786e05592a1eb7d64f00  usr/include/FLAC/ordinals.h
+4d8e50bdd4c993ab649af0194f8e8e1d  usr/include/FLAC/stream_decoder.h
+423d99ebe5c7bb12b6f4e6e26265b91d  usr/include/FLAC/stream_encoder.h
+85e11f9a7bc45cc7941ab20ecce865af  usr/lib/arm-linux-gnueabihf/libFLAC.a
+aaf5dbdd25b77468c9d39c21e318d262  usr/lib/arm-linux-gnueabihf/pkgconfig/flac.pc
+9b278aa12bcf0fbff9f94b00432f1305  usr/share/aclocal/libFLAC.m4
+6644b6b6f4e677e63e077a6ecb1d1387  usr/share/doc/libflac-dev/changelog.Debian.gz
+e60c7121121119fb438b23218e1100fb  usr/share/doc/libflac-dev/copyright

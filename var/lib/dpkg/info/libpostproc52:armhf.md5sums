@@ -1,0 +1,6 @@
+60257d310368b2a1019df8b325d7dc8c  usr/lib/arm-linux-gnueabihf/libpostproc.so.52.0.0
+812ae049e35a77fbe9da612a1284c3c5  usr/share/doc/libpostproc52/README.Debian.gz
+519617b163f58cc815bbcfabcaafd7f5  usr/share/doc/libpostproc52/changelog.Debian.gz
+7e96676b3cceea582ab27f92ef922394  usr/share/doc/libpostproc52/changelog.gz
+e51de741ce5932946736d2b8ef235b80  usr/share/doc/libpostproc52/copyright
+b2eb6029a751f2667f874df1c87ba3ea  usr/share/lintian/overrides/libpostproc52

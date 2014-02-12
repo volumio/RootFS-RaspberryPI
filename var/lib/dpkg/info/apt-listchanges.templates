@@ -1,0 +1,779 @@
+
+Template: apt-listchanges/frontend
+Type: select
+Choices: pager, browser, xterm-pager, xterm-browser, gtk, text, mail, none
+Choices-ca.UTF-8: paginador, navegador, paginador-xterm, navegador-xterm, gtk, text, correu, cap
+Choices-cs.UTF-8: pager, browser, xterm-pager, xterm-browser, gtk, text, pošta, žádné
+Choices-da.UTF-8: tekstviser, browser, xterm-tekstviser, xterm-browser, gtk, tekst, post, ingen
+Choices-de.UTF-8: Anzeigeprogramm, Browser, Xterm-Anzeigeprogramm, Xterm-Browser, GTK, Text, E-Mail, Gar nicht
+Choices-es.UTF-8: paginador, navegador, paginador-xterm, navegador-xterm, gtk, texto, correo, ninguno
+Choices-eu.UTF-8: orrialdekatzailea, nabigatzailea, xterm-orrialdekatzailea, xterm-nabigatzailea, gtk, testua, posta, bat ere ez
+Choices-fi.UTF-8: sivutin, selain, xterm-sivutin, xterm-selain, gtk, teksti, sähköposti, ei mikään
+Choices-fr.UTF-8: Pageur, Navigateur, Pageur xterm, Navigateur xterm, GTK, Texte, Courriel, Aucun
+Choices-gl.UTF-8: visor, navegador, visor-xterm, navegador-xterm, gtk, texto, correo, ningún
+Choices-it.UTF-8: pager, browser, xterm-pager, xterm-browser, gtk, text, mail, none
+Choices-ja.UTF-8: ページャ, ブラウザ, Xterm上のページャ, Xterm上のブラウザ, gtk, テキスト, メール, なし
+Choices-nb.UTF-8: sideviser, nettviser, xterm-sideviser, xterm-nettviser, gtk, tekst, e-post, ingen
+Choices-nl.UTF-8: pager, browser, xterm-pager, xterm-browser, gtk, tekst, e-mail, geen
+Choices-no.UTF-8: sideviser, nettviser, xterm-sideviser, xterm-nettviser, gtk, tekst, e-post, ingen
+Choices-pl.UTF-8: pager, browser, xterm-pager, xterm-browser, gtk, tekst, poczta, brak
+Choices-pt.UTF-8: pager, browser, xterm-pager, xterm-browser, gtk, texto, mail, nenhum
+Choices-pt_BR.UTF-8: paginador, navegador, xterm-paginador, xterm-navegador, gtk, texto, e-mail, nenhum
+Choices-ru.UTF-8: пейджер, браузер, xterm-пейджер, xterm-браузер, gtk, текст, почта, не выводить
+Choices-sk.UTF-8: stránkovač, prehliadač, xterm-pager, xterm-browser, gtk, text, email, žiadny
+Choices-sv.UTF-8: visare, webbläsare, xterm-visare, xterm-bläddrare, gtk, text, e-post, ingen
+Choices-vi.UTF-8: bộ dàn trang, bộ duyệt, bộ dàn trang xterm, bộ duyệt xterm, gtk, văn bản, thư tín, không có
+Choices-zh_CN.UTF-8: 分页器, 浏览器, xterm-分页器, xterm-浏览器, gtk, 文本, 邮件, 无
+Choices-zh_TW.UTF-8: pager, 瀏覽器, xterm-pager, xterm 瀏覽器, gtk, 文字介面, 郵件, 無
+Default: pager
+Description: Method to be used to display changes:
+ Changes in packages can be displayed in various ways by apt-listchanges:
+ .
+  pager        : display changes one page at a time;
+  browser      : display HTML-formatted changes using a web browser;
+  xterm-pager  : like pager, but in an xterm in the background;
+  xterm-browser: like browser, but in an xterm in the background;
+  gtk          : display changes in a GTK window;
+  text         : print changes to the terminal (without pausing);
+  mail         : only send changes via e-mail;
+  none         : do not run automatically from APT.
+ .
+ This setting can be overridden at execution time. By default, all the
+ options except for 'none' will also send copies by mail.
+Description-ca.UTF-8: Mètode a emprar per a mostrar els canvis:
+ apt-listchanges pot mostrar els canvis als paquets de diverses maneres:
+ .
+ paginador:       mostrar els canvis de pàgina en pàgina
+ navegador:       mostra els canvis en format HTML utilitzant un navegador web
+ paginador-xterm: com el paginador, però dins d'un xterm en segon pla
+ navegador-xterm: com el navegador, però dins d'un xterm en segon pla
+ gtk:             mostra els canvis en una finestra GTK
+ text:            mostra els canvis al terminal (sense fer cap pausa)
+ correu:          envia els canvis només per correu
+ cap:             no s'executa automàticament des de l'APT
+ .
+ Aquest paràmetre es pot substituir en temps d'execució. Per defecte, totes les opcions excepte «cap» també enviaran còpies per correu.
+Description-cs.UTF-8: Způsob zobrazení změn:
+ apt-listchanges umí zobrazit změny v balících různými způsoby:
+ .
+  pager        : zobrazí změny programem more, less, apod.;
+  browser      : zobrazí HTML-formátované změny pomocí webového
+                 prohlížeče;
+  xterm-pager  : jako pager, ale v xtermu na pozadí;
+  xterm-browser: jako browser, ale v xtermu na pozadí;
+  gtk          : zobrazí změny v GTK okně;
+  text         : vypíše změny na terminál (bez pauzy);
+  pošta        : pouze zašle změny elektronickou poštou;
+  žádné        : nespouští se z APTu automaticky.
+ .
+ Toto nastavení lze změnit parametrem na příkazové řádce. Ve výchozím nastavení posílají všechny možnosti (kromě „žádné“) kopii emailem.
+Description-da.UTF-8: Metode der skal bruges til visning af ændringer:
+ Ændringer i pakker kan vises på forskellige måder af apt-listchanges:
+ .
+  tekstviser      : benyt din foretrukne tekstviser til at vise ændringerne
+                    en side ad gangen;
+  browser         : vis HTML-formaterede ændringer med en internetbrowser;
+  xterm-tekstviser: som tekstviser, men i en xterm i baggrunden;
+  xterm-browser   : som browser, men i en xterm i baggrunden;
+  gtk             : vis ændringer i et GTK-vindue;
+  text            : skriv ændringerne til din terminal (uden at holde
+                    pauser);
+  post            : send kun ændringerne med e-post;
+  ingen           : undlad at køre automatisk fra apt.
+ .
+ Denne indstilling kan tilsidesættes ved udførelsestid. Som standard vil alle indstillinger undtagen »ingen« (none) også sende kopier med post.
+Description-de.UTF-8: Methode, die zum Anzeigen der Änderungen verwendet wird:
+ Änderungen in Paketen können von Apt-listchanges auf verschiedene Arten dargestellt werden:
+ .
+  Anzeigeprogramm: zeigt die Änderungen seitenweise an
+  Browser        : zeigt HTML-formatierte Änderungen mit einem
+                   Web-Browser an
+  Xterm-Anzeigeprogramm: wie Anzeigeprogramm, aber in einem Xterm im
+                         Hintergrund
+  Xterm-Browser  : wie Browser, aber in einem Xterm im Hintergrund
+  GTK            : zeigt die Änderungen in einem GTK-Fenster
+  Text           : schreibt die Änderungen in ein Terminal (ohne Unterbrechung)
+  E-Mail         : sendet die Änderungen nur per E-Mail
+  Gar nicht      : nicht automatisch von APT aus ausführen.
+ .
+ Diese Einstellung kann bei der Ausführung überschrieben werden. Standardmäßig werden alle Oberflächen außer »Gar nicht« auch eine Kopie per E-Mail verschicken.
+Description-es.UTF-8: Método a usar para la visualización de los cambios:
+ apt-listchanges puede mostrar los cambios en los paquetes de varias formas:
+ .
+  paginador       : mostrar los cambios en una página de cada vez,
+  navegador       : mostrar los cambios en formato HTML con un navegador,
+  paginador-xterm : como paginador, pero en una xterm en segundo plano,
+  navegador-xterm : como navegador, pero en una xterm en segundo plano,
+  gtk             : mostrar los cambios en una ventana GTK,
+  texto           : escribir los cambios en la terminal (sin pausas),
+  correo          : enviar los cambios sólo por correo,
+  ninguno         : no ejecutar automáticamente desde APT.
+ .
+ Esta configuración puede cambiarse en tiempo de ejecución. Por defecto todos los métodos excepto «ninguno» enviarán una copia por correo.
+Description-eu.UTF-8: Aldaketak bistaratzeko erabiliko den metodoa:
+ Paketeetako aldaketak metodo ezberdinez bistarazi daitezke apt-listchanges-ekin:
+ .
+  orrialdekatzailea       : aldaketak orriz-orri bistarazi;
+  nabigatzailea           : HTML formatuko aldaketak nabigatzaile bate bidez bistarazi;
+  xterm-orrialdekatzailea : orrialdekatzailea bezala baina xterm baten barruan;
+  xterm-nabigatzailea     : nabigatzailea bezala xterm baten barruan;
+  gtk                     : aldaketak GTK leiho batetan bistarazi;
+  testua                  : aldaketak terminalean inprimatu (pausarik gabe);
+  posta                   : aldaketak bakarrik posta bidez bidali;
+  bat ere ez              : Ez abiarazi automatikoki ATP-tik.
+ .
+ Ezarpen hauek exekuzioan gainidatzi daitezke. 'bat ere ez' ez beste Interfaze erabiltzean kopia bat postaz bidaliko da.
+Description-fi.UTF-8: Muutosten näyttötapa:
+ apt-listchanges voi näyttää pakettien muutokset usealla eri tavalla:
+ .
+  sivutin      : näytä muutokset sivu kerrallaan
+  selain       : näytä HTML-muotoillut muutokset verkkoselaimella
+  xterm-sivutin: kuten sivutin, mutta xtermissä taustalla
+  xterm-selain : kuten selain, mutta xtermissä taustalla
+  gtk          : näytä muutokset GTK-ikkunassa
+  teksti       : tulosta muutokset päätteeseen (ilman taukoja)
+  sähköposti   : lähetä muutokset vain sähköpostilla
+  ei mikään    : älä suorita automaattisesti APTista
+ .
+ Tätä asetusta voidaan muuttaa ajettaessa ohjelma. Oletuksena kaikki käyttöliittymät paitsi ”ei mikään” lähettävät myös kopion sähköpostina.
+Description-fr.UTF-8: Méthode d'affichage des changements :
+ Les modifications intervenues dans les paquets peuvent être affichées de plusieurs manières par apt-listchanges :
+ .
+  Pageur           : utilise un pageur (logiciel de pagination) ;
+  Navigateur       : affiche dans un navigateur ;
+  Pageur xterm     : pageur dans un xterm en tâche de fond ;
+  Navigateur xterm : navigateur dans un xterm en tâche de fond ;
+  GTK              : affiche dans une fenêtre GTK ;
+  Texte            : affiche sur le terminal (sans pause) ;
+  Courriel         : envoie les changements par courrier électronique ;
+  Aucun            : ne pas exécuter apt-listchanges depuis APT.
+ .
+ Ce réglage peut être remplacé par un autre à l'exécution de la commande. Pour tous les choix (sauf « Aucun »), une copie sera également envoyée par courrier électronique.
+Description-gl.UTF-8: Método a empregar para amosar os cambios:
+ apt-listchanges pode amosar os cambios nos paquetes de varios xeitos:
+ .
+  visor          : amosar os cambios páxina a páxina;
+  navegador      : amosar os cambios en formato HTML cun navegador web;
+  visor-xterm    : coma o visor, pero nunha xterm en segundo plano;
+  navegador-xterm: coma o navegador, pero nunha xterm en segundo plano;
+  gtk            : amosar os cambios nunha fiestra de GTK;
+  texto          : amosar os cambios no terminal (sen facer pausas);
+  correo         : só enviar os cambios por correo electrónico;
+  ningún         : non executar automaticamente desde apt.
+ .
+ Esta configuración pódese ignorar no momento da execución. Por defecto, tódalas opcións agás "ningún" tamén han enviar copias por correo electrónico.
+Description-it.UTF-8: Metodo da usare per mostrare i cambiamenti:
+ I cambiamenti nei pacchetti possono essere visualizzati da apt-listchanges in diversi modi:
+ .
+  pager        : mostra i cambiamenti una pagina alla volta;
+  browser      : mostra i cambiamenti formattati in HTML usando un
+                 browser web;
+  xterm-pager  : come «pager» ma all'interno di un xterm in background;
+  xterm-browser: come «browser» ma all'interno di un xterm in background;
+  gtk          : mostra i cambiamenti in una finestra GTK;
+  text         : mostra i cambiamenti sul terminale (senza pause);
+  mail         : invia i cambiamenti per posta elettronica;
+  none         : non viene eseguito automaticamente da APT.
+ .
+ Questa impostazione può essere cambiata durante l'esecuzione. Con la configurazione predefinita tutte le interfacce, eccetto «none», inviano una copia per posta elettronica.
+Description-ja.UTF-8: 変更内容を表示するのに使う方法:
+ パッケージの変更内容は、apt-listchanges によっていくつかのやり方で表示できます:
+ .
+  ページャ          : 一度に 1 ページずつ変更を表示する;
+  ブラウザ          : Web ブラウザを使って、HTML で整形された変更内容を表示する;
+  Xterm上のページャ : 「ページャ」と同じだが、バックグラウンドで起動した Xterm の中に表示する;
+  Xterm上のブラウザ : 「ブラウザ」と同じだが、バックグラウンドで起動した Xterm の中に表示する;
+  gtk               : GTK ウィンドウの中に変更内容を表示する;
+  テキスト          : 変更内容を端末に表示する (1ページ表示後の一時停止はしない);
+  メール            : 電子メールで変更内容を送るだけにする;
+  なし              : APT から自動的には実行しない
+ .
+ この設定は実行時に上書きすることができます。デフォルトでは、'なし' 以外のすべての選択肢は、コピーのメール送信も行います。
+Description-nb.UTF-8: Metode som skal brukes til å vise endringer:
+ Endringer i pakker kan vises på forskjellige måter med apt-listchanges:
+ .
+  sideviser       : vis endringer en side av gangen;
+  nettviser       : vis HTML-formatterte endringer med en nettleser;
+  xterm-sideviser : som sideviser, men i en xterm i bakgrunnen;
+  xterm-nettviser : som nettviser, men i en xterm i bakgrunnen;
+  gtk             : vis endringer i et GTK-vindu;
+  tekst           : skriv endringer til terminalen (uten pause);
+  e-post          : send bare endringer via e-post;
+  ingen           : ikke kjør automatisk fra APT.
+ .
+ Denne innstillingen kan overstyres når programmet skal kjøres. Alle forstykker unntatt «ingen» vil som standard også sende en kopi med e-post.
+Description-nl.UTF-8: The gebruiken methode voor de presentatie van wijzigingen:
+ Wijzigingen in pakketten kunnen door apt-listchanges op diverse wijzen worden gepresenteerd:
+ .
+  pager        : toon wijzigingen pagina voor pagina;
+  browser      : toon wijzigingen in een webbrowser (HTML opmaak);
+  xterm-pager  : als pager, maar in een xterm op de achtergrond;
+  xterm-browser: als browser, maar in een xterm op de achtergrond;
+ .gtk          : toon wijzigingen in een GTK-venster;
+  tekst        : wijzigingen op uw terminal tonen (zonder pauzes);
+  e-mail       : wijzigingen alleen via e-mail verzenden;
+  geen         : niet automatisch vanuit APT uitvoeren.
+ .
+ Deze instelling kan bij uitvoering van het programma worden gewijzigd. Bij alle opties met uitzondering van 'geen' wordt standaard ook een kopie verzonden per e-mail.
+Description-no.UTF-8: Metode som skal brukes til å vise endringer:
+ Endringer i pakker kan vises på forskjellige måter med apt-listchanges:
+ .
+  sideviser       : vis endringer en side av gangen;
+  nettviser       : vis HTML-formatterte endringer med en nettleser;
+  xterm-sideviser : som sideviser, men i en xterm i bakgrunnen;
+  xterm-nettviser : som nettviser, men i en xterm i bakgrunnen;
+  gtk             : vis endringer i et GTK-vindu;
+  tekst           : skriv endringer til terminalen (uten pause);
+  e-post          : send bare endringer via e-post;
+  ingen           : ikke kjør automatisk fra APT.
+ .
+ Denne innstillingen kan overstyres når programmet skal kjøres. Alle forstykker unntatt «ingen» vil som standard også sende en kopi med e-post.
+Description-pl.UTF-8: Sposób wyświetlania zmian:
+ Zmiany w pakietach mogą być wyświetlane przez apt-listchanges na różne sposoby:
+ .
+  pager        : wyświetlanie zmian kolejno po stronie;
+  browser      : wyświetlanie zmian sformatowanych jako HTML w przeglądarce;
+  xterm-pager  : jak pager, ale z użyciem xterm w tle;
+  xterm-browser: jak browser, ale z użyciem xterm w tle;
+  gtk          : wyświetlanie zmian w oknie GTK;
+  tekst        : drukowanie zmian na terminalu (bez pauz po każdej stronie);
+  poczta       : tylko wysyłanie zmian pocztą elektroniczną;
+  brak         : bez automatycznego uruchamiania przez APT.
+ .
+ To ustawienie może być zmienione w czasie wykonania. Domyślnie wszystkie opcje poza "brak" powodują wysyłanie kopii pocztą elektroniczną.
+Description-pt.UTF-8: Método de visualização das modificações:
+ Modificações nos pacotes podem ser visualizadas de variados modos pelo apt-listchanges:
+ .
+  pager         : visualizar modificações uma página de cada vez;
+  browser       : visualizar modificações em HTML com um browser web;
+  xterm-pager   : como um pager, mas com uma consola xterm em fundo;
+  xterm-browser : como um browser, mas·com·uma·consola·xterm·em·fundo;
+  gtk...........:.visualizar modificações numa janela GTK;
+  text          : envia as modificações para o seu terminal (sem pausa);
+  mail          : apenas envia as modificações via mail;
+  none          : não corre automaticamente a partir do APT.
+ .
+ Esta opção pode ser ultrapassada durante a execução. Por omissão, todas as opções excepto 'none' podem também enviar uma cópia por mail.
+Description-pt_BR.UTF-8: Método a ser usado para exibir as mudanças:
+ Mudanças nos pacotes podem ser exibidas de várias formas pelo apt-listchanges:
+ .
+  paginador      : exibe mudanças, uma página de cada vez;
+  navegador      : exibe mudanças formatas em HTML usando um
+                   navegador web;
+  xterm-paginador: similar ao paginador, mas em um xterm em
+                   segundo plano;
+  xterm-navegador: similar ao navegador, mas em um xterm em
+                   segundo plano;
+  gtk            : exibe mudanças em uma janela GTK;
+  texto          : imprime mudanças para um terminal (sem pausa);
+  e-mail         : só envia as mudanças por e-mail;
+  nenhum         : não executar automaticamente a partir do APT.
+ .
+ Esta configuração pode ser sobrescrita em tempo de execução. Por padrão, todas as opções exceto 'nenhum' também enviarão cópias por e-mail.
+Description-ru.UTF-8: Метод показа изменений:
+ apt-listchanges может отображать изменения в пакете несколькими способами:
+ .
+  пейджер       : постраничный просмотр изменений
+  браузер       : просмотр изменений в формате HTML через веб-браузер
+  xterm-пейджер : то же, что и пейджер, но в окне xterm
+  xterm-браузер : то же, что и браузер, но в окне xterm
+  gtk          : вывод изменений в окне GTK
+  текст         : вывод изменений на терминал (без пауз)
+  почта         : отправка изменений по почте
+  не выводить   : не запускать из APT автоматически.
+ .
+ Эта настройка может быть изменена во время исполнения. По умолчанию, при любом способе отображения, кроме "не выводить", также отправляется копия по почте.
+Description-sk.UTF-8: Metóda na zobrazenie zmien:
+ Zmeny v balíkoch môže apt-listchanges zobraziť rôznymi spôsobmi:
+ .
+  stránkovač    : zobraziť zmeny po stránke;
+  prehliadač    : zobraziť zmeny pomocou webového prehliadača vo formáte HTML;
+  xterm-pager   : ako stránkovač, ale na pozadí použiť xterm;
+  xterm-browser : ako prehliadač, ale na pozadí použiť xterm;
+  gtk           : zobraziť zmeny v okne GTK;
+  text          : vypísať zmeny do terminálu (bez prerušenia);
+  email         : len poslať zmeny emailom;
+  žiadny        : nespúšťať automaticky z APT.
+ .
+ Tieto nastavenia možno prepísať parametrom príkazového riadku. Predvolene, všetky voľby okrem „žiadny” pošlú aj kópiu emailom.
+Description-sv.UTF-8: Metod för att visa ändringar:
+ Ändringar i paket kan visas på olika sätt av apt-listchanges:
+ .
+  visare          : visa ändringar en sida åt gången;
+  webbläsare      : visa HTML-formaterade ändringar med en webbläsare;
+  xterm-visare    : som visare men i en xterm-terminal i bakgrunden;
+  xterm-bläddrare : som bläddrare men i en xterm-terminal i bakgrunden;
+  gtk             : visa ändringar i ett GTK-fönster;
+  text            : skriv ut ändringar till din terminal (utan paus);
+  e-post          : skicka endast ändringar via e-post;
+  ingen           : kör inte automatiskt från APT.
+ .
+ Denna inställning kan ignoreras vid körning. Som standard sänder alla val förutom "ingen" även en kopia via e-post.
+Description-vi.UTF-8: Phương pháp cần dùng để hiển thị thay đổi:
+ Các thay đổi trong gói phần mềm có thể được apt-listchanges hiển thị bằng vài cách khác nhau :
+ .
+  bộ dàn trang         : hiển thị thay đổi từng trang;
+  bộ duyệt       : hiển thị thay đổi định dạng HTML bằng trình duyệt Web;
+  bộ dàn trang xterm   : như bộ dàn trang, trong xterm ở nền;
+  bộ duyệt xterm : như bộ duyệt, trong xterm ở nền;
+  văn bản          : in thay đổi ra thiết bị cuối (không tạm dừng);
+  thư tín          : chỉ gửi thay đổi bằng thư điện tử;
+  không có          : không chạy tự động từ trình APT.
+ .
+ Có thể ghi đè lên thiết lập này vào lúc thực hiện. Mặc định là tất các các tùy chọn trừ « không có » sẽ cũng gửi thư chứa bản sao.
+Description-zh_CN.UTF-8: 用来显式改变的方式：
+ apt-listchanges 可以使用不同的方式显式软件包的改变：
+ .
+  分页器       : 每次只显式一页改变内容；
+  浏览器       : 使用网页浏览器显式 HTML 格式的改变内容；
+  xterm-分页器 : 与分页器类似，但显式在后台的 xterm 中；
+  xterm-浏览器 : 与浏览器类似，但显式在后台的 xterm 中；
+  gtk          : 在 GTK 窗口里显式改变内容；
+  文本         : 将改变内容打印到终端(没有停顿)；
+  邮件         : 仅将改变内容通过电子邮件发送；
+  无           : 不从 APT 中自动运行。
+ .
+ 此设置可以在执行期被覆盖掉。默认情况下，除“无”以外所有选项都会通过邮件发送副本。
+Description-zh_TW.UTF-8: 顯示更動的方法：
+ apt-listchanges顯示套件的更動記錄方式為：
+ .
+ pager         ：使用您喜愛的 pager 以一次一頁的方式
+  瀏覽器          ：以網頁瀏覽器顯示 HTML 格示的變動部份；
+  xterm-pager  ：類似 pager 的用法，只有在 xterm 的環境下；
+  xterm 瀏覽器 ：類似瀏覽器的用法，只有在 xterm 的環境下；
+ gtk           ：以 GTK 視窗顯示更動記錄；
+  文字介面       ：在現有終端機顯示（不停止）；
+  郵件             ：透過郵件傳送變動部份；
+  無                ：使用 apt 時不自動執行。
+ .
+ 該設定在執行時是可被推翻的。除了“none”之外，預設是所有選項皆會寄送複本。
+
+Template: apt-listchanges/email-address
+Type: string
+Default: root
+Description: E-mail address(es) which will receive changes:
+ Optionally, apt-listchanges can e-mail a copy of displayed changes to
+ a specified address.
+ .
+ Multiple addresses may be specified, delimited by commas. Leaving this
+ field empty disables mail notifications.
+Description-ca.UTF-8: Adreces de correu que rebran els canvis:
+ Opcionalment, apt-listchanges pot enviar per correu una còpia dels canvis mostrats a una adreça especificada.
+ .
+ Es poden especificar adreces múltiples, delimitades per comes. Si es deixa això buit s'inhabiliten les notificacions per correu.
+Description-cs.UTF-8: Emailová adresa (adresy), kam zasílat změny:
+ apt-listchanges může volitelně zasílat emailem kopii zobrazovaných změn na zadanou adresu.
+ .
+ Lze zadat i více adres, stačí je oddělit čárkami. Pokud nechcete zasílat tyto emaily, ponechte prázdné.
+Description-da.UTF-8: E-post-adresser der skal modtage ændringerne:
+ apt-listchanges kan valgfrit sende en kopi af de viste ændringer til en angiven adresse.
+ .
+ Der kan angives flere adresser adskilt af komma. Hvis dette felt er tomt, vil alle e-post-påmindelser være deaktiveret.
+Description-de.UTF-8: E-Mail-Adresse(n), die die Änderungen erhalten werden:
+ Apt-listchanges kann optional eine Kopie der angezeigten Änderungen an eine angegebene Adresse versenden.
+ .
+ Mehrere Adressen können, durch Kommata getrennt, angegeben werden. Falls Sie dieses Feld leer lassen wird der E-Mail-Versand deaktiviert.
+Description-es.UTF-8: Dirección(es) de correo que recibirán los cambios:
+ Opcionalmente, apt-listchanges puede enviar una copia de los cambios mostrados a una dirección de correo.
+ .
+ Se pueden especificar múltiples direcciones, separadas por comas. Dejando este campo en blanco deshabilitará las notificaciones por correo.
+Description-eu.UTF-8: Aldaketa berriak jasoko dituen helbidea(k):
+ Aukera apt-listchanges bistarazitako aldaketen kopia bat ezarritako eposta helbidera bidali dezake.
+ .
+ Hainbat helbide ezarri daitezke, gakoz bereizirik. Hutsik utziaz eposta bidezko berri emateak ezgaituko dira.
+Description-fi.UTF-8: Sähköpostiosoitteet, joihin muutokset lähetetään:
+ Haluttaessa apt-listchanges voi lähettää sähköpostissa kopion muutoksista annettuun osoitteeseen.
+ .
+ Voit antaa useampia osoitteita pilkuilla eroteltuina. Kentän tyhjäksi jättäminen passivoi sähköpostien lähettämisen.
+Description-fr.UTF-8: Adresse(s) électronique(s) de réception des changements :
+ Apt-listchanges peut envoyer une copie des changements par courrier électronique.
+ .
+ Plusieurs adresses peuvent être utilisées et doivent alors être séparées par des virgules. Si ce champ est laissé vide, les notifications par courrier électronique seront désactivées.
+Description-gl.UTF-8: Enderezo(s) de e-mail que ha(n) recibir os cambios:
+ De xeito opcional, apt-listchanges pode enviar por correo electrónico unha copia dos cambios que se amosen ao enderezo que se indique.
+ .
+ Pódense indicar varios enderezos, separándoos con comas. Se se deixa este campo baleiro hanse desactivar os avisos por correo.
+Description-it.UTF-8: Indirizzo/i email a cui inviare i cambiamenti:
+ apt-listchanges può inviare per posta elettronica una copia dei cambiamenti mostrati all'indirizzo specificato.
+ .
+ Si possono specificare più indirizzi separandoli con delle virgole. Lasciando vuoto questo campo si disabilitano le notifiche via posta elettronica.
+Description-ja.UTF-8: 変更内容を受け取る電子メールアドレス:
+ オプションとして、apt-listchanges は表示した変更内容のコピーをメールで送ることができます。
+ .
+ カンマ (,) で区切って、 複数のアドレスを指定することもできます。このフィールドを空のままにしておくと、メール通知を無効にします。
+Description-nb.UTF-8: E-postadresse(r) som skal motta endringer:
+ Om du vil kan apt-listchanges sende en kopi av viste endringer med e-post til en oppgitt adresse.
+ .
+ Flere adresser kan oppgis, atskilt med komma. E-post blir ikke sendt hvis dette feltet er tomt.
+Description-nl.UTF-8: E-mailadres(sen) die wijzigingen zullen ontvangen:
+ Desgewenst kan apt-listchanges een kopie van de getoonde wijzigingen naar een opgegeven e-mailadres sturen.
+ .
+ Er kunnen meerdere adressen worden opgegeven, gescheiden door komma's. Notificatie via e-mail wordt uitgeschakeld als dit veld leeg wordt gelaten.
+Description-no.UTF-8: E-postadresse(r) som skal motta endringer:
+ Om du vil kan apt-listchanges sende en kopi av viste endringer med e-post til en oppgitt adresse.
+ .
+ Flere adresser kan oppgis, atskilt med komma. E-post blir ikke sendt hvis dette feltet er tomt.
+Description-pl.UTF-8: Adres(y) e-mail, gdzie mają być wysyłane zmiany:
+ apt-listchanges może wysyłać kopie wyświetlanych list zmian pocztą elektroniczną pod określony adres.
+ .
+ Można podać wiele adresów, oddzielonych przecinkami. Pozostawienie tego pola pustego wyłącza wysyłanie powiadomień pocztą.
+Description-pt.UTF-8: Endereço(s) E-mail que receberá as modificações:
+ Em opção, o apt-listchanges pode enviar por email uma cópia das modificações visualizadas para um endereço específico.
+ .
+ Podem ser especificados múltiplos endereços, delimitados por vírgulas. Deixe este espaço vazio se não quiser que seja enviado qualquer notificação por email.
+Description-pt_BR.UTF-8: Endereço(s) de e-mail que receberá(ão) as mudanças:
+ Opcionalmente, o apt-listchanges pode enviar uma cópia das mudanças exibidas para um endereço de e-mail especificado.
+ .
+ Múltiplos endereços podem ser especificados, separados por vírgulas. Deixar este campo em branco desabilita as notificações por e-mail.
+Description-ru.UTF-8: Эл. адрес(а), на который будут отправлены изменения:
+ apt-listchanges может отправлять копию отображаемых изменений по электронной почте на указанный адрес.
+ .
+ Можно указать несколько адресов, перечислив их через запятую. Чтобы выключить отправку по почте оставьте поле пустым.
+Description-sk.UTF-8: Emailová adresa (y), kam posielať zmeny:
+ Voliteľne môže apt-listchanges na zadanú adresu posielať emailom kópiu zobrazených zmien.
+ .
+ Možno zadať viac adries, oddelených čiarkami. Ak ponecháte toto pole prázdne, emaily nebudú posielané.
+Description-sv.UTF-8: E-postadress(er) som ska ta emot ändringar:
+ apt-listchanges kan skicka en kopia av visade ändringar.
+ .
+ Flera adresser kan anges, avgränsade med kommatecken.  Lämna detta fält blankt om du inte vill att några e-postmeddelanden ska skickas.
+Description-vi.UTF-8: (Các) địa chỉ thư điện tử sẽ nhận thay đổi:
+ Tùy chọn, trình apt-listchanges có khả năng gửi cho địa chỉ đã ghi rõ một thư chứa bản sao các thay đổi đã hiển thị.
+ .
+ Có khả năng xác định nhiều địa chỉ, định giới bằng dấu phẩy. Bỏ rỗng trường này để tắt thông báo về thư tín.
+Description-zh_CN.UTF-8: 接收改变内容的电子邮件地址：
+ 可选的，apt-listchanges 将所显示的变更内容的副本通过电子邮件发到指定地址。
+ .
+ 您可以指定多个邮件地址，用逗号分隔开。置空此项将关闭邮件通知。
+Description-zh_TW.UTF-8: 接收更動記綠的電子郵件信箱(多個)：
+ apt-listchanges 能額外將更動部份的顯示畫面寄到特定的電子郵件信箱。
+ .
+ 多個位址是可允許的，請用逗號隔開。不想送出郵件的話請保留空白。
+
+Template: apt-listchanges/confirm
+Type: boolean
+Default: false
+Description: Prompt for confirmation after displaying changes?
+ After displaying the list of changes, apt-listchanges can pause with
+ a confirmation prompt. This is useful when running from APT, as it
+ offers an opportunity to abort the upgrade if a change is unwelcome.
+ .
+ This can be overridden at execution time, and has no effect if the
+ configured frontend option is 'mail' or 'none'.
+Description-ca.UTF-8: Voleu que se us demane confirmació després de mostrar els canvis?
+ Després de mostrar-vos la llista de canvis, apt-listchanges pot posar-se enpausa amb un indicador de confirmació. Açò és útil si s'està executant des de l'APT, ja ofereix una oportunitat d'avortar l'actualització si un canvi no és vol aplicar.
+ .
+ Això es pot substituir en temps d'execució, i no té cap efecte si l'opció d'interfície configurada és «correu» o «cap».
+Description-cs.UTF-8: Ptát se na potvrzení po zobrazení změn?
+ Po zobrazení seznamu změn se může apt-listchanges zeptat, jestli chcete pokračovat nebo ne. To je užitečné při spuštění z APT, protože vám to dává šanci přerušit aktualizaci, pokud uvidíte změnu, kterou zatím nechcete aplikovat.
+ .
+ Zvolené chování lze změnit před spuštěním programu. Používáte-li rozhraní „pošta“ nebo „žádné“, nemá toto nastavení žádný vliv..
+Description-da.UTF-8: Skal der bedes om bekræftelse efter visning af ændringer?
+ Når apt-listchanges har givet dig mulighed for at se listen over ændringer, kan den spørge, om du vil fortsætte. Dette er nyttigt, når den køres fra APT, da det giver dig mulighed for at afbryde opgraderingen, hvis denne ikke er velkommen (på dette tidspunkt).
+ .
+ Dette kan tilsidesættes på udførelsestidspunktet, og har ingen effekt hvis den konfigurerede grænsefladeindstilling er »post« eller »ingen«.
+Description-de.UTF-8: Soll Apt-listchanges nach dem Anzeigen der Änderungen um eine Bestätigung bitten?
+ Nachdem Apt-listchanges die Änderungen angezeigt hat, kann es unterbrechen und um eine Bestätigung bitten. Das ist nützlich, wenn Apt-listchanges von APT gestartet wird, da so eine Gelegenheit gegeben wird, das Upgrade abzubrechen, falls eine Änderungen nicht gewünscht wird.
+ .
+ Dies kann bei der Ausführung überschrieben werden und hat keinen Effekt, falls die konfigurierte Oberflächenoption »E-Mail« oder »Gar nicht« lautet.
+Description-es.UTF-8: ¿Pedir confirmación después de mostrar los cambios?
+ Después de mostrar la lista de cambios, apt-listchanges puede esperar por si quiere o no continuar. Ésto es útil cuando se ejecuta desde APT, ya que le ofrece la oportunidad de abortar la actualización si algún cambio no es bienvenido.
+ .
+ Esta configuración puede cambiarse en tiempo de ejecución y no tiene efecto si la opción del método configurada es «correo» o «ninguno».
+Description-eu.UTF-8: Berrespena eskatu aldaketak bistarazi ondoren?
+ Aldaketa zerrenda bistarazi ondoren, apt-listachanges gelditu egin daiteke aurrera jarraitzeko berrespenaren zain. Hau erabilgarri da berau APT barnetik deitzean aldaketak gustuko ez direnean eguneraketa bertan uzteko aukera ematen bait du.
+ .
+ Hau exekuzioan gainidatzi daitezke, eta ez dute eraginik konfiguratutako interfazea 'posta' edo 'bat ere ez' denean.
+Description-fi.UTF-8: Kysytäänkö vahvistusta muutoksien näytön jälkeen?
+ Näytettyään luettelon muutoksista apt-listchanges voi kysyä haluatko jatkaa asennusta. Tästä on hyötyä ajettaessa ohjelmaa APTista, koska saat mahdollisuuden keskeyttää päivityksen, jos muutokset eivät ole toivottuja.
+ .
+ Tätä asetusta voidaan muuttaa ajettaessa ohjelma, eikä sitä huomioida, jos käyttöliittymä on ”sähköposti” ja ”ei mikään”.
+Description-fr.UTF-8: Faut-il demander une confirmation après l'affichage des changements ?
+ Après vous avoir montré les changements, apt-listchanges peut s'interrompre avec demande de confirmation. Cette fonctionnalité est utile quand apt-listchanges est lancé à partir d'APT, car cela permet d'annuler une mise à jour en cas de changement non désiré.
+ .
+ Ce réglage peut être remplacé par un autre à l'exécution de la commande et n'a pas d'effet si la méthode d'envoi choisie est « Aucun » ou « Courriel ». 
+Description-gl.UTF-8: ¿Pedir unha confirmación despois de amosar os cambios?
+ Despois de amosar a lista de cambios, apt-listchanges pode esperar por confirmación. Isto é útil cando se está a executar desde APT, xa que ofrece a oportunidade de abortar a actualización se hai un cambio que non sexa benvido.
+ .
+ Isto pódese ignorar no momento da execución, e non produce ningún efecto se a interface configurada é "correo" ou "ningún".
+Description-it.UTF-8: Chiedere conferma dopo aver mostrato i cambiamenti?
+ Dopo aver mostrato l'elenco dei cambiamenti, apt-listchanges può fermarsi e chiedere se continuare. Questo è utile quando viene eseguito da APT perché permette di interrompere l'aggiornamento se i cambiamenti non sono di proprio gradimento.
+ .
+ Questa impostazione può essere cambiata durante l'esecuzione e non ha effetti quando l'interfaccia configurata è «mail» o «none».
+Description-ja.UTF-8: 変更内容を表示したあと、 確認のプロンプトを表示しますか?
+ 変更内容の一覧を表示したあと、 apt-listchanges は確認のプロンプト付きで一時停止します。これは、変更が望まないものだったときにアップグレードを中止する機会を与えるので、APTから実行するときに便利です。
+ .
+ この設定は実行時に上書きすることができます。設定されたフロントエンドの選択が 'メール' または 'なし' のときには何も起きません。
+Description-nb.UTF-8: Be om bekreftelse etter at endringer er vist?
+ Etter at lista over endringer er vist kan apt-listchanges stoppe opp med anmodning om bekreftelse. Dette er nyttig når det kjøres fra APT, siden det gjør det mulig å abryte en oppgradering hvis en endring ikke ønskes.
+ .
+ Denne innstillingen kan overstyres når programmet skal kjøres, og har ingen virkning hvis det oppsatte forstykket er «e-post» eller «ingen».
+Description-nl.UTF-8: Om bevestiging vragen na het tonen van wijzigingen?
+ Nadat het overzicht met wijzigingen is getoond, kan apt-listchanges om bevestiging vragen of u wilt doorgaan. Dit is nuttig bij gebruik vanuit APT omdat dit de mogelijkheid biedt de opwaardering af te breken als een wijziging ongewenst is.
+ .
+ Deze instelling kan bij uitvoering van het programma worden gewijzigd en heeft geen effect als bij de selectie van een frontend is gekozen voor 'e-mail' of 'geen'.
+Description-no.UTF-8: Be om bekreftelse etter at endringer er vist?
+ Etter at lista over endringer er vist kan apt-listchanges stoppe opp med anmodning om bekreftelse. Dette er nyttig når det kjøres fra APT, siden det gjør det mulig å abryte en oppgradering hvis en endring ikke ønskes.
+ .
+ Denne innstillingen kan overstyres når programmet skal kjøres, og har ingen virkning hvis det oppsatte forstykket er «e-post» eller «ingen».
+Description-pl.UTF-8: Pytać o potwierdzenie po wyświetleniu zmian?
+ Po wyświetleniu listy zmian apt-listchanges może zapytać o kontynuację działania. Jest to użyteczne, gdy apt-listchanges jest uruchamiany przez APT, gdyż daje możliwość przerwania uaktualniania, jeśli zmiana jest niepożądana.
+ .
+ Może być to zmienione w czasie wykonania i nie jest brane pod uwagę, jeśli ustawiono sposób "poczta" lub "brak".
+Description-pt.UTF-8: Pedir confirmação após mostrar as modificações?
+ Depois visualizar a lista de modificações, o apt-listchanges pode interromper pedindo-lhe uma confirmação. Esta função é útil quando se encontra a correr o APT, já que lhe oferece uma oportunidade de cancelar a actualização se uma modificação não for bem vinda.
+ .
+ Esta opção pode ser ultrapassada durante a execução, e não tem efeito se a opção de configuração do 'frontend' é 'mail' ou 'none'.
+Description-pt_BR.UTF-8: Pedir confirmação após exibir as mudanças?
+ Após exibir a lista de mudanças, o apt-listchanges pode fazer uma pausa em uma solicitação de confirmação. Isto é útil quando o apt-listchanges é executado a partir do APT, já que te dá uma oportunidade de abortar a atualização se uma mudança não é bem vinda.
+ .
+ Isto pode ser sobrescrito em tempo de execução e não possui efeito se a opção de interface configurada é 'e-mail' ou 'nenhum'.
+Description-ru.UTF-8: Ожидать подтверждения после показа изменений?
+ После отображения журнала изменений apt-listchanges может спросить нужно ли продолжать или нет. Это полезно при запуске из APT, так как позволяет прервать обновление пакета, если вы видите, что в пакете произошли не устраивающие вас изменения.
+ .
+ Эта настройка может быть изменена во время исполнения и не учитывается, если способом отображения задано "не выводить" или "почта".
+Description-sk.UTF-8: Čakať na potvrdenie po zobrazení zmien?
+ Po zobrazení zoznamu zmien sa môže apt-listchanges zastaviť a zobraziť potvrdzujúcu otázku. Je to užitočné pri spúšťaní z APT, pretože to ponúka možnosť prerušiť aktualizáciu, ak zmena nie je vítaná.
+ .
+ Toto správanie môže byť zmenené voľbami príkazového riadku a nemá žiadny vplyv, ak používate rozhranie „email” alebo „žiadne”.
+Description-sv.UTF-8: Fråga efter bekräftelse efter visning av ändringar?
+ Efter att ha visat listan över ändringar kan apt-listchanges fråga dig om du vill fortsätta eller inte. Detta är användbart när den körs från APT eftersom det ger dig en chans att avbryta uppgradering om du ser en ändring som du inte vill genomföra (ännu).
+ .
+ Denna inställning kan ignoreras vid körning och har ingen påverkan om den konfigurerade visaren är "e-post" eller "ingen".
+Description-vi.UTF-8: Nhắc người dùng xác nhận sau khi hiển thị thay đổi không?
+ Sau khi hiển thị danh sách các thay đổi, apt-listchanges có thể tạm dừng với dấu nhắc xác nhận. Có ích khi chạy từ APT, vì có dịp hủy bỏ tiến trình nâng cấp nếu bạn gặp thay đổi không tốt.
+ .
+ Có thể ghi đè lên thiết lập này vào lúc thực hiện; nó cũng không có tác động nếu giao diện đã cấu hình là « thư tín » hay « không có ».
+Description-zh_CN.UTF-8: 在显示变更内容后提示您确认吗？
+ 在显示变更内容之后，apt-listchanges 会停顿并显式确认提示。这对于从 APT 中运行是非常有用的，因为如果您看到了一个不想要的变动，它还给您一个机会来中止升级。
+ .
+ 此选项可以在执行时被覆盖，并且如果设置前端选项为“邮件”或“无”的话将不起作用。
+Description-zh_TW.UTF-8: 顯示完更動部份後是否要提出確認？
+ 在閱讀更動記錄的列表後，apt-listchanges 會詢問您是否要繼續。搭配 APT 執行時是非常有用的，因為這允許您看到不期望的更動時可以中止升級的動作。
+ .
+ 該選項在執行時是可被推翻的，如果前端程式設定是“mail”或“none”，此功能無作用。
+
+Template: apt-listchanges/save-seen
+Type: boolean
+Default: true
+Description: Should apt-listchanges skip changes that have already been seen?
+ A record of already displayed changes can be kept in order to avoid
+ displaying them again. This is useful, for example, when retrying an upgrade.
+Description-ca.UTF-8: Voleu que l'apt-listchanges descarte els canvis que ja s'han mostrat?
+ Es pot guardar un registre dels canvis que ja s'han mostrat, i així poder evitar que es tornen a mostrar. Açò és útil, per exemple, quan es torna a intentar una actualització.
+Description-cs.UTF-8: Má apt-listchanges přeskočit změny, které již byly shlédnuty?
+ apt-listchanges si může zapamatovat, které změny již byly zobrazeny, a při dalších spuštěních je přeskočit. To je užitečné například při opětovném pokusu o aktualizaci.
+Description-da.UTF-8: Skal apt-listchanges springe de ændringer over, der er blevet vist før?
+ apt-listchanges kan holde styr på hvilke ændringer, der allerede er blevet vist. Dette er nyttigt, hvis du f.eks. gentager et forsøg på at opgradere.
+Description-de.UTF-8: Soll Apt-listchanges bereits gesehene Einträge überspringen?
+ Es kann vermerkt werden, welche Änderungen bereits angezeigt wurden, um ein erneutes Anzeigen zu vermeiden. Dies ist beispielsweise nützlich, falls ein Upgrade erneut versucht wird.
+Description-es.UTF-8: ¿Debería apt-listchanges ignorar los cambios que ya se han visto?
+ Se puede guardar un registro de los cambios que ya se han mostrado para evitar mostrarlos de nuevo. Esto es útil, por ejemplo, cuando se reintenta una actualización.
+Description-eu.UTF-8: Apt-listchanges-ek dagoeneko ikusiak dauden aldaketak albo batetara utzi behar al ditu?
+ Dagoeneko ikusi diren aldaketen erregistro bat gordeko da berriz bistaratzea saihesteko. Hau erabilgarri izan daiteke adibidez bertsio-berritze bat berriz saiatzean.
+Description-fi.UTF-8: Haluatko apt-listchangesin ohittavan jo nähdyt muutokset?
+ apt-listchanges voi pitää kirjaa jo näytetyistä muutoksista ja jättää nämä näyttämättä myöhemmin. Tästä on hyötyä esimerkiksi yritettäessä päivitystä uudelleen.
+Description-fr.UTF-8: Faut-il ignorer les changements déjà affichés ?
+ Un enregistrement des changements déjà affichés est conservé, ce qui permet de les ignorer ultérieurement. Cela peut être utile, par exemple, lors d'une nouvelle tentative de mise à jour.
+Description-gl.UTF-8: ¿Debería apt-listchanges omitir os cambios que xa se enviaron?
+ Pódese levar a conta dos cambios que xa se amosaron para non amosalos outra vez. Isto é útil, por exemplo, ao repetir unha tentativa de actualización.
+Description-it.UTF-8: apt-listchanges deve ignorare i cambiamenti già mostrate?
+ È possibile tener traccia dei cambiamenti già mostrate per evitare di mostrarle nuovamente in seguito. Questo è utile, per esempio, quando si riprova un aggiornamento.
+Description-ja.UTF-8: すでに見た変更内容は apt-listchanges で飛ばしますか?
+ 同じものがまた表示されるのを避けるために、表示済みの変更内容の記録は保持できます。これは、たとえばアップグレードを再試行するときなどに便利です。
+Description-nb.UTF-8: Skal apt-listchanges hoppe over endringer som allerede er sett?
+ Det går an å holde styr på hvilke endringer som er vist, for å kunne la være å vise dem igjen. Dette er f.eks. nyttig når en oppgradering forsøkes på nytt.
+Description-nl.UTF-8: Wilt u dat apt-listchanges reeds getoonde wijzigingen overslaat?
+ apt-listchanges kan bijgehouden welke wijzigingen reeds getoond zijn waardoor kan worden voorkomen dat ze een tweede keer getoond worden. Dit is nuttig wanneer u, bijvoorbeeld, een opwaardering afbreekt en later opnieuw probeert.
+Description-no.UTF-8: Skal apt-listchanges hoppe over endringer som allerede er sett?
+ Det går an å holde styr på hvilke endringer som er vist, for å kunne la være å vise dem igjen. Dette er f.eks. nyttig når en oppgradering forsøkes på nytt.
+Description-pl.UTF-8: Czy apt-listchanges ma pomijać zmiany już wcześniej wyświetlone?
+ apt-listchanges może śledzić, które zmiany zostały wyświetlone wcześniej i pomijać je przy kolejnych wywołaniach. Jest to użyteczne, na przykład przy wznawianiu uaktualnienia.
+Description-pt.UTF-8: Deverá o apt-listchanges ignorar as modificações que tenham já sido visualizadas?
+ Um historial de modificações que tenham já sido visualizadas pode ser guardado para evitar que sejam visualizadas novamente. Esta função é útil por exemplo quando se volta a tentar uma actualização.
+Description-pt_BR.UTF-8: O apt-listchanges deverá omitir as mudanças que já foram vistas?
+ Um registro de mudanças já exibidas pode ser mantido para evitar que elas sejam exibidas novamente. Isto é útil, por exemplo, quando você estiver repetindo uma tentativa de atualização.
+Description-ru.UTF-8: Должен ли apt-listchanges пропускать изменения, которые уже просматривались?
+ Есть возможность запоминать уже отображавшиеся изменения, чтобы пропускать их в будущем. Это полезно, например, при повторных попытках обновления.
+Description-sk.UTF-8: Má apt-listchanges preskočiť zmeny, ktoré už boli zobrazené?
+ Aby apt-listchanges predišiel opakovanému zobrazovaniu zmien, môžu byť už zobrazené zmeny uchovávané. Je to užitočné napríklad pri opakovanom pokuse o aktualizáciu.
+Description-sv.UTF-8: Ska apt-listchanges hoppa över ändringar som redan har visats?
+ apt-listchanges har möjlighet att hålla kontroll på vilka ändringar som redan har visats och undvika att visa dem igen. Detta är användbart, till exempel, när en uppgradering upprepas.
+Description-vi.UTF-8: Trình apt-listchanges nên bỏ qua các thay đổi đã được thấy không?
+ Có thể duy trì một mục ghi các thay đổi đã hiển thị, để tránh trường cần phải hiển thị lại. Có ích, chẳng hạn, khi thử lại nâng cấp.
+Description-zh_CN.UTF-8: apt-listchanges 是否应该忽略那些已经被看过的变更内容呢？
+ 已经显式过的变更内容的记录将会保存下来以避免它们被再次显式。这会是很有用的，例如，当您尝试重新进行升级时。
+Description-zh_TW.UTF-8: 跳過 apt-listchanges 已顯示的更動嗎？
+ 已顯示過的更動記錄會被保留，以避免重復顯示。這個功能很有用，例如重複嘗試升級時。
+
+Template: apt-listchanges/which
+Type: select
+Choices: news, changelogs, both
+Choices-ca.UTF-8: notícies, registres, ambdós
+Choices-cs.UTF-8: novinky, seznamy změn, obojí
+Choices-da.UTF-8: nyheder, ændringslogger (changelogs), begge
+Choices-de.UTF-8: News-Dateien, Changelog-Dateien, beide
+Choices-es.UTF-8: noticias, cambios, ambos
+Choices-eu.UTF-8: berriak, aldaketa-erregistroak, biak
+Choices-fi.UTF-8: uutiset, muutoslokit, molemmat
+Choices-fr.UTF-8: Nouveautés, Journaux, Les deux
+Choices-gl.UTF-8: novas, cambios, ambos
+Choices-it.UTF-8: notizie, changelog, entrambi
+Choices-ja.UTF-8: ニュース, changelog, 両方
+Choices-nb.UTF-8: nyheter, endringslogger, begge
+Choices-nl.UTF-8: nieuws, changelogs, beide
+Choices-no.UTF-8: nyheter, endringslogger, begge
+Choices-pl.UTF-8: wiadomości, dzienniki zmian, wszystkie
+Choices-pt.UTF-8: Novidades, changelogs, Ambas
+Choices-pt_BR.UTF-8: notícias, logs de mudanças, ambos
+Choices-ru.UTF-8: новости, изменения, все
+Choices-sk.UTF-8: novinky, zmeny, obe
+Choices-sv.UTF-8: nyheter, ändringsloggar, båda
+Choices-vi.UTF-8: tin tức, bản ghi thay đổi, cả hai
+Choices-zh_CN.UTF-8: 新内容, 变更记录, 两者皆显示
+Choices-zh_TW.UTF-8: 新聞, 更動記錄, 兩者皆可
+Default: news
+Description: Changes displayed with APT:
+ Please choose which type of changes should be displayed with APT.
+ .
+  news      : important news items only;
+  changelogs: detailed changelogs only;
+  both      : news and changelogs.
+Description-ca.UTF-8: Canvis mostrats amb l'APT:
+ Seleccioneu el tipus de canvis que voleu que es mostren amb l'APT.
+ .
+  notícies: només els elements de notícies importants
+  registres: només els canvis detallats
+  ambdós: notícies i canvis
+Description-cs.UTF-8: Změny, které se mají zobrazovat pomocí APT:
+ Vyberte, které typy změn se mají zobrazovat pomocí APT.
+ .
+  novinky     : jen důležité novinky;
+  seznamy změn: jen podrobné seznamy změn;
+  obojí       : novinky i podrobné seznamy změn.
+Description-da.UTF-8: Ændringer vist med APT:
+ Vælg Hvilke typer ændringer, der skal vises med APT.
+ .
+  nyheder: Kun vigtige nyheder
+  ændringslogger (changelogs): Kun detaljerede ændringslogger
+  begge: Nyheder og ændringslogger (changelogs).
+Description-de.UTF-8: Mit APT angezeigte Änderungen:
+ Bitte wählen Sie aus, welche Arten von Änderungen von APT angezeigt werden sollen.
+ .
+  News-Dateien     : Nur wichtige Neuigkeiten
+  Changelog-Dateien: Nur detaillierte Changelogs (Änderungen)
+  Beide            : Wichtige Neuigkeiten und detaillierte Changelogs
+Description-es.UTF-8: Cambios mostrados con APT:
+ Por favor elija qué tipos de cambios deberían mostrarse con APT.
+ .
+  noticias  : sólo las noticias importantes,
+  cambios   : sólo las listas de cambios detallados,
+  ambos     : noticias y listas de cambios detallados.
+Description-eu.UTF-8: APT bidez bistarazitako aldaketak:
+ Mesedez hautatu zein aldaketa mota bistarazi behar diren APT erabiltzean.
+ .
+  berriak               : elementu berri garrantzitsuak bakarrik;
+  aldaketa-erregistroak : zehazturiko aldaketa-erregistroak bakarrik;
+  biak                  : berriak eta aldaketa-erregistroak.
+Description-fi.UTF-8: Muutokset, jotka näytetään ajettaessa APT:
+ Valitse minkä tyyppiset muutokset näytetään APTin ajon yhteydessä.
+ .
+  uutiset    : ainoastaan tärkeät uutiset
+  muutoslokit: ainoastaan tarkat muutoslokit
+  molemmat   : sekä uutiset että muutoslokit
+Description-fr.UTF-8: Changements affichés avec APT :
+ Veuillez choisir le type de changements affichés avec apt.
+ .
+  Nouveautés : seulement les nouveautés importantes ;
+  Journaux   : seulement les journaux des changements détaillés ;
+  Les deux   : nouveautés et journaux.
+Description-gl.UTF-8: Cambios que se amosan con APT:
+ Escolla os tipos de cambios que se teñen que amosar con APT.
+ .
+  novas  : só novas importantes;
+  cambios: só cambios detallados;
+  ambos  : nmovas e cambios.
+Description-it.UTF-8: Cambiamenti da mostrare con APT:
+ Scegliere il tipo di cambiamenti che devono essere mostrati con APT.
+ .
+  notizie   : solo le notizie più importanti;
+  changelog : solo lo storico dei cambiamenti;
+  entrambi  : le notizie e lo storico dei cambiamenti.
+Description-ja.UTF-8: APT で表示する変更内容:
+ APTで表示すべき変更内容の種類を選択してください。
+ .
+  ニュース - 重要なニュース項目のみ;
+  changelog - 詳細な changelog のみ;
+  両方 - ニュースと changelog の両方
+Description-nb.UTF-8: Endringer som vises med APT:
+ Velg hvilken type endringer som APT skal vise.
+ .
+  nyheter        : bare viktige nyhetsmeldinger;
+  endringslogger : bare detaljerte endringslogger;
+  begge          : nyheter og endringslogger.
+Description-nl.UTF-8: Met APT weer te geven wijzigingen:
+ Welk type wijzigingen wilt u dat bij gebruik vanuit APT getoond worden?
+ .
+  nieuws    : alleen belangrijke nieuwsberichten;
+  changelogs: alleen gedetailleerde changelogs;
+  beide     : zowel nieuws als gedetailleerde changelogs.
+Description-no.UTF-8: Endringer som vises med APT:
+ Velg hvilken type endringer som APT skal vise.
+ .
+  nyheter        : bare viktige nyhetsmeldinger;
+  endringslogger : bare detaljerte endringslogger;
+  begge          : nyheter og endringslogger.
+Description-pl.UTF-8: Wyświetlane zmiany gdy używany jest APT:
+ Proszę wskazać typy zmian, które mają być wyświetlane gdy używany jest APT.
+ .
+  wiadomości     : tylko ważne wiadomości;
+  dzienniki zmian: tylko szczegółowe dzienniki zmian;
+  wszystkie      : wiadomości oraz dzienniki zmian.
+Description-pt.UTF-8: Modificações visualizadas com o APT:
+ Por favor escolha que tipo de modificações devem visualizadas com o APT.
+ .
+  novidades      : apenas novos elementos importantes;
+  changelogs: apenas relatórios detalhados;
+  ambas        : novidades e changelogs.
+Description-pt_BR.UTF-8: Mudanças exibidas com o APT:
+ Por favor, escolha quais tipos de mudanças deverão ser exibidas com o APT.
+ .
+  notícias        : somente itens de notícias importantes;
+  logs de mudanças: somente logs de mudanças detalhados;
+  ambos           : notícias e logs de mudanças.
+Description-ru.UTF-8: Отображаемые изменения с APT:
+ Выберите тип изменений, которые должны отображаться с APT.
+ .
+  новости   : только важные новости
+  изменения : только изменения
+  все       : новости и изменения
+Description-sk.UTF-8: Zmeny zobrazované pomocou APT:
+ vyberte si prosí, ktorý typ zmien má byť zobrazený pomocou APT.
+ .
+  novinky : len dôležité novinky;
+  zmeny   : len podrobné záznamy zmien;
+  obe     : novinky i podrobné záznamy zmien.
+Description-sv.UTF-8: Ändringar visade med APT:
+ Välj vilka typer av ändringar som ska visas med APT.
+ .
+  nyheter       : endast viktiga nyhetsposter
+  ändringsloggar: endast detaljerade ändringsloggar
+  båda          : både nyheter och detaljerade ändringsloggar.
+Description-vi.UTF-8: Thay đổi được hiển thị bằng APT:
+ Hãy chọn kiểu thay đổi nào nên được hiển thị bằng APT.
+ .
+  tin tức 	 		chỉ mục tin tức quan trọng
+  bản ghi thay đổi 	chỉ bản ghi thay đổi chi tiết
+  cả hai 			cả hai tin tức và bản ghi thay đổi chi tiết.
+Description-zh_CN.UTF-8: 由 APT 显示的变更内容：
+ 请选择 APT 该显示哪种变更内容。
+ .
+  新内容    : 仅显示重要的新项目
+  变更记录  : 仅显示详细的变更记录(changelogs)
+  两者皆显示: 同时显示新闻和变更记录
+Description-zh_TW.UTF-8: 搭配 APT 使用時顯示更動部份：
+ 請選擇搭配 apt 使用時顯示更動部份的格式？
+ .
+  news - 只顯示重要的新聞項目;
+  changelogs - 只顯示詳細的更動記錄;
+  both - news 和更動記錄.

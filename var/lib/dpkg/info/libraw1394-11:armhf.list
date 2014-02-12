@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libraw1394-11
+/usr/share/doc/libraw1394-11/changelog.Debian.gz
+/usr/share/doc/libraw1394-11/copyright
+/usr/share/doc/libraw1394-11/NEWS.gz
+/usr/share/doc/libraw1394-11/changelog.gz
+/usr/share/doc/libraw1394-11/AUTHORS
+/usr/share/doc/libraw1394-11/README
+/usr/share/doc/libraw1394-11/README.Debian
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libraw1394.so.11.0.1
+/usr/lib/arm-linux-gnueabihf/libraw1394.so.11

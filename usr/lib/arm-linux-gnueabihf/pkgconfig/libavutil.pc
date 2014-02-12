@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: libavutil
+Description: Libav utility library
+Version: 51.22.1
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavutil 
+Libs.private: -lm
+Cflags: -I${includedir}

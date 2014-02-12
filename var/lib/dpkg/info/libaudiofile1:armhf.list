@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libaudiofile1
+/usr/share/doc/libaudiofile1/changelog.Debian.gz
+/usr/share/doc/libaudiofile1/copyright
+/usr/share/doc/libaudiofile1/NEWS.gz
+/usr/share/doc/libaudiofile1/changelog.gz
+/usr/share/doc/libaudiofile1/TODO
+/usr/share/doc/libaudiofile1/AUTHORS
+/usr/share/doc/libaudiofile1/README
+/usr/share/doc/libaudiofile1/ACKNOWLEDGEMENTS
+/usr/share/doc/libaudiofile1/NOTES
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libaudiofile.so.1.0.0
+/usr/lib/arm-linux-gnueabihf/libaudiofile.so.1

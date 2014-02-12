@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr/bin
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libwibble
+Description: Library of useful C++ code
+Version: 0.1.28
+Libs: -L${libdir} -lwibble
+Cflags: -I${includedir}

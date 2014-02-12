@@ -1,0 +1,16 @@
+README
+setup.py
+lib/deb822.py
+lib/debian/__init__.py
+lib/debian/arfile.py
+lib/debian/changelog.py
+lib/debian/deb822.py
+lib/debian/debfile.py
+lib/debian/debian_support.py
+lib/debian/debtags.py
+lib/debian/deprecation.py
+lib/debian_bundle/__init__.py
+lib/python_debian.egg-info/PKG-INFO
+lib/python_debian.egg-info/SOURCES.txt
+lib/python_debian.egg-info/dependency_links.txt
+lib/python_debian.egg-info/top_level.txt

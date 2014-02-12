@@ -1,0 +1,9 @@
+auto
+/usr/bin/vi
+vi.1.gz
+/usr/share/man/man1/vi.1.gz
+
+/bin/elvis-tiny
+10
+/usr/share/man/man1/elvis-tiny.1.gz
+

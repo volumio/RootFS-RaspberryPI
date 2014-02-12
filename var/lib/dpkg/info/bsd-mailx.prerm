@@ -1,0 +1,12 @@
+#!/bin/sh
+# vim:ts=2:et
+# $Id: bsd-mailx.prerm,v 1.2 2007-12-01 12:06:49 robert Exp $
+
+set -e
+
+if [ "$1" = "remove" ]; then
+  update-alternatives --remove "mailx" "/usr/bin/bsd-mailx"
+fi
+
+
+

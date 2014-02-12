@@ -1,0 +1,9 @@
+auto
+/usr/bin/luac
+lua-compiler-manual
+/usr/share/man/man1/luac.1.gz
+
+/usr/bin/luac5.1
+110
+/usr/share/man/man1/luac5.1.1.gz
+

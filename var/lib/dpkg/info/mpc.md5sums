@@ -1,0 +1,11 @@
+1aee90b3836b441cc2963bfa44c4f9f4  usr/bin/mpc
+fc2d78ab52aca0811a5a891f43f3f794  usr/share/doc/mpc/AUTHORS
+bfceea66ff71f4047727782aec2e5d5e  usr/share/doc/mpc/NEWS.gz
+b667a735dee98a4da08e5c4c337c7875  usr/share/doc/mpc/README
+d5b62034d0934af87cceef69cd071e0b  usr/share/doc/mpc/changelog.Debian.gz
+7d1b2a0b80f0b0d6d623afe35a088929  usr/share/doc/mpc/copyright
+fa5574282aec2c4ae891651f362aa2d2  usr/share/doc/mpc/examples/mpd-m3u-handler.sh
+af08a9604eeae7022c9fcab498af90a3  usr/share/doc/mpc/examples/mpd-pls-handler.sh
+6f5d60c218c218b820feaa7900a1e08f  usr/share/doc/mpc/examples/mppledit
+e3c363013804ef8bd3b844f8e1bf3e14  usr/share/doc/mpc/examples/playstream
+e72fd16b0a925d07047442b6a0665237  usr/share/man/man1/mpc.1.gz

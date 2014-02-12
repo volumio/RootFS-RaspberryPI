@@ -1,0 +1,4 @@
+b7ebebda7a50b4081399b7b278ee37bc  usr/lib/libopencv_imgproc.so.2.3.1
+7fa4ce5a86e5cce2cc33b6d6231e3a3e  usr/share/doc/libopencv-imgproc2.3/changelog.Debian.gz
+891355b60a4c85791f19c69ee9c9aa3b  usr/share/doc/libopencv-imgproc2.3/copyright
+bcbc65cff02eccc34b62b0e35dc484ab  usr/share/lintian/overrides/libopencv-imgproc2.3

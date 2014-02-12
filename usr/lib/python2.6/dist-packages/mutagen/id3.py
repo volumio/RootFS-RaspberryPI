@@ -1,0 +1,1 @@
+../../../../share/pyshared/mutagen/id3.py

@@ -1,0 +1,1 @@
+../../../../share/pyshared/chardet/codingstatemachine.py

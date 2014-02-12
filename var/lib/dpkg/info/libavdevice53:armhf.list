@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libavdevice53
+/usr/share/doc
+/usr/share/doc/libavdevice53
+/usr/share/doc/libavdevice53/changelog.Debian.gz
+/usr/share/doc/libavdevice53/README.Debian.gz
+/usr/share/doc/libavdevice53/copyright
+/usr/share/doc/libavdevice53/changelog.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libavdevice.so.53.2.0
+/usr/lib/arm-linux-gnueabihf/libavdevice.so.53

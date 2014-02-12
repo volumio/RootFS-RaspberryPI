@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/ssh
+/usr/share/ssh/blacklist.DSA-2048
+/usr/share/ssh/blacklist.RSA-1024
+/usr/share/ssh/blacklist.RSA-4096
+/usr/share/doc/openssh-blacklist-extra
+/usr/share/doc/openssh-blacklist-extra/changelog.gz
+/usr/share/doc/openssh-blacklist-extra/copyright
+/usr/share/doc/openssh-blacklist-extra/examples
+/usr/share/doc/openssh-blacklist-extra/examples/generate-blacklist.sh

@@ -1,0 +1,12 @@
+f6737b4689697c99f1be6a90602c9c7a  usr/lib/perl5/Crypt/OpenSSL/RSA.pm
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/RSA.bs
+2496bcbc25fbfeed438b1edde33ed13f  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/RSA.so
+4be5897d622c69b86da9ef9812337e66  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/autosplit.ix
+50327eb33b802525097fc5c9d3e9beca  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
+e7e4752a955713c47023d6cf0db3d59f  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/import_random_seed.al
+82e2e546122914b0b770e0993ae72f70  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/new_key_from_parameters.al
+b129d653b0e0116bba567481ea59988b  usr/lib/perl5/auto/Crypt/OpenSSL/RSA/new_public_key.al
+bbfb27d49764a245aa1a0f2b605743f5  usr/share/doc/libcrypt-openssl-rsa-perl/changelog.Debian.gz
+6a79d00405896a53241b56618ef81d9c  usr/share/doc/libcrypt-openssl-rsa-perl/changelog.gz
+736569767ed25cfd6e7682d10c477496  usr/share/doc/libcrypt-openssl-rsa-perl/copyright
+db266c5ddc7fe1c9e18e442fccd032a5  usr/share/man/man3/Crypt::OpenSSL::RSA.3pm.gz

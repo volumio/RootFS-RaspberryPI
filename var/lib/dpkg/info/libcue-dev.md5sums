@@ -1,0 +1,6 @@
+78449562c876638f8c74366396282c7d  usr/include/libcue-1.4/libcue/cd.h
+58e62c3280abb488803bfbdb9ba86fad  usr/include/libcue-1.4/libcue/cdtext.h
+95615ad2a579fc12ec7235295dc9419f  usr/include/libcue-1.4/libcue/libcue.h
+d1e7cc19fde4bae3bb57f9189b814458  usr/include/libcue-1.4/libcue/rem.h
+d1bcdd345bc3103b62af1e2a45b536ba  usr/include/libcue-1.4/libcue/time.h
+4e799fae753ea4c3ea1d7651c111a289  usr/lib/pkgconfig/libcue.pc

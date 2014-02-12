@@ -1,0 +1,111 @@
+#! /bin/sh
+#
+
+### BEGIN INIT INFO
+# Provides: autofs
+# Required-Start: $network $remote_fs $syslog
+# Required-Stop: $network $remote_fs $syslog
+# Should-Start: ypbind nslcd slapd
+# Should-Stop: ypbind nslcd slapd
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Automounts filesystems on demand
+# Description: Automounts filesystems on demand
+### END INIT INFO
+
+# Location of the automount daemon and the init directory
+#
+PROG=automount
+DAEMON=/usr/sbin/$PROG
+NAME=autofs
+PIDFILE="/var/run/$NAME.pid"
+
+test -e $DAEMON || exit 0
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+export PATH
+
+. /lib/lsb/init-functions
+
+#
+# load customized configuation settings
+#
+if [ -r /etc/default/autofs ]; then
+	. /etc/default/autofs
+fi
+
+start_stop_autofs() {
+	start-stop-daemon "$@" --pidfile $PIDFILE --exec $DAEMON -- \
+		$OPTIONS --pid-file $PIDFILE
+}
+
+start() {
+	log_action_begin_msg "Starting $PROG"
+
+	if ! grep -qw autofs /proc/filesystems
+	then
+		if ! modprobe autofs4 >/dev/null 2>&1
+		then
+			log_action_end_msg 1 "failed to load autofs4 module"
+			return 1
+		fi
+	elif [ -f /proc/modules ] && grep -q "^autofs[^4]" /proc/modules
+	then
+		log_action_end_msg 1 "autofs kernel module is loaded, autofs4 required"
+		return 1
+	fi
+
+	if ! start_stop_autofs --start --oknodo --quiet ; then
+		log_action_end_msg 1 "no valid automount entries defined."
+		return 1
+	fi
+	log_end_msg 0
+	return 0
+}
+
+stop() {
+	log_action_begin_msg "Stopping $PROG"
+	if ! start_stop_autofs --stop --retry 5 --oknodo --quiet ; then
+		log_action_end_msg 1
+		return 1
+	fi
+	log_end_msg 0
+	return 0
+}
+
+reload() {
+	log_action_begin_msg "Reloading $PROG maps"
+	if ! start_stop_autofs --stop --signal=HUP --quiet
+	then
+		log_action_end_msg 1 "$PROG not running"
+		return 1
+	fi
+	log_action_end_msg 0
+	return 0
+}
+
+forcestart() {
+	OPTIONS="$OPTIONS --force"
+	start
+}
+
+case "$1" in
+	start|forcestart|stop|reload)
+		$1
+		;;
+	restart|force-reload)
+		stop
+		start
+		;;
+	forcerestart)
+		stop
+		forcestart
+		;;
+	status)
+		status_of_proc -p $PIDFILE $DAEMON $PROG
+		;;
+	*)
+		echo "Usage: $0 {start|forcestart|stop|restart|forcerestart|reload|force-reload|status}"
+		exit 1
+		;;
+esac

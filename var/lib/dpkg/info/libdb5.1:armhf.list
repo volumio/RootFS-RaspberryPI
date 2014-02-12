@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libdb-5.1.so
+/usr/share
+/usr/share/doc/libdb5.1
+/usr/share/doc/libdb5.1/changelog.Debian.gz
+/usr/share/doc/libdb5.1/copyright
+/usr/share/doc/libdb5.1/build_signature_armhf.txt
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libdb5.1

@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libffi.so.5.0.10
+/usr/share
+/usr/share/doc/libffi5
+/usr/share/doc/libffi5/changelog.Debian.gz
+/usr/share/doc/libffi5/copyright
+/usr/lib/arm-linux-gnueabihf/libffi.so.5

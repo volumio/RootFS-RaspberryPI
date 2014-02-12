@@ -1,0 +1,27 @@
+# File:		php.get
+# Changes:
+#	20010219 Ola Lundqvist <opal@debian.org>
+#	20010430 Ola Lundqvist <opal@debian.org>
+#		Removed bash specific dependency.
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Removed reinclusion.
+# Needs:	/usr/share/wwwconfig-common/php.get
+#		$extensions - what php extensions to check for!
+# Description:	Sets the phpver and phpini variables to the version
+#		of php that are installed.
+# Sets:         $phpver = {php3, php4}
+#               $phpini = {/etc/php4/apache/php.ini, /etc/php3/apache/php3.ini}
+
+for A in php3 php4 ; do
+    B=$(echo "$A" | sed -e "s|4||g;")
+    I=/etc/$A/apache/$B.ini
+    if [ -f $I ] ; then
+	phpver=$A
+	phpini=$I
+    fi
+done
+phpini=${phpini:-none}

@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libkdb5-6
+/usr/share/doc/libkdb5-6/changelog.Debian.gz
+/usr/share/doc/libkdb5-6/copyright
+/usr/share/doc/libkdb5-6/NEWS.Debian.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libkdb5.so.6.0
+/usr/lib/arm-linux-gnueabihf/libkdb5.so.6

@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/php5
+/usr/share/php5/sqlite
+/usr/share/php5/sqlite/pdo_sqlite.ini
+/usr/share/php5/sqlite/sqlite3.ini
+/usr/lib
+/usr/lib/php5
+/usr/lib/php5/20100525+lfs
+/usr/lib/php5/20100525+lfs/sqlite3.so
+/usr/lib/php5/20100525+lfs/pdo_sqlite.so
+/usr/share/doc/php5-sqlite

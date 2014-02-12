@@ -1,0 +1,45 @@
+# File:		mysql.get
+# Changes:
+#	20010224 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Removed the reinclusion.
+#	20040216 Marc Horowitz <marc@mit.edu>
+#		Support using a socket connection to the server
+#	20040915 Ola Lundqvist <opal@debian.org>
+#		Quote mysql password so it can have other chars in it.
+#       20060314 Ola Lundqvist <opal@debian.org>,
+#                Manu Benoit <tseeker@nocternity.net>
+#		Allow passwords to contain quotes.
+#       20080424 Ola Lundqvist <opal@debian.org>
+#               Removed single quotes for dbserver according to bug report
+#               #477624 from Bryan McLellan <btm@loftninjas.org>.
+# Needs:	$dbserver  - the server to connect to.
+#		$dbadmin   - the administrator name.
+#		$dbadmpass - the administrator password.
+# Sets:		$mysqlcmd so that administration access are prepared
+
+if [ -z "$dbserver" ] || [ "$dbserver" = "localhost" ]; then
+	hostopt=""
+    dbserver=localhost
+else
+    case "$dbserver" in
+	:*)
+	    dbsocket=`echo $dbserver | sed -e 's/^://'`
+	    hostopt="-S $dbsocket"
+	    ;;
+	*)
+	    hostopt="-h $dbserver"
+	    ;;
+    esac
+fi
+if [ -z "$dbadmpass" ] ; then
+    log="${log}No password used."
+    passopt=""
+else
+    passopt="--password='"`echo "$dbadmpass" | sed -e "s/'/'"'"'"'"'"'"'/g"`"'"
+fi
+mysqlcmd="mysql $hostopt $passopt -u $dbadmin"

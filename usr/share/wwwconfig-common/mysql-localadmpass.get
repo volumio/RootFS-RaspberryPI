@@ -1,0 +1,54 @@
+# File:		mysql-localadmpass.get
+# Changes:
+#	20010430 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020125 Ola Lundqvist <opal@debian.org>
+#		Empty passwords will be handled in a lot better way.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Added password string again. Only mysqladmin works that
+#		way, not mysql.
+#		Removed the dbadmpassfound variable and
+#		changed the status variable instead.
+#	20020912 <hec@espuny.net>, applied by Ola Lundqvist <opal@debian.org>
+#		mysql-localadmpass.get fails to get the user and password for
+#		mysql administration if they are not at /etc/mysql/my.cnf
+#		The solution is not to relay in the var "status" for stop the
+#		search, but in "found"
+# Needs:	/etc/mysql/my.cnf
+#		/usr/share/wwwconfig-common/mysql.func
+# Description:	Gets a user and passphrase (if found) from /etc/mysql/my.cnf
+# Sets:		$dbadmpass = a passphrase (if found), will most probably
+#			be empty because mysql can get it automaticly.
+#		$dbadmin = a username (if found)
+#		$status = {error, user, password, userpassword, nothing}
+#		$mysql_localadmpass_get=done (to allow reinclusion).
+#		$found = {yes, no}
+
+if [ -z "$mysql_localadmpass_get" ] ; then
+    . /usr/share/wwwconfig-common/mysql.func
+    
+    found=no
+    status=error
+    for A in /etc/mysql/my.cnf /var/lib/mysql/my.cnf ~/.my.cnf ; do
+	if [ -f $A -a "$found" = "no" ] ; then
+	    status=""
+	    getmysqlopt mysqladmin user $A
+	    if [ "$found" = "yes" ] ; then
+		dbadmin=$getmysqlopt
+		status=${status}user
+	    fi
+	    getmysqlopt mysqladmin password $A
+	    if [ "$found" = "yes" ] ; then
+		dbadmpass=$getmysqlopt
+		status=${status}password
+	    fi
+	fi
+    done
+    mysql_localadmpass_get="done"
+    if [ -z "$status" ] ; then
+	status=nothing
+    fi
+fi

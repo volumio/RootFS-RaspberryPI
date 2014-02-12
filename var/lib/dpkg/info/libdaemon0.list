@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libdaemon0
+/usr/share/doc/libdaemon0/changelog.Debian.gz
+/usr/share/doc/libdaemon0/README.gz
+/usr/share/doc/libdaemon0/copyright
+/usr/lib
+/usr/lib/libdaemon.so.0.5.0
+/usr/lib/libdaemon.so.0

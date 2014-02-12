@@ -1,0 +1,12 @@
+Document: debian-manifesto
+Title: The Debian Linux Manifesto
+Author: Ian A. Murdock
+Abstract: The Debian Manifesto was released in 1993 by Ian Murdock. The document
+  outlines his view for a brand new Linux distribution which would be developed
+  openly, describes why the world needed this distribution and which problems
+  would the distribution solved. This document is provided in order to document
+  Debian's history.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/debian/debian-manifesto.gz

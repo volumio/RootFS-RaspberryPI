@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installmodules
+if [ -e /boot/System.map-3.10.24+ ]; then
+	depmod -a -F /boot/System.map-3.10.24+ 3.10.24+ || true
+fi
+# End automatically added section

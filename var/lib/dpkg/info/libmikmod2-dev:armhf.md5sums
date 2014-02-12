@@ -1,0 +1,14 @@
+7e8b4bf3ac45bc19aba11ad4f6da90c1  usr/bin/libmikmod-config
+d344c6f0707974278ea906bab87392d8  usr/include/mikmod.h
+7e4df116fb4a5dd62c5f7f382126dbb2  usr/lib/arm-linux-gnueabihf/libmikmod.a
+00e7f891c03d131d61a23a9951fe9e86  usr/share/aclocal/libmikmod.m4
+38c43405afb5ffc5d42056ad316392a4  usr/share/doc-base/libmikmod
+31e41f22137f1a1559a28a3dece9ea46  usr/share/doc/libmikmod2-dev/AUTHORS.gz
+1450ec6333d8038054aa61d858c0821e  usr/share/doc/libmikmod2-dev/README.gz
+f58d5325ebec24bd9e70fecc324b75db  usr/share/doc/libmikmod2-dev/TODO
+e0ece8ff4d7eb42c6a1a128d52042e34  usr/share/doc/libmikmod2-dev/changelog.Debian.gz
+936496e992bffffc152f0943d1c462b3  usr/share/doc/libmikmod2-dev/changelog.gz
+12d821d11494e19f18225a2619ff12aa  usr/share/doc/libmikmod2-dev/copyright
+c7bb4ec2ea99585f93badbdc360a5b0c  usr/share/doc/libmikmod2-dev/mikmod.html
+ec0d64e3ec141574d90145319c7f7936  usr/share/info/mikmod.info.gz
+ac8252055e4fae1606f166c78537e96f  usr/share/man/man1/libmikmod-config.1.gz

@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libtheora.so.0.3.10
+/usr/lib/arm-linux-gnueabihf/libtheoradec.so.1.1.4
+/usr/lib/arm-linux-gnueabihf/libtheoraenc.so.1.1.2
+/usr/share
+/usr/share/doc/libtheora0
+/usr/share/doc/libtheora0/README.gz
+/usr/share/doc/libtheora0/changelog.Debian.gz
+/usr/share/doc/libtheora0/changelog.gz
+/usr/share/doc/libtheora0/copyright
+/usr/share/doc/libtheora0/AUTHORS
+/usr/lib/arm-linux-gnueabihf/libtheora.so.0
+/usr/lib/arm-linux-gnueabihf/libtheoradec.so.1
+/usr/lib/arm-linux-gnueabihf/libtheoraenc.so.1

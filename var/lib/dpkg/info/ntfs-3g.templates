@@ -1,0 +1,103 @@
+Template: ntfs-3g/setuid-root
+Type: boolean
+Default: false
+Description: Should NTFS-3G be installed "setuid root"?
+ NTFS-3G can be installed with the set-user-id bit set, so that it will run
+ with superuser privileges. This allows unprivileged users to mount NTFS
+ volumes.
+ .
+ Enabling this feature may be a security risk, so it is disabled by
+ default. If in doubt, you should leave it disabled.
+Description-cs.UTF-8: Má se NTFS-3G nainstalovat se "setuid root"?
+ NTFS-3G může být nainstalován s nastaveným bitem set-user-id, takže bude běžet s oprávněními superuživatele. To umožňuje neprivilegovaným uživatelům připojovat NTFS svazky.
+ .
+ Povolení této funkce může představovat bezpečnostní riziko, proto je ve výchozím nastavení zakázána. Nejste-li si jistí, měli byste ji ponechat zakázánu.
+Description-da.UTF-8: Skal NTFS-3G installeres som »setuid root«?
+ NTFS-3G kan installeres med bit-sættet set-user-id, så at den vil køre med superbrugerprivilegier. Dette tillader uprivilegerede brugere at montere NFTS-drev.
+ .
+ Aktivering af denne funktion kan udgøre en sikkerhedsmæssig risiko, så den er deaktiveret som standard. Hvis du er i tvivl, bør du efterlade den deaktiveret.
+Description-de.UTF-8: Möchten Sie NTFS-3G "setuid root" installieren?
+ NTFS-3G kann so installiert werden, dass das "set-user-id"-Bit gesetzt ist und daher mit den Rechten des System Administrators läuft. Dies erlaubt regulären Benutzer NTFS Volumes automatisch einbinden zu können.
+ .
+ Das Einschalten dieses Funktionalität kann ein Sicherheitsrisiko sein. Daher ist es standardmäßig abgeschaltet. Falls Sie sich nicht sicher sind, sollten Sie es deshalb deaktiviert lassen.
+Description-es.UTF-8: ¿Desea instalar NTFS-3G con el bit «setuid root» activado?
+ Puede instalar NTFS-3G con el bit «setuid» activado, de modo que se ejecute con privilegios de «root». Esto permite montar volúmenes NTFS a los usuarios que carezcan de los privilegios necesarios para hacerlo.
+ .
+ Activar esta funcionalidad puede comportar un riesgo de seguridad, por ello está desactivada de forma predeterminada. Si duda, debería dejarla desactivada.
+Description-fr.UTF-8: NTFS-3G doit-il être installé « setuid root » ?
+ NTFS-3G peut être installé avec le bit « setuid », pour pouvoir être exécuté avec les privilèges du superutilisateur. Cela permet à un utilisateur non privilégié de pouvoir monter des volumes NTFS.
+ .
+ Activer cette fonctionnalité peut être un risque de sécurité, elle est donc désactivée par défaut. En cas de doute, il est recommandé de la laisser désactivée.
+Description-it.UTF-8: NTFS-3G dev'essere installato con il "setuid root"?
+ NTFS-3G può essere installato con il bit set-user-id attivo, affinché possa essere eseguito con i privilegi del superuser. Questo permette agli utenti normali di montare i volumi NTFS.
+ .
+ L'attivazione di questa funzionalità potrebbe aumentare i rischi per la sicurezza, perciò è disabilitata per impostazione predefinita. Nel dubbio, lasciarla disabilitata.
+Description-ja.UTF-8: NTFS-3G を「setuid root」してインストールしますか?
+ NTFS-3G は、set-user-id ビットを設定してインストールできます。そうすると、NTFS-3G は管理者ユーザの権限で動作するようになります。これによって、非特権ユーザが NTFS ボリュームのマウントが可能になります。
+ .
+ この機能を有効にするのはセキュリティリスクになる可能性があるので、デフォルトでは無効にされています。分からない場合は、無効のままにしておいてください。
+Description-nl.UTF-8: Moet NTFS-3G als "setuid root" worden geïnstalleerd?
+ NTFS-3G kan worden geïnstalleerd met de setuid-bit ingesteld, zodat het wordt uitgevoerd met beheerdersrechten. Dit maakt het voor gewone gebruikers mogelijk om NTFS-schijven aan te koppelen.
+ .
+ Het activeren van deze functionaliteit is mogelijk een veiligheidsrisico en wordt daarom standaard niet gedaan. Als u twijfelt kunt u dit het best niet activeren.
+Description-pl.UTF-8: Czy NTFS-3G powinien być zainstalowany z "setuid root"?
+ NTFS-3G może być zainstalowany z atrybutem set-user-id, dzięki któremu będzie uruchamiany z uprawnieniami administratora. Pozwala to na montowanie partycji NTFS przez nieuprzywilejowanych użytkowników.
+ .
+ Włączenie tej opcji może stanowić zagrożenie bezpieczeństwa, dlatego jest domyślnie wyłączona. W przypadku wątpliwości, proszę wybrać "nie".
+Description-pt.UTF-8: Deverá o NTFS-3G ser instalado com a opção "setuid root" activada?
+ O NTFS-3G pode ser instalado com o bit set-user-id activo, deste modo irá correr com privilégios de super-utilizador. Permite assim a utilizadores sem privilégios montar volumes NTFS.
+ .
+ Activar esta funcionalidade acarreta riscos de segurança, assim está inactiva por omissão. Em caso de dúvida deverá deixá-la inactiva.
+Description-ru.UTF-8: Установить NTFS-3G как «setuid root»?
+ Пакет NTFS-3G может быть установлен с задействованным битом set-user-id, из-за чего будет выполняться с правами суперпользователя. Это позволяет монтировать тома NTFS непривилегированным пользователям.
+ .
+ Включение данной возможности может быть небезопасно, поэтому она по умолчанию выключена. Если не уверены — оставьте её выключенной.
+Description-sk.UTF-8: Má byť NTFS-3G nainštalovaný ako „setuid root“?
+ NTFS-3G je možné nainštalovať s nastaveným bitom set-user-id, aby bežal s oprávneniami superpoužívateľa. To umožňuje neprivilegovaným používateľom pripájať zväzky NTFS.
+ .
+ Zapnutie tejto možnosti môže byť bezpečnostným rizikom, preto je štandardne vypnutá. Ak máte pochyby, nechajte ju vypnutú.
+Description-sr.UTF-8: Треба ли NTFS-3G бити инсталиран као "setuid root"?
+ NTFS-3G може бити инсталиран са set-user-id bit поставком, тако да ће се покретати са суперкорисничким привилегијама. Ово омугаћава обичним корисницимада подигну NTFS уређаје.
+ .
+ Омогућавање ове опције може бити сигурносни ризик, због тога је по стандардуискључена.У недоумици, оставите је онемогућеном.
+Description-sr@latin.UTF-8: Treba li NTFS-3G biti instaliran kao "setuid root"?
+ NTFS-3G može biti instaliran sa set-user-id bit postavkom, tako da će sepokretati sa superkorisničkim privilegijama. Ovo omugaćava običnim korisnicimada podignu NTFS uređaje.
+ .
+ Omogućavanje ove opcije može biti sigurnosni rizik, zbog toga je po standarduisključena.U nedoumici, ostavite je onemogućenom.
+Description-sv.UTF-8: Ska NTFS-3G installeras som "setuid root"?
+ NTFS-3G kan installeras med biten set-user-id aktiv så att exekveringen sker med en superanvändares rättigheter. Detta medger användare att montera NTFS-volymer.
+ .
+ Aktivering av denna funktion kan vara en säkerhetsrisk, därför är det inte aktiverat som standard. Har du minsta tvivel mot funktionen ska du lämna den avaktiverad.
+Description-zh_CN.UTF-8: 是否将 NTFS-3G 安装为“setuid root”?
+ NTFS-3G 可以有设置用户 ID 位设置，这样将会以超级用户权限运行。这会允许普通用户挂载 NTFS 分区。
+ .
+ 启用此功能可能会是一个安全问题，所以默认禁用了。如果有疑问，就应该禁用。
+
+Template: ntfs-3g/initramfs
+Type: boolean
+Default: true
+Description: Should NTFS-3G be included in initramfs?
+ NTFS-3G can be included in initramfs which allows to early mount NTFS
+ volumes.
+Description-cs.UTF-8: Má se NTFS-3G zahrnout do initramfs?
+ NTFS-3G lze zahrnout v initramfs, což umožňuje dřívější připojování NTFS svazků.
+Description-da.UTF-8: Skal NTFS-3G inkluderes i initramfs?
+ NTFS-3G kan inkluderes i initramfs, hvilket tillader tidlig montering af NTFS-diskenheder.
+Description-de.UTF-8: Soll NTFS-3G in der initramfs enthalten sein?
+ NTFS-3G kann in die initramfs aufgenommen werden. Dies ermöglicht einfrühes Einbinden von NTFS Volumes.
+Description-es.UTF-8: ¿Debería incluirse NTFS-3G en el «initramfs»?
+ Puede incluirse NTFS-3G en el «initramfs» de forma que sea posible volúmenes NTFS en cualquier momento durante el arranque del sistema operativo.
+Description-fr.UTF-8: NTFS-3G doit-il être inclus dans l'initramfs ?
+ NTFS-3G peut être inclus dans le système de fichier initial en mémoire (« initramfs ») ce qui permet un montage précoce des volumes NTFS.
+Description-it.UTF-8: Includere NTFS-3G in initramfs?
+ NTFS-3G può essere incluso in initramfs per permettere di montare subito i volumi NTFS.
+Description-nl.UTF-8: Moet NTFS-3G worden toegevoegd aan het initramfs?
+ NTFS-3G kan worden toegevoegd aan het initramfs, wat het mogelijk maakt om NTFS-schijven in een vroeg stadium aan te koppelen.
+Description-pl.UTF-8: Czy NTFS-3G powinien być dołączony do initramfs?
+ NTFS-3G może być częścią initramfs, co pozwala na wczesne montowanie partycji NTFS.
+Description-pt.UTF-8: Deve o NTFS-3G ser incluído no initramfs?
+ O NTFS-3G pode ser incluido do initramfs o que permite montar atempadamente volumes NTFS.
+Description-ru.UTF-8: Включить NTFS-3G в initramfs?
+ Модуль NTFS-3G можно включить в initramfs, что позволить монтировать тома NTFS на ранней стадии загрузки ОС.
+Description-sv.UTF-8: Ska NTFS-3G inkluderas i initramfs?
+ NTFS-3G kan bli inkluderat i initramfs vilket möjliggör tidig montering av NTFS-volymer.

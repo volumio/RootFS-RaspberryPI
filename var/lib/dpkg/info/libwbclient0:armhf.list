@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libwbclient.so.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libwbclient0
+/usr/share/doc/libwbclient0/changelog.Debian.gz
+/usr/share/doc/libwbclient0/NEWS.Debian.gz
+/usr/share/doc/libwbclient0/copyright

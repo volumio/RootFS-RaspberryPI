@@ -1,0 +1,1 @@
+/usr/share/pyshared/reportbug/checkbuildd.py

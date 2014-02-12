@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: libavcodec
+Description: Libav codec library
+Version: 53.35.0
+Requires: 
+Requires.private: libavutil = 51.22.1
+Conflicts:
+Libs: -L${libdir} -lavcodec 
+Libs.private: -ldl -lX11 -lXext -lXfixes -lcdio_paranoia -lcdio_cdda -lcdio -ljack -lasound -ldc1394 -lraw1394 -lxvidcore -lx264 -lvpx -lvpx -lvorbisenc -lvorbis -logg -ltheoraenc -ltheoradec -logg -lspeex -lschroedinger-1.0 -lrtmp -lz -lgnutls -lpulse-simple -lpulse -lopenjpeg -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -lmp3lame -lgsm -lfreetype -ldirac_encoder -ldirac_decoder -lstdc++ -lgnutls -lva -lm -pthread -lbz2 -lz
+Cflags: -I${includedir}

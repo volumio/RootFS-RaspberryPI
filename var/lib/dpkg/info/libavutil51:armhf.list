@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libavutil51
+/usr/share/doc/libavutil51
+/usr/share/doc/libavutil51/changelog.Debian.gz
+/usr/share/doc/libavutil51/README.Debian.gz
+/usr/share/doc/libavutil51/copyright
+/usr/share/doc/libavutil51/changelog.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libavutil.so.51.22.1
+/usr/lib/arm-linux-gnueabihf/libavutil.so.51

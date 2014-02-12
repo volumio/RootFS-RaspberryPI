@@ -1,0 +1,28 @@
+TARGETS = minidlna plymouth fake-hwclock urandom triggerhappy atd exim4 samba dropbear shairport php5-fpm mpd avahi-daemon wicd myruns autofs alsa-utils sendsigs rsyslog umountnfs.sh rpcbind nfs-common hwclock.sh networking umountfs umountroot halt reboot
+plymouth: minidlna
+fake-hwclock: minidlna
+urandom: minidlna
+triggerhappy: minidlna
+atd: minidlna
+exim4: minidlna
+samba: minidlna
+dropbear: minidlna
+shairport: minidlna
+php5-fpm: minidlna
+mpd: minidlna
+avahi-daemon: minidlna
+wicd: minidlna
+myruns: minidlna
+autofs: mpd minidlna
+alsa-utils: mpd minidlna
+sendsigs: autofs mpd alsa-utils triggerhappy atd exim4 samba dropbear avahi-daemon shairport php5-fpm wicd plymouth minidlna
+rsyslog: autofs atd exim4 dropbear sendsigs avahi-daemon shairport minidlna
+umountnfs.sh: autofs mpd alsa-utils triggerhappy atd exim4 sendsigs samba dropbear rsyslog avahi-daemon shairport php5-fpm wicd plymouth minidlna
+rpcbind: umountnfs.sh minidlna
+nfs-common: umountnfs.sh minidlna
+hwclock.sh: atd nfs-common rsyslog minidlna
+networking: rpcbind autofs mpd umountnfs.sh exim4 samba php5-fpm minidlna
+umountfs: networking rpcbind autofs hwclock.sh mpd alsa-utils triggerhappy atd umountnfs.sh exim4 urandom samba dropbear avahi-daemon shairport php5-fpm wicd plymouth minidlna
+umountroot: umountfs fake-hwclock minidlna
+halt: umountroot minidlna
+reboot: umountroot minidlna

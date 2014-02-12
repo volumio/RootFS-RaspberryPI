@@ -1,0 +1,1 @@
+../../../../share/pyshared/mutagen/__init__.py

@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libxvidcore.so.4.3
+/usr/share
+/usr/share/doc/libxvidcore4
+/usr/share/doc/libxvidcore4/changelog.Debian.gz
+/usr/share/doc/libxvidcore4/changelog.gz
+/usr/share/doc/libxvidcore4/copyright
+/usr/lib/arm-linux-gnueabihf/libxvidcore.so.4

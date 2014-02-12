@@ -1,0 +1,9 @@
+auto
+/usr/bin/php-cgi
+php-cgi.1.gz
+/usr/share/man/man1/php-cgi.1.gz
+
+/usr/bin/php5-cgi
+50
+/usr/share/man/man1/php5-cgi.1.gz
+

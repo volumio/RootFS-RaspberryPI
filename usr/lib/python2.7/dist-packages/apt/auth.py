@@ -1,0 +1,1 @@
+../../../../share/pyshared/apt/auth.py

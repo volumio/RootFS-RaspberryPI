@@ -1,0 +1,9 @@
+27cbbb960537e7a2de5d14b0292f4dba  usr/include/libavformat/avformat.h
+d3013cbf1080dba00d6df17858841a53  usr/include/libavformat/avio.h
+19ca5b24427f660f923ca7b62e96047e  usr/include/libavformat/version.h
+79d6deb767909721e6aef7abe49bd2c1  usr/lib/arm-linux-gnueabihf/libavformat.a
+eec8a53cbfee87cfdb5c1e29c354b66a  usr/lib/arm-linux-gnueabihf/pkgconfig/libavformat.pc
+812ae049e35a77fbe9da612a1284c3c5  usr/share/doc/libavformat-dev/README.Debian.gz
+519617b163f58cc815bbcfabcaafd7f5  usr/share/doc/libavformat-dev/changelog.Debian.gz
+7e96676b3cceea582ab27f92ef922394  usr/share/doc/libavformat-dev/changelog.gz
+e51de741ce5932946736d2b8ef235b80  usr/share/doc/libavformat-dev/copyright

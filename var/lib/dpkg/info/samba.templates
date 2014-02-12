@@ -1,0 +1,197 @@
+Template: samba-common/title
+Type: title
+Description: Samba server
+Description-cs.UTF-8: Samba server
+Description-da.UTF-8: Sambaserver
+Description-de.UTF-8: Samba-Server
+Description-eo.UTF-8: Servilo Samba
+Description-es.UTF-8: Servidor Samba
+Description-fi.UTF-8: Samba-palvelin
+Description-fr.UTF-8: Serveur Samba
+Description-gl.UTF-8: Servidor Samba
+Description-he.UTF-8: שרת סמבה
+Description-id.UTF-8: Server Samba
+Description-it.UTF-8: Server Samba
+Description-ja.UTF-8: Samba サーバ
+Description-nb.UTF-8: Ingen Samba-tjener er installert på dette systemet
+Description-nl.UTF-8: Samba-server
+Description-no.UTF-8: Ingen Samba-tjener er installert på dette systemet
+Description-pl.UTF-8: Serwer Samba
+Description-pt.UTF-8: Servidor Samba
+Description-pt_BR.UTF-8: Servidor Samba
+Description-ru.UTF-8: Сервер Samba
+Description-sk.UTF-8: Samba server
+Description-sv.UTF-8: Sambaserver
+Description-th.UTF-8: เซิร์ฟเวอร์ samba
+Description-tr.UTF-8: Samba sunucusu
+
+Template: samba/run_mode
+Type: select
+Choices: daemons, inetd
+Choices-ar.UTF-8: daemons, inetd
+Choices-ast.UTF-8: degorrios, inetd
+Choices-be.UTF-8: дэманы, inetd
+Choices-bg.UTF-8: фонов процес, при нужда
+Choices-bn.UTF-8: ডিমন, inetd
+Choices-bs.UTF-8: daemons, inetd
+Choices-ca.UTF-8: dimonis, inetd
+Choices-cs.UTF-8: démoni, inetd
+Choices-da.UTF-8: dæmoner, inetd
+Choices-de.UTF-8: Daemon, inetd
+Choices-dz.UTF-8: ཌེ་མཱོནསི་, inetd
+Choices-el.UTF-8: δαίμονες, inetd
+Choices-eo.UTF-8: demonoj, inetd
+Choices-es.UTF-8: demonios, inetd
+Choices-et.UTF-8: deemonitena, inetd'ist
+Choices-eu.UTF-8: deabruak, inetd
+Choices-fi.UTF-8: palvelinprosessit, inetd
+Choices-fr.UTF-8: démons, inetd
+Choices-gl.UTF-8: servizos, inetd
+Choices-gu.UTF-8: ડેમોન્સ, inetd
+Choices-he.UTF-8: תהליכי רקע, inetd
+Choices-hu.UTF-8: démonok, inetd
+Choices-id.UTF-8: server, inetd
+Choices-it.UTF-8: demoni, inetd
+Choices-ja.UTF-8: デーモン, inetd
+Choices-ka.UTF-8: დემონები, inetd
+Choices-km.UTF-8: ដេមិន , inetd
+Choices-ko.UTF-8: 데몬, inetd
+Choices-ku.UTF-8: daemon, inetd
+Choices-lt.UTF-8: tarnybos, inetd
+Choices-ml.UTF-8: ഡെമണുകള്‍, inetd
+Choices-mr.UTF-8: डिमन्स, आयएनइटीडी
+Choices-nb.UTF-8: nisser, inetd
+Choices-ne.UTF-8: डेइमोन, inetd
+Choices-nl.UTF-8: achtergronddiensten, inetd
+Choices-nn.UTF-8: tenester, inetd
+Choices-no.UTF-8: nisser, inetd
+Choices-pl.UTF-8: demon, inetd
+Choices-pt.UTF-8: daemons, inetd
+Choices-pt_BR.UTF-8: daemons, inetd
+Choices-ro.UTF-8: demoni, inetd
+Choices-ru.UTF-8: как самостоятельный процесс, из inetd
+Choices-sk.UTF-8: démoni, inetd
+Choices-sl.UTF-8: daemoni, inetd
+Choices-sq.UTF-8: daemons, inetd
+Choices-sv.UTF-8: demoner, inetd
+Choices-ta.UTF-8: கிங்கரன்கள் (டீமன்கள்), inetd
+Choices-th.UTF-8: ดีมอน, inetd
+Choices-tl.UTF-8: mga daemon, inetd
+Choices-tr.UTF-8: artalan süreçleri, inetd
+Choices-vi.UTF-8: trình nền, inetd
+Choices-wo.UTF-8: daemon yi, inetd
+Choices-zh_CN.UTF-8: 守护进程, inetd
+Choices-zh_TW.UTF-8: 常駐程式, inetd
+Default: daemons
+Description: How do you want to run Samba?
+ The Samba daemon smbd can run as a normal daemon or from inetd. Running as
+ a daemon is the recommended approach.
+Description-ar.UTF-8: كيف تريد تشغيل Samba؟
+ يمكن لرقيب smbd الاشتغال كرقيب عادي أو عبر inetd. ينصح بتشغييله كرقيب.
+Description-ast.UTF-8: ¿Cómo quies executar Samba?
+ El degorriu Samba smbd puede correr como un degorriu normal o dende inetd. Corriendo como un degorriu ye la escoyeta recomendada.
+Description-be.UTF-8: Якім чынам мусіць запускацца Samba?
+ Служба Samba smbd можа запускацца як звычайны дэман, або з дапамогай inetd. Рэкамендаваны падыход -- запуск у якасці звычайнага дэмана.
+Description-bg.UTF-8: Как да се стартира Samba?
+ Основният процес на Samba, smbd, може да бъде изпълняван при нужда или като фонов процес (със зареждането на операционната система). Препоръчителният начин за изпълнение е като фонов процес.
+Description-bn.UTF-8: আপনি সাম্বা কিভাবে চালাতে চান?
+ সাম্বা ডিমন smbd একটি সাধারন ডিমন হিসেবে বা inetd থেকে চালানো যেতে পারে। ডিমন হিসেবে চালানো সুপারিশকৃত।
+Description-bs.UTF-8: Kako želite pokretati Samba-u?
+ Samba daemon smbd može biti pokrenut kao normalni daemon ili preko inetd-a. Pokretanje kao daemon je preporučeni pristup.
+Description-ca.UTF-8: Com voleu executar el Samba?
+ El dimoni de Samba pot executar-se com un dimoni normal o des de l'inetd. És recomanable executar-lo com a dimoni.
+Description-cs.UTF-8: Jak chcete spouštět Sambu?
+ Server Samby smbd může běžet jako obyčejný daemon (doporučeno), nebo se může spouštět z inetd.
+Description-da.UTF-8: Hvordan skal Samba køres?
+ Samba-dæmonen smbd kan køre som en almindelig dæmon eller fra inetd. Det anbefales at køre den som dæmon.
+Description-de.UTF-8: Wie möchten Sie Samba starten?
+ Der Samba-Prozess smbd kann als normaler Hintergrunddienst (Daemon) laufen oder über inetd gestartet werden. Ersteres wird jedoch empfohlen.
+Description-dz.UTF-8: ཁྱོད་ཀྱིས་ སམ་བ་འདི་ག་དེ་སྦེ་གཡོག་བཀོལ་དགོ་མནོཝ་སྨོ?
+ སམ་བ་ཌེ་མཱོན་smbdའདི་ སྤྱིར་བཏང་ཌེ་མཱོན་སྦེ་ ཡང་ན་ inetdནང་ལས་ གཡོག་བཀོལ་ཚུགས། ཌེ་མཱོན་སྦེ་གཡོག་བཀོལ་མི་འདི་ འོས་སྦྱོར་འབད་ཡོད་པའི་རྩར་ལེན་ཨིན།
+Description-el.UTF-8: Πώς θέλετε να εκτελείται η υπηρεσία Samba;
+ Ο δαίμονας της υπηρεσίας Samba μπορεί να τρέχει σαν ένας συνηθισμένος δαίμονας ή από τον inetd. Η εκτέλεσή του σαν συνηθισμένου δαίμονα είναι η συνιστώμενη προσέγγιση.
+Description-eo.UTF-8: Kiel vi volas lanĉi Samba?
+ La Samba-demono smbd povas esti lanĉita kiel normala demono aŭ per la programo inetd. Oni rekomendas lanĉi ĝin kiel demonon.
+Description-es.UTF-8: ¿Cómo quiere que se ejecute Samba?
+ El demonio de Samba «smbd» puede ejecutarse como un demonio normal independiente o iniciarse desde el demonio «inetd». Se recomienda que se ejecute como demonio independiente.
+Description-et.UTF-8: Kuidas soovid Samba käivitada?
+ Samba deemon võib käivituda kui tavaline deemon või inetd'ist. Soovitatav lähenemine on käivitamine tavalise deemonina.
+Description-eu.UTF-8: Nola nahi duzu Samba abiaraztea?
+ Samba smbd zerbitzua deabru arrunt edo inted bidez abiarazi daiteke. Deabru bezala abiaraztea gomendatzen da.
+Description-fi.UTF-8: Kuinka Samba käynnistetään?
+ Samban palvelinprosessi smbd voi toimia tavallisena prosessina tai inetd voi käynnistää sen. Tavallisen prosessin käyttämistä suositellaan.
+Description-fr.UTF-8: Comment voulez-vous lancer Samba ?
+ Le service de Samba smbd peut s'exécuter en tant que démon classique ou bien être lancé par inetd. Il est recommandé de l'exécuter en tant que démon.
+Description-gl.UTF-8: Como quere executar Samba?
+ O servizo de Samba smbd pode funcionar coma un servizo normal ou desde inetd. Recoméndase executalo coma un servizo.
+Description-gu.UTF-8: તમે સામ્બા કઇ રીતે ઉપયોગ કરશો?
+ સામ્બા ડેમોન smbd સામાન્ય ડેમોન અથવા inetd તરીકે ચાલી શકે છે. ડેમોન તરીકે ચલાવવાનું સલાહભર્યું છે.
+Description-he.UTF-8: כיצד תרצה להריץ את סמבה?
+ תהליך הרקע של סמבה שנקרא smbd יכול לרוץ כתהליך רקע רגיל או דרך inetd. ריצה כתהליך רקע רגיל היא השיטה המומלצת.
+Description-hu.UTF-8: Hogyan induljon a Samba?
+ Az smbd Samba démon futhat normál démonként vagy az inetd-n keresztül. A démonként való futtatása a javasolt beállítás.
+Description-id.UTF-8: Bagaimana Anda ingin menjalankan Samba
+ Server samba (smbd) dapat berjalan sebagai server normal (daemon) atau dari inetd. Sangat dianjurkan menjalankannya sebagai server normal.
+Description-it.UTF-8: Come avviare Samba?
+ Il demone Samba smbd può essere avviato come un normale demone oppure da inetd. Si raccomanda l'avvio come demone.
+Description-ja.UTF-8: どのように Samba を実行したいですか?
+ Samba デーモン smbd は通常のデーモンとしての実行または inetd からの実行ができます。デーモンとして実行するのがお勧めの手段です。
+Description-ka.UTF-8: როგორ გსურთ Samba-ს გაშვება?
+ Samba-ს დემონი smbd შეიძლება გაეშვას როგორც ჩვეულებრივი დემო inetd-დან. დემონად გაშვება რეკომენდირებული მიდგომაა.
+Description-km.UTF-8: តើ​អ្នក​ចង់​រត់ Samba តាម​វិធី​ណា ?
+ ដេមិន Samba smbd អាចរត់ជាដេមិនធម្មតា ឬពី inetd ។ ការរត់ជាដេមិនមួយត្រូវបានផ្ដល់អនុសាសន៍ ។
+Description-ko.UTF-8: Samba를 어떻게 실행하시겠습니까?
+ Samba의 데몬인 smbd은 일반적인 데몬으로 실행할 수도 있고 inetd을 통해 실행할 수도 있습니다. 데몬으로 실행할 것을 권장합니다.
+Description-ku.UTF-8: Dixwazî Samba çawa bixebitînî?
+ Daemona Sambayê dikare wekî daemon'eke ji rêzê an jî inetd'ê bixebite. Xebitandina wekî daemonekê tê pêşniyarkirin.
+Description-lt.UTF-8: Kokiu būdu norite leisti Samba?
+ Samba tarnyba smbd gali veikti kaip įprastinė tarnyba arba ji gali būti paleidžiama iš inetd. Rekomenduojama Samba naudoti kaip įprastinę tarnybą.
+Description-ml.UTF-8: സാംബ എങ്ങനെ പ്രവര്‍ത്തിപ്പിക്കാനാണ് നിങ്ങളാഗ്രഹിക്കുന്നത്?
+ സാംബ ഡെമണ്‍ smbd ഒരു സാധാരണ ഡെമണായോ അല്ലെങ്കില്‍ inetd യില്‍ നിന്നോ പ്രവര്‍ത്തിപ്പിക്കാവുന്നതാണ്. ഡെമണായി ഓടിക്കുന്നതാണ് ശുപാര്‍ശ ചെയ്തിട്ടുള്ള വഴി.
+Description-mr.UTF-8: तुम्हाला सांबा कशा प्रकारे चालू करावयाचा आहे?
+ सांबा डिमन एसएमबीडी हा प्रोग्राम सर्वसाधारण डिमन म्हणून किंवा आयएनइटीडी मधून चालविता येतो. डिमन म्हणून चालविणे अधिक श्रेयस्कर.
+Description-nb.UTF-8: Hvordan vil du at Samba skal kjøres?
+ Samba-prosessen smbd kan kjøres som en normal nisse eller fra inetd. Det anbefales å kjøre som en nisse.
+Description-ne.UTF-8: तपाईँ साम्बा कसरी चलाउन चाहनुहुन्छ?
+ साम्बा डेइमोन समान्य डेइमोनको रुपमा वा inetd बाट चलाउन सकिन्छ । डेइमोनको रूपमा चलाउनु सिफारिस गरिएको तरिका हो ।
+Description-nl.UTF-8: Hoe wilt u Samba draaien?
+ De Samba-achtergronddienst smbd kan als een normale achtergronddienst of via inetd draaien. Als een achtergronddienst is de aangeraden aanpak.
+Description-nn.UTF-8: Korleis vil du køyre Samba?
+ Samba-tenesta smbd kan køyrast som ei normal teneste frå inetd. Å køyre som ei teneste er den tilrådde måten.
+Description-no.UTF-8: Hvordan vil du at Samba skal kjøres?
+ Samba-prosessen smbd kan kjøres som en normal nisse eller fra inetd. Det anbefales å kjøre som en nisse.
+Description-pl.UTF-8: W jaki sposób Samba ma być uruchamiana?
+ Demon Samby smbd może działać jako zwykły demon, albo z poziomu inetd. Zalecane jest uruchomienie demona.
+Description-pt.UTF-8: Como deseja correr o Samba?
+ O daemon de Samba smbd pode correr como um daemon normal ou a partir de inetd. Executá-lo como um daemon é a aproximação recomendada.
+Description-pt_BR.UTF-8: Como você deseja que o Samba seja executado?
+ O daemon Samba smbd pode ser executado como daemon normal ou a partir do inetd. Executá-lo como daemon é o método recomendado.
+Description-ro.UTF-8: Cum doriți să rulați Samba?
+ Demonul Samba smbd poate rula ca un demon normal sau din inetd. Rularea ca demon este recomandată.
+Description-ru.UTF-8: Как нужно запускать Samba?
+ Служба Samba smbd может постоянно работать как самостоятельный процесс или запускаться из inetd. Рекомендуется использовать запуск в виде самостоятельного процесса.
+Description-sk.UTF-8: Ako chcete spúšťať Sambu?
+ Samba server smbd sa môže spúšťať ako obyčajný démon (odporúča sa) alebo sa môže spúšťať z inetd.
+Description-sl.UTF-8: Kako želite poganjati Sambo?
+ Samba demon smbd lahko teče kot običajen demon ali iz inetd. Priporočljivo je poganjanje sambe kot demon.
+Description-sq.UTF-8: Si dëshiron të xhirojë Samba?
+ Daemon Samba smbd mund të xhirojë si një daemon normal ose nga inetd. Rekomandohet puna si daemon.
+Description-sv.UTF-8: Hur vill du köra Samba?
+ Samba-demonen smbd kan köras som en normal demon eller från inetd. Att köra som en demon är den rekommenderade metoden.
+Description-ta.UTF-8: சாம்பாவை எப்படி இயக்க விரும்புகிறீர்கள்?
+ சாம்பா கிங்கரனான எஸ்எம்பிடி இயல்பான கிங்கரனாக இயங்கலாம் அல்லது inetd லிருந்து இயங்கலாம். கிங்கரனாக இயங்குவதே பரிந்துரைக்கப் படுகிறது.
+Description-th.UTF-8: คุณต้องการเรียกใช้ Samba แบบไหน?
+ ดีมอน smbd ของ Samba สามารถทำงานแบบดีมอนธรรมดา หรือเรียกจาก inetd ก็ได้ ทางที่ขอแนะนำคือเรียกแบบดีมอน
+Description-tl.UTF-8: Paano ninyo gustong patakbuhin ang Samba?
+ Ang daemon na smbd ng Samba ay maaaring patakbuhin bilang normal na daemon o mula sa inetd. Pagpapatakbo nito bilang daemon ang rekomendado.
+Description-tr.UTF-8: Samba'nın nasıl çalışmasını istersiniz?
+ Samba artalan süreci smbd, normal bir artalan süreci olarak ya da inetd'den çalışabilir. Önerilen yaklaşım artalan süreci olarak çalıştırmaktır.
+Description-vi.UTF-8: Muốn chạy Samba như thế nào?
+ Trình nền Samba smbd có khả năng chạy làm một trình nền tiêu chuẩn, hoặc từ inetd. Phương pháp khuyến khích là chạy làm trình nền.
+Description-wo.UTF-8: Nan nga bëgga doxale samba?
+ Daemon bu Samba smbd maneesna koo doxal ne ab deamon normaal, maneesna koo doxale yit ak inetd. Liñuy deŋkaane nak mooy doxalko muy ab daemon.
+Description-zh_CN.UTF-8: 您想如何运行 Samba？
+ Samba 守护进程 smbd 可以作为普通守护进程或者从 inetd 启动。以守护进程的方式运行是推荐的方式。
+Description-zh_TW.UTF-8: 您想要如何執行 Samba？
+ Samba 常駐程式 smbd 可以作為普通的常駐程式，或者是由 inetd 啟動。建議是以常駐程式的方式執行。
+

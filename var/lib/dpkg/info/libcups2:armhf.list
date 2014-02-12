@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libcups2
+/usr/share/doc/libcups2/changelog.Debian.gz
+/usr/share/doc/libcups2/copyright
+/usr/share/doc/libcups2/changelog.gz
+/usr/share/doc/libcups2/examples
+/usr/share/doc/libcups2/examples/client.conf
+/usr/share/doc/libcups2/README.Debian.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libcups.so.2

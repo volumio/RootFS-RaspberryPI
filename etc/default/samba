@@ -1,0 +1,12 @@
+# Defaults for samba initscript
+# sourced by /etc/init.d/samba
+# installed at /etc/default/samba by the maintainer scripts
+#
+
+#
+# This is a POSIX shell fragment
+#
+
+# How should Samba (smbd) run? Possible values are "daemons"
+#	or "inetd".
+RUN_MODE="daemons"

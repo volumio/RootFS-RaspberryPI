@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: reportbug
+Version: 6.4.4
+Summary: bug reporting tool
+Home-page: http://alioth.debian.org/projects/reportbug
+Author: reportbug maintainence team
+Author-email: reportbug-maint@lists.alioth.debian.org
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

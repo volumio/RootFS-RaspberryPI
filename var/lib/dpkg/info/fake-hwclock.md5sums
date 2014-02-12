@@ -1,0 +1,4 @@
+deca787014cf611234c7dabb0810cb40  sbin/fake-hwclock
+9df127a47fe5a8fc161d88cb06b9d5e7  usr/share/doc/fake-hwclock/changelog.gz
+9ec36f3cb9555a4814545b7455f5a4ad  usr/share/doc/fake-hwclock/copyright
+f256d8d6a692dcb57bf9145d75b415c6  usr/share/man/man8/fake-hwclock.8.gz

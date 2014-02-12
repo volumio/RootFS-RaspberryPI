@@ -1,0 +1,1 @@
+../../../../share/pyshared/musicbrainzngs/__init__.py

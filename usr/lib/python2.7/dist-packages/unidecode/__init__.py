@@ -1,0 +1,1 @@
+../../../../share/pyshared/unidecode/__init__.py

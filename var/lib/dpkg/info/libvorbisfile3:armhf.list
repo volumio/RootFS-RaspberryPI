@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libvorbisfile3
+/usr/share/doc/libvorbisfile3/changelog.Debian.gz
+/usr/share/doc/libvorbisfile3/changelog.gz
+/usr/share/doc/libvorbisfile3/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libvorbisfile3
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libvorbisfile.so.3.3.4
+/usr/lib/arm-linux-gnueabihf/libvorbisfile.so.3

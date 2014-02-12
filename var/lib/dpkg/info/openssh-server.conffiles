@@ -1,0 +1,5 @@
+/etc/ufw/applications.d/openssh-server
+/etc/pam.d/sshd
+/etc/default/ssh
+/etc/init.d/ssh
+/etc/network/if-up.d/openssh-server

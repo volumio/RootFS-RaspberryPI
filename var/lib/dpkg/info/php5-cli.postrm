@@ -1,0 +1,29 @@
+#! /bin/sh
+
+set -e
+
+phpini=/etc/php5/cli/php.ini
+
+case "$1" in
+purge)
+	# remove the flag to remember the original state
+	if [ -e /etc/php5/cli/.start ]; then
+	    rm -f /etc/php5/cli/.start
+	fi
+	for ext in '~' '%' .bak .ucf-new .ucf-old .ucf-dist;  do
+	    rm -f $phpini$ext
+	done
+	rm -f $phpini
+	if which ucf >/dev/null; then
+	    ucf --purge $phpini
+	fi
+	if which ucfr >/dev/null; then
+	    ucfr --purge php5-cli $phpini
+	fi
+	;;
+esac
+
+
+
+
+exit 0

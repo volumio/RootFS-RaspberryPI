@@ -1,0 +1,17 @@
+06b18a774de203eb282f32a8f2691376  usr/bin/omshell
+c90e8fe760c7d357e245d164a7615a71  usr/share/doc/isc-dhcp-common/README.Debian
+ebef8373c48b11169afeb6b3aef267ca  usr/share/doc/isc-dhcp-common/README.gz
+f14213d1bb6b070ebdd84a2ebe3bb4e3  usr/share/doc/isc-dhcp-common/RELNOTES.gz
+94abf9e1974f64504eded841b6b77358  usr/share/doc/isc-dhcp-common/api+protocol.gz
+089f1844ab2a66478297005731a7b6fc  usr/share/doc/isc-dhcp-common/changelog.Debian.gz
+6fa20b8ad86e433a76968e90d6809a51  usr/share/doc/isc-dhcp-common/copyright
+d7d0bf7a25418cf889b9e994d90b16f8  usr/share/lintian/overrides/isc-dhcp-common
+4347a2c2cf7ce929b1c887d96e6b40e7  usr/share/man/ja/man5/dhclient.conf.5.gz
+b5f3d151b70fc4c9ff28b7d5295de72c  usr/share/man/ja/man5/dhclient.leases.5.gz
+b029342691ab7f5e3a1252696aec5bb5  usr/share/man/ja/man5/dhcp-eval.5.gz
+2ae2bbcaa31fae65ac7ea0a25d137ea7  usr/share/man/ja/man5/dhcp-options.5.gz
+b1aa459630830fde1562033557e87ab1  usr/share/man/ja/man8/dhclient-script.8.gz
+8de7ff44952184fc4772679a2e281845  usr/share/man/ja/man8/dhclient.8.gz
+5c0ca2779b895264a69d88b38a9db24b  usr/share/man/man1/omshell.1.gz
+3b573afb799aaa9d5fbf6c49d36a6006  usr/share/man/man5/dhcp-eval.5.gz
+5e3b998bc47c733fe7cb90ecd74fee67  usr/share/man/man5/dhcp-options.5.gz

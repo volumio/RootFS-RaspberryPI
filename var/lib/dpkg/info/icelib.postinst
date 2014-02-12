@@ -1,0 +1,21 @@
+#!/bin/sh
+# postinst script for icelib
+# This runs /after/ the icelib has been unpacked.
+# If you want things to happen before it's unpacked, you need a preinst script.
+
+
+echo "icelib postinstall starting"
+# <--- THINGS YOU MAY WISH TO CHANGE --->
+
+
+
+# <--- END --->
+
+echo "rebuilding shared library cache"
+ldconfig
+
+
+echo "icelib postinstall finished"
+
+
+exit 0

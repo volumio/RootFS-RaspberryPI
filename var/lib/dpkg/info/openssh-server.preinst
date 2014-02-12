@@ -1,0 +1,354 @@
+#!/bin/sh -e
+
+ETC_DEFAULT_SSH='# Default settings for openssh-server. This file is sourced by /bin/sh from
+# /etc/init.d/ssh.
+
+# Options to pass to sshd
+SSHD_OPTS=
+'
+
+ETC_INIT_D_SSH='#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:		sshd
+# Required-Start:	$remote_fs $syslog
+# Required-Stop:	$remote_fs $syslog
+# Default-Start:	2 3 4 5
+# Default-Stop:		
+# Short-Description:	OpenBSD Secure Shell server
+### END INIT INFO
+
+set -e
+
+# /etc/init.d/ssh: start and stop the OpenBSD "secure shell(tm)" daemon
+
+test -x /usr/sbin/sshd || exit 0
+( /usr/sbin/sshd -\? 2>&1 | grep -q OpenSSH ) 2>/dev/null || exit 0
+
+umask 022
+
+if test -f /etc/default/ssh; then
+    . /etc/default/ssh
+fi
+
+. /lib/lsb/init-functions
+
+if [ -n "$2" ]; then
+    SSHD_OPTS="$SSHD_OPTS $2"
+fi
+
+# Are we running from init?
+run_by_init() {
+    ([ "$previous" ] && [ "$runlevel" ]) || [ "$runlevel" = S ]
+}
+
+check_for_no_start() {
+    # forget it if we'\''re trying to start, and /etc/ssh/sshd_not_to_be_run exists
+    if [ -e /etc/ssh/sshd_not_to_be_run ]; then 
+	if [ "$1" = log_end_msg ]; then
+	    log_end_msg 0 || true
+	fi
+	if ! run_by_init; then
+	    log_action_msg "OpenBSD Secure Shell server not in use (/etc/ssh/sshd_not_to_be_run)" || true
+	fi
+	exit 0
+    fi
+}
+
+check_dev_null() {
+    if [ ! -c /dev/null ]; then
+	if [ "$1" = log_end_msg ]; then
+	    log_end_msg 1 || true
+	fi
+	if ! run_by_init; then
+	    log_action_msg "/dev/null is not a character device!" || true
+	fi
+	exit 1
+    fi
+}
+
+check_privsep_dir() {
+    # Create the PrivSep empty dir if necessary
+    if [ ! -d /var/run/sshd ]; then
+	mkdir /var/run/sshd
+	chmod 0755 /var/run/sshd
+    fi
+}
+
+check_config() {
+    if [ ! -e /etc/ssh/sshd_not_to_be_run ]; then
+	/usr/sbin/sshd $SSHD_OPTS -t || exit 1
+    fi
+}
+
+export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
+
+case "$1" in
+  start)
+	check_privsep_dir
+	check_for_no_start
+	check_dev_null
+	log_daemon_msg "Starting OpenBSD Secure Shell server" "sshd" || true
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- $SSHD_OPTS; then
+	    log_end_msg 0 || true
+	else
+	    log_end_msg 1 || true
+	fi
+	;;
+  stop)
+	log_daemon_msg "Stopping OpenBSD Secure Shell server" "sshd" || true
+	if start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/sshd.pid; then
+	    log_end_msg 0 || true
+	else
+	    log_end_msg 1 || true
+	fi
+	;;
+
+  reload|force-reload)
+	check_for_no_start
+	check_config
+	log_daemon_msg "Reloading OpenBSD Secure Shell server'\''s configuration" "sshd" || true
+	if start-stop-daemon --stop --signal 1 --quiet --oknodo --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd; then
+	    log_end_msg 0 || true
+	else
+	    log_end_msg 1 || true
+	fi
+	;;
+
+  restart)
+	check_privsep_dir
+	check_config
+	log_daemon_msg "Restarting OpenBSD Secure Shell server" "sshd" || true
+	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/sshd.pid
+	check_for_no_start log_end_msg
+	check_dev_null log_end_msg
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- $SSHD_OPTS; then
+	    log_end_msg 0 || true
+	else
+	    log_end_msg 1 || true
+	fi
+	;;
+
+  try-restart)
+	check_privsep_dir
+	check_config
+	log_daemon_msg "Restarting OpenBSD Secure Shell server" "sshd" || true
+	RET=0
+	start-stop-daemon --stop --quiet --retry 30 --pidfile /var/run/sshd.pid || RET="$?"
+	case $RET in
+	    0)
+		# old daemon stopped
+		check_for_no_start log_end_msg
+		check_dev_null log_end_msg
+		if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/sshd.pid --exec /usr/sbin/sshd -- $SSHD_OPTS; then
+		    log_end_msg 0 || true
+		else
+		    log_end_msg 1 || true
+		fi
+		;;
+	    1)
+		# daemon not running
+		log_progress_msg "(not running)" || true
+		log_end_msg 0 || true
+		;;
+	    *)
+		# failed to stop
+		log_progress_msg "(failed to stop)" || true
+		log_end_msg 1 || true
+		;;
+	esac
+	;;
+
+  status)
+	status_of_proc -p /var/run/sshd.pid /usr/sbin/sshd sshd && exit 0 || exit $?
+	;;
+
+  *)
+	log_action_msg "Usage: /etc/init.d/ssh {start|stop|reload|force-reload|restart|try-restart|status}" || true
+	exit 1
+esac
+
+exit 0
+'
+
+ETC_PAM_D_SSH='# PAM configuration for the Secure Shell service
+
+# Read environment variables from /etc/environment and
+# /etc/security/pam_env.conf.
+auth       required     pam_env.so # [1]
+# In Debian 4.0 (etch), locale-related environment variables were moved to
+# /etc/default/locale, so read that as well.
+auth       required     pam_env.so envfile=/etc/default/locale
+
+# Standard Un*x authentication.
+@include common-auth
+
+# Disallow non-root logins when /etc/nologin exists.
+account    required     pam_nologin.so
+
+# Uncomment and edit /etc/security/access.conf if you need to set complex
+# access limits that are hard to express in sshd_config.
+# account  required     pam_access.so
+
+# Standard Un*x authorization.
+@include common-account
+
+# Standard Un*x session setup and teardown.
+@include common-session
+
+# Print the message of the day upon successful login.
+# This includes a dynamically generated part from /run/motd.dynamic
+# and a static (admin-editable) part from /etc/motd.
+session    optional     pam_motd.so  motd=/run/motd.dynamic noupdate
+session    optional     pam_motd.so # [1]
+
+# Print the status of the user'\''s mailbox upon successful login.
+session    optional     pam_mail.so standard noenv # [1]
+
+# Set up user limits from /etc/security/limits.conf.
+session    required     pam_limits.so
+
+# Set up SELinux capabilities (need modified pam)
+# session  required     pam_selinux.so multiple
+
+# Standard Un*x password updating.
+@include common-password
+'
+
+action=$1
+version=$2
+
+prepare_transfer_conffile () {
+	CONFFILE="$1"
+	TEXT="$2"
+	MODE="$3"
+	[ "$CONFFILES" ] || return 0
+	[ -e "$CONFFILE" ] || return 0
+
+	md5sum="$(md5sum "$CONFFILE" |sed -e 's/ .*//')"
+	old_md5sum="$(echo "$CONFFILES" | awk '$1 == "'"$CONFFILE"'" { print $2 }')"
+	if [ "$md5sum" = "$old_md5sum" ]; then
+		echo >&2 "Transferring ownership of conffile $CONFFILE ..."
+		# We have to write out the desired new text of the conffile,
+		# which is tricky in the preinst, hence the nasty way we
+		# have to hardcode the text here. Fortunately, this is only
+		# necessary with sarge's dpkg and older.
+		if echo "$TEXT" | head -n1 | grep -q '^@.*@$'; then
+			echo >&2 'Unsubstituted conffile text! Please report this bug.'
+			exit 1
+		fi
+		printf '%s' "$TEXT" >"$CONFFILE.dpkg-new"
+		chmod "$MODE" "$CONFFILE.dpkg-new"
+		mv -f "$CONFFILE" "$CONFFILE.moved-by-preinst"
+		mv -f "$CONFFILE.dpkg-new" "$CONFFILE"
+		return 0
+	fi
+}
+
+prepare_mv_conffile () {
+	CONFFILE="$1"
+	[ -e "$CONFFILE" ] || return 0
+
+	md5sum="$(md5sum "$CONFFILE" | sed -e 's/ .*//')"
+	old_md5sum="$(dpkg-query -W -f '${Conffiles}\n' openssh-server 2>/dev/null | sed 's/^ *//' | awk '$1 == "'"$CONFFILE"'" { print $2 }')"
+	if [ "$md5sum" = "$old_md5sum" ]; then
+		mv -f "$CONFFILE" "$CONFFILE.dpkg-old"
+	else
+		mv -f "$CONFFILE" "$CONFFILE.moving"
+	fi
+}
+
+if [ -d /etc/ssh-nonfree ] && [ ! -d /etc/ssh ]; then
+  version=1.2.27
+fi
+
+if [ "$action" = upgrade ] || [ "$action" = install ]
+then
+  # check if debconf is missing
+  if ! test -f /usr/share/debconf/confmodule
+  then
+    cat <<EOF
+
+WARNING: ssh's pre-configuration script relies on debconf to tell you
+about some problems that might prevent you from logging in if you are
+upgrading from the old, Non-free version of ssh.
+
+If this is a new installation, you don't need to worry about this.
+Just go ahead and install ssh (make sure to read .../ssh/README.Debian).
+
+If you are upgrading, but you have alternative ways of logging into
+the machine (i.e. you're sitting in front of it, or you have telnetd
+running), then you also don't need to worry too much, because you can
+fix it up afterwards if there's a problem.
+
+If you're upgrading from an older (non-free) version of ssh, and ssh
+is the only way you have to access this machine, then you should
+probably abort the installation of ssh, install debconf, and then
+retry the installation of ssh.
+
+EOF
+    echo -n "Do you want to install SSH anyway [yN]: "
+    read input
+    expr "$input" : '[Yy]' >/dev/null || exit 1
+
+    # work around for missing debconf
+    db_get() { : ; }
+    RET=true
+    if [ -d /etc/ssh-nonfree ] && [ ! -d /etc/ssh ]; then
+      cp -a /etc/ssh-nonfree /etc/ssh
+    fi
+  else
+    # Source debconf library.
+    . /usr/share/debconf/confmodule
+    db_version 2.0
+  fi
+
+  db_get ssh/use_old_init_script
+  if [ "$RET" = "false" ]; then
+    echo "ssh config: Aborting because ssh/use_old_init_script = false" >&2
+    exit 1
+  fi
+
+  # deal with upgrading from pre-OpenSSH versions
+  key=/etc/ssh/ssh_host_key
+  export key
+  if [ -n "$version" ] && [ -x /usr/bin/ssh-keygen ] && [ -f $key ] &&
+     dpkg --compare-versions "$version" lt 1.2.28
+  then
+    # make sure that keys get updated to get rid of IDEA
+    #
+    # N.B. this only works because we've still got the old
+    # nonfree ssh-keygen at this point
+    #
+    # First, check if we need to bother
+    printf '\0\0' | 3<&0 sh -c \
+        'dd if=$key bs=1 skip=32 count=2 2>/dev/null | cmp -s - /dev/fd/3' || {
+      # this means that bytes 32&33 of the key were not both zero, in which
+      # case the key is encrypted, which we need to fix
+      chmod 600 $key
+      ssh-keygen -u -f $key >/dev/null
+      if which restorecon >/dev/null 2>&1; then
+        restorecon "$key.pub"
+      fi
+    }
+  fi
+
+  if dpkg --compare-versions "$version" lt 0; then
+    CONFFILES="$(dpkg-query -W -f '${Conffiles}\n' ssh 2>/dev/null | sed 's/^ *//')"
+    prepare_transfer_conffile /etc/default/ssh "$ETC_DEFAULT_SSH" 0644
+    prepare_transfer_conffile /etc/init.d/ssh "$ETC_INIT_D_SSH" 0755
+    prepare_transfer_conffile /etc/pam.d/ssh "$ETC_PAM_D_SSH" 0644
+  fi
+
+  if dpkg --compare-versions "$version" lt 1:4.7p1-4; then
+    prepare_mv_conffile /etc/pam.d/ssh
+  fi
+
+  if dpkg --compare-versions "$version" lt 1:5.5p1-6 && \
+     [ -d /var/run/sshd ]; then
+    # make sure /var/run/sshd is not removed on upgrades
+    touch /var/run/sshd/.placeholder
+  fi
+fi
+
+

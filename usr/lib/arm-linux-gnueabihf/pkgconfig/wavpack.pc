@@ -1,0 +1,11 @@
+prefix=/usr
+libdir=${prefix}/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: wavpack
+Description: wavpack library
+Version: 4.60.1
+Requires:
+Conflicts:
+Libs: -L${libdir} -lwavpack -lm 
+Cflags: -I${includedir}

@@ -1,0 +1,48 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_makeshlibs
+if [ "$1" = "remove" ]; then
+	ldconfig
+fi
+# End automatically added section
+
+
+log() {
+    echo "$*"
+}
+
+remove_mdns() {
+    log "Checking NSS setup..."
+    # abort if /etc/nsswitch.conf does not exist
+    if ! [ -e /etc/nsswitch.conf ]; then
+        log "Could not find /etc/nsswitch.conf."
+        return
+    fi
+    perl -i -pe '
+        my @remove=(
+            "mdns4_minimal [NOTFOUND=return]",
+            "mdns4_minimal",
+            "mdns4",
+            "mdns6_minimal [NOTFOUND=return]",
+            "mdns6_minimal",
+            "mdns6",
+            "mdns_minimal [NOTFOUND=return]",
+            "mdns_minimal",
+            "mdns",
+        );
+        sub remove {
+            my $s=shift;
+            foreach my $bit (@remove) {
+                $s=~s/\s+\Q$bit\E//g;
+            }
+            return $s;
+        }
+        s/^(hosts:)(.*)/$1.remove($2)/e;
+    ' /etc/nsswitch.conf
+}
+
+action="$1"
+
+if [ "$action" = remove ]; then
+    remove_mdns
+fi

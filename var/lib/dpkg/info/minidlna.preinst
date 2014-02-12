@@ -1,0 +1,84 @@
+#!/bin/sh
+# preinst script for minidlna
+
+set -e
+
+unset USER
+
+DEFAULT=/etc/default/minidlna
+
+# Get values from ${DEFAULT}, if it exists.
+[ -r ${DEFAULT} ] && . ${DEFAULT}
+
+# Set the default user and group.
+if [ -z ${USER} ]; then
+    USER=minidlna
+fi
+if [ -z ${GROUP} ]; then
+    GROUP=minidlna
+fi
+
+HOME=/var/lib/minidlna
+
+# Based on the mediatomb debian package.
+
+case "$1" in
+    install)
+        # If we use NIS then errors should be tolerated. It's up to the
+        # user to ensure that the ${USER} user is correctly setup.
+        # Beware that there are two ypwhich one of them needs the 2>/dev/null!
+        if test -n "`which ypwhich 2>/dev/null`"  &&  ypwhich >/dev/null 2>&1; then
+            set +e
+        fi
+
+        # Create ${GROUP} if it isn't already there. If ${GROUP} is different
+        # from the default value, assume it was properly configured already.
+        if ! getent group ${GROUP} >/dev/null; then
+            if [ ${GROUP} = "minidlna" ]; then
+                # Adding system group.
+                addgroup --quiet --system ${GROUP}
+            else
+                echo "Error: Group \`${GROUP}' set in ${DEFAULT} does not" \
+                     "exist" >&2
+                exit 1
+            fi
+        fi
+
+        # Create ${USER} if it isn't already there. If ${USER} is different
+        # from the default value, assume it was properly configured already.
+        if ! getent passwd ${USER} >/dev/null; then
+            if [ ${USER} = "minidlna" ]; then
+                # Adding system user.
+                adduser \
+                    --quiet \
+                    --system \
+                    --ingroup ${GROUP} \
+                    --home "${HOME}" \
+                    --gecos "MiniDLNA server" \
+                    --shell /usr/sbin/nologin \
+                    --disabled-login \
+                    --disabled-password \
+                    ${USER}
+            else
+                echo "Error: User \`${USER}' set in ${DEFAULT} does not" \
+                     "exist" >&2
+                exit 1
+            fi
+        fi
+
+        # End of NIS tolerance zone.
+        set -e
+    ;;
+
+    upgrade|abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+exit 0

@@ -1,0 +1,9 @@
+auto
+/usr/bin/www-browser
+www-browser.1.gz
+/usr/share/man/man1/www-browser.1.gz
+
+/usr/bin/w3m
+25
+/usr/share/man/man1/w3m.1.gz
+

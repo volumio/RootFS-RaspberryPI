@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libspeex1
+/usr/share/doc/libspeex1/changelog.Debian.gz
+/usr/share/doc/libspeex1/copyright
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libspeex.so.1.5.0
+/usr/lib/arm-linux-gnueabihf/libspeex.so.1

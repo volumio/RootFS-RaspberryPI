@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libsndfile.so.1.0.25
+/usr/share
+/usr/share/doc/libsndfile1
+/usr/share/doc/libsndfile1/changelog.Debian.gz
+/usr/share/doc/libsndfile1/changelog.gz
+/usr/share/doc/libsndfile1/copyright
+/usr/lib/arm-linux-gnueabihf/libsndfile.so.1

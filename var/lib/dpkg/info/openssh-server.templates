@@ -1,0 +1,632 @@
+Template: ssh/use_old_init_script
+Type: boolean
+Default: false
+Description: Do you want to risk killing active SSH sessions?
+ The currently installed version of /etc/init.d/ssh is likely to kill
+ all running sshd instances. If you are doing this upgrade via an SSH
+ session, you're likely to be disconnected and leave the upgrade
+ procedure unfinished.
+ .
+ This can be fixed by manually adding "--pidfile /var/run/sshd.pid" to
+ the start-stop-daemon line in the stop section of the file.
+Description-bg.UTF-8: Да се прекъснат ли текущите връзки по SSH?
+ Много е вероятно версията на /etc/init.d/ssh, която е инсталирана в момента да прекъсне активните връзки. Ако извършвате обновяването отдалечено има опасност връзката да се разпадне и процесът да не завърши нормално.
+ .
+ Това може да бъде поправено ръчно с добавянето на „--pidfile /var/run/sshd.pid“ към командата start-stop-daemon в раздела „stop“ на файла.
+Description-ca.UTF-8: Voleu arriscar-vos a aturar les sessions SSH actives?
+ És possible que la versió de «/etc/init.d/ssh» que teniu instal·lada actualment aturi les instàncies de l'sshd que s'estan executant. Si esteu actualitzant des d'una sessió SSH, és possible que es talli la connexió i quedi el procés d'actualització a mitges.
+ .
+ Ho podeu arreglar afegint «--pidfile /var/run/sshd.pid» a la línia «start-stop-daemon» de la secció «stop» del mateix fitxer.
+Description-cs.UTF-8: Chcete riskovat ukončení aktivních SSH spojení?
+ Stávající verze /etc/init.d/ssh pravděpodobně pozabíjí všechny běžící instance sshd. Pokud tuto aktualizaci provádíte přes SSH, budete nejspíše odpojeni a aktualizace skončí na půli cesty.
+ .
+ Můžete to spravit ručním přidáním „--pidfile /var/run/sshd.pid“ na řádek start-stop-daemon v sekci stop.
+Description-da.UTF-8: Vil du risikere at afbryde aktive SSH-forbindelser?
+ Den udgave af /etc/init.d/ssh, du har installeret, vil sandsynligvis afbryde alle sshd-instanser. Hvis du foretager denne opgradering via en SSH-session, vil du højst sandsynlig blive afbrudt og efterlade opgraderingsproceduren uafsluttet.
+ .
+ Du kan afhjælpe dette ved at tilføje »--pidfile /var/run/sshd.pid« til linjen start-stop-daemon i stop-afsnittet af filen.
+Description-de.UTF-8: Wollen Sie das Beenden aktiver SSH-Sitzungen riskieren?
+ Die derzeit installierte Version von /etc/init.d/ssh wird vermutlich Ihre aktiven ssh-Instanzen beenden. Falls Sie dieses Upgrade über eine SSH-Sitzung durchführen, dann wird die Verbindung wahrscheinlich getrennt und der Upgrade-Vorgang nicht beendet.
+ .
+ Dieses Problem kann behoben werden, indem »--pidfile /var/run/sshd.pid« an die start-stop-daemon-Zeile in dem Abschnitt »stop« der Datei /etc/init.d/ssh manuell hinzugefügt wird.
+Description-es.UTF-8: ¿Desea correr el riesgo de matar las sesiones SSH activas?
+ La versión de /etc/init.d/ssh que tiene instalada es muy probable que mate todas las estancias que están ejecutándose de sshd. Es muy probable que se le desconecte y el procedimiento de actualización quede a medidas si continúa y está realizando esta actualizando.
+ .
+ Puede arreglarlo añadiendo manualmente «--pidfile /var/run/sshd.pid» a la línea «start-stop-daemon», en la sección «stop» del fichero.
+Description-eu.UTF-8: Irekirik dauden SSH saioak ixteko arriskua hartu nahi duzu?
+ Instalaturik dagoen /etc/init.d/ssh bertsioak martxan dauden sshd instantziak hilko ditu. Bertsio berritze hau SSH bidez egiten ari bazara, ziurrenik deskonektatu egingo zara eta bertsio berritze prozedura ez da behar bezala amaituko.
+ .
+ Hau eskuz konpondu daiteke  "--pidfile /var/run/sshd.pid" gehituaz start-stop-daemon lerroan fitxategiaren "stop" atalean.
+Description-fi.UTF-8: Haluatko ottaa riskin, että aktiiviset SSH-istunnot tapetaan?
+ Tiedoston /etc/init.d/ssh asennettuna oleva versio tappaa todennäköisesti kaikki käynnissä olevat sshd-prosessit. Jos teet tätä päivitystä ssh-yhteyden yli, yhteytesi luultavasti katkeaa ja päivitysprosessi keskeytyy.
+ .
+ Tämä voidaan korjata lisäämällä merkkijono ”--pidfile /var/run/sshd.pid” kyseisen tiedoston stop-osion start-stop-daemon-riville.
+Description-fr.UTF-8: Voulez-vous risquer de rompre les sessions SSH actives ?
+ La version de /etc/init.d/ssh actuellement installée va vraisemblablement interrompre toutes les instances de sshd en cours. Si vous êtes en train de faire cette mise à niveau à l'aide de SSH, la connexion sera probablement coupée et la mise à jour sera interrompue.
+ .
+ Cela peut être corrigé en ajoutant « --pidfile /var/run/sshd.pid » à la ligne « start-stop-daemon » dans /etc/init.d/ssh, dans la section « stop » du fichier.
+Description-gl.UTF-8: ¿Quere arriscarse a matar as sesións de SSH activas?
+ É posible que a versión de /etc/init.d/ssh que instalou vaia matar tódalas instancias de sshd en execución. Se está a facer esta actualización mediante unha sesión SSH, é probable que se desconecte e este procedemento de actualización quede sen rematar.
+ .
+ Isto pode arranxarse engadindo "--pidfile /var/run/sshd.pid" á liña start-stop-daemon da sección stop do ficheiro.
+Description-id.UTF-8: Apakah Anda mau menanggung resiko mematikan sesi SSH aktif?
+ Versi /etc/init.d/ssh yang kini terpasang mungkin akan mematikan semua instansi sshd yang berjalan. Bila Anda melakukan upgrade ini melalui sesi SSH, Anda mungkin akan diputus dan meninggalkan prosedur upgrade tak terselesaikan.
+ .
+ Ini dapat diperbaiki secara manual dengan menambahkan "--pidfile /var/run/sshd.pid" ke baris start-stop-daemon pada bagian stop dari berkas.
+Description-it.UTF-8: Si vuole rischiare di terminare le sessioni SSH attive?
+ È probabile che la versione di /etc/init.d/ssh attualmente installata termini tutte le istanze di sshd attive. Se si sta effettuando questo aggiornamento tramite una sessione SSH, è possibile che la sessione venga chiusa e che la procedura di aggiornamento rimanga incompleta.
+ .
+ È possibile evitare ciò aggiungendo manualmente «--pidfile /var/run/sshd.pid» alla riga start-stop-daemon nella sezione stop del file.
+Description-ja.UTF-8: 接続中の SSH セッションが切れるかもしれませんがよいですか?
+ 現在インストールされたバージョンの /etc/init.d/ssh は、おそらく実行中の sshd インスタンスをすべて殺します。このアップグレードを SSH セッション経由で行っている場合、あなたは切断され、アップグレード処理は不完全なままになるでしょう。
+ .
+ この状況を修正するには、ファイルの stop セクションの start-stop-daemon の行に「--pidfile /var/run/sshd.pid」と手動で追加します。
+Description-ko.UTF-8: 현재 사용중인 SSH 세션을 죽여도 괜찮습니까?
+ 현재 설치된 /etc/init.d/ssh 버전은 사용중인 sshd 인스턴스를 모두 죽일 것입니다. 만약 SSH 세션을 통해 이 업그레이드를 하고 있다면 도중에 연결이 해제되어 업그레이드 작업이 도중에 중단될 수 있습니다.
+ .
+ 파일의 stop 구역에 있는 start-stop-daemon에 "--pidfile /var/run/sshd.pid"을 추가하시면 이 문제를 해결할 수 있습니다.
+Description-nb.UTF-8: Vil du risikere å avbryte aktive SSH-økter?
+ Den versjonen av /etc/init.d/ssh som nå er installert vil antakelig stoppe alle sshd-instanser som kjører. Hvis denne oppgraderingen gjøres over en SSH-økt, så risikerer du å bli frakoblet og oppgraderingen blir ikke fullført.
+ .
+ Dette kan rettes på ved å legge til manuelt «--pidfile /var/run/sshd.pid» til start-stop-daemon linja i stopp-delen av fila.
+Description-nl.UTF-8: Wilt u het afsluiten van actieve SSH-sessies riskeren?
+ De /etc/init.d/ssh versie die u geïnstalleerd hebt sluit waarschijnlijk alle lopende sshd-instanties af. Als u deze opwaardering via een SSH-sessie uitvoert verliest u waarschijnlijk de verbinding waardoor de opwaarderingsprocedure onafgemaakt blijft.
+ .
+ U kunt dit handmatig repareren door "--pidfile /var/run/sshd.pid" toe te voegen aan de start-stop-daemon regel in de stop-sectie van het bestand.
+Description-no.UTF-8: Vil du risikere å avbryte aktive SSH-økter?
+ Den versjonen av /etc/init.d/ssh som nå er installert vil antakelig stoppe alle sshd-instanser som kjører. Hvis denne oppgraderingen gjøres over en SSH-økt, så risikerer du å bli frakoblet og oppgraderingen blir ikke fullført.
+ .
+ Dette kan rettes på ved å legge til manuelt «--pidfile /var/run/sshd.pid» til start-stop-daemon linja i stopp-delen av fila.
+Description-pl.UTF-8: Czy ryzykować przerwaniem aktywnych sesji SSH?
+ Instalowana właśnie wersja /etc/init.d/ssh może zabić wszystkie działające obecnie kopie sshd. Jeśli aktualizacja jest wykonywana przez SSH, prawdopodobnie zostanie wtedy przerwana i pozostawi nieukończoną procedurę aktualizacji.
+ .
+ Można to naprawić dodając ręcznie "--pidfile /var/run/sshd.pid" do wiersza start-stop-daemon w sekcji stop tego pliku.
+Description-pt.UTF-8: Quer arriscar matar sessões activas de SSH?
+ A versão do /etc/init.d/ssh que tem instalado provavelmente terminará todas as instâncias de sshd. Se vai actualizar através de uma sessão ssh, é possível que a sua sessão seja terminada e que deixe o procedimento de actualização por terminar.
+ .
+ Isto pode ser arranjado adicionando "--pidfile /var/run/sshd.pid" à linha start-stop-daemon na secção stop do ficheiro.
+Description-pt_BR.UTF-8: Você deseja arriscar matar ("kill") as sessões SSH ativas?
+ A versão instalada atualmente de /etc/init.d/ssh está prestes a derrubar todas as instâncias sshd em execução. Se você estiver fazendo esta atualização através de uma sessão SSH, você provavelmente será desconectado e deixará este processo de atualização incompleto.
+ .
+ Você pode corrigir isto adicionando "--pidfile /var/run/sshd.pid" na linha start-stop-daemon na seção stop deste arquivo.
+Description-ro.UTF-8: Doriți să riscați întreruperea sesiunilor ssh active?
+ Este foarte probabil ca această versiune de /etc/init.d/ssh pe care o aveți instalată să omoare toate instanțele sshd care rulează. Dacă faceți această actualizare printr-o sesiune ssh, atunci este posibil să fiți deconectați și actualizarea să rămână neterminată.
+ .
+ Puteți repară manual acest lucru adăugând „--pidfile /var/run/sshd.pid” la linia start-stop-daemon în secțiunea stop a fișierului.
+Description-ru.UTF-8: Вы хотите пойти на риск потерять активные SSH соединения?
+ Установленная в настоящее время версия /etc/init.d/ssh, вероятно, уничтожит все запущенные экземпляры sshd. Если вы выполняете это обновление через SSH соединение, то скорее всего вы будете отключены и процедура обновления останется не завершенной.
+ .
+ Это может быть исправлено вручную добавлением "--pidfile /var/run/sshd.pid" в строку start-stop-daemon в разделе stop этого файла.
+Description-sk.UTF-8: Chcete riskovať zrušenie aktívnych SSH relácií?
+ Momentálne nainštalovaná verzia /etc/init.d/ssh pravdepodobne ukončí všetky prebiehajúce inštancie sshd. Ak túto aktualizáciu vykonávate cez reláciu SSH pravdepodobne budete odpojený a aktualizácia zostane nedokončená.
+ .
+ Toto je možné manuálne napraviť tým, že pridáte „--pidfile /var/run/sshd.pid“ do stop sekcie súboru start-stop-daemon.
+Description-sv.UTF-8: Vill du riskera att döda aktiva SSH-sessioner?
+ Den för närvarande installerade versionen av /etc/init.d/ssh kommer antagligen döda alla körande instanser av sshd.  Om du gör denna uppgradering via en SSH-session kommer du sannolikt att kopplas ner och uppgraderingsprocessen lämnas ofärdig.
+ .
+ Det här kan rättas till genom att manuellt lägga till "--pidfile /var/run/sshd.pid" till raden "start-stop-daemon" i sektionen "stop" i filen.
+Description-ta.UTF-8: செயலில் இருக்கும் எஸ்எஸ்ஹெச் அமர்வுகளை செயல் நீக்கம் செய்வதை அனுமதிக்க விரும்புகிறீகளா?
+ இப்போது நிறுவியுள்ள /etc/init.d/ssh பதிப்பு எல்லா செயலில் இருக்கும் எஸ்எஸ்ஹெச் அமர்வுகளை செயல் நீக்கம் செய்யும். நீங்கள் இந்த மேம்படுத்தலை எஸ்எஸ்ஹெச் அமர்வு வழியாக செய்து கொண்டிருந்தால் வலை இணப்பு துண்டிக்கப்பட்டு மேம்படுத்தல் நிறைவுறாது.
+ .
+ இது கைமுறையாக கோப்பின் நிறுத்து பகுதியில் ஆரம்பி-நிறுத்து-கிங்கரன் வரியில் "--pidfile /var/run/sshd.pid" என சேர்ப்பதால் சரி செய்யப்படும்.
+Description-tr.UTF-8: Etkin SSH oturumlarının öldürülmesi riskini göze alıyor musunuz?
+ Kurmuş olduğunuz /etc/init.d/ssh sürümü büyük olasılıkla, çalışıyor olan tüm sshd süreçlerini öldürecek. Bu yükseltmeyi bir ssh oturumu üzerinden yapıyorsanız büyük olasılıkla bağlantınız kopacak ve yükseltme işlemi yarım kalacak.
+ .
+ Bu sorunu dosyanın (/etc/init.d/ssh) stop bölümündeki start-stop-daemon satırına "--pidfile /var/run/sshd.pid" ekleyerek düzeltebilirsiniz.
+Description-vi.UTF-8: Bạn có muốn rủi ro giết phiên bản SSH đang chạy không?
+ Phiên bản « /etc/init.d/ssh » được cài đặt hiện thời rất có thể giết mọi tiến trình sshd đang chạy. Nếu bạn có nâng cấp qua phiên chạy SSH, rất có thể bạn bị ngắt kết nối, để lại tiến trình nâng cấp chưa hoàn tất.
+ .
+ Bạn vẫn còn có thể sửa chữa vấn đề này bằng cách tự thêm chuỗi « --pidfile /var/run/sshd.pid » vào dòng « start-stop-daemon » (khởi/ngừng chạy trình nền) trong phần « stop » (ngừng chạy) của tập tin đó.
+
+Template: ssh/encrypted_host_key_but_no_keygen
+Type: note
+Description: New host key mandatory
+ The current host key, in /etc/ssh/ssh_host_key, is encrypted with the
+ IDEA algorithm. OpenSSH can not handle this host key file, and the
+ ssh-keygen utility from the old (non-free) SSH installation does not
+ appear to be available.
+ .
+ You need to manually generate a new host key.
+Description-bg.UTF-8: Необходим е нов ключ за хоста
+ В момента ключа на хоста в /etc/ssh/ssh_host_key е шифриран с алгоритъма IDEA. OpenSSH не може да работи с този файл, а програмата ssh-keygen от старата инсталация не е налична.
+ .
+ Необходимо е да се генерира ръчно нов ключ за хоста.
+Description-ca.UTF-8: Nova clau obligatòria
+ L'actual clau de la màquina, a /etc/ssh/ssh_host_key, està xifrada amb l'algorisme IDEA. OpenSSH no pot gestionar aquest fitxer de clau, i no es pot trobar l'eina ssh-keygen de la instal·lació d'SSH anterior (non-free).
+ .
+ Haureu de generar manualment una nova clau per a la màquina.
+Description-cs.UTF-8: Nutný nový serverový klíč
+ Aktuální serverový klíč v /etc/ssh/ssh_host_key je šifrovaný algoritmem IDEA. OpenSSH neumí tento soubor zpracovat a zdá se, že utilita ssh-keygen ze staré (nesvobodné) instalace SSH není k dispozici.
+ .
+ Musíte ručně vygenerovat nový serverový klíč
+Description-da.UTF-8: Ny værtsnøgle er krævet
+ Den aktuelle værtsnøgle, i /etc/ssh/ssh_host_key, er krypteret med en IDEA-algoritme. OpenSSH kan ikke håndtere en sådan værtsnøglefil, og værktøjet ssh-keygen fra den gamle (ikke-frie, 'non-free') SSH-installation lader ikke til at være tilgængeligt.
+ .
+ Du skal manuelt oprette en ny værtsnøgle.
+Description-de.UTF-8: Neuer Host-Schlüssel verpflichtend
+ Der aktuelle Host-Schlüssel in /etc/ssh/ssh_host_key ist mit dem IDEA-Algorithmus verschlüsselt. OpenSSH kann diese Host-Schlüssel-Datei nicht verarbeiten und das ssh-keygen-Hilfswerkzeug von der alten (nicht-freien) SSH-Installation scheint nicht verfügbar zu sein.
+ .
+ Sie müssen manuell einen neuen Host-Schlüssel erzeugen.
+Description-es.UTF-8: Nueva clave de sistema obligatoria
+ La clave actual de su sistema, en /etc/ssh/ssh_host_key, está cifrada con el algoritmo IDEA. OpenSSH no puede manejar este fichero de clave y tampoco parece estar disponible la utilidad «ssh-keygen» de la instalación antigua de SSH (no libre).
+ .
+ Debe generar manualmente una nueva clave de sistema.
+Description-eu.UTF-8: Ostalari gako berria beharrezkoa
+ /etc/ssh/ssh_host_key-ko ostalari gakoa IDEA algoritmoaren bidez enkriptaturik dago. OpenSSH ez da ostalari gako mota hau kudeatzeko gai eta SSH instalazio zaharreko (ez-librea) ssh-keygen lanabesa dirudienez ez dago erabilgarri.
+ .
+ Ostalari gako berri bat eskuz sortu behar duzu.
+Description-fi.UTF-8: Uusi järjestelmäavain pakollinen
+ Olemassa oleva järjestelmäavain /etc/ssh/ssh_host_key on salattu IDEA-algoritmilla. OpenSSH ei voi käsitellä tätä järjestelmäavaintiedostoa, eikä vanhan (ei-vapaan) SSH-asennuksen ssh-keygen-ohjelmaa löydy.
+ .
+ Uuden järjestelmäavaimen (host key) luominen on tarpeen.
+Description-fr.UTF-8: Nouvelle clé d'hôte obligatoire
+ La clé d'hôte actuelle, /etc/ssh/ssh_host_key, est chiffrée avec IDEA. OpenSSH ne peut utiliser ce fichier de clé, et l'utilitaire ssh-keygen de l'installation précédente (non libre) de SSH n'a pas été trouvé.
+ .
+ Vous devez générer une nouvelle clé d'hôte vous-même.
+Description-gl.UTF-8: É obrigatorio ter unha nova clave de servidor
+ A clave de servidor actual, armacenada en /etc/ssh/ssh_host_key, está cifrada mediante o algoritmo IDEA. OpenSSH non pode xestionar este ficheiro de clave de servidor, e non semella que estea dispoñible a utilidade ssh-keygen da anterior instalación de SSH (non libre).
+ .
+ Ten que xerar unha nova clave de servidor.
+Description-id.UTF-8: Kunci host baru wajib
+ Kunci host saat ini, dalam /etc/ssh/ssh_host_key, dienkripsi memakai algoritma IDEA. OpenSSH tak bisa menangani berkas kunci host ini, dan utilitas ssh-keygen dari instalasi SSH lama (non-free) sepertinya tak tersedia.
+ .
+ Anda perlu membuat kunci host baru secara manual.
+Description-it.UTF-8: Necessaria una nuova chiave host
+ L'attuale chiave host, contenuta in /etc/ssh/ssh_host_key, è cifrata con l'algoritmo IDEA. OpenSSH non è in grado di gestire questa chiave host e non è disponibile il programma (non-free) ssh-keygen dalla precedente installazione di SSH.
+ .
+ È necessario generare manualmente una nuova chiave host.
+Description-ja.UTF-8: 新しいホストキーが必要です
+ /etc/ssh/ssh_host_key にある現在のホストキーは IDEA で暗号化されていあす。OpenSSH はこのホストキーファイルを扱えず、古い (フリーではない) SSH の ssh-keygen ユーティリティはもう利用できません。
+ .
+ 新しいホストキーを手動で生成する必要があります。
+Description-ko.UTF-8: 호스트키 새로 만들어야 함
+ /etc/ssh/ssh_host_key에 있는 현재 호스트키늘 IDEA 알고리즘으로 암호화되어있습니다. OpenSSH는 이 호스트키 파일을 다루지 못하며, 이전에 설치되었던 (비자유) SSH 프로그램의 ssh-keygen 응용프로그램이 없는 것 같습니다.
+ .
+ 호스트키를 직접 새로 생성하셔야 합니다.
+Description-nb.UTF-8: Ny vertsnøkkel obligatorisk
+ Den gjeldende vertsnøkkelen, i /etc/ssh/ssh_host_key, er kryptert med IDEA-algoritmen. OpenSSH kan ikke håndtere denne vertsnøkkelfila, og det ser ikke ut til at verktøyet ssh-keygen fra den gamle (ikke-frie) SSH-installasjonen er tilgjengelig.
+ .
+ En ny vertsnøkkel må lages manuelt.
+Description-nl.UTF-8: Een nieuwe computersleutel is verplicht
+ De huidige computersleutel in /etc/ssh/ssh_host_key is versleuteld met het IDEA-algoritme. OpenSSH kan dit computer-sleutelbestand niet aan, en het ssh-keygen programma van de oude (niet-vrije) SSH-installatie is niet beschikbaar.
+ .
+ U dient bijgevolg handmatig een nieuwe computersleutel te genereren.
+Description-no.UTF-8: Ny vertsnøkkel obligatorisk
+ Den gjeldende vertsnøkkelen, i /etc/ssh/ssh_host_key, er kryptert med IDEA-algoritmen. OpenSSH kan ikke håndtere denne vertsnøkkelfila, og det ser ikke ut til at verktøyet ssh-keygen fra den gamle (ikke-frie) SSH-installasjonen er tilgjengelig.
+ .
+ En ny vertsnøkkel må lages manuelt.
+Description-pl.UTF-8: Konieczny jest nowy klucz hosta
+ Obecny klucz hosta, /etc/ssh/ssh_host_key, jest zaszyfrowany algorytmem IDEA. OpenSSH nie umie obsłużyć takiego pliku hosta, a dodatkowo ssh-keygen ze starej (niewolnej) instalacji SSH wygląda na niedostępny.
+ .
+ Należy ręcznie wygenerować nowy klucz hosta.
+Description-pt.UTF-8: Uma nova chave de anfitrião é obrigatória
+ A chave actual, em /etc/ssh/ssh_host_key, está cifrada com o algoritmo IDEA. O OpenSSH não consegue usar este ficheiro, e o utilitário ssh-keygen da antiga (e não livre) instalação do SSH não parece estar disponível.
+ .
+ Terá de gerar manualmente uma nova chave para o host.
+Description-pt_BR.UTF-8: Nova chave de máquina obrigatória
+ A chave de máquina atual, em /etc/ssh/ssh_host_key, é criptografada utilizando o algoritmo IDEA. O OpenSSH não pode gerenciar esse arquivo de chave de máquina, e o utilitário ssh-keygen da antiga (e não livre) instalação SSH não parece estar disponível.
+ .
+ Você precisa gerar manualmente uma chave de máquina.
+Description-ro.UTF-8: O cheie nouă este obligatorie
+ Cheia curentă în /etc/ssh/ssh_host_key este criptată cu algoritmul IDEA. OpenSSH nu suportă acest tip de cheie, iar utilitarul ssh-keygen din versiunea SSH (non-liberă) anterior instalată nu pare să fie disponibil.
+ .
+ Va trebui să generați manual o nouă cheie pentru sistem.
+Description-ru.UTF-8: Необходим новый ключ хоста
+ Текущий ключ хоста, /etc/ssh/ssh_host_key, зашифрован алгоритмом IDEA. OpenSSH не может работать с таким файлом ключа хоста, а утилита создания ssh-ключа (ssh-keygen) из прежней (не свободной) установки SSH, кажется, недоступна.
+ .
+ Вам нужно вручную создать новый ключ хоста.
+Description-sk.UTF-8: Nový kľúč hostiteľa je povinný
+ Aktuálny kľúč hostiteľa v /etc/ssh/ssh_host_key je kryptovaný algoritmom IDEA. OpenSSH nemôže pracovať s týmto súborom s kľúčom hostiteľa a nástroj ssh-keygen zo starej (neslobodnej) inštalácie SSH nie je dostupný.
+ .
+ Musíte ručne vygenerovať nový kľúč hostiteľa.
+Description-sv.UTF-8: Ny värdnyckel är obligatorisk
+ Den aktuella värdnyckeln i /etc/ssh/ssh_host_key är krypterad med IDEA-algoritmen. OpenSSH kan inte hantera den här värdnyckelfilen och verktyget ssh-keygen från den gamla (ickefria) SSH-installationen verkar inte finnas tillgänglig.
+ .
+ Du behöver manuellt generera en ny värdnyckel.
+Description-ta.UTF-8: புதிய புரவலன் விசை கட்டாயமாகும்
+ இப்போதைய /etc/ssh/ssh_host_key இல் உள்ள புரவலன் விசை IDEA அல்காரிதத்தில் குறியீடு செய்யப்பட்டது. இந்த புரவலன் விசையை ஓபன் எஸ்எஸ்ஹெச் கையாள இயலாது. பழைய பதிப்பிலிருந்து ssh-keygen பயன்பாடு இருப்பில் இல்லை.
+ .
+ நீங்கள் கைமுறையாக புதிய புரவலன் விசையை உருவாக்க வேண்டும்.
+Description-tr.UTF-8: Yeni makine anahtarı zorunlu
+ Şu anda kullandığınız makine anahtarı, /etc/ssh/ssh_host_key, IDEA algoritmasıyla şifrelenmiş. OpenSSH bu anahtar dosyasını yönetemez; ayrıca eski (özgür olmayan) SSH kurulumuna ait ssh-keygen aracı da ulaşılabilir değil.
+ .
+ Yeni bir makine anahtarı oluşturmanız gerekiyor.
+Description-vi.UTF-8: Bắt buộc phải có khoá máy mới
+ Khoá máy hiện thời, trong « /etc/ssh/ssh_host_key », được mặt mã bằng thuật toán IDEA. Phần mềm OpenSSH không thể xử lý tập tin khoá máy kiểu này; cũng có vẻ là tiện ích « ssh-keygen » (tạo khoá SSH) thuộc về bản cài đặt SSH cũ (khác tự do) không sẵn sàng.
+ .
+ Vậy bạn cần phải tự tạo một khoá máy mới.
+
+Template: ssh/disable_cr_auth
+Type: boolean
+Default: false
+Description: Disable challenge-response authentication?
+ Password authentication appears to be disabled in the current OpenSSH
+ server configuration. In order to prevent users from logging in using
+ passwords (perhaps using only public key authentication instead) with
+ recent versions of OpenSSH, you must disable challenge-response
+ authentication, or else ensure that your PAM configuration does not allow
+ Unix password file authentication.
+ .
+ If you disable challenge-response authentication, then users will not be
+ able to log in using passwords. If you leave it enabled (the default
+ answer), then the 'PasswordAuthentication no' option will have no useful
+ effect unless you also adjust your PAM configuration in /etc/pam.d/ssh.
+Description-bg.UTF-8: Забрана на удостоверяването challenge-response?
+ Изглежда че удостоверяването с парола е забранено в настройката на OpenSSH сървъра. За пълна забрана на използването на пароли за удостоверяване (вероятно оставяйки само удостоверяването с публичен ключ) е необходимо да бъде забранено удостоверяването „challenge-response“. В противен случай е нужно да се настрои PAM да не позволява удостоверяване чрез файловете с пароли стил Unix.
+ .
+ Ако удостоверяването chalenge-response е забрането, потребителите няма да могат да използват пароли за удостоверяване. Ако е разрешено (по подразбиране), настройката 'PasswordAuthentication no' няма да има ефект, освен ако не промените настройките за PAM в /etc/pam.d/ssh.
+Description-ca.UTF-8: Voleu desactivar l'autenticació «challenge-response»?
+ Sembla que l'autenticació per contrasenya està desactivada en l'actual configuració del servidor OpenSSH. Per tal d'evitar que els usuaris entrin al sistema utilitzant contrasenyes (i utilitzin només autenticació basada en clau pública), en les darreres versions d'OpenSSH heu de desactivar l'autenticació «challenge-response», o altrament assegurar-vos que la configuració de PAM no permet autenticar mitjançant el fitxer de contrasenyes de Unix.
+ .
+ Si desactiveu l'autenticació «challenge-response», aleshores els usuaris no podran entrar utilitzant contrasenyes. Si la deixeu activada (que és l'opció predeterminada), aleshores «PasswordAuthentication no» no tindrà cap valor a menys que ajusteu la configuració de PAM a /etc/pam.d/ssh.
+Description-cs.UTF-8: Zakázat autentizaci challenge-response?
+ Zdá se, že autentizace pomocí hesel je ve vaší stávající konfiguraci OpenSSH serveru zakázána. Abyste zabránili uživatelům v přihlášení pouze pomocí hesla, musíte v posledních verzích OpenSSH zakázat autentizaci challenge-response, nebo jinak zajistit, aby PAM nepovolilo autentizaci vůči unixovému souboru hesel.
+ .
+ Zakážete-li autentizaci challenge-response, uživatelé se nebudou moci přihlásit pomocí hesel. Necháte-li ji povolenu (přednastavená odpověď), pak nebude mít volba „PasswordAuthentication no“ žádný efekt, pokud ovšem neupravíte nastavení PAM v /etc/pam.d/ssh.
+Description-da.UTF-8: Slå udfordrings-svar godkendelse fra?
+ Adgangskodegodkendelse ser ud til at være deaktiveret i din nuværende OpenSSH-serveropsætning. For at forhindre brugere i at logge ind med adgangskoder (måske kun med brug af offentlig nøglegodkendelse) med nyere versioner af OpenSSH, skal du deaktivere udfordrings-svar godkendelse, eller sikre at din PAM-opsætning ikke tillader godkendelse via Unixadgangskodefil.
+ .
+ Hvis du deaktiverer udfordrings-svar godkendelse, vil brugere ikke være i stand til at logge ind med adgangskoder. Hvis du lader det være slået til (standardsvaret), så vil indstillingen 'PasswordAuthentication no' ikke have nogen effekt, medmindre du også redigerer din PAM-opsætning i /etc/pam.d/ssh.
+Description-de.UTF-8: Challenge-response-Authentifizierung deaktivieren?
+ Passwort-Authentifizierung scheint in der aktuellen OpenSSH-Server-Konfiguration deaktiviert zu sein. Um in neueren Versionen von OpenSSH zu verhindern, dass Benutzer sich unter Verwendung von Passwörtern anmelden (möglicherweise stattdessen nur unter Verwendung von Public-Key-Authentifizierung), müssen Sie Challenge-response-Authentifizierung deaktivieren oder ansonsten sicherstellen, dass Ihre PAM-Konfiguration keine Authentifizierung über Unix-Password-Dateien erlaubt.
+ .
+ Falls Sie Challenge-response-Authentifizierung deaktivieren, werden Benutzer nicht in der Lage sein, sich mit Passwörtern anzumelden. Falls Sie es aktiviert lassen (die Standard-Antwort) wird die »PasswordAuthentication no«-Einstellung keinen nützlichen Effekt haben, es sei denn, sie passen auch Ihre PAM-Konfiguration in /etc/pam.d/ssh an.
+Description-es.UTF-8: ¿Desea deshabilitar la autenticación basada en desafío-respuesta?
+ Parece que la configuración actual de su servidor de OpenSSH tiene deshabilitada la autenticación mediante contraseñas. En las versiones recientes de OpenSSH para impedir que los usuarios se puedan conectar con contraseñas (y obligar la utilización de sistemas de autenticación con clave pública) debe deshabilitar la autenticación basada en desafío-respuesta o asegurarse de que su configuración PAM no permite autenticación basada en el fichero de contraseñas Unix.
+ .
+ Si deshabilita la autenticación mediante desafío-respuesta los usuarios no podrán acceder con contraseñas. Si la deja habilitada (respuesta por omisión) entonces la opción «PasswordAuthentication no» no tendrá ninguna utilidad a menos que ajuste su configuración de PAM en «/etc/pam.d/ssh».
+Description-eu.UTF-8: erronka-erantzun autentifikazioa desgaitu?
+ Pasahitz egiaztapena dirudienez desgaiturik dago instalaturik dagoen OpenSSH konfigurazioan. Pasahitzak erabiliaz OpenSSH bertsio berrietan saio hastea ezintzeko (agian gako publiko autentifikazioa bakarrik erabiliaz), erronka-erantzun (challenge-response) autentifikazioa desgaitu edo zure PAM konfigurazioak UNIX pasahitz fitxategi autentifikazioa onartzen ez duela ziurtatu beharko duzu.
+ .
+ Erronka-erantzun autentifikazioa des	gaituaz gero erabiltzaileak ez dira pasahitza erabiliaz saio hasteko gai izango. Berau gaiturik utziaz gero (lehenetsiriko erantzuna), 'PasswordAuthentication no' aukerak ez du ondoriorik izango /etc/pam.d/ssh-eko PAM konfigurazioa doitzen ez baduzu.
+Description-fi.UTF-8: Poistetaanko haaste-vaste-autentikointi käytöstä?
+ OpenSSH-palvelimen nykyisissä asetuksissa salasana-autentikointi näyttää olevan poissa käytöstä. Estääksesi kirjautumiset salasanaa käyttäen (esim. salliaksesi kirjautumisen vain julkista avainta käyttäen), OpenSSH:n uusissa versioissa haaste-vaste-autentikointi tulee poistaa käytöstä tai muutoin varmistaa, että PAM-asetukset eivät salli Unixin salasanatiedostoon perustuvaa autentikointia.
+ .
+ Jos poistat haaste-vaste-autentikoinnin käytöstä, käyttäjät eivät voi kirjautua käyttäen salasanaa. Jos jätät sen päälle (oletus), asetuksella ”PasswordAuthentication no” ei ole vaikutusta, ellet muuta myös PAM-asetuksia tiedostossa /etc/pam.d/ssh.
+Description-fr.UTF-8: Faut-il désactiver l'authentification par défi-réponse ?
+ L'authentification par mots de passe semble être désactivée dans la configuration actuelle du serveur OpenSSH. Afin d'empêcher les utilisateurs de se connecter avec un mot de passe (pour, par exemple n'autoriser que l'authentification par clé publique) avec les versions récentes d'OpenSSH, vous devez aussi désactiver l'authentification par défi-réponse, ou alors vous assurer que votre configuration de PAM n'autorise pas l'authentification avec le fichier de mots de passe Unix.
+ .
+ Si vous désactivez l'authentification par défi-réponse, alors les utilisateurs ne pourront pas se connecter en entrant un mot de passe. Si vous la laissez active (ce qui est la valeur par défaut), alors l'option « PasswordAuthentication no » n'aura d'effet que si vous ajustez aussi la configuration de PAM dans /etc/pam.d/ssh.
+Description-gl.UTF-8: ¿Desactivar a autenticación por desafío-resposta?
+ Semella que a autenticación por contrasinal está desactivada na configuración actual do servidor de OpenSSH. Para impedir que os usuarios se conecten empregando contrasinais (empregando no seu canto, por exemplo, autenticación mediante clave pública), nas versións recentes de OpenSSH ten que desactivar a autenticación por desafío-resposta ou asegurarse de que a súa configuración de PAM non permita a autenticación por ficheiro de contrasinais de Unix.
+ .
+ Se desactiva a autenticación por desafío-resposta, os usuarios non han poder conectarse empregando contrasinais. Se a deixa activada (a resposta por defecto) a opción "PasswordAuthentication no" non ha ter ningún efecto útil a menos que tamén axuste a súa configuración de PAM en /etc/pam.d/ssh.
+Description-id.UTF-8: Nonaktifkan otentikasi challenge-response?
+ Otentikasi sandi nampaknya dinonaktifkan dalam konfigurasi server OpenSSH saat ini. Untuk mencegah pengguna log masuk memakai sandi (mungkin digantikan hanya dengan memakai otentikasi kunci publik) dengan versi OpenSSH terkini, Anda mesti menonaktifkan otentikasi challenge-response, atau bisa juga dengan memastikan bahwa konfigurasi PAM Anda tak mengijinkan otentikasi berkas sandi Unix.
+ .
+ Bila Anda menonaktifkan otentikasi challenge-response, maka pengguna tak akan bisa log masuk memakai sandi. Bila Anda membiarkannya aktif (jawaban baku), maka opsi 'PasswordAuthentication no' tak akan memiliki efek yang berguna kecuali Anda juga mengubah konfigurasi PAM Anda dalam /etc/pam.d/ssh.
+Description-it.UTF-8: Disabilitare l'autenticazione interattiva?
+ Nell'attuale configurazione del server OpenSSH è disabilitata l'autenticazione tramite password. Con le versioni più recenti di OpenSSH per impedire l'accesso degli utenti al sistema con la password (per esempio l'accesso deve essere possibile solo tramite chiavi pubbliche) si deve disabilitare l'autenticazione interattiva oppure si deve verificare che PAM sia configurato in modo da non consentire l'autenticazione tramite il file delle password Unix.
+ .
+ Se l'autenticazione interattiva è disabilitata gli utenti non possono effettuare l'accesso al sistema con la password. Invece se, come previsto dalla configurazione predefinita, è abilitata allora l'opzione «PasswordAuthentication no» non ha effetto fino a quando non si interviene anche sulla configurazione di PAM in /etc/pam.d/ssh.
+Description-ja.UTF-8: チャレンジ-レスポンス認証を無効にしますか?
+ 現在の OpenSSH サーバの設定ではパスワード認証が無効になっているようです。OpenSSH の最近のバージョンでパスワードを使ってユーザがログインするのを防ぐ (多分公開鍵認証だけを代わりに使う) ためには、チャレンジ-レスポンス認証を無効にするか、PAM 設定で Unix パスワードファイル認証を絶対に許可しないようにする必要があります。
+ .
+ チャレンジ-レスポンス認証を無効にする場合、ユーザはパスワードを使ってログインできなくなります。有効 (デフォルト) のままにしておくと、/etc/pam.d/ssh にある PAM 設定を調節しない限り、'PasswordAuthentication no' オプションは効果を持たなくなります。
+Description-ko.UTF-8: 제기-응답 인증방식을 해제하도록 할까요?
+ 현재의 OpenSSH 서버 설정에 비밀번호 인증방식이 해제되어 있습니다. 최근 버전의 OpenSSH에서 사용자들이 (공개키 방식만 허용하기 위해서 등의 이유로) 비밀번호로 로그인하지 못하도록 하시려면 제기-응답 인증방식을 해제하시든지 유닉스 password 파일 인증방식을 사용하지 못하도록 PAM 설정을 하셔야 합니다.
+ .
+ 제기-응답 인증방식을 해제하면 사용자들은 비밀번호를 이용하여 로그인하지 못하게 됩니다. (기본 설정대로) 해제하지 않으시면 /etc/pam.d/ssh에 있는 PAM 설정을 변경하지 않으실 경우 'PasswordAuthentication no' 옵션은 아무런 영향을 주지 못합니다.
+Description-nb.UTF-8: Skal autentisering med utfordring/svar slås av?
+ Det ser ut til at passord-autentisering er slått av i det gjeldende tjeneroppsettet for OpenSSH. For å hindre brukere i å logge inn med passord med nyere versjoner av OpenSSH (kanskje med autentisering med kryptonøkler i stedet), så må autentisering med utfordring-svar slås av, eller det må sjekkes at PAM-oppsettet er satt til ikke å tillate autentisering mot Unix passord-fila.
+ .
+ Hvis autentisering med utfordring-svar er slått av, så kan brukere ikke logge inn med passord. Hvis det står på (som er standard), så har det ingen virkning å sette «PasswordAuthentication no» med mindre PAM-oppsettet i /etc/pam.d/ssh også justeres.
+Description-nl.UTF-8: Challenge-response-authenticatie deactiveren?
+ Zo te zien is wachtwoord-authenticatie momenteel gedeactiveerd in uw OpenSSH-serverconfiguratie. Om te voorkomen dat gebruikers van recente OpenSSH-versies inloggen met behulp van wachtwoorden (en in plaats daarvan enkel publieke-sleutel authenticatie te gebruiken), dient challenge-response-authenticatie gedeactiveerd te worden, of dient u ervoor te zorgen dat uw PAM-configuratie geen Unix 'password'-bestand-authenticatie toe laat.
+ .
+ Wanneer u challenge-response-authenticatie deactiveert kunnen gebruikers niet meer inloggen met behulp van wachtwoorden. Als u het geactiveerd laat (de standaarwaarde) zal de 'PasswordAuthentication no' optie geen (nuttig) effect hebben tenzij u ook de PAM-configuratie aanpast in /etc/pam.d/ssh.
+Description-no.UTF-8: Skal autentisering med utfordring/svar slås av?
+ Det ser ut til at passord-autentisering er slått av i det gjeldende tjeneroppsettet for OpenSSH. For å hindre brukere i å logge inn med passord med nyere versjoner av OpenSSH (kanskje med autentisering med kryptonøkler i stedet), så må autentisering med utfordring-svar slås av, eller det må sjekkes at PAM-oppsettet er satt til ikke å tillate autentisering mot Unix passord-fila.
+ .
+ Hvis autentisering med utfordring-svar er slått av, så kan brukere ikke logge inn med passord. Hvis det står på (som er standard), så har det ingen virkning å sette «PasswordAuthentication no» med mindre PAM-oppsettet i /etc/pam.d/ssh også justeres.
+Description-pl.UTF-8: Wyłączyć uwierzytelnianie typu pytanie-odpowiedź?
+ Uwierzytelnianie hasłem w obecnej konfiguracji serwera OpenSSH wygląda na wyłączone. Aby zapobiec logowaniu użytkowników przy użyciu haseł (w zamian prawdopodobnie będą używane klucze publiczne) w nowszych wersjach OpenSSH, należy wyłączyć uwierzytelnianie typu pytanie-odpowiedź (and. challenge-response) lub upewnić się, że bieżąca konfiguracja PAM uniemożliwia uwierzytelnianie przy pomocy pliku haseł Unix.
+ .
+ Jeśli uwierzytelnianie typu pytanie-odpowiedź zostanie wyłączone, użytkownicy nie będą w stanie zalogować się przy użyciu haseł. Jeśli pozostanie wybrana domyślna odpowiedź (włączone), to opcja "PasswordAuthentication no" nie będzie przynosiła pożądanych efektów, dopóki nie zostanie odpowiednio zmieniona konfiguracja PAM w pliku /etc/pam.d/ssh.
+Description-pt.UTF-8: Desactivar autenticação por desafio-resposta?
+ Autenticação por palavra-chave aparenta estar desactivada na sua configuração actual do servidor OpenSSH. De forma a impedir que os utilizadores se liguem usando palavras-chave (talvez usando apenas autenticação por chave pública) com versões recentes do OpenSSH, tem de desactivar a autenticação por desafio-resposta, ou assegurar-se que a sua configuração do PAM não permite autenticação pelo ficheiro password de Unix.
+ .
+ Se desactivar autenticação por pedido-resposta, os utilizadores não serão capazes de se ligar usando palavras-chave. Se deixar activado (a resposta por omissão), então a opção 'PasswordAuthentication no' não terá efeito a não ser que também ajuste a configuração do PAM em /etc/pam.d/ssh.
+Description-pt_BR.UTF-8: Desabilitar autenticação desafio-resposta ("challenge-response")?
+ A autenticação através de senha parece estar desabilitada em sua configuração atual do servidor OpenSSH. Para que seja possível evitar que usuários se autentiquem utilizando senhas (talvez utilizando somente autenticação através de chaves públicas) em versões recentes do OpenSSH você deve desabilitar a autenticação desafio-resposta ("challenge-response") ou então se certificar que sua configuração PAM não permita autenticação através do arquivos de senhas Unix ("password").
+ .
+ Caso você desabilite a autenticação desafio-resposta ("challenge-response"), os usuários não poderão se autenticar utilizando suas senhas. Se você deixá-la habilitada (a resposta padrão), então a opção 'PasswordAuthentication no' não terá efeito útil a menos que você também ajuste sua configuração PAM em /etc/pam.d/ssh.
+Description-ro.UTF-8: Dezactivează modul de autentificare provocare-răspuns?
+ Autentificarea pe bază de parole pare dezactivată în configurația curentă a serverului OpenSSH. Pentru a împiedica utilizatorii să se autentifice folosind parole (probabil folosind doar autentificarea cu chei publice) în versiunile recente OpenSSH trebuie să dezactivați autentificarea tip provocare-răspuns, sau asigurați-vă că configurația PAM nu permite autentificarea cu fișierul de parole Unix.
+ .
+ Dacă dezactivați autentificarea pe bază de provocare-răspuns, utilizatorii nu vor mai putea să se autentifice folosind parolele. Dacă nu o dezactivați (răspunsul implicit), atunci opțiunea 'PasswordAuthentification no' va fi utilizabilă doar dacă modificați și configurația PAM din /etc/pam.d/ssh.
+Description-ru.UTF-8: Отключить аутентификацию запрос-ответ?
+ Кажется, что парольная аутентификация отключена в текущей настройке сервера OpenSSH. Чтобы запретить пользователям вход с использованием паролей (возможно, использовав вместо этого только аутентификацию по публичному ключу) в новых версиях OpenSSH, вы должны отключить аутентификацию запрос-ответ, либо убедиться, что ваша настройка PAM не разрешает аутентификацию по файлу паролей Unix.
+ .
+ Если вы запретите аутентификацию запрос-ответ, пользователи не смогут войти с использованием паролей. Если вы оставите её разрешенной (ответ по умолчанию), то параметр 'PasswordAuthentication no' не будет иметь силы до тех пор, пока вы также не откорректируете настройки PAM в /etc/pam.d/ssh.
+Description-sk.UTF-8: Vypnúť autentifikáciu výzva-odpoveď?
+ Zdá sa, že autentifikácia pomocou hesla je v aktuálnej konfigurácii OpenSSH servera vypnutá. Aby ste zabránili používateľom prihlasovať sa pomocou hesiel (snáď iba použitím autentifikácie svojím verejným kľúčom) pri novších verziách OpenSSH musíte vypnúť autentifikáciu výzva-odpoveď alebo sa inak uistiť, že vaša konfigurácia PAM neumožňuje autentifikáciu pomocu unixového súboru s heslami.
+ .
+ Ak vypnete autentifikáciu výzva-odpoveď, používatelia sa nebudú môcť prihlasovať pomocou hesiel. Ak ju necháte zapnutú (štandardná odpoveď), potom nebude mať voľba „PasswordAuthentication no“ žiadny účinok v prípade, že tiež vhodne nenastavíte vašu konfiguráciu PAM v /etc/pam.d/ssh.
+Description-sv.UTF-8: Inaktivera challenge-response-autentisering?
+ Lösenordsautentisering verkar vara inaktiverat i din aktuella konfiguration av OpenSSH-servern. För att förhindra att användare loggar in med lösenord (istället kanske endast använder publik nyckelautentisering) med senare versioner av OpenSSH, måste du inaktivera challenge-response-autentisering eller försäkra dig om att din PAM-konfiguration inte tillåter autentisering via Unix lösenordsfil.
+ .
+ Om du inaktiverar  challenge-response-autentisering så kan användarna inte logga in med lösenord. Om du lämnar det aktiverat (som är standard) så kommer "PasswordAuthentication no" inte att ha någon effekt om du inte justerar din PAM-konfiguration i /etc/pam.d/ssh.
+Description-ta.UTF-8: கேள்வி பதில் உறுதிப்படுத்தலை செயலிழக்க செய்யவா?
+ இப்போதைய ஓபன் எஸ்எஸ்ஹெச் சேவையக வடிவமைப்பில் கடவுச்சொல் உறுதிப்படுத்தலை செயலிழக்க செய்துள்ளது. (திறந்த விசையை பயன்படுத்தி) பயனர்கள் உள்நுழைவதை தடுக்க சமீபத்திய ஓபன் எஸ்எஸ்ஹெச் பதிப்புகளில் நீங்கள் கேள்வி பதில் உறுதிப்படுத்தலை செயலிழக்க செய்ய வேண்டும். அல்லது உங்கள் பாம் வடிவமைப்பு யூனிக்ஸ் கடவுச்சொல் கோப்பு உறுதிப்படுத்தலை ஏற்காதவாறு அமைக்க வேண்டும்.
+ .
+ நீங்கள் கேள்வி பதில் உறுதிப்படுத்தலை செயலிழக்க செய்தால் பயனர்கள் கடவுச்சொற்களை பயன் படுத்தி உள் நுழைய இயலாது. அதை செயல் படச்செய்தால் (கடவுச்சொல் உறுதிப்படுத்தல் தேர்வு இல்லை) 'PasswordAuthentication no'  தேர்வு /etc/pam.d/ssh இல் பாம் வடிவமைப்பை சரி செய்தால் ஒழிய பயன் தராது.
+Description-tr.UTF-8: Sorgula-yanıtla yöntemiyle kimlik doğrulama devre dışı bırakılsın mı?
+ Şu anda kullanılan OpenSSH yapılandırmasında parola ile kimlik doğrulama devre dışı gibi görünüyor. OpenSSH'ın yeni versiyonlarında kullanıcıların parola kullanarak oturum açmalarını engellemek için (belki  bunun yerine açık anahtar yöntemiyle kimlik doğrulamayı kullanabilirsiniz) sorgula-yanıtla yöntemiyle kimlik doğrulamayı devre dışı bırakmalı ya da PAM yapılandırmanızın Unix parola dosyası yöntemiyle kimlik doğrulamaya izin vermediğinden emin olmalısınız.
+ .
+ Sorgula-yanıtla kimlik doğrulamayı devre dışı bırakırsanız, kullanıcılar parola kullanarak oturum açamayacaklar. Eğer sorgula-yanıtla kimlik doğrulamayı etkin halde bırakırsanız (öntanımlı yanıt); /etc/pam.d/ssh'daki PAM yapılandırmasını ayarlamadığınız sürece 'PasswordAuthentication no' seçeneği bir işe yaramayacak.
+Description-vi.UTF-8: Tắt chức năng xác thực kiểu yêu cầu/đáp ứng không?
+ Có vẻ là chức năng xác thực bằng mật khẩu bị tắt trong cấu hình trình phục vụ OpenSSH hiện thời. Để ngăn cản người dùng đăng nhập bằng mật khẩu (có lẽ chỉ xác thực bằng khoá công)  với phiên bản OpenSSH gần đây, bạn cần phải tắt khả năng xác thực kiểu yêu cầu/đáp ứng (challenge-response authentication), không thì đảm bảo cấu hình PAM không cho phép xác thực bằng tập tin mật khẩu UNIX.
+ .
+ Nếu bạn tắt khả năng xác thực kiểu yêu cầu/đáp ứng, người dùng sẽ không thể đăng nhập bằng mật khẩu. Để lại hoạt động (trả lời mặc định) thì tùy chọn « PasswordAuthentication no » (xác thực bằng mật khẩu : không) sẽ không có tác động thật, nếu bạn không điều chỉnh cấu hình PAM trong « /etc/pam.d/ssh »
+
+Template: ssh/vulnerable_host_keys
+Type: note
+Description: Vulnerable host keys will be regenerated
+ Some of the OpenSSH server host keys on this system were generated with a
+ version of OpenSSL that had a broken random number generator. As a result,
+ these host keys are from a well-known set, are subject to brute-force
+ attacks, and must be regenerated.
+ .
+ Users of this system should be informed of this change, as they will be
+ prompted about the host key change the next time they log in. Use
+ 'ssh-keygen -l -f HOST_KEY_FILE' after the upgrade to print the
+ fingerprints of the new host keys.
+ .
+ The affected host keys are:
+ .
+ ${HOST_KEYS}
+ .
+ User keys may also be affected by this problem. The 'ssh-vulnkey' command
+ may be used as a partial test for this. See
+ /usr/share/doc/openssh-server/README.compromised-keys.gz for more details.
+Description-bg.UTF-8: Уязвимите ключове на хоста ще бъдат създадени наново
+ Някои от ключовете за услугата OpenSSH на хоста са създадени с версия на OpenSSL, която използва повреден генератор на случайни числа. Тези ключове са широко известни, уязвими са към атаки и трябва да бъдат сменени.
+ .
+ Потребителите на системата трябва да бъдат известени за промяната, понеже при следващият им опит за връзка чрез SSH ще получат предупреждение за промяна в ключовете на хоста. За да получите отпечатъците на новите ключове използвайте „ssh-keygen -l -f файл-с-ключ“.
+ .
+ Засегнатите ключове на хоста са:
+ .
+ ${HOST_KEYS}
+ .
+ Възможно е потребителските ключове също да са засегнати от проблема. Можете да използвате програмата „ssh-vulnkey“ за да ги проверите. За повече информация погледнете /usr/share/doc/openssh-server/README.compromised-keys.gz.
+Description-cs.UTF-8: Zranitelné serverové klíče budou přegenerovány
+ Některé serverové klíče OpenSSH na tomto systému byly vytvořeny verzí OpenSSL, která měla narušený generátor náhodných čísel. Ve výsledku jsou tyto dobře známé klíče předmětem útoků hrubou silou a musí být přegenerovány.
+ .
+ Uživatelé tohoto systému by měli být informováni o změně, protože budou při příštím přihlášení varováni o změně serverového klíče. Po aktualizaci můžete zjistit nové otisky serverových klíčů příkazem „ssh-keygen -l -f SOUBOR_SE_SERVEROVÝM_KLÍČEM“.
+ .
+ Postižené serverové klíče:
+ .
+ ${HOST_KEYS}
+ .
+ Tímto problémem mohou být postiženy také uživatelské klíče. Pro částečnou kontrolu můžete použít příkaz „ssh-vulnkey“. Více informací naleznete v souboru /usr/share/doc/openssh-server/README.compromised-keys.gz.
+Description-da.UTF-8: Sårbare værtsnøgler vil blive oprettet
+ Nogle af OpenSSh-serverens værtsnøgler på dette system blev oprettet med en version af OpenSSL, som havde en ødelagt tilfældighedstalgenerator. Derfor er disse værtsnøgler fra et velkendt sæt, der er sårbare over for brutale (brute-force) angreb og skal derfor genskabes.
+ .
+ Brugere af dette system bør informeres om denne ændring, da de vil blive spurgt om værtsnøgleændringen den næste gang de logger ind. Brug 'ssh-keygen -l -f HOST_KEY_FILE' efter opgraderingen for at udskrive fingeraftryk på de nye værtsnøgler.
+ .
+ De påvirkede værtsnøgler er:
+ .
+ ${HOST_KEYS}
+ .
+ Brugernøgler kan måske også være påvirket af dette problem. Kommandoen 'ssh-vulnkey' kan bruges som en delvis test vedrørende dette. Se /usr/share/doc/openssh-server/README.compromised-keys.gz for yderligere detaljer.
+Description-de.UTF-8: Verwundbare Host-Schlüssel werden neu erzeugt
+ Einige der OpenSSH-Server-Host-Schlüssel auf diesem System wurden mit einer Version von OpenSSL erzeugt, die einen defekten Zufallszahlengenerator hatte. Als Ergebnis stammen diese Host-Schlüssel aus einer wohlbekannten Menge, unterliegen Rechen- (»brute-force«)-angriffen und müssen neu erstellt werden.
+ .
+ Die Benutzer dieses Systems sollten über diese Änderung informiert werden, da sie über die Änderung des Host-Schlüssels bei der nächsten Anmeldung befragt werden. Führen Sie nach dem Upgrade »ssh-keygen -l -f HOST_SCHLÜSSEL_DATEI« aus, um die Fingerabdrücke es neuen Host-Schlüssels anzuzeigen.
+ .
+ Die betroffenen Host-Schlüssel sind:
+ .
+ ${HOST_KEYS}
+ .
+ Die Schüssel der Benutzer könnten auch von diesem Problem betroffen sein. Der Befehl »ssh-vulnkey« kann dazu verwandt werden, dieses Problem teilweise zu ermitteln. Lesen Sie /usr/share/doc/openssh-server/README.compromised-keys.gz für weitere Details.
+Description-es.UTF-8: Se regenerarán las claves vulnerables del sistema
+ Algunas de las claves de sistema del servidor OpenSSH en este equipo se generaron con una versión de OpenSSL que tenía un generador de números aleatorios defectuoso. Consecuentemente, estas claves de sistema son de un conjunto de claves conocidas y están sujetas a ataques de fuerza bruta por lo que conviene regenerarlas.
+ .
+ Se informará a los usuarios de este sistema ya que se les informará del cambio de clave la siguiente vez que se conecten. Utilice «ssh-keygen -l -f ARCHIVO_CLAVE_SISTEMA» después de la actualización para obtener la huella digital de las nuevas claves del sistema.
+ .
+ Las claves del sistema afectadas son:
+ .
+ ${HOST_KEYS}
+ .
+ Las claves de los usuarios también pueden estar afectadas por este problema. Se puede utilizar el programa «ssh-vulnkey» como un test parcial para detectar el problema. Consulte la información en «/usr/share/doc/openssh-server/README.compromised-keys.gz» para conocer los detalles.
+Description-eu.UTF-8: Ostalari gako ahulak birsortu egingo dira
+ Sistema honetako zenbait OpenSSH ostalari gako hondaturiko ausazko zenbasi sortzaile bat zuen OpenSSL bertsio batez sortuak izan ziren. Hau dela eta, ostalari gako horiek ezagutza handiko pertsona batek indarrezko erasoei ahulak dira eta birsortuak izango dira.
+ .
+ Sistema honetako erabiltzaileak aldaketa honetaz ohartu beharko ziren, saio hasten duten hurrengoan ostalari gako aldaketaz galdetuko zaie eta. 'ssh-keygen -l -f OSTALARI_GAKO_FITX' erabili bertsio-berritzearen ondoren ostalari gako berrien hatzmarkak inprimatzeko.
+ .
+ Ostalari gako hauei eragingo die:
+ .
+ ${HOST_KEYS}
+ .
+ Erabiltzaile gakoak ere arazo honengatik eragindak egon daitezke. 'ssh-vulnkey' komandoak honetarako proba bezala erdi-ziur erabili daiteke. Ikusi /usr/share/doc/openssh-server/README.compromised-keys.gz xehetasun gehiagorako.
+Description-fi.UTF-8: Haavoittuvaiset järjestelmäavaimet luodaan uudelleen
+ Jotkin tämän järjestelmän OpenSSH-palvelimen järjestelmäavaimista on luotu OpenSSL:n versiolla, jossa oli rikkinäinen satunnaislukugeneraattori. Tämän tuloksena nämä avaimet voidaan murtaa järjestelmällisellä läpikäynnillä ja ne tulee vaihtaa.
+ .
+ Järjestelmän käyttäjille tulisi tiedottaa tästä muutoksesta, koska heitä pyydetään hyväksymään muuttunut järjestelmäavain, kun he seuraavan kerran kirjautuvat järjestelmään. Komennolla ”ssh-keygen -l -f HOST_KEY_FILE” voidaan tulostaa uusien järjestelmäavainten sormenjäljet päivityksen jälkeen.
+ .
+ Järjestelmäavaimet, joihin tämä vaikuttaa:
+ .
+ ${HOST_KEYS}
+ .
+ Tämä ongelma saattaa vaikuttaa myös käyttäjien avaimiin. Komennolla ”ssh-vulnkey” voidaan osittain testata tätä. Tiedostossa /usr/share/doc/openssh-server/README.compromised-keys.gz on lisätietoja.
+Description-fr.UTF-8: Recréation des clés d'hôte vulnérables
+ Certaines clés d'hôte OpenSSH de ce serveur ont été créées avec une version d'OpenSSL affligée d'un défaut dans le générateur de nombres aléatoires. En conséquence, ces clés ont un contenu prévisible et peuvent être vulnérables à des attaques par force brute. Elles doivent être recréées.
+ .
+ Les utilisateurs de ce système devraient être informés de cette modification car le système leur signalera le changement de clé d'hôte à leur prochaine connexion. Vous pouvez utiliser la commande « ssh-keygen -l -f HOST_KEY_FILE » après la mise à jour pour afficher l'empreinte des nouvelles clés d'hôte.
+ .
+ Les clés concernées sont les suivantes :
+ .
+ ${HOST_KEYS}
+ .
+ Les clés OpenSSH des utilisateurs sont aussi potentiellement affectées par ce problème. La commande « ssh-vulnkey » offre un test partiel pour cette vulnérabilité. Veuillez consulter le fichier /usr/share/doc/openssh-server/README.compromised-keys.gz pour plus d'informations.
+Description-gl.UTF-8: Hanse rexenerar as claves de servidor vulnerables
+ Algunhas das claves de servidor de OpenSSH deste sistema xeráronse cunha versión de OpenSSL que tiña un xerador de números aleatorios que non funcionaba correctamente. Coma resultado, esas claves de servidor pertencen a un conxunto coñecido, son vulnerables a ataques por forza bruta, e teñen que se rexenerar.
+ .
+ É preciso informar deste cambio aos usuarios deste sistema, xa que se lles ha avisar do cambio de clave de servidor a próxima vez que se conecten. Empregue a orde "ssh-keygen -l -f FICHEIRO_DE_CLAVE" trala actualización para amosar as pegadas dactilares das novas claves de servidor.
+ .
+ As claves de servidor afectadas son:
+ .
+ ${HOST_KEYS}
+ .
+ As claves dos usuarios tamén poden estar afectadas por este problema. Pódese empregar a orde "ssh-vulnkey" para facer unha comprobación parcial disto. Consulte /usr/share/doc/openssh-server/README.compromised-keys.gz para máis detalles.
+Description-id.UTF-8: Kunci host yang vulnerable akan dibuat ulang
+ Beberapa kunci host server OpenSSH pada sistem ini dibuat dengan versi OpenSSH yang memiliki pembangkit bilangan acak yang rusak. Akibatnya, kunci host ini berasal dari set yang dikenal luas, berresiko terhadap serangan brute-force, dan mesti dibuat ulang.
+ .
+ Pengguna sistem ini mesti diberitahu atas perubahan ini, karena mereka akan ditanyai tentang perubahan kunci host saat berikutnya mereka log masuk. Gunakan 'ssh-keygen -l -f HOST_KEY_FILE' setelah upgrade untuk mencetak sidik jari dari kunci host baru.
+ .
+ Kunci host yang terpengaruh adalah:
+ .
+ ${HOST_KEYS}
+ .
+ Kunci pengguna mungkin juga terpengaruh oleh masalah ini. Perintah 'ssh-vulnkey' dapat dipakai sebagai uji parsial untuk ini. Lihat /usr/share/doc/openssh-server/README.compromised-keys.gz untuk rincian lebih lanjut.
+Description-it.UTF-8: Le chiavi host vulnerabili devono essere rigenerate
+ Alcune delle chiavi host OpenSSH per server presenti su questo sistema sono state create con una versione di OpenSSL afflitta da un problema al generatore di numeri casuali. Di conseguenza queste chiavi host appartengono a un insieme noto, quindi sono vulnerabili ad attacchi di tipo forza bruta e devono essere rigenerate.
+ .
+ Gli utenti del sistema dovrebbero essere informati di questo cambiamento poiché al prossimo accesso al sistema verrà loro mostrato un avvertimento relativo al cambiamento della chiave host. Dopo l'aggiornamento usare "ssh-keygen -l -f FILE_CHIAVE_HOST" per stampare i fingerprint delle nuove chiavi host.
+ .
+ Le chiavi host vulnerabili sono:
+ .
+ ${HOST_KEYS}
+ .
+ Anche le chiavi utente potrebbero essere afflitte dallo stesso problema. È possibile usare il comando "ssh-vulnkey" per fare un test parziale sulla loro vulnerabilità. Si veda /usr/share/doc/openssh-server/README.compromised-keys.gz per ulteriori informazioni.
+Description-ja.UTF-8: 脆弱なホストキーは再生成されます
+ このシステムの OpenSSH サーバのホストキーのいくつかが、壊れた乱数生成器を持つ OpenSSL バージョンで生成されていました。結果として、これらのホストキーは既知の組み合わせから成り、ブルートフォース攻撃を受けやすいものになっているため、再生成する必要があります。
+ .
+ 次回のログイン時にホストキーの変更が示されることで、このシステムのユーザは、この変更の通知を受け取ることになります。更新後に新しいホストキーの指紋を表示するには、'ssh-keygen -l -f HOST_KEY_FILE' を使います。
+ .
+ 影響を受けるホストキーは次のとおりです:
+ .
+ ${HOST_KEYS}
+ .
+ ユーザキーもこの問題の影響を受けている恐れがあります。この部分的なテストとして、'ssh-vulnkey' コマンドを利用できます。詳細については /usr/share/doc/openssh-server/README.compromised-keys.gz を参照してください。
+Description-ko.UTF-8: 취약한 호스트키를 다시 생성합니다
+ 이 시스템에 있는 OpenSSH 서버의 호스트키는 잘못된 난수생성기를 사용한 버전의 OpenSSL를 통해 만들어졌습니다. 이러한 호스트키들은 잘 알려진 범위 내에 있게 되므로 brute-force 공격에 약할 수 있으며, 따라서 다시 만들어야 합니다.
+ .
+ 이 시스템을 사용한 사람들은 다음에 로그인할 때 호스트키가 변경되었다는 사실을 감지하게 되기 때문에 사용자들에게 이 사항을 알려주셔야 합니다. 업그레이드 후 'ssh-keygen -l -f 호스트키 파일명'을 사용하여 새로운 호스트키의 핑거프린트를 출력받을 수 있습니다.
+ .
+ 관련된 호스트키의 목록은:
+ .
+ ${HOST_KEYS}
+ .
+ 사용자 키 역시 이 문제에 영향을 받을 수 있습니다. 'ssh-vulnkey' 명령을 사용하여 부분적으로나마 그렇한지를 검사할 수 있습니다. 자세한 정보는 /usr/share/doc/openssh-server/README.compromised-keys.gz를 참조하십시오.
+Description-nb.UTF-8: Sårbare vertsnøkler vil bli laget på nytt
+ Noen av OpenSSHs vertsnøkler på dette systemet ble opprettet med versjon av OpenSSH som hadde en feil på slumptallsgeneratoren. Derfor tilhører disse nøklene et velkjent sett nøkler, kan knekkes med «rå kraft»-metoden og må lages på nytt.
+ .
+ De som bruker dette systemet bør få opplysning om denne endringen, siden de vkil få spørsmål om vertsnøkkelendringen neste gang de logger inn. Etter oppgraderingen kan fingeravtrykkene for de nye vertsnøklene skrives ut med kommandoen «keygen -l -f VERTSNØKKELFIL».
+ .
+ De vertsnøklene dette gjelder er:
+ .
+ ${HOST_KEYS}
+ .
+ Det kan være at brukernøkler også har dette problemet. En delvis test på dette kan gjøres med kommandoen «ssh-vulnkey». Mer detaljer finnes i /usr/share/doc/openssh-server/README.compromised-keys.gz.
+Description-nl.UTF-8: Kwetsbare computersleutels worden opnieuw aangemaakt
+ Er zijn op dit systeem OpenSSH-computersleutels aangetroffen die aangemaakt zijn door een versie van OpenSSL met een onjuiste random-nummer-generator. Hierdoor zijn deze computersleutels kwetsbaar voor 'brute-force'-aanvallen en moeten ze opnieuw aangemaakt worden.
+ .
+ Gebruikers van dit systeem krijgen een melding omtrent de computersleutelverandering op hun scherm de volgende keer dat ze inloggen via ssh. U dient hun hierover dus te berichten. De vingerafdrukken van de nieuwe computersleutels kunt na de opwaardering opvragen via het commando 'ssh-keygen -l -f HOST_KEY_FILE'.
+ .
+ De getroffen computersleutels zijn:
+ .
+ ${HOST_KEYS}
+ .
+ Sleutels van gebruikers kunnen ook getroffen zijn door dit probleem. Het 'ssh-vulnkey' commando kan gebruikt worden als een gedeeltelijke test, meer details vindt u in /usr/share/doc/openssh-server/README.compromised-keys.gz .
+Description-no.UTF-8: Sårbare vertsnøkler vil bli laget på nytt
+ Noen av OpenSSHs vertsnøkler på dette systemet ble opprettet med versjon av OpenSSH som hadde en feil på slumptallsgeneratoren. Derfor tilhører disse nøklene et velkjent sett nøkler, kan knekkes med «rå kraft»-metoden og må lages på nytt.
+ .
+ De som bruker dette systemet bør få opplysning om denne endringen, siden de vkil få spørsmål om vertsnøkkelendringen neste gang de logger inn. Etter oppgraderingen kan fingeravtrykkene for de nye vertsnøklene skrives ut med kommandoen «keygen -l -f VERTSNØKKELFIL».
+ .
+ De vertsnøklene dette gjelder er:
+ .
+ ${HOST_KEYS}
+ .
+ Det kan være at brukernøkler også har dette problemet. En delvis test på dette kan gjøres med kommandoen «ssh-vulnkey». Mer detaljer finnes i /usr/share/doc/openssh-server/README.compromised-keys.gz.
+Description-pl.UTF-8: Narażone klucze zostaną wygenerowane ponownie
+ Część kluczy hosta serwera OpenSSH w tym systemie została wygenerowana korzystając z wersji OpenSSL z nieprawidłowym generatorem liczb losowych. W rezultacie, klucze hosta pochodzą ze znanego zestawu, który jest przedmiotem ataków typu brute-force i musi zostać wygenerowany ponownie.
+ .
+ Użytkownicy systemu powinni zostać poinformowani o tej zmianie, w związku z informacją dotyczącą zmiany klucza hosta jaka pojawi się w trakcie ich kolejnego logowania. Proszę użyć "ssh-keygen -l -f HOST_KEY_FILE" po tej aktualizacji aby uzyskać nowe odciski kluczy hosta.
+ .
+ Klucze hosta dotknięte problemem:
+ .
+ ${HOST_KEYS}
+ .
+ Użytkownicy również mogą być dotknięci tym problemem. Polecenie "ssh-vulnkey" umożliwia częściowe sprawdzenie tego scenariusza. Proszę zapoznać się z /usr/share/doc/openssh-server/README.compromised-keys.gz, aby uzyskać więcej szczegółów.
+Description-pt.UTF-8: Chaves do anfitrião vulneráveis serão regeneradas
+ Algumas das chaves do servidor OpenSSH neste sistema foram criadas com uma versão do OpenSSL que tem um gerador de números aleatórios com problemas. Como resultado estas chaves, que fazem parte de um conjunto bem conhecido, estão sujeitas a ataques por força bruta, e têm de ser geradas de novo.
+ .
+ Os utilizadores deste sistema devem ser informados desta mudança, uma vez que vão ser avisados da mudança de chave da próxima vez que se ligarem. Utilize o comando 'ssh-keygen -l -f FICHEIRO_DA_CHAVE' depois da actualização para imprimir as impressões das novas chaves.
+ .
+ As chaves afectadas são:
+ .
+ ${HOST_KEYS}
+ .
+ As chaves de utilizador também podem ser afectadas por este problema. O comando 'ssh-vulnkey' pode ser usado como um teste parcial para este caso. Veja o ficheiro /usr/share/doc/openssh-server/README.compromised-keys.gz para mais detalhes.
+Description-pt_BR.UTF-8: Chaves de host vulneráveis serão regeradas
+ Algumas das chaves de host do servidor OpenSSH neste sistema foram geradas com uma versão do OpenSSL que tem um gerador de números aleatórios quebrado. Como resultado, estas chaves de host são originárias de um conjunto bem conhecido, ficando sujeitas a ataques de força bruta, e devem ser regeradas.
+ .
+ Usuários deste sistema deverão ser informados desta mudança, pois eles serão alertados sobre a mudança de chave de host na próxima vez que logarem. Use 'ssh-keygen -l -f ARQUIVO_COM_A_CHAVE_DE_HOST' após a atualização para exibir as impressões digitais ("fingerprints") das novas chaves de host.
+ .
+ As chaves de host afetadas são:
+ .
+ ${HOST_KEYS}
+ .
+ Chaves de usuários também podem ser afetadas por este problema. O comando 'ssh-vulnkey' pode ser usado como um teste parcial para isso. Veja /usr/share/doc/openssh-server/README.compromised-keys.gz para mais detalhes.
+Description-ro.UTF-8: Cheile vulnerabile vor fi regenerate
+ Unele dintre cheile serverului OpenSSH gazdă de pe acest sistem au fost generate cu o versiune de OpenSSL, care a avut un generator de numere aleatorii stricat. Ca rezultat, aceste chei gazda sunt un set binecunoscut, sunt supuse la atacuri brute-force și trebuie să fie regenerate.
+ .
+ Utilizatorii acestui sistem ar trebui să fie informați ce se schimbă, deoarece se va solicita cheia gazdă ce se schimba data viitoare când se autentifică. Folosiți 'ssh-keygen -l -f HOST_KEY_FILE' după ce faceți actualizare pentru a imprima amprentele digitale ale noilor chei gazdă.
+ .
+ Cheile gazdă afectate sunt:
+ .
+ ${HOST_KEYS}
+ .
+ Cheile utilizatorului de asemenea, pot fi afectate de această problemă. Comanda 'ssh-vulnkey' poate fi folosită ca un test parțial pentru acestea. A se vedea /usr/share/doc/openssh-server/README.compromised-keys.gz pentru mai multe detalii.
+Description-ru.UTF-8: Уязвимые ключи хоста будут созданы заново
+ Некоторые ключи хоста сервера OpenSSH в этой системе были созданы с помощью версии OpenSSL, в которой был испорченный генератор случайных чисел. В результате, такие ключи хоста входили во всем известный список, что позволяло применять атаку последовательного подбора ключей. Ключи должны быть созданы заново.
+ .
+ Пользователи этой системы будут проинформированы об этом изменении, так как им будет выведено сообщение о смене ключа хоста при следующем подключении. Используйте команду 'ssh-keygen -l -f HOST_KEY_FILE' после обновления для распечатки отпечатков новых ключей хоста.
+ .
+ Ключи хоста, которые будут заменены:
+ .
+ ${HOST_KEYS}
+ .
+ Пользовательские ключи также имеют данную проблему. Для частичной проверки можно воспользоваться командой 'ssh-vulnkey'. В файле /usr/share/doc/openssh-server/README.compromised-keys.gz дано более подробное описание.
+Description-sk.UTF-8: Namiesto zneužiteľných kľúčov hostiteľa sa vytvoria nové
+ Niektoré z OpenSSH klúčov hostiteľa na tomto systéme boli vytvorené verziou OpenSSL, ktorá mala chybný generátor náhodných čísel. Dôsledkom je, že tieto klúče hostiteľa sú z vopred známej množiny, je možné ich prelomiť hrubou silou a je potrebné vytvoriť namiesto nich nové.
+ .
+ Používateľov tohoto systému by ste mali informovať o tejto zmene, pretože pri najbližšom prihlásení sa im zobrazí výzva o zmenenom kľúči hostiteľa. Po aktualizácii vypíšete odtlačky nových kľúčov hostiteľa príkazom „ssh-keygen -l -f HOST_KEY_FILE“.
+ .
+ Postihnuté kľúče sú:
+ .
+ ${HOST_KEYS}
+ .
+ Používateľské kľúče tiež mohol ovplyvniť tento problém. Na čiastočný test zraniteľnosti je možné použiť príkaz „ssh-vulnkey“. Podrobnosti nájdete v /usr/share/doc/openssh-server/README.compromised-keys.gz
+Description-sv.UTF-8: Sårbara värdnycklar kommer att omskapas
+ Några av värdnycklarna för OpenSSH skapades med en version av OpenSSL som innehöll ett fel i slumptalsgeneratorn. På grund av detta är värden sårbar för en så kallad brute force-attack då nycklarna kommer från ett litet och välkänt spektra.
+ .
+ Användarna på det här systemet borde informeras om den här förändringen då de kommer att bli varse bytet av värdnyckel nästa gång de loggar in. Använd 'ssh-keygen -l -f HOST_KEY_FILE' efter uppgraderingen har slutförst för att skriva ut fingeravtrycken för de nya värdnycklarna
+ .
+ De drabbade värdnycklarna är:
+ .
+ ${HOST_KEYS}
+ .
+ Användarnycklar kan också vara drabbade av detta fel. Kommandot 'ssh-vulnkey' kan användas som ett deltest. Läs /usr/share/doc/openssh-server/README.compromised-keys.gz för mer ingående detaljer.
+Description-tr.UTF-8: Saldırıya açık makine anahtarları yeniden yaratılacak
+ Bu sistemdeki OpenSSH sunucusu makine anahtarlarından bazıları OpenSSL'in rastgele sayı üreticisi bozuk olan bir versiyonuyla oluşturulmuş. Sonuç olarak, bu makine anahtarları iyi bilinen bir gruptan ve kaba kuvvet saldırılarına açık. Bu anahtarlar yeniden oluşturulmalı.
+ .
+ Bu sistemin kullanıcılarını makine anahtarı değişikliğinden haberdar etmelisiniz, çünkü  kullanıcılar sisteme ilk oturum açışlarında uyarılacak ve kullanıcılara oturum açmaya devam etmek isteyip istemedikleri sorulacak. Yeni makine anahtarlarının parmak izlerini görmek için yükseltmeden sonra 'ssh-keygen -l -f MAKİNE_ANAHTARI_DOSYASI' komutunu kullanın.
+ .
+ Etkilenmiş makine anahtarları:
+ .
+ ${HOST_KEYS}
+ .
+ Kullanıcı anahtarları da bu sorundan etkilenebilir.  'ssh-vulnkey' komutu bu sorun için kısmi bir test olarak kullanılabilir. Ayrıntılar için  /usr/share/doc/openssh-server/README.compromised-keys.gz belgesine bakın.
+Description-vi.UTF-8: Mọi khoá máy dễ bị tấn công đều sẽ được tạo lại
+ Một số khoá máy kiểu trình phục vụ OpenSSH trên hệ thống này đã được tạo bằng một phiên bản OpenSSL có một cơ chế tạo số ngẫu nhiên mà bị hỏng. Kết quả là những khoá máy này thuộc về một tập hợp ai cũng biết, có thể bị tấn công dùng sức mạnh vũ phu, và phải được tạo lại.
+ .
+ Các người dùng của hệ thống này nên được thông báo về thay đổi này, vì họ sẽ được nhắc cho thay đổi khoá máy này lần kế tiếp đăng nhập. Hãy dùng câu lệnh « ssh-keygen -l -f TẬP_TIN_KHOÁ_MÁY » sau khi nâng cấp, để in ra các vân tay của những khoá máy mới.
+ .
+ Những máy khoá bị ảnh hưởng:
+ .
+ ${HOST_KEYS}
+ .
+ Các khoá kiểu người dùng cũng có thể bị vấn đề này ảnh hưởng. Câu lệnh « ssh-vulnkey » có thể được sử dụng làm thử bộ phận để phát hiện các khoá vẫn còn dễ tấn công. Xem tài liệu Đọc Đi «  /usr/share/doc/openssh-server/README.compromised-keys.gz » để tìm thêm chi tiết.

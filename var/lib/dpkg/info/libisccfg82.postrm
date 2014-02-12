@@ -1,0 +1,15 @@
+#!/bin/sh
+# postrm script for #PACKAGE#
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# Automatically added by dh_makeshlibs
+if [ "$1" = "remove" ]; then
+	ldconfig
+fi
+# End automatically added section
+
+
+exit 0

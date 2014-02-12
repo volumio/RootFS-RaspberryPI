@@ -1,0 +1,11 @@
+# deb http://mirrordirector.raspbian.org/raspbian/ wheezy main
+
+deb http://mirrordirector.raspbian.org/raspbian/ wheezy main
+deb-src http://mirrordirector.raspbian.org/raspbian/ wheezy main
+
+## Raspberry Pi Foundation official repository
+deb http://archive.raspberrypi.org/debian wheezy main
+
+deb http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi
+deb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi
+

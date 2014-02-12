@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+
+
+if [ "$1" = "configure" ]; then
+  ldconfig;
+fi
+
+if [ "$(dpkg --print-architecture)" = armhf ]; then
+  ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3 2>/dev/null || true
+fi
+
+if [ -e /etc/asound.conf ]; then
+  if grep -q "mmap_emul" /etc/asound.conf && ! grep -q "LEAVE_ME_ALONE" /etc/asound.conf; then
+    printf "mmap_emul is set in /etc/asound.conf, disabling it as it is no longer necessary\n"
+    printf "If you are (for instance) using an external USB soundcard that needs mmap_emul,"
+    printf "add the string LEAVE_ME_ALONE to your /etc/asound.conf as a comment\n"
+    printf "If you don't know what an /etc/asound.conf is, don't worry about this message\n"
+    mv /etc/asound.conf /etc/asound.conf.disabled
+  fi
+fi

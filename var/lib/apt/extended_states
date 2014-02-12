@@ -1,0 +1,72 @@
+Package: lockfile-progs
+Architecture: armhf
+Auto-Installed: 1
+
+Package: pmount
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libsdl1.2debian
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libts-0.0-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libswscale2
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libxfixes3
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libdc1394-22
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libcaca0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libopencv-imgproc2.3
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpostproc52
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libraw1394-11
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libdirectfb-1.2-9
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libcdio-cdda1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libopencv-core2.3
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libavfilter2
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libcdio-paranoia1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: tsconf
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libavdevice53
+Architecture: armhf
+Auto-Installed: 1
+

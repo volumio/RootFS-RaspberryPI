@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/apc.ini \
+	/etc/php5/mods-available/apc.ini 3.1.10-1~ -- "$@"
+
+case "$1" in
+    configure)
+	php5enmod apc
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+exit 0

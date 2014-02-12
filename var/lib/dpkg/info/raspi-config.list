@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/bin
+/usr/bin/raspi-config
+/usr/share
+/usr/share/doc
+/usr/share/doc/raspi-config
+/usr/share/doc/raspi-config/LICENSE
+/usr/share/doc/raspi-config/sample_profile_d.sh
+/usr/share/doc/raspi-config/changelog.Debian.gz

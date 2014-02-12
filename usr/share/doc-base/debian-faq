@@ -1,0 +1,20 @@
+Document: debian-faq
+Title: Debian FAQ
+Author: Ray Dassen, Javier Fernandez-Sanguino, Susan G. Kleinmann,
+ Josip Rodin, Sven Rudolph, Chuck Stickelman, Santiago Vila e.a.
+Abstract: This document answers questions frequently asked about Debian
+ GNU/Linux.
+Section: Debian
+
+Format: HTML
+Index: /usr/share/doc/debian/FAQ/index.html
+Files: /usr/share/doc/debian/FAQ/*.html
+
+Format: text
+Files: /usr/share/doc/debian/FAQ/debian-faq.txt.gz
+
+Format: PostScript
+Files: /usr/share/doc/debian/FAQ/debian-faq.ps.gz
+
+Format: PDF
+Files: /usr/share/doc/debian/FAQ/debian-faq.pdf.gz

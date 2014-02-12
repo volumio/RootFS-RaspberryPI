@@ -1,0 +1,10 @@
+TARGETS = bootlogs motd killprocs single rpcbind nfs-common autofs triggerhappy atd exim4 samba dropbear dbus shairport php5-fpm sudo ssh rsync ntp mpd avahi-daemon wicd cron myruns rmnologin rc.local
+INTERACTIVE =
+single: killprocs bootlogs motd
+mpd: autofs
+avahi-daemon: dbus
+wicd: dbus
+cron: autofs
+myruns: rpcbind autofs mpd triggerhappy atd nfs-common exim4 samba dropbear avahi-daemon dbus shairport php5-fpm wicd bootlogs motd sudo ssh rsync ntp cron
+rmnologin: sudo rpcbind autofs mpd triggerhappy atd nfs-common exim4 samba dropbear avahi-daemon dbus shairport php5-fpm wicd bootlogs motd ssh rsync ntp cron
+rc.local: rpcbind autofs mpd triggerhappy atd nfs-common exim4 samba dropbear avahi-daemon dbus shairport php5-fpm wicd bootlogs motd sudo ssh rsync ntp cron

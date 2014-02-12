@@ -1,0 +1,248 @@
+#!/usr/bin/python
+# -*- python -*-
+# querybts - Examine the state of a debbugs server
+#   Written by Chris Lawrence <lawrencc@debian.org>
+#   (C) 1999-2008 Chris Lawrence
+#   Copyright (C) 2008-2012 Sandro Tosi <morph@debian.org>
+#
+# This program is freely distributable per the following license:
+#
+##  Permission to use, copy, modify, and distribute this software and its
+##  documentation for any purpose and without fee is hereby granted,
+##  provided that the above copyright notice appears in all copies and that
+##  both that copyright notice and this permission notice appear in
+##  supporting documentation.
+##
+##  I DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+##  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL I
+##  BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+##  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+##  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+##  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+##  SOFTWARE.
+
+import sys
+import os
+import optparse
+import re
+
+from reportbug import utils
+from reportbug.exceptions import (
+    UINotImportable,
+    NoPackage, NoBugs, NoReport, NoNetwork,
+    )
+from reportbug import debbugs
+from reportbug import urlutils
+
+from reportbug.ui import AVAILABLE_UIS
+
+import reportbug.ui.text_ui as ui
+ui_mode = 'text'
+
+from reportbug import VERSION_NUMBER
+
+VERSION = "querybts %s" % VERSION_NUMBER
+
+def main():
+
+    # default values for cli options
+    defaults = dict(system = 'debian', archived = False,
+                    http_proxy = '', interface = 'text',
+                    use_browser = False, source = False,
+                    mirrors = None, mbox = False,  buglist = False,
+                    mbox_reader_cmd = None)
+
+    # parse config file to update default options
+    args = utils.parse_config_files()
+    for option, arg in args.items():
+        if option in ('system', 'mirrors', 'interface', 'http_proxy',
+                      'mbox_reader_cmd'):
+            defaults[option] = arg
+
+    # define the cli options parser
+    parser = optparse.OptionParser(
+        description='%prog - Examine the state of a debbugs server.',
+        usage='%prog [options] {<package> | <report number> [report2] ...}',
+        version=VERSION)
+
+    # set the defaults
+    parser.set_defaults(**defaults)
+
+    # add the cli options
+    parser.add_option('-A', '--archive', action='store_true', dest='archived',
+                      help='Browse archived bugs.')
+    parser.add_option('-b', '--buglist', action='store_true', dest='buglist',
+                      help='Display a bugs list for the given package.')
+    parser.add_option('-B', '--bts', dest='system',
+                      help='Specify an alternate debbugs BTS; available values:  %s ' %
+                      ', '.join([k for k in debbugs.SYSTEMS if debbugs.SYSTEMS[k].get('btsroot')]))
+    parser.add_option('-m', '--mbox', action='store_true', dest='mbox',
+                      help='generate mbox')
+    parser.add_option('--proxy', '--http_proxy', dest='http_proxy',
+                      help='define the proxy to use')
+    parser.add_option('-s', '--source', action='store_true', dest='source',
+                      help='Query for source packages rather than binary packages.')
+    parser.add_option('--timeout', type="int", dest='timeout', default=60,
+                      help='Specify the network timeout, in seconds [default: %default].')
+    parser.add_option('-u', '--ui', '--interface', dest='interface',
+                      help='Specify the user interface to use; available values: %s ' % ', '.join(AVAILABLE_UIS.keys()))
+    parser.add_option('-w', '--web', action='store_true', dest='use_browser',
+                      help='Use a web browser instead of the internal interface.')
+    parser.add_option('--mbox-reader-cmd', dest='mbox_reader_cmd',
+                      help="Specify the program to open the reports mbox.")
+    parser.add_option('--latest-first', action='store_true', dest='latest_first', default=False,
+                      help='Order bugs to show the latest first')
+
+
+    # parse cli options
+    (options, args) = parser.parse_args()
+
+    # check options for consistency
+
+    # interface must be one of those supported
+    if options.interface not in AVAILABLE_UIS:
+        parser.error('Allowed arguments to --ui: \n' +
+                     '\n'.join(['  %s  (%s)' % (key, value) for key, value in AVAILABLE_UIS.iteritems()]))
+    else:
+        # prepare the UI and import it
+        global ui, ui_mode
+        iface = '%s_ui' % options.interface
+        try:
+            lib_package = __import__('reportbug.ui', fromlist=[iface])
+            ui = getattr(lib_package, iface)
+            ui_mode = options.interface
+        except UINotImportable, msg:
+            ui.long_message('*** Unable to import %s interface: %s '
+                            'Falling back to %s interface.\n',
+                            options.interface, msg, ui_mode)
+            print
+
+    # initialize the selected UI
+    ui.initialize ()
+
+    # system must be one of those supported
+    if options.system not in [k for k in debbugs.SYSTEMS if debbugs.SYSTEMS[k].get('btsroot')]:
+        parser.error('Allowed arguments to --bts: \n' +
+                     '\n'.join(['  %s  (%s)' % (k, debbugs.SYSTEMS[k]['name']) for k in debbugs.SYSTEMS if debbugs.SYSTEMS[k].get('btsroot')]))
+    else:
+        # set the system info to those of the one selected
+        sysinfo = debbugs.SYSTEMS[options.system]
+
+    # there should be at least one argument
+    if len(args) == 0:
+        parser.error('Please specify a package or one or more bug numbers.  ' +
+                     'Note: most shells consider # a comment character; however, a ' +
+                     'leading # is not needed to specify a bug by number.')
+
+    if options.use_browser:
+        if options.buglist:
+            parser.error("--web and --buglist can't work together, exiting.")
+
+        package = args[0]
+
+        m = re.match('^#?(\d+)$', package)
+        if m:
+            num = int(m.group(1))
+            url = debbugs.get_report_url(options.system, num, options.mirrors, options.archived)
+        else:
+            url = debbugs.get_package_url(options.system, package, options.mirrors, options.source, options.archived)
+
+        # launch the browser and exit
+        urlutils.launch_browser(url)
+        sys.exit()
+
+    if options.mbox:
+        if options.buglist:
+            parser.error("--mbox and --buglist can't work together, exiting.")
+
+        for bugnum in args:
+            package = bugnum
+            m = re.match('^#?(\d+)$', bugnum)
+            if not m:
+                mboxbuglist = []
+                mboxbuglist = ui.handle_bts_query(package, options.system, options.timeout, options.mirrors, options.http_proxy,
+                                    queryonly=True, title=VERSION, archived=options.archived,
+                                    source=options.source, mbox=options.mbox, latest_first=options.latest_first)
+                for num in mboxbuglist:
+                    url = debbugs.get_report_url(options.system, num, options.archived, mbox=True)
+                    try:
+                        report = urlutils.open_url(url, timeout=options.timeout)
+                        sys.stdout.write(report.read())
+                    except urlutils.urllib2.URLError, ex:
+                        print >> sys.stderr, "Error while accessing mbox report (%s)." % ex
+            else:
+                num = int(m.group(1))
+                url = debbugs.get_report_url(options.system, num, options.archived, mbox=True)
+                try:
+                    report = urlutils.open_url(url, timeout=options.timeout)
+                    sys.stdout.write(report.read())
+                except urlutils.urllib2.URLError, ex:
+                    print >> sys.stderr, "Error while accessing mbox report (%s)." % ex
+                    sys.exit(1)
+        return
+
+
+    reportre = re.compile(r'^#?(\d+)$')
+    try:
+        if len(args) > 1:
+            bugs = []
+            for report in args:
+                match = reportre.match(report)
+                if match:
+                    bugs.append(int(match.group(1)))
+            package = bugs
+            if not bugs:
+                raise ui.NoBugs
+        else:
+            package = args[0]
+            match = reportre.match(package)
+            if match:
+                report = int(match.group(1))
+                while 1 :
+                    retvalue = ui.show_report(report, options.system, options.mirrors,
+                                          options.http_proxy, options.timeout,
+                                          queryonly=True,
+                                          title=VERSION,
+                                          archived=options.archived,
+                                          mbox_reader_cmd=options.mbox_reader_cmd)
+                    ui.long_message('This option is not available while using querybts alone.\n')
+                    x = ui.select_options('What do you want to do now?', 'Qb',
+                                          {'q': 'Exit querybts.',
+                                           'b': 'Query BTS one more time.'})
+                    if x == 'q':
+                        ui.long_message('Exiting.\n')
+                        sys.exit(0)
+
+        while 1:
+            ui.handle_bts_query(package, options.system, options.timeout, options.mirrors, options.http_proxy,
+                                queryonly=True, title=VERSION, archived=options.archived,
+                                source=options.source, buglist=options.buglist,
+                                mbox_reader_cmd=options.mbox_reader_cmd, latest_first=options.latest_first)
+            ui.long_message('This option is not available while using querybts alone.\n')
+            x = ui.select_options('What do you want to do now?', 'Qb',
+                                  {'q': 'Exit querybts.',
+                                   'b': 'Query BTS one more time.'})
+            if x == 'q':
+                ui.long_message('Exiting.\n')
+                sys.exit(0)
+
+    except NoPackage:
+        ui.long_message('Package appears not to exist in the BTS.\n')
+    except NoBugs:
+        ui.long_message('No bug reports found.\n')
+    except NoReport:
+        ui.long_message('Exiting.\n')
+    except NoNetwork:
+        ui.long_message('Cannot connect to network.\n')
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print "querybts: exiting due to user interrupt."
+    except debbugs.Error, x:
+        print 'error accessing BTS: '+str(x)
+    except SystemExit:
+        pass
+    except:
+        raise

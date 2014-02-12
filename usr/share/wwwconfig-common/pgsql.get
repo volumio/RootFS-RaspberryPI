@@ -1,0 +1,85 @@
+# File:		pgsql.get
+# Changes:	
+#	20010224 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Added defaults for dbadmin and documented all defaults.
+#		Removed the reinclusion. No high computation and it will work
+#		fine anyway.
+#	20020926 Ola Lundqvist <opal@debian.org>
+#		 Arndt Schönewald <arndt@lin02384n012.mc.schoenewald.de>
+#		Changed so that sudo is no longer needed. Patch description
+#		and code from Arndt Schönewald.
+#		This really solves a big issue with wwwconfig-common.
+#	20020926 Ola Lundqvist <opal@debian.org>
+#		 Arndt Schönewald <arndt@lin02384n012.mc.schoenewald.de>
+#		Minor fix from Arndt Schönewald that fix problem if someone
+#		use a non-sh compatible shell.
+#       20080327 Morten Werner Forsbring <werner@debian.org>
+#               Support for postgres 8.x.
+# Needs:	$dbserver  - the server to connect to (defaults to localhost).
+#		$dbadmin   - the administrator name (defaults to postgres).
+#		$dbadmpass - the administrator password (not supported).
+# Sets:		$pgsqlcmd so that administration access are prepared
+#		$systemdb  - the name of the system db.
+
+if [ -z "$dbadmin" ] ; then
+    dbadmin=postgres
+fi
+if [ -z "$dbserver" ] ; then
+    dbserver=localhost
+fi
+if [ -z "$systemdb" ] ; then
+    systemdb=template1
+fi
+if [ "$dbserver" != "localhost" ] ; then
+    hostopt="-h '$dbserver'"
+fi
+
+use_dbuser=true
+
+pgsqlcmd()
+{
+    if [ "$use_dbuser" = true ]; then
+	local user="$dbuser"
+	local pass="$dbpass"
+    else
+	local user="$dbadmin"
+	local pass="$dbadmpass"
+    fi
+
+    _psql_args=
+    while [ $# -gt 0 ]
+    do
+        _psql_args="$_psql_args '`echo \"$1\" | sed -e \"s/'/'\\\\\\''/g\"`'"
+        shift
+    done
+
+    MYUID=`id -un`
+    if [ -z "$hostopt" -a \( "$MYUID" = root -o "$UID" = "$user" \) ] && grep -q ^"$user": /etc/passwd ; then
+	su -s /bin/sh $user -c "psql $hostopt $_psql_args"
+    else
+	PGPASSDIR=`mktemp -d`
+	if [ $? -ne 0 ]; then
+	    exit 1
+	fi
+	PGPASSFILE=$PGPASSDIR/.pgpass
+	export PGPASSFILE
+
+	if [ ! -z "$pass" ] ; then
+	    OLDUMASK=`umask`
+	    umask 077
+	    echo "*:*:*:$user:$pass" > $PGPASSFILE
+	    umask $OLDUMASK
+	fi
+
+	eval psql -U "$user" $hostopt $_psql_args
+
+	rm -rf "$PGPASSDIR"
+    fi
+}
+
+pgsqlcmd=pgsqlcmd

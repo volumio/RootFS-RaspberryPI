@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libparted0debian1
+/usr/share/doc/libparted0debian1
+/usr/share/doc/libparted0debian1/changelog.Debian.gz
+/usr/share/doc/libparted0debian1/changelog.gz
+/usr/share/doc/libparted0debian1/copyright
+/lib
+/lib/arm-linux-gnueabihf
+/lib/arm-linux-gnueabihf/libparted.so.0.0.1
+/lib/arm-linux-gnueabihf/libparted.so.0

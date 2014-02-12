@@ -1,0 +1,1 @@
+/usr/share/pyshared/reportbug/ui/__init__.py

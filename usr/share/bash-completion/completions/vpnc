@@ -1,0 +1,40 @@
+# bash completion for vpnc                                 -*- shell-script -*-
+
+_vpnc()
+{
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        --pfs)
+            COMPREPLY=( $( compgen -W 'nopfs dh1 dh2 dh5 server' -- "$cur" ) )
+            return 0
+            ;;
+        --pfs)
+            COMPREPLY=( $( compgen -W 'dh1 dh2 dh5' -- "$cur" ) )
+            return 0
+            ;;
+        --pid-file|--script)
+            _filedir
+            return 0
+            ;;
+        --gateway)
+            _known_hosts_real "$cur"
+            return 0
+            ;;
+    esac
+
+    if [[ "$cur" == -* ]]; then
+        COMPREPLY=( $( compgen -W '--version --print-config --help \
+            --long-help --gateway --id --username --udp --domain \
+            --xauth-inter --script --dh --pfs --enable-1des \
+            --application-version --ifname --debug --no-detach \
+            --pid-file --local-port  --udp-port --disable-natt \
+            --non-inter' -- "$cur" ) )
+    else
+        COMPREPLY=( $( compgen -W '$( command ls /etc/vpnc )' -- "$cur" ) )
+    fi
+} &&
+complete -F _vpnc vpnc
+
+# ex: ts=4 sw=4 et filetype=sh

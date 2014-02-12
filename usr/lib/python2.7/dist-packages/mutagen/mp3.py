@@ -1,0 +1,1 @@
+../../../../share/pyshared/mutagen/mp3.py

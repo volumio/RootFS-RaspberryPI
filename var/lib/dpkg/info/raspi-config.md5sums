@@ -1,0 +1,4 @@
+f5b68b33804b26de5b65d9e239b1c6c2  usr/bin/raspi-config
+87c25b1874010cc3f7a251d7956b4e57  usr/share/doc/raspi-config/LICENSE
+5e2053853bd1e4f629fd8084a3daf671  usr/share/doc/raspi-config/changelog.Debian.gz
+2cc747f451e60b002ce7f4051749e654  usr/share/doc/raspi-config/sample_profile_d.sh

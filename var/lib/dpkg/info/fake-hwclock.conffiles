@@ -1,0 +1,3 @@
+/etc/default/fake-hwclock
+/etc/init.d/fake-hwclock
+/etc/cron.hourly/fake-hwclock

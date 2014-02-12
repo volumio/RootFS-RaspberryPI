@@ -1,0 +1,9 @@
+ee3a54c0b09a4c72085f3cf233677cee  usr/include/librtmp/amf.h
+385bb830eb202ea4a884a09065b11875  usr/include/librtmp/http.h
+db3e60283a7535c677e2455944d7bd27  usr/include/librtmp/log.h
+8f6354f7d944a1c9c3aaae66ffc0afef  usr/include/librtmp/rtmp.h
+14a5634ca723fcc1484ae34dbd894527  usr/lib/arm-linux-gnueabihf/librtmp.a
+80afe770fd620f3ef02f323f7ecd29c2  usr/lib/arm-linux-gnueabihf/pkgconfig/librtmp.pc
+7541ed6464582129afb26004831df33f  usr/share/doc/librtmp-dev/changelog.Debian.gz
+d8a0cfa6d91a1701feaaddd82bc2b50b  usr/share/doc/librtmp-dev/changelog.gz
+79bad274b70075d8e97c7dd7b79f841f  usr/share/doc/librtmp-dev/copyright

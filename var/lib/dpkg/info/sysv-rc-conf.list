@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/sysv-rc-conf
+/usr/share/doc/sysv-rc-conf/README
+/usr/share/doc/sysv-rc-conf/changelog.Debian.gz
+/usr/share/doc/sysv-rc-conf/TODO
+/usr/share/doc/sysv-rc-conf/copyright
+/usr/share/doc/sysv-rc-conf/changelog.gz
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/sysv-rc-conf.8.gz
+/usr/sbin
+/usr/sbin/sysv-rc-conf

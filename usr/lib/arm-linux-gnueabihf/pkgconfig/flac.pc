@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: FLAC
+Description: Free Lossless Audio Codec Library
+Version: 1.2.1
+Libs: -L${libdir} -lFLAC -lm
+Cflags: -I${includedir}/FLAC

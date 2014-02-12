@@ -1,0 +1,1 @@
+../../../../share/pyshared/urwid/version.py

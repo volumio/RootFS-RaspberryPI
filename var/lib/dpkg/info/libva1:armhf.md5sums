@@ -1,0 +1,4 @@
+b4795c41a15f5e0110bde1f9e3e636d0  usr/lib/arm-linux-gnueabihf/dri/dummy_drv_video.so
+d699a580eb04f1727f7a9c61d3f73c42  usr/lib/arm-linux-gnueabihf/libva.so.1.3200.0
+ca81459f4ecfff17ad61d6badb3d3157  usr/share/doc/libva1/changelog.Debian.gz
+a90222d44e3f84081d943ff22bf5514c  usr/share/doc/libva1/copyright

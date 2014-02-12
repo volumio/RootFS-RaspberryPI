@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/locale
+/usr/share/locale/en_US
+/usr/share/locale/en_US/LC_MESSAGES
+/usr/share/locale/en_US/LC_MESSAGES/mit-krb5.mo
+/usr/share/doc
+/usr/share/doc/krb5-locales
+/usr/share/doc/krb5-locales/changelog.gz
+/usr/share/doc/krb5-locales/copyright
+/usr/share/doc/krb5-locales/NEWS.Debian.gz
+/usr/share/doc/krb5-locales/changelog.Debian.gz
+/usr/share/doc/krb5-locales/CHANGES.gz

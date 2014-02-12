@@ -1,0 +1,1 @@
+../../../../share/pyshared/unidecode/x052.py

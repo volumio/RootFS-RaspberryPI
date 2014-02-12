@@ -1,0 +1,11 @@
+#!/bin/sh
+# prerm script for icelib-dev
+# Runs on removal of icelib-dev
+
+
+echo "icelib-dev prerm starting"
+
+
+echo "icelib-dev prerm finished"
+
+exit 0

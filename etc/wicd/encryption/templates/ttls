@@ -1,0 +1,16 @@
+name = TTLS with WEP
+author = Adam Blackburn
+version = 1
+require identity *Identity password *Password auth *Authentication
+protected password *Password
+-----
+ctrl_interface=/var/run/wpa_supplicant
+network={
+	ssid="$_ESSID"
+	scan_ssid=$_SCAN
+	eap=TTLS
+	key_mgmt=IEEE8021X
+	identity="$_IDENTITY"
+	password="$_PASSWORD"
+	phase2="auth=$_AUTH"
+}

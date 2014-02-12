@@ -1,0 +1,6 @@
+a6ae1f513c68ccb7324eda371f1d3337  usr/share/doc/openssh-blacklist-extra/changelog.gz
+031e6cfe10e9791515e0f7b31d8f681f  usr/share/doc/openssh-blacklist-extra/copyright
+da6724edb70e3c3de9a414c6a7e27f25  usr/share/doc/openssh-blacklist-extra/examples/generate-blacklist.sh
+6346a71939f747681d7b8119aecd14ff  usr/share/ssh/blacklist.DSA-2048
+88990bf04eafbec1fc8ca3d08cdbe45a  usr/share/ssh/blacklist.RSA-1024
+557ad1062466f5e4c1c4e531ef887923  usr/share/ssh/blacklist.RSA-4096

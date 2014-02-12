@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/bin/ffmpeg
+/usr/share
+/usr/share/doc
+/usr/share/doc/ffmpeg
+/usr/share/doc/ffmpeg/README.Debian.gz
+/usr/share/doc/ffmpeg/NEWS.Debian.gz
+/usr/share/doc/ffmpeg/changelog.gz
+/usr/share/doc/ffmpeg/changelog.Debian.gz
+/usr/share/doc/ffmpeg/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/ffmpeg.1.gz

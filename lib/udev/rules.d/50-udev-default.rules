@@ -1,0 +1,12 @@
+# virtio serial / console ports
+KERNEL=="vport*", ATTR{name}=="?*",	SYMLINK+="virtio-ports/$attr{name}"
+
+SUBSYSTEM=="input", ENV{ID_INPUT}=="", IMPORT{builtin}="input_id"
+
+# RTC on some architectures
+SUBSYSTEM=="rtc", DRIVERS=="rtc_cmos",		SYMLINK+="rtc"
+
+# /dev/sndstat
+SUBSYSTEM=="module", KERNEL=="snd", ACTION=="add", \
+        RUN+="/bin/ln -sf /proc/asound/oss/sndstat $root/sndstat"
+

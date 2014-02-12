@@ -1,0 +1,2 @@
+libparted 0 libparted0debian1 (>= 2.2-1)
+udeb: libparted 0 libparted0-udeb (>= 2.2-1)

@@ -1,0 +1,37 @@
+server {
+  listen   8080;
+  root /var/www;
+  index index.php index.html index.htm;
+  server_name localhost;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /doc/ {
+        alias /usr/share/doc/;
+        autoindex on;
+        allow 127.0.0.1;
+        allow ::1;
+        deny all;
+    }
+
+
+    error_page 404 /404.html;
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/www;
+    }
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}

@@ -1,0 +1,7 @@
+d65796ac78c11a01c29cdc7f6b775f0a  lib/systemd/system/nginx.service
+b1e85e005e37a3cdab1b9ce2161b3eca  usr/share/doc/nginx-common/changelog.Debian.gz
+cabc0add8e7d1175c5bab55ca060c099  usr/share/doc/nginx-common/changelog.gz
+7600bc1bc7edc5bc0fcf515bdc3bcdfd  usr/share/doc/nginx-common/copyright
+29cb3e185fa141e5df795a924b3f4302  usr/share/man/man1/nginx.1.gz
+a233b4bd37c258227cf8668977598387  usr/share/nginx/www/50x.html
+5b6d74f1453e20c09d6a20d909779ad7  usr/share/nginx/www/index.html

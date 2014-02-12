@@ -1,0 +1,7 @@
+e642bbdbc29976ac0937addc0ed885f7  usr/sbin/localepurge
+649bc0bf1c0740575e0f485a0e60787c  usr/share/doc/localepurge/NEWS.Debian.gz
+d9642ee6095d083adad9283b9d4399cd  usr/share/doc/localepurge/README.Debian
+b8fb46c809adb69a4c53c05987bf3f60  usr/share/doc/localepurge/changelog.gz
+2cc58a2738d1925d7e462633addf7856  usr/share/doc/localepurge/copyright
+6fc4dfd4aad16186ca32dce9fb15a1a3  usr/share/doc/localepurge/reinstall_debs.sh
+e07315f6b2a429584e6ca8af11757bc6  usr/share/man/man8/localepurge.8.gz

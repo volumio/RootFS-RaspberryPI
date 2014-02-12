@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libserf-1.so.0.0.0
+/usr/share
+/usr/share/doc/libserf1
+/usr/share/doc/libserf1/changelog.gz
+/usr/share/doc/libserf1/NOTICE
+/usr/share/doc/libserf1/changelog.Debian.gz
+/usr/share/doc/libserf1/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libserf1
+/usr/lib/arm-linux-gnueabihf/libserf-1.so.0

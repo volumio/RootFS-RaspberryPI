@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libmms.so.0.0.2
+/usr/share
+/usr/share/doc/libmms0
+/usr/share/doc/libmms0/changelog.gz
+/usr/share/doc/libmms0/changelog.Debian.gz
+/usr/share/doc/libmms0/copyright
+/usr/lib/arm-linux-gnueabihf/libmms.so.0

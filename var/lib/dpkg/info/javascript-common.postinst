@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	configure)
+		mkdir -p /etc/apache2/conf.d
+
+		if [ ! -e /etc/apache2/conf.d/javascript-common.conf ]
+		then
+			ln -s /etc/javascript-common/javascript-common.conf /etc/apache2/conf.d/javascript-common.conf
+			restart="apache2"
+		fi
+
+		servers="apache2"
+		. /usr/share/wwwconfig-common/restart.sh
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+
+
+exit 0

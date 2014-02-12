@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/MAKEDEV.8.gz
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/makedev
+/usr/share/doc/makedev
+/usr/share/doc/makedev/changelog.Debian.gz
+/usr/share/doc/makedev/copyright
+/sbin
+/sbin/MAKEDEV

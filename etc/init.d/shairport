@@ -1,0 +1,19 @@
+#! /bin/sh
+# /etc/init.d/shairport
+#
+NAME="Volumio"
+ 
+case "$1" in
+  start)
+    /usr/local/bin/shairport -d -a "$NAME"
+    ;;
+  stop)
+    killall shairport
+    ;;
+  *)
+    echo "Usage: /etc/init.d/shairport {start|stop}"
+    exit 1
+    ;;
+esac
+ 
+exit 0

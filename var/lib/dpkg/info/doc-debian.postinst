@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+if which install-docs >/dev/null 2>&1; then
+  install-docs -i /usr/share/doc-base/debian-constitution-text
+  install-docs -i /usr/share/doc-base/debian-reporting-bugs
+  install-docs -i /usr/share/doc-base/debian-manifesto
+  install-docs -i /usr/share/doc-base/debian-mailing-lists
+  install-docs -i /usr/share/doc-base/debian-social-contract
+fi

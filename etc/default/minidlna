@@ -1,0 +1,22 @@
+# Defaults for minidlna initscript
+# sourced by /etc/init.d/minidlna
+# installed at /etc/default/minidlna by the maintainer scripts
+
+# These options can be set to modify the behavior of the minidlna init script.
+# The options commented out show the default values.
+
+# Start the daemon if set to "yes"
+START_DAEMON="yes"
+
+# Path to the configuration file
+#CONFIGFILE="/etc/minidlna.conf"
+
+# Path to the log file
+#LOGFILE="/var/log/minidlna.log"
+
+# User and group the daemon should run as
+#USER="minidlna"
+#GROUP="minidlna"
+
+# Additional options that are passed to the daemon
+DAEMON_OPTS=""

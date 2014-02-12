@@ -1,0 +1,8 @@
+144c46639070763bf0a781f723f2072b  usr/bin/debsig-verify
+a6efdeea6921cdac9845feef49b96b50  usr/share/doc/debsig-verify/changelog.gz
+4ae08c66309b9ef65d3011e2f9b7503f  usr/share/doc/debsig-verify/copyright
+14d91f3ee5fa2f1472bc1ca8af6497ea  usr/share/doc/debsig-verify/examples/generic.pol
+b9a589870bebbf3134d9949aae784b02  usr/share/doc/debsig-verify/examples/potato-release.pol
+cd5ddb2bd45cb6448c5ed990c3e80a2a  usr/share/doc/debsig-verify/policy-syntax.txt
+b0c363c95a38fe668008e34ecc24905f  usr/share/doc/debsig-verify/policy.dtd
+89de91495d3bfd2841c60afc34fb128e  usr/share/man/man1/debsig-verify.1.gz

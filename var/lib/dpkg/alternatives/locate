@@ -1,0 +1,12 @@
+auto
+/usr/bin/locate
+locate.1.gz
+/usr/share/man/man1/locate.1.gz
+updatedb
+/usr/bin/updatedb
+
+/usr/bin/mlocate
+80
+/usr/share/man/man1/mlocate.1.gz
+/usr/bin/updatedb.mlocate
+

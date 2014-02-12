@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/arm-linux-gnueabihf
+includedir=${prefix}/include/ncursesw
+major_version=5
+version=5.9.20110404
+
+Name: panelw
+Description: ncurses 5.9 add-on library
+Version: ${version}
+Requires: ncursesw tinfo
+Libs: -L${libdir} -lpanelw
+Cflags: -I${includedir}

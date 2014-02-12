@@ -1,0 +1,11 @@
+#!/bin/sh
+# postrm script for icelib-dev
+# Runs after removal of icelib-dev
+
+
+echo "icelib-dev postrm starting"
+
+
+echo "icelib-dev postrm finished"
+
+exit 0

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/arm-linux-gnueabihf
+includedir=${prefix}/include
+
+Name: jack
+Description: the Jack Audio Connection Kit: a low-latency synchronous callback-based media server
+Version: 0.122.0
+Libs: -L${libdir} -ljack -lpthread  -lrt
+Cflags: -I${includedir}

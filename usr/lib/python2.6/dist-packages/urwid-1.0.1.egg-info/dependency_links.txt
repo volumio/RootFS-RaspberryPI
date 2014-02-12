@@ -1,0 +1,1 @@
+../../../../share/pyshared/urwid-1.0.1.egg-info/dependency_links.txt

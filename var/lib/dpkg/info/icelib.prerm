@@ -1,0 +1,11 @@
+#!/bin/sh
+# prerm script for pishop
+# Runs on removal of pishop
+
+
+echo "icelib prerm starting"
+
+
+echo "icelib prerm finished"
+
+exit 0

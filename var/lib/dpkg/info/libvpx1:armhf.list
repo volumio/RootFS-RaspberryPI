@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libvpx.so.1.1.0
+/usr/share
+/usr/share/doc/libvpx1
+/usr/share/doc/libvpx1/README
+/usr/share/doc/libvpx1/changelog.Debian.gz
+/usr/share/doc/libvpx1/copyright
+/usr/share/doc/libvpx1/AUTHORS
+/usr/share/doc/libvpx1/changelog.gz
+/usr/lib/arm-linux-gnueabihf/libvpx.so.1.1
+/usr/lib/arm-linux-gnueabihf/libvpx.so.1

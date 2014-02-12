@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if [ -e /etc/ld.so.preload ]; then
+  sed -i -e "/libcofi_rpi/d" /etc/ld.so.preload
+  if [ -z $(cat /etc/ld.so.preload) ]; then
+    rm /etc/ld.so.preload
+  fi
+fi

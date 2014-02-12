@@ -1,0 +1,6 @@
+ca441d76c246f5342d157b1edf8db637  usr/lib/arm-linux-gnueabihf/libmikmod.so.2.0.4
+1450ec6333d8038054aa61d858c0821e  usr/share/doc/libmikmod2/README.gz
+e0ece8ff4d7eb42c6a1a128d52042e34  usr/share/doc/libmikmod2/changelog.Debian.gz
+936496e992bffffc152f0943d1c462b3  usr/share/doc/libmikmod2/changelog.gz
+12d821d11494e19f18225a2619ff12aa  usr/share/doc/libmikmod2/copyright
+a8eff0a418cf9753cfb054c64bdb6abc  usr/share/lintian/overrides/libmikmod2

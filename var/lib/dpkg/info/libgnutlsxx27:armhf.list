@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgnutlsxx27
+/usr/share/doc/libgnutlsxx27/README.gz
+/usr/share/doc/libgnutlsxx27/changelog.Debian.gz
+/usr/share/doc/libgnutlsxx27/copyright
+/usr/share/doc/libgnutlsxx27/NEWS.gz
+/usr/share/doc/libgnutlsxx27/changelog.gz
+/usr/share/doc/libgnutlsxx27/AUTHORS.gz
+/usr/share/doc/libgnutlsxx27/THANKS.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libgnutlsxx.so.27.0.0
+/usr/lib/arm-linux-gnueabihf/libgnutlsxx.so.27

@@ -1,0 +1,5 @@
+/etc
+/etc/default
+/etc/default/rsync
+/etc/init.d
+/etc/init.d/rsync

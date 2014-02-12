@@ -1,0 +1,21 @@
+?package(deborphan):\
+	needs="text" \
+	section="Applications/System/Administration" \
+	title="Orphaner (libs)" \
+	hints="apt,Administration" \
+	longtitle="Orphaned library finder (libraries only)" \
+	command="su-to-root -c /usr/sbin/orphaner"
+?package(deborphan):\
+	needs="text" \
+	section="Applications/System/Administration" \
+	title="Orphaner (all)" \
+	hints="apt,Administration" \
+	longtitle="Orphaned library finder (all packages)" \
+	command="su-to-root -c '/usr/sbin/orphaner -a'"
+?package(deborphan):\
+	needs="text" \
+	section="Applications/System/Administration" \
+	title="Orphaner - editkeep" \
+	hints="apt,Administration" \
+	longtitle="Edit list of packages deborphan/orphaner should never list" \
+	command="su-to-root -c '/usr/sbin/editkeep'"

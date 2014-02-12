@@ -1,0 +1,37 @@
+#! /bin/sh
+set -e
+
+case "$1" in
+    configure)
+	[ -e /media ] || mkdir /media
+
+	# confine pmount/pumount execution to $GROUP members
+	for prog in /usr/bin/pmount /usr/bin/pumount; do
+	    if ! dpkg-statoverride --list $prog > /dev/null; then
+                if ! getent group plugdev > /dev/null; then
+                    addgroup --quiet --system plugdev || true
+                fi
+                chown root:plugdev $prog
+                chmod 4754 $prog
+	    fi
+	done
+
+        # Clean up pmount stamps in lock directories (bug from < 0.8 packages,
+        # see #302174)
+        if [ -d /var/lock/pmount ]; then
+            find /var/lock/pmount/ -name .created_by_pmount -exec rm -f '{}' \;
+        fi
+	;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+	;;
+esac
+
+
+
+exit 0

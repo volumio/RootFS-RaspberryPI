@@ -1,0 +1,167 @@
+state.DAC {
+	control.1 {
+		iface PCM
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'PCM Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value.0 110
+		value.1 110
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 110'
+			dbmin -5500
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+}
+state.ALSA {
+	control.1 {
+		iface MIXER
+		name 'PCM Playback Volume'
+		value 400
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '-10239 - 400'
+			dbmin -9999999
+			dbmax 400
+			dbvalue.0 400
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'PCM Playback Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'PCM Playback Route'
+		value 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 2'
+		}
+	}
+}
+state.D20 {
+	control.1 {
+		iface MIXER
+		name 'DIYINHK Clock Selector Playback Switch'
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'DIYINHK Clock Selector Playback Switch'
+		index 1
+		value false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'DIYINHK Clock Selector Playback Volume'
+		value.0 127
+		value.1 127
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 127'
+			dbmin -12700
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'DIYINHK Clock Selector Playback Volume'
+		index 1
+		value 127
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 127'
+			dbmin -12700
+			dbmax 0
+			dbvalue.0 0
+		}
+	}
+}
+state.sndrpipcm5102a {
+	control {
+	}
+}
+control.3 {
+	iface MIXER
+	name 'DIYINHK Clock Selector Playback Volume'
+	value.0 127
+	value.1 127
+	comment {
+		access 'read write'
+		type INTEGER
+		count 2
+		range '0 - 127'
+		dbmin -12700
+		dbmax 0
+		dbvalue.0 0
+		dbvalue.1 0
+	}
+}
+control.4 {
+	iface MIXER
+	name 'DIYINHK Clock Selector Playback Volume'
+	index 1
+	value 127
+	comment {
+		access 'read write'
+		type INTEGER
+		count 1
+		range '0 - 127'
+		dbmin -12700
+		dbmax 0
+		dbvalue.0 0
+	}
+}

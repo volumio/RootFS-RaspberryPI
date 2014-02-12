@@ -1,0 +1,4 @@
+8ea427b3e148217201dbcdb04d761eed  sbin/chkconfig
+a61ffeec8c28736a2fece49b1da75d73  usr/share/doc/chkconfig/changelog.Debian.gz
+1957b414103d1770d6a3c9ba74d0dbca  usr/share/doc/chkconfig/copyright
+419b90fee685bd1c3530cbe33170d7ef  usr/share/man/man8/chkconfig.8.gz

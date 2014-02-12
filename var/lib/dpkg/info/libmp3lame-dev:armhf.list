@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/include
+/usr/include/lame
+/usr/include/lame/lame.h
+/usr/share
+/usr/share/doc/libmp3lame-dev
+/usr/share/doc/libmp3lame-dev/changelog.Debian.gz
+/usr/share/doc/libmp3lame-dev/changelog.gz
+/usr/share/doc/libmp3lame-dev/copyright
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libmp3lame.a
+/usr/lib/arm-linux-gnueabihf/libmp3lame.so

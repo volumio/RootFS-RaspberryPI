@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# This file must be executable to work! chmod 755!
+
+key="$1"
+opts="-fstype=cifs"
+
+for P in /bin /sbin /usr/bin /usr/sbin
+do
+	if [ -x $P/smbclient ]
+	then
+		SMBCLIENT=$P/smbclient
+		break
+	fi
+done
+
+[ -x $SMBCLIENT ] || exit 1
+
+$SMBCLIENT -gNL $key 2>/dev/null| awk -v key="$key" -v opts="$opts" -F'|' -- '
+	BEGIN	{ ORS=""; first=1 }
+	/Disk/	{
+		  if (first)
+			print opts; first=0
+		  dir = $2
+		  loc = $2
+		  # Enclose mount dir and location in quotes
+		  # Double quote "$" in location as it is special
+		  gsub(/\$$/, "\\$", loc);
+		  gsub(/\&/,"\\\\&",loc)
+		  print " \\\n\t \"/" dir "\"", "\"://" key "/" loc "\""
+		}
+	END 	{ if (!first) print "\n"; else exit 1 }
+	'
+

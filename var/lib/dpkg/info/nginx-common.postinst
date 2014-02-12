@@ -1,0 +1,36 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure)
+    logdir="/var/log/nginx"
+    # Ensure existance and right state of log files and directory
+    if [ ! -d "$logdir" -a ! -L "$logdir" ]; then
+      mkdir "$logdir"
+      chown www-data:adm $logdir
+      chmod 0750 $logdir
+    fi
+    # For systemd, enable the nginx unit, but don't start it (just like the
+    # init script).
+    if [ -x /bin/systemctl ]; then
+      systemctl enable nginx.service >/dev/null 2>&1 || true
+    fi
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/nginx" ]; then
+	update-rc.d nginx defaults >/dev/null || exit $?
+fi
+# End automatically added section
+
+
+exit 0

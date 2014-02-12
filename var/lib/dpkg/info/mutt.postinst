@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+	update-alternatives --install /usr/bin/mutt mutt /usr/bin/mutt-org 50
+fi
+
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" ] && [ -x "`which update-menus 2>/dev/null`" ]; then
+	update-menus
+fi
+# End automatically added section
+# Automatically added by dh_installmime
+if [ "$1" = "configure" ] && [ -x "`which update-mime 2>/dev/null`" ]; then
+	update-mime
+fi
+# End automatically added section
+
+
+exit 0

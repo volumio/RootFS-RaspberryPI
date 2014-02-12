@@ -1,0 +1,9 @@
+Document: munkres
+Title: Munkres Module Documentation
+Author: Brian M. Clapper
+Abstract: munkres algorithm for the Assignment Problem
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-munkres/html/index.html
+Files: /usr/share/doc/python-munkres/html/*.html

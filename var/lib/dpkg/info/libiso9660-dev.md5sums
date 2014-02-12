@@ -1,0 +1,8 @@
+68917eb6125af4338a32518d21cd6379  usr/include/cdio/iso9660.h
+77bdcc7ae1377cde2b184f18c539bf47  usr/include/cdio/rock.h
+6725bfae7d3be7800fd7f53a4717011e  usr/include/cdio/xa.h
+43e51d54a41af49318e8a08dece14caa  usr/lib/libiso9660.a
+3ff1a0d59ec64c506f88bd68d90358c8  usr/lib/pkgconfig/libiso9660.pc
+96818ded2affe12cd139925c1aac397d  usr/share/doc/libiso9660-dev/changelog.Debian.gz
+bc877d16cf8b0964f0370ff07b732d24  usr/share/doc/libiso9660-dev/changelog.gz
+cc1cbad64c4f7d167e7a38a0b44fd67c  usr/share/doc/libiso9660-dev/copyright

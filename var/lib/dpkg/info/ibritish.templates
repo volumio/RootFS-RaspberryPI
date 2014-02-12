@@ -1,0 +1,8 @@
+Template: shared/packages-ispell
+Type: text
+Description:
+
+Template: ibritish/languages
+Type: text
+Default: british (British English)
+Description:

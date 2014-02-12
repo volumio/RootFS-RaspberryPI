@@ -1,0 +1,9 @@
+libsvn_fs-1 1 libsvn1
+libsvn_ra-1 1 libsvn1
+libsvn_repos-1 1 libsvn1
+libsvn_subr-1 1 libsvn1
+libsvn_delta-1 1 libsvn1
+libsvn_ra_svn-1 1 libsvn1
+libsvn_client-1 1 libsvn1
+libsvn_wc-1 1 libsvn1
+libsvn_diff-1 1 libsvn1

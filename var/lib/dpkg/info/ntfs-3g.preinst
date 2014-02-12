@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	upgrade)
+		if [ -h /usr/share/doc/ntfs-3g ]
+		then
+			rm -f /usr/share/doc/ntfs-3g
+		fi
+		;;
+
+	install|abort-upgrade)
+
+			;;
+
+	*)
+		echo "preinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+
+
+exit 0

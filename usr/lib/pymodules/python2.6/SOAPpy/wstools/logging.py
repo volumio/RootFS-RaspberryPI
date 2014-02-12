@@ -1,0 +1,1 @@
+/usr/share/python-support/python-soappy/SOAPpy/wstools/logging.py

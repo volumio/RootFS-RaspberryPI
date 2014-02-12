@@ -1,0 +1,8 @@
+/var
+/var/lib
+/var/lib/aptitude
+/etc
+/etc/cron.daily
+/etc/cron.daily/aptitude
+/etc/logrotate.d
+/etc/logrotate.d/aptitude

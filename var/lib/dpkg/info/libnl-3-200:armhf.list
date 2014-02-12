@@ -1,0 +1,16 @@
+/.
+/etc
+/etc/libnl-3
+/etc/libnl-3/classid
+/etc/libnl-3/pktloc
+/usr
+/usr/share
+/usr/share/doc/libnl-3-200
+/usr/share/doc/libnl-3-200/changelog.Debian.gz
+/usr/share/doc/libnl-3-200/changelog.gz
+/usr/share/doc/libnl-3-200/copyright
+/usr/share/doc/libnl-3-200/README.Debian
+/lib
+/lib/arm-linux-gnueabihf
+/lib/arm-linux-gnueabihf/libnl-3.so.200.5.2
+/lib/arm-linux-gnueabihf/libnl-3.so.200

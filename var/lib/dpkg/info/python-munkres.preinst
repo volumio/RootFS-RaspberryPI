@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Automatically added by dh_python2:
+# make sure python-central files are removed before new package is installed
+if [ "$1" = upgrade ] && [ -f /var/lib/pycentral/python-munkres.pkgremove ]
+then
+	pycentral pkgremove python-munkres
+	rm -f /var/lib/pycentral/python-munkres.pkgremove
+fi
+
+# End automatically added section

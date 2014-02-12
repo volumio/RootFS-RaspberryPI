@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+if [ -e /etc/default/ntfs-3g ]
+then
+	. /etc/default/ntfs-3g
+fi
+
+if [ "${NTFS3G_INITRAMFS}" = "false" ]
+then
+	exit 0
+fi
+
+PREREQ="fuse"
+
+prereqs () {
+	echo "${PREREQ}"
+}
+
+case "${1}" in
+	prereqs)
+		prereqs
+		exit 0
+		;;
+esac
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /bin/ntfs-3g /bin
+
+ln -s /bin/ntfs-3g "${DESTDIR}/sbin/mount.ntfs-3g"
+ln -s /bin/ntfs-3g "${DESTDIR}/sbin/mount.ntfs"
+
+exit 0

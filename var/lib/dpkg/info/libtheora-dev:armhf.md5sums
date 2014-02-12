@@ -1,0 +1,13 @@
+c10b2e73e1eaaf84664d7fd2d3bf0347  usr/include/theora/codec.h
+b1591959c084d5d9402b0f24d8de5153  usr/include/theora/theora.h
+674e47321083316cee728e08fc659fe8  usr/include/theora/theoradec.h
+7a68adcb6a7fe67bf98bebb48c55c993  usr/include/theora/theoraenc.h
+f3e6f657bd76e6832da2ade5a9b4aaef  usr/lib/arm-linux-gnueabihf/libtheora.a
+95580d9c736429f7851c2637bffcef97  usr/lib/arm-linux-gnueabihf/libtheoradec.a
+9042c8639aa3a217ae314bdb27ae0ac6  usr/lib/arm-linux-gnueabihf/libtheoraenc.a
+a15ef2b193df879eae627d569e26e5fc  usr/lib/arm-linux-gnueabihf/pkgconfig/theora.pc
+ccfbbebad2def06ae8b0c0232934d616  usr/lib/arm-linux-gnueabihf/pkgconfig/theoradec.pc
+d0969f8979d0aa0cb11256869548a401  usr/lib/arm-linux-gnueabihf/pkgconfig/theoraenc.pc
+82d3a7df493806258482545fd2be51a9  usr/share/doc/libtheora-dev/changelog.Debian.gz
+49f24e886943520312f32eff1c35de07  usr/share/doc/libtheora-dev/changelog.gz
+607d5d1853133a0c746a53641103c85a  usr/share/doc/libtheora-dev/copyright

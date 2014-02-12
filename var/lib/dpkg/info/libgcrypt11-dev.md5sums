@@ -1,0 +1,17 @@
+dcff4f9b80f3656107e96ddc9bfcd233  lib/arm-linux-gnueabihf/libgcrypt.a
+fb7047233ccf1b39b7a983e20df78cf4  usr/bin/dumpsexp
+baaa8f763ed5b89db8e9ba7f5f275a16  usr/bin/hmac256
+06903634fcdf251bf520eceaada91252  usr/bin/libgcrypt-config
+ed9f0332d80b875611307f50b30ce945  usr/include/gcrypt-module.h
+096f39984a0963db0895e462a95fb63f  usr/include/gcrypt.h
+c3d27cb78a502f322bd6a28c098621d8  usr/share/aclocal/libgcrypt.m4
+50bb8946159d2e5bad3b2b80ae6ce084  usr/share/doc/libgcrypt11-dev/AUTHORS.gz
+5e1babf5f0858a2a9ced150b5ad0795d  usr/share/doc/libgcrypt11-dev/NEWS.gz
+ed5963fd3cef8893e0e1431dbe9b9dd8  usr/share/doc/libgcrypt11-dev/README.gz
+d020bce9528e731353d321ee7aae2385  usr/share/doc/libgcrypt11-dev/THANKS.gz
+76d5fc840868bb24b4c931e8366762a0  usr/share/doc/libgcrypt11-dev/TODO
+b2d503a533d1dade57853ae743af4152  usr/share/doc/libgcrypt11-dev/changelog.Debian.gz
+45163c5cb3226af9621e9dd43f8fbe45  usr/share/doc/libgcrypt11-dev/changelog.gz
+5e6d057f06ced5b7b6e53866506a9a3e  usr/share/doc/libgcrypt11-dev/copyright
+3beeb1a90c8437a2fc6ad520e153a7e7  usr/share/man/man1/dumpsexp.1.gz
+6eb196802534e1bda43e58ec335ad321  usr/share/man/man1/libgcrypt-config.1.gz

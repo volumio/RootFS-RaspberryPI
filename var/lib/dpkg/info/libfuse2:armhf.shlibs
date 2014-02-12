@@ -1,0 +1,4 @@
+libfuse 2 libfuse2 (>= 2.8.1)
+libulockmgr 1 libfuse2 (>= 2.8.1)
+udeb: libfuse 2 libfuse2-udeb (>= 2.8.1)
+udeb: libulockmgr 1 libfuse2-udeb (>= 2.8.1)

@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libssh2-1
+/usr/share/doc/libssh2-1/changelog.Debian.gz
+/usr/share/doc/libssh2-1/copyright
+/usr/share/doc/libssh2-1/changelog.gz
+/usr/share/doc/libssh2-1/AUTHORS
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libssh2.so.1.0.1
+/usr/lib/arm-linux-gnueabihf/libssh2.so.1

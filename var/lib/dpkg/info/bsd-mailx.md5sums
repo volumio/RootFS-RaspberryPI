@@ -1,0 +1,8 @@
+6eb9cdbb87939ab8cf8f0e7257bda98d  usr/bin/bsd-mailx
+bd10a15e486a75e4e1ae8af7445623c4  usr/share/bsd-mailx/mail.help
+8e14010ef05498f7831c88f60e445402  usr/share/bsd-mailx/mail.tildehelp
+08673f3cf2d4bc2c085d34a324537eaa  usr/share/doc/bsd-mailx/README.Debian.gz
+5405fcd4f73740381bae3f0091b52709  usr/share/doc/bsd-mailx/changelog.Debian.gz
+c1f009dbab256844f11b7d6a3f553c2c  usr/share/doc/bsd-mailx/changelog.gz
+7d66d65ca833a8781fd04ecf6224a7fc  usr/share/doc/bsd-mailx/copyright
+2f50fcd99305126c284d4cc24808bb4e  usr/share/man/man1/bsd-mailx.1.gz

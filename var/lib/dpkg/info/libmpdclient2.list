@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libmpdclient2
+/usr/share/doc/libmpdclient2/changelog.Debian.gz
+/usr/share/doc/libmpdclient2/copyright
+/usr/share/doc/libmpdclient2/changelog.gz
+/usr/share/doc/libmpdclient2/AUTHORS
+/usr/lib
+/usr/lib/libmpdclient.so.2.0.1
+/usr/lib/libmpdclient.so.2

@@ -1,0 +1,31 @@
+# File:		apache.func
+# Changes:
+#	20010219 Ola Lundqvist <opal@debian.org>
+#	20010222 Ola Lundqvist <opal@debian.org>
+#	20010430 Ola Lundqvist <opal@debian.org>
+#		Removed bash specific dependency.
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Added set -e.
+#	20020312 Ola Lundqvist <opal@debian.org>
+#		Fixed getwwwoption get using suggestions from
+#		root@langhorst.com.
+# Description:	Functions for apache query or manipulation.
+
+set -e
+
+# Function:	getwwwoption
+# Author:	Ola Lundqvist <opal@debian.org>
+# Date:		20010219, 20010222
+# Description:	Get the value of a apache config option.
+# Parameters:	1 - The option to query for.
+#		2 - a config file to query.
+# Needs:	The file that parameter two points to. (else it hangs)
+# Sets:		$getwwwoption = the option value.
+getwwwoption() {
+    getwwwoption=""
+    if [ -f $2 ] ; then
+	if grep $1 $2 | grep -v "#" > /dev/null 2>&1 ; then
+	    getwwwoption=$(sed -ne "/^[[:space:]]*$1[[:space:]]\+/ s|[[:space:]]*$1[[:space:]]\+\([^[:space:]]\+\)[[:space:]]*$|\1|pg;" < $2)
+	fi
+    fi
+}

@@ -1,0 +1,8 @@
+?package(mc): \
+   needs="text" \
+   section="Applications/File Management" \
+   title="mc" \
+   longtitle="Midnight Commander" \
+   hints="File managers" \
+   command="/usr/bin/mc" \
+   icon="/usr/share/pixmaps/mc.xpm"

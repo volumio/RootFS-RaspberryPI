@@ -1,0 +1,3 @@
+/etc/usbmount/mount.d/00_create_model_symlink
+/etc/usbmount/umount.d/00_remove_model_symlink
+/etc/usbmount/usbmount.conf

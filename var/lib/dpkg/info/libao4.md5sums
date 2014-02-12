@@ -1,0 +1,9 @@
+74d422f692b0a44ce95b907d458666b1  usr/lib/ao/plugins-4/libalsa.so
+acf1d751137a320228aa21ed30f855a0  usr/lib/ao/plugins-4/libesd.so
+2c33794f5f81ecca80fcbfa3d2d545b4  usr/lib/ao/plugins-4/libnas.so
+1e74debc7d7dd24ff44ecb09d0f2e2fe  usr/lib/ao/plugins-4/liboss.so
+3dc70d0542ee7223e308cee9584c8eb6  usr/lib/ao/plugins-4/libpulse.so
+41933aaf2f57f11d67767f0dd8d37ec1  usr/lib/libao.so.4.0.0
+0ba51f95ffd73dd9834726b1656b7625  usr/share/doc/libao4/changelog.Debian.gz
+279068ab194eeefbd419992cd85bd13b  usr/share/doc/libao4/changelog.gz
+158831af2b5da6307adbf14996cc89d8  usr/share/doc/libao4/copyright

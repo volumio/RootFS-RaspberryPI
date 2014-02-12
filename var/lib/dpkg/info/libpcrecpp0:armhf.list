@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libpcrecpp0
+/usr/share/doc/libpcrecpp0/README.gz
+/usr/share/doc/libpcrecpp0/changelog.Debian.gz
+/usr/share/doc/libpcrecpp0/copyright
+/usr/share/doc/libpcrecpp0/NEWS.gz
+/usr/share/doc/libpcrecpp0/changelog.gz
+/usr/share/doc/libpcrecpp0/AUTHORS
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libpcrecpp.so.0.0.0
+/usr/lib/arm-linux-gnueabihf/libpcrecpp.so.0

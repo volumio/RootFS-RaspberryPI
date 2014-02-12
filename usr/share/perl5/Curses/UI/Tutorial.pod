@@ -1,0 +1,159 @@
+=head1 NAME
+
+Curses::UI::Tutorial - Tutorial for the Curses::UI framework
+
+=head1 Introduction
+
+The intention of this tutorial is a quick overview of Curses::UI and
+it's widgets. The target of this example is to write a simple text
+editor using the Curses::UI framework. 
+
+=head1 First requirements
+
+In order to use Curses::UI start your program with 
+"use Curses::UI;" and, as it is always a good idea,
+ add "use strict" and the -w switch too.
+After that an instance of Curses::UI must
+be created. From now on, this instance will be called
+"the UI". You  also want to redirect STDERR to a file 
+(e.g. perl myscript.pl 2> debug.out), so output that does
+not come from Curses::UI doesn't clobber your display.
+You want fancy colors, so the option -color_support is set
+to a true value.
+
+    #!/usr/bin/perl -w
+
+    use strict;
+    use Curses::UI;
+    my $cui = new Curses::UI( -color_support => 1 );
+
+=head1 Create a menu
+
+	my @menu = (
+	  { -label => 'File', 
+	    -submenu => [
+           { -label => 'Exit      ^Q', -value => \&exit_dialog  }
+    			]
+  	   },
+	);
+
+In order to describe the structure of a menu Curses::UI uses
+a rather ugly construct out of hash and arrayrefs. See
+Curses::UI::Menubar for details. What you do at this point is to
+create a Menubar with just one entry and one submenu. The entry
+is 'File' and the submenu is 'Exit'. 
+The value of this menu item is a reference to a sub called
+exit_dialog.
+
+=head1 Dialogs
+
+	sub exit_dialog()
+	{
+		my $return = $cui->dialog(
+			-message   => "Do you really want to quit?",
+			-title     => "Are you sure???", 
+			-buttons   => ['yes', 'no'],
+
+		);
+
+	exit(0) if $return;
+	}
+
+The dialog method of Curses::UI gives us an easy and convenient way to
+create dialogs on the main screen. A dialog is a way to interact with
+the user in order to ask him a question or give him important
+information.  This dialog is a more complex one, which asks the
+question whether or not you really want to exit. As the button for 
+"yes" would return us a true value, you can easily exit on this return 
+value.
+
+=head1 Add the Menubar
+
+	my $menu = $cui->add(
+		'menu','Menubar', 
+		-menu => \@menu,
+		-fg  => "blue",
+	);
+
+To finally add the Menubar to our root object, you have to call the add
+method on the Curses UI object. You specify the internal name of the
+widget as the first argument, the widget type as the second argument
+(like Label, TextViewer, etc.) and the menu structure you created at
+the beginning as an array reference as third object. Because you want
+the Menubar to have a blue theme, you give him the -fg option
+"blue". There are a couple of colors you can use, see
+Curses::UI::Color for details.
+
+=head1 Add a window
+
+	my $win1 = $cui->add(
+			     'win1', 'Window',
+			     -border => 1,
+			     -y    => 1,
+			     -bfg  => 'red',
+		     );
+
+There are only two types of object you can add to the Curses::UI root
+object: Menubars and Windows. All other widgets have to be inserted
+into a window. Of course you can add a Menubar to a window, but not
+vice versa ;-).
+The add method always has the same two first arguments: the internal
+name and the widget type. The internal name can be used to find an
+object. The method getobj takes this name and returns us the
+corresponding object out of the hierarchy. See Curses::UI for details.
+Again you want some fancy colors, so you tell the window to have a
+border, leave some space for the Menubar (-y => 1) and set the border
+foreground color to red.
+
+=head1 Add a widget
+
+	my $texteditor = $win1->add("text", "TextEditor",
+				 -text => "Here is some text\n"
+			                . "And some more");
+
+The next step is to add a useful widget to our new small Curses::UI
+app. Here you take a TextEditor widget which performs basic tasks as a
+text editor. You add some initial text to the widget to make it not
+seem that empty.
+
+=head1 Making keybindings
+
+	$cui->set_binding(sub {$menu->focus()}, "\cX");
+	$cui->set_binding( \&exit_dialog , "\cQ");
+
+You want to be able to focus the Menubar if you finished editing in the
+TextEditor widget. Therefore you set a binding to the focus function of
+the menu and the key sequence Control (specified by \c) combined with
+X. Now you can easily return to the menu after editing.
+Because it is easier to have a shortcut for closing the application you
+add a binding for the sequence Control-Q to our nice exit_dialog
+method.
+
+=head1 The final steps
+
+	$texteditor->focus();
+	$cui->mainloop();
+
+You want to start editing directly. Therefore you set the initial focus
+on the TextEditor by calling it's focus method directly. 
+The last thing you got to do is to tell Curses that it now contoles the
+program flow by starting it's MainLoop. 
+
+=head1 You're done!
+
+You have built a genuine Curses::UI application! Not that it is a
+very useful one, but who cares? Now try out if it works like you 
+think it should. The complete source code of this application 
+is located in the examples directory of the distribution (examples/tutorial.pl).
+
+Now you can enhance this application to become a full featured editor
+like Emacs :-)
+
+=head1 Author
+
+2003-2004 (c) by Marcus Thiesen (marcus@cpan.org)
+All rights reserved
+This Tutorial is licensed under the same terms as perl itself.
+
+If you have some additions to this tutorial feel free to send me a
+mail.

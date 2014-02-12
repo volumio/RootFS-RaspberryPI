@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdebconf
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+# Automatically added by installdeb-ispell
+rmscript="remove-default-ispell"
+
+case "$1" in abort-install|remove)
+	if which $rmscript > /dev/null 2>&1; then
+	    $rmscript ibritish
+	else
+	    echo "Warning: $rmscript not present or executable." >&2
+	fi
+
+        # Remove shared question stuff on package removal, not only on purge
+	if [ -e /usr/share/debconf/confmodule ]; then
+	    . /usr/share/debconf/confmodule
+	    db_purge
+	fi
+esac
+# End automatically added section
+# Automatically added by installdeb-ispell
+dico_class="ispell"
+dico_varlib_remove="british.compat british.hash"
+
+case "$1" in abort-install|remove)
+	if [ -d "/var/lib/$dico_class" ]; then
+	    ( cd "/var/lib/$dico_class" && rm -f $dico_varlib_remove )
+	fi
+esac
+# End automatically added section

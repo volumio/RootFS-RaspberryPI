@@ -1,0 +1,7 @@
+76674c14edf6eb5939a775b7040ade46  usr/sbin/sysv-rc-conf
+772d97e52b7d79a0c73b7bdc963c0b71  usr/share/doc/sysv-rc-conf/README
+a9aff13a52a6b124ce0eb4ef1bf70d3d  usr/share/doc/sysv-rc-conf/TODO
+1342458d4bb967fe1f732163feee4287  usr/share/doc/sysv-rc-conf/changelog.Debian.gz
+691e758ec7712d7445ca768e066ef70f  usr/share/doc/sysv-rc-conf/changelog.gz
+fdd26c0aa8df8e63f85f5532baa3d924  usr/share/doc/sysv-rc-conf/copyright
+3477bf1fd49e44cffd0674ee110e9fd7  usr/share/man/man8/sysv-rc-conf.8.gz

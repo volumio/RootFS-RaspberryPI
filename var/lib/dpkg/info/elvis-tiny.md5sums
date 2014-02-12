@@ -1,0 +1,8 @@
+7e5e151edb521b8928f40901acddab22  bin/elvis-tiny
+0e8f4f0420c94f7fd83c6ef2ed3006f7  bin/vi
+eb065457afa42e05ad11830ce9fec96d  usr/share/doc/elvis-tiny/KNOWN.BUGS
+c03e2ee5088e82cbca9fdc0ca7b224ea  usr/share/doc/elvis-tiny/changelog.Debian.gz
+a5d8aed840454ad6898418463addcc86  usr/share/doc/elvis-tiny/changelog.gz
+0432c403a3c1a0e985af1e45e3177337  usr/share/doc/elvis-tiny/copyright
+236199f49535580bb1bb66fe183bedcf  usr/share/lintian/overrides/elvis-tiny
+8cb3a286feb0c8c3d92c835f83ca8d0c  usr/share/man/man1/elvis-tiny.1.gz

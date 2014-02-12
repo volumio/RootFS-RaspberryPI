@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libflac8
+/usr/share/doc/libflac8/changelog.Debian.gz
+/usr/share/doc/libflac8/copyright
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libFLAC.so.8.2.0
+/usr/lib/arm-linux-gnueabihf/libFLAC.so.8

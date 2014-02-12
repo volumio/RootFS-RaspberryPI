@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libwavpack.a
+/usr/lib/arm-linux-gnueabihf/pkgconfig
+/usr/lib/arm-linux-gnueabihf/pkgconfig/wavpack.pc
+/usr/share
+/usr/share/doc/libwavpack-dev
+/usr/share/doc/libwavpack-dev/changelog.gz
+/usr/share/doc/libwavpack-dev/changelog.Debian.gz
+/usr/share/doc/libwavpack-dev/README.gz
+/usr/share/doc/libwavpack-dev/copyright
+/usr/include
+/usr/include/wavpack
+/usr/include/wavpack/wavpack.h
+/usr/lib/arm-linux-gnueabihf/libwavpack.so

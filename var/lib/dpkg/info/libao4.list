@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/ao
+/usr/lib/ao/plugins-4
+/usr/lib/ao/plugins-4/libnas.so
+/usr/lib/ao/plugins-4/libpulse.so
+/usr/lib/ao/plugins-4/libesd.so
+/usr/lib/ao/plugins-4/libalsa.so
+/usr/lib/ao/plugins-4/liboss.so
+/usr/lib/libao.so.4.0.0
+/usr/share
+/usr/share/doc/libao4
+/usr/share/doc/libao4/changelog.Debian.gz
+/usr/share/doc/libao4/changelog.gz
+/usr/share/doc/libao4/copyright
+/usr/lib/libao.so.4

@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+dpkg-maintscript-helper rm_conffile /etc/mc/mc.charsets  3:4.8-1 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/mc/mc.lib       3:4.8-1 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/mc/Syntax       3:4.8-1 -- "$@"
+dpkg-maintscript-helper mv_conffile \
+		/etc/mc/cedit.menu    /etc/mc/mcedit.menu        3:4.8-1 -- "$@"
+
+case "$1" in
+	configure|abort-upgrade)
+		update-alternatives --install /usr/bin/view view /usr/bin/mcview 25 \
+			--slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/mcview.1.gz
+		update-alternatives --install /usr/bin/editor editor /usr/bin/mcedit 25 \
+			--slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/mcedit.1.gz
+	;;
+esac
+
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" ] && [ -x "`which update-menus 2>/dev/null`" ]; then
+	update-menus
+fi
+# End automatically added section
+

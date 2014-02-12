@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/share
+/usr/share/javascript
+/usr/share/javascript/underscore
+/usr/share/javascript/underscore/underscore.js
+/usr/share/doc/libjs-underscore
+/usr/share/doc/libjs-underscore/changelog.Debian.gz
+/usr/share/doc/libjs-underscore/buildinfo_all.gz
+/usr/share/doc/libjs-underscore/copyright
+/usr/share/doc/libjs-underscore/index.html
+/usr/share/doc/libjs-underscore/README
+/usr/share/javascript/underscore/underscore.min.js

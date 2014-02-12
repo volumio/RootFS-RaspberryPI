@@ -1,0 +1,1 @@
+../../../../share/pyshared/musicbrainzngs/mbxml.py

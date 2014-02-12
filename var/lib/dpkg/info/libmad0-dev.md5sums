@@ -1,0 +1,11 @@
+421a690b1e42bbf8bc2454e1cca5cbcb  usr/include/mad.h
+0a2500954c3bcd49e6f1a20cce4aaea3  usr/lib/libmad.a
+cd97da9d657a3f83c69fbfd95a709682  usr/lib/libmad.la
+f6b96053b8419816b3522ec9bf98ddb8  usr/lib/pkgconfig/mad.pc
+f35a3a574b9573d17415dda0550edd5a  usr/share/doc/libmad0-dev/CREDITS.gz
+77969e53980194812f8db3967f48659f  usr/share/doc/libmad0-dev/README.gz
+b9e99c133625a289ac56a94946d743ab  usr/share/doc/libmad0-dev/TODO
+e50c1e214f75b8a9dc49f7c654e5d320  usr/share/doc/libmad0-dev/changelog.Debian.gz
+0449fd2d4794b9ac3e58bfc99d024bdb  usr/share/doc/libmad0-dev/changelog.gz
+4ec5a7dac22e088b5a5514ca18e12c6f  usr/share/doc/libmad0-dev/copyright
+a982d2f9309749fdcd79f4acd258b5a3  usr/share/doc/libmad0-dev/examples/minimad.c.gz

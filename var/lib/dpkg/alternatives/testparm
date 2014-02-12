@@ -1,0 +1,9 @@
+auto
+/usr/bin/testparm
+testparm.1.gz
+/usr/share/man/man1/testparm.1.gz
+
+/usr/bin/testparm.samba3
+10
+/usr/share/man/man1/testparm.samba3.1.gz
+

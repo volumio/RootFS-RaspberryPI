@@ -1,0 +1,11 @@
+264cd70b7431bc94d1220c38f7d4fcb8  usr/include/speex/speex.h
+0071f3f1c4c6f07fa30fd4c3f7221490  usr/include/speex/speex_bits.h
+3a238a383e0a2a88c973b353b6b147a0  usr/include/speex/speex_callbacks.h
+f1dc00ce402ce294c6be8c15279d7c13  usr/include/speex/speex_config_types.h
+ca4b10c170a17e3352c98e5e38dfdda8  usr/include/speex/speex_header.h
+e95a22c5556c5719e9acbbfc84eff00c  usr/include/speex/speex_stereo.h
+9cfe8dd8430358c4756163d861ad0908  usr/include/speex/speex_types.h
+ec272ffef6059d2d8ea3c1d4da00e105  usr/lib/arm-linux-gnueabihf/libspeex.a
+c724110b40202a2d17333403da8a3e55  usr/lib/arm-linux-gnueabihf/pkgconfig/speex.pc
+b1f20e9b9a38708329f1abb8d304011b  usr/share/doc/libspeex-dev/changelog.Debian.gz
+0a1c381d3aabe22c49676cadc93dafd1  usr/share/doc/libspeex-dev/copyright

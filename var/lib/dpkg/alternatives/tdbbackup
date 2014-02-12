@@ -1,0 +1,9 @@
+auto
+/usr/bin/tdbbackup
+tdbbackup.8.gz
+/usr/share/man/man8/tdbbackup.8.gz
+
+/usr/bin/tdbbackup.tdbtools
+10
+/usr/share/man/man8/tdbbackup.tdbtools.8.gz
+

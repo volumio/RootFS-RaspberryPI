@@ -1,0 +1,5 @@
+php5-fpm: package-contains-empty-directory usr/lib/php5/20100525+lfs/
+php5-fpm: spelling-error-in-binary * ment meant
+php5-fpm: spelling-error-in-binary * taht that
+php5-fpm: embedded-library usr/sbin/php5-fpm: file
+php5-fpm: embedded-library ./usr/sbin/php5-fpm: file

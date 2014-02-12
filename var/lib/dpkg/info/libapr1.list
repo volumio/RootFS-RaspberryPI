@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libapr-1.so.0.4.6
+/usr/share
+/usr/share/doc
+/usr/share/doc/libapr1
+/usr/share/doc/libapr1/changelog.Debian.gz
+/usr/share/doc/libapr1/changelog.gz
+/usr/share/doc/libapr1/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libapr1
+/usr/lib/libapr-1.so.0

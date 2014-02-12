@@ -1,0 +1,10 @@
+28eba7b06a1097cced74126de5591864  usr/include/mpc/datatypes.h
+e16ea369f1f8f048a68be7a0e541d655  usr/include/mpc/minimax.h
+f7bc6b2eb94c99dc1507cd8965a4658c  usr/include/mpc/mpc_types.h
+df197a367c35e2087310a8dd6601da30  usr/include/mpc/mpcdec.h
+5864a365d13acd3dfcad6b415ca47ab7  usr/include/mpc/mpcmath.h
+e1dc3d18cb0008dd9452ca5c34e6a03d  usr/include/mpc/reader.h
+b5430525e3cc9a87ade3287cbcad7b7e  usr/include/mpc/streaminfo.h
+b8ae4a9a67fb8216cb8385e860ce893d  usr/lib/arm-linux-gnueabihf/libmpcdec.a
+1eb118a534e05c6bd50deca2526e03c4  usr/share/doc/libmpcdec-dev/changelog.Debian.gz
+f66092538374e924a966488f2b46c1fa  usr/share/doc/libmpcdec-dev/copyright

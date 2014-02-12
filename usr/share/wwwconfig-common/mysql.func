@@ -1,0 +1,24 @@
+# File:		mysql.func
+# Changes:
+#	20010430 Ola Lundqvist <opal@debian.org>
+#	20020125 Ola Lundqvist <opal@debian.org>
+#		Fixed multiple $tmpwhat matching lines, #115485.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Added new variable found so that empty passwords will be
+#		correctly handled.
+# Needs:	/etc/mysql/my.cnf
+# Description:	Get a config value from my.cnf
+# Usage:	getmysqlopt section option
+# Sets:		$getmysqlopt = value
+
+found=no
+getmysqlopt() {
+    tmpcfgfile="$3"
+    tmpwhat="$2"
+    tmpsect="$1"
+
+    if grep -v '^#' $tmpcfgfile | grep "\[$tmpsect\]" >/dev/null 2>&1 ; then
+	getmysqlopt=$(grep -A 10 "\[$tmpsect\]" $tmpcfgfile | grep "^[[:space:]]*$tmpwhat[[:space:]]*=[[:space:]]*" | head -1 | sed "s|^[[:space:]]*$tmpwhat[[:space:]]*=[[:space:]]*||g; s|[[:space:]][[:space:]]*$||g;")
+	found=yes
+    fi
+}

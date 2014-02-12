@@ -1,0 +1,9 @@
+#!/bin/sh
+# preinst script for icelib-dev
+
+
+echo "icelib-dev preinst starting"
+
+echo "icelib-dev preinst finished"
+
+exit 0

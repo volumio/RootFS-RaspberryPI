@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+	remove)
+		update-alternatives --remove editor /usr/bin/mcedit
+		update-alternatives --remove view /usr/bin/mcview
+	;;
+esac
+
+

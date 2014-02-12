@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libavformat53
+/usr/share/doc/libavformat53
+/usr/share/doc/libavformat53/changelog.Debian.gz
+/usr/share/doc/libavformat53/README.Debian.gz
+/usr/share/doc/libavformat53/formats-armhf.txt.gz
+/usr/share/doc/libavformat53/copyright
+/usr/share/doc/libavformat53/changelog.gz
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libavformat.so.53.21.1
+/usr/lib/arm-linux-gnueabihf/libavformat.so.53

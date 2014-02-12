@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libvorbisenc2
+/usr/share/doc/libvorbisenc2/changelog.Debian.gz
+/usr/share/doc/libvorbisenc2/changelog.gz
+/usr/share/doc/libvorbisenc2/copyright
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libvorbisenc.so.2.0.8
+/usr/lib/arm-linux-gnueabihf/libvorbisenc.so.2

@@ -1,0 +1,1 @@
+/usr/share/pyshared/reportbug/ui/text_ui.py

@@ -1,0 +1,34 @@
+lease {
+  interface "eth0";
+  fixed-address 192.168.1.140;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.1.1;
+  option dhcp-lease-time 86400;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.1.1;
+  option dhcp-server-identifier 192.168.1.1;
+  option dhcp-renewal-time 43200;
+  option broadcast-address 192.168.1.255;
+  option dhcp-rebinding-time 75600;
+  option host-name "volumio";
+  renew 1 2013/12/23 19:37:46;
+  rebind 1 2013/12/23 19:37:46;
+  expire 1 2013/12/23 19:37:46;
+}
+lease {
+  interface "eth0";
+  fixed-address 192.168.1.140;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.1.1;
+  option dhcp-lease-time 86400;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.1.1;
+  option dhcp-server-identifier 192.168.1.1;
+  option dhcp-renewal-time 43200;
+  option broadcast-address 192.168.1.255;
+  option dhcp-rebinding-time 75600;
+  option host-name "volumio";
+  renew 2 2013/12/24 07:20:33;
+  rebind 2 2013/12/24 16:37:56;
+  expire 2 2013/12/24 19:37:56;
+}

@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/include
+/usr/include/cdio
+/usr/include/cdio/rock.h
+/usr/include/cdio/iso9660.h
+/usr/include/cdio/xa.h
+/usr/share
+/usr/share/doc/libiso9660-dev
+/usr/share/doc/libiso9660-dev/changelog.Debian.gz
+/usr/share/doc/libiso9660-dev/changelog.gz
+/usr/share/doc/libiso9660-dev/copyright
+/usr/lib
+/usr/lib/libiso9660.a
+/usr/lib/pkgconfig
+/usr/lib/pkgconfig/libiso9660.pc
+/usr/lib/libiso9660.so

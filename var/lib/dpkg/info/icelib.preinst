@@ -1,0 +1,9 @@
+#!/bin/sh
+# preinst script for pishop
+
+
+echo "icelib preinst starting"
+
+echo "icelib preinst finished"
+
+exit 0

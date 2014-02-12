@@ -1,0 +1,39 @@
+Common issues with reportbug:
+
+EXIM IS CONFIGURED FOR LOCAL DELIVERY: In Debian 4.0 (etch) and later,
+   exim4 is configured by default to only deliver email to addresses
+   on your system.  YOUR BUG REPORTS WILL NOT ARRIVE AT THE BUG
+   TRACKING SYSTEM UNLESS YOU FOLLOW ONE OF THE FOLLOWING STEPS:
+
+   - Reconfigure exim (using 'dpkg-reconfigure -plow exim4') to send
+     mail to the Internet directly or via a smarthost.
+
+   - Configure reportbug to deliver mail to your ISP's smarthost or
+     reportbug.debian.org directly (using 'reportbug --configure').
+
+   - Alternatively, see /usr/share/doc/reportbug/README.Users for
+     instructions on how to use GMail's SMTP server to submit reports.
+
+EMAIL ADDRESS SETTING: See the manual page reportbug(1) for how to set
+   your email address (i.e. the address that appears in the "From:"
+   header), if reportbug is unable to correctly figure it out for you.
+
+   Note that some mail systems will further rewrite the address
+   displayed by reportbug when it starts.
+
+EDITORS: See the manual page reportbug(1) for how to choose an editor.
+   You probably will want to have this setting for other tools as
+   well.  As an alternative, some mail programs, such as "mutt", can
+   be configured to be used as the editor for your report, which you
+   may find preferable.
+
+REPORTING: It is useful to include the full transcript of reportbug
+   (with text ui) output, so we can see what it's trying to do and
+   provide a faster and more precise response.
+
+GTK+ UI: There are some situation when the GTK+ stack crashes,
+   reporting "Floating point exception" or GTK+ stack traces; those
+   are bugs in GTK+ or misconfigurations (for example, using 'testing'
+   suite can lead to such errors) on the current machine. Do not
+   report bugs against reportbug in such situations but consult users
+   support forums.

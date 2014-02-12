@@ -1,0 +1,8 @@
+6f1ce22804d79ed63fe01e83d4a5e25b  usr/bin/dig
+e5e08deed2acb98162ecac9801f77cf1  usr/bin/nslookup
+8bd9b1c228c033c23b22dcd5025b041b  usr/bin/nsupdate
+c4d345c026efc4228123a87cba4ad3c3  usr/share/doc/dnsutils/changelog.Debian.gz
+892bf811938a6b4767f4dc54c8dd1d2d  usr/share/doc/dnsutils/copyright
+439f9d39079febb7d8e4c8c182719249  usr/share/man/man1/dig.1.gz
+373c2ca296e577775cec9e5502125d02  usr/share/man/man1/nslookup.1.gz
+ce6b7ac9f3e11f632a485298666633fb  usr/share/man/man1/nsupdate.1.gz

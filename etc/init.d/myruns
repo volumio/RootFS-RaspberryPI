@@ -1,0 +1,36 @@
+#! /bin/sh
+# /etc/init.d/myruns
+#
+### BEGIN INIT INFO
+# Provides: myruns
+# Required-Start: $all
+# Required-Stop: $mpd
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Renicing mpd
+# Description: Being nice with music
+### END INIT INFO
+# Some things that run always
+touch /var/lock/myruns
+
+MAXTRIES=15
+TRIES=0
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+  #
+  # mount music
+  #
+   sudo /usr/sbin/nginx
+;;
+  stop)
+    echo "Exiting myruns"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/myruns {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

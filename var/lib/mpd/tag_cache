@@ -1,0 +1,176 @@
+info_begin
+format: 1
+mpd_version: 0.17.4
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+directory: WEBRADIO
+mtime: 1378555326
+begin: WEBRADIO
+playlist_begin: AudiophileClassical.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: VeniceClassicRadioItalia.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: BluesRadioUK.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: RadioCapriceGrunge.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: FreshRadioPopRockElectro.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: MetalOnly.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: BigRRadioPostGrungeRock.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: StarFMFromHell.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: RadioBeograd.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: JazzGrove.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: AudiophileBaroque.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: ProgRockcom.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: AudiophileLive.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: KCRWallNews.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: SlowRadio.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: AudiophileJazz.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: BigCityBeats.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: BluesRadio1.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: EggRadio.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: SmoothRadioLondon.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: DigitallyAffected.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: Hot108Jamz.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: RadioUp.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: AnkwaardRadio.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: Cinemix.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: CalmaRadio.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: AdoreJazz.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: RADIOXY.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: Healing.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: RadioOasis.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: CoolFahrenheit.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: BaySmooth.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: SomaFM.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: IbizaSonica.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: CultureFMTrueHipHop.pls
+mtime: 1378475429
+playlist_end
+playlist_begin: AbsolutelySmoothJazz.pls
+mtime: 1378475430
+playlist_end
+playlist_begin: LinnRadio.pls
+mtime: 1378475680
+playlist_end
+playlist_begin: LinnJazz.pls
+mtime: 1378475680
+playlist_end
+playlist_begin: LinnClassical.pls
+mtime: 1378475680
+playlist_end
+playlist_begin: Radio24.pls
+mtime: 1378476027
+playlist_end
+playlist_begin: BlackBeat.pls
+mtime: 1378555328
+playlist_end
+playlist_begin: AbsoluteRadio80s.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: AbsoluteClassicRock.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: AbsoluteRadio00s.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: JazzFM.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: BBCWorldService.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: AbsoluteRadio90s.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: wfmu.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: AbsoluteRadio70s.pls
+mtime: 1378555307
+playlist_end
+playlist_begin: ResonanceFM.m3u
+mtime: 1378555326
+playlist_end
+end: WEBRADIO

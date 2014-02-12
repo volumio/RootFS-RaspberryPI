@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/zlib1g
+/usr/share/doc/zlib1g/changelog.Debian.gz
+/usr/share/doc/zlib1g/changelog.gz
+/usr/share/doc/zlib1g/copyright
+/lib
+/lib/arm-linux-gnueabihf
+/lib/arm-linux-gnueabihf/libz.so.1.2.7
+/lib/arm-linux-gnueabihf/libz.so.1

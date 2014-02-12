@@ -1,0 +1,8 @@
+4ee8886f569a632c614d0c7b15edccff  usr/bin/minidlna
+62470f1c69a931c3757a12f25983a3dc  usr/share/doc/minidlna/README
+796409742f422fe4c13e3dc6acc63384  usr/share/doc/minidlna/TODO
+1b9ede0455cd8fb0a5bd1be90cdd070d  usr/share/doc/minidlna/changelog.Debian.gz
+3984c78b86d7bb4a3fad368b2770a6a9  usr/share/doc/minidlna/changelog.gz
+1cbffbac65ab8490be9525791a5d48df  usr/share/doc/minidlna/copyright
+d77bbdaa3f37fe5dd4c7ccdf62b727d0  usr/share/man/man1/minidlna.1.gz
+5214e2d445c3bf514c3cf368b29e5537  usr/share/man/man5/minidlna.conf.5.gz

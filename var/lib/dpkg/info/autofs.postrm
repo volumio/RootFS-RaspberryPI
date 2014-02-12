@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "purge" ]; then
+  for CONFF in /etc/auto.master /etc/auto.net /etc/auto.misc /etc/auto.smb /etc/default/autofs; do
+    rm -f $CONFF $CONFF.ucf-dist $CONFF.ucf-old $CONFF.ucf-new
+    if which ucf  >/dev/null; then ucf  --purge $CONFF; fi
+    if which ucfr >/dev/null; then ucfr --purge autofs $CONFF; fi
+  done
+fi
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d autofs remove >/dev/null
+fi
+# End automatically added section
+

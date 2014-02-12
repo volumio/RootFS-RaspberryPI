@@ -1,0 +1,39 @@
+###############################################################################
+#
+#  MIME types and programs that process those types
+#
+#  Much of this file is generated automatically by the program "update-mime".
+#  Please see the "update-mime" man page for more information.
+#
+#  Users can add their own rules if they wish by creating a ".mailcap"
+#  file in their home directory.  Entries included there will take
+#  precedence over those listed here.
+#
+###############################################################################
+
+
+###############################################################################
+#
+#  User section follows:  Any entries included in this section will take
+#  precedence over those created by "update-mime".  DO NOT CHANGE the
+#  "User Section Begins" and "User Section Ends" lines, or anything outside
+#  of this section!
+#
+
+# ----- User Section Begins ----- #
+# -----  User Section Ends  ----- #
+
+###############################################################################
+
+text/plain; less '%s'; needsterminal
+text/html; /usr/bin/sensible-browser '%s'; description=HTML Text; nametemplate=%s.html
+message/rfc822; mutt -Rf '%s'; edit=mutt -f '%s'; needsterminal
+application/x-tar; /bin/tar tvf -; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+application/x-gtar; /bin/tar tvzf -; print=/bin/tar tvzf - | print text/plain:-; copiousoutput
+application/zip; unzip -l '%s'; nametemplate=%s.zip; copiousoutput
+text/plain; more '%s'; needsterminal
+text/html; /usr/bin/w3m -T text/html '%s'; needsterminal; description=HTML Text; nametemplate=%s.html
+text/html; /usr/bin/w3m -I %{charset} -dump -T text/html '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/*; less '%s'; needsterminal
+text/*; more '%s'; needsterminal
+application/x-debian-package; /usr/lib/mime/debian-view '%s'; needsterminal; description=Debian GNU/Linux Package; nametemplate=%s.deb

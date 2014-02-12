@@ -1,0 +1,5 @@
+/usr/share/apt-listchanges/apt_listchanges.py
+/usr/share/apt-listchanges/DebianFiles.py
+/usr/share/apt-listchanges/AptListChangesGtk.py
+/usr/share/apt-listchanges/ALChacks.py
+/usr/share/apt-listchanges/ALCConfig.py

@@ -1,0 +1,9 @@
+auto
+/usr/bin/php
+php.1.gz
+/usr/share/man/man1/php.1.gz
+
+/usr/bin/php5
+50
+/usr/share/man/man1/php5.1.gz
+

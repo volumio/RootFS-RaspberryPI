@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc/libnss-mdns
+/usr/share/doc/libnss-mdns/README.Debian
+/usr/share/doc/libnss-mdns/changelog.Debian.gz
+/usr/share/doc/libnss-mdns/style.css
+/usr/share/doc/libnss-mdns/README.html
+/usr/share/doc/libnss-mdns/copyright
+/lib
+/lib/libnss_mdns6_minimal.so.2
+/lib/libnss_mdns6.so.2
+/lib/libnss_mdns4.so.2
+/lib/libnss_mdns4_minimal.so.2
+/lib/libnss_mdns_minimal.so.2
+/lib/libnss_mdns.so.2

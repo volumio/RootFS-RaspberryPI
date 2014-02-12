@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libxmlparse.so.1.2
+/usr/lib/libxmltok.so.1.2
+/usr/share
+/usr/share/doc/libxmltok1
+/usr/share/doc/libxmltok1/changelog.Debian.gz
+/usr/share/doc/libxmltok1/README.xmltok
+/usr/share/doc/libxmltok1/copyright
+/usr/lib/libxmlparse.so.1
+/usr/lib/libxmltok.so.1

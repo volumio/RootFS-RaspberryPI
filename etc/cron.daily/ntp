@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# The default Debian ntp.conf enables logging of various statistics to
+# the /var/log/ntpstats directory.  The daemon automatically changes
+# to a new datestamped set of files at midnight, so all we need to do
+# is delete old ones, and compress the ones we're keeping so disk
+# usage is controlled.
+
+statsdir=$(cat /etc/ntp.conf | grep -v '^#' | sed -n 's/statsdir \([^ ][^ ]*\)/\1/p')
+
+if [ -n "$statsdir" ] && [ -d "$statsdir" ]; then
+	# only keep a week's depth of these
+	find "$statsdir" -type f -mtime +7 -exec rm {} \;
+
+	# compress whatever is left to save space
+	cd "$statsdir"
+	ls *stats.???????? > /dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		# Note that gzip won't compress the file names that
+		# are hard links to the live/current files, so this
+		# compresses yesterday and previous, leaving the live
+		# log alone.  We supress the warnings gzip issues
+		# about not compressing the linked file.
+		gzip --best --quiet *stats.???????? 
+		return=$?
+		case $return in
+		    2)
+			exit 0			# squash all warnings
+			;;
+		    *)
+			exit $return	 	# but let real errors through
+			;;
+		esac
+	fi
+fi

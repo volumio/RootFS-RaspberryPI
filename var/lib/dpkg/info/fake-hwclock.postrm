@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+case "${1:-}" in
+  purge)
+    rm -f /etc/fake-hwclock.data
+    ;;
+
+  *) :;;
+esac
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d fake-hwclock remove >/dev/null
+fi
+# End automatically added section
+

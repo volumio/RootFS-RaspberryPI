@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/valgrind
+/usr/lib/valgrind/ncurses.supp
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libtinfo.a
+/usr/lib/arm-linux-gnueabihf/libtic.a
+/usr/lib/arm-linux-gnueabihf/pkgconfig
+/usr/lib/arm-linux-gnueabihf/pkgconfig/tinfo.pc
+/usr/lib/arm-linux-gnueabihf/pkgconfig/tic.pc
+/usr/lib/arm-linux-gnueabihf/libtermcap.so
+/usr/share
+/usr/lib/arm-linux-gnueabihf/libtinfo.so
+/usr/lib/arm-linux-gnueabihf/libtic.so
+/usr/lib/arm-linux-gnueabihf/libtermcap.a
+/usr/share/doc/libtinfo-dev

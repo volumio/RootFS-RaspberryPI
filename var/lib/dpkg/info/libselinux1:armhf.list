@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libselinux1
+/usr/share/doc/libselinux1
+/usr/share/doc/libselinux1/changelog.Debian.gz
+/usr/share/doc/libselinux1/copyright
+/usr/share/doc/libselinux1/changelog.gz
+/selinux
+/lib
+/lib/arm-linux-gnueabihf
+/lib/arm-linux-gnueabihf/libselinux.so.1

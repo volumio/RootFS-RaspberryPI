@@ -1,0 +1,7 @@
+/etc
+/etc/dropbear
+/etc/dropbear/run
+/etc/dropbear/log
+/etc/dropbear/log/run
+/etc/init.d
+/etc/init.d/dropbear

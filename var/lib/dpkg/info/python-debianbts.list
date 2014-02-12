@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/pyshared
+/usr/share/pyshared/python_debianbts-1.11.egg-info
+/usr/share/pyshared/debianbts.py
+/usr/share/python-support
+/usr/share/python-support/python-debianbts.public
+/usr/share/doc/python-debianbts
+/usr/share/doc/python-debianbts/changelog.gz
+/usr/share/doc/python-debianbts/copyright

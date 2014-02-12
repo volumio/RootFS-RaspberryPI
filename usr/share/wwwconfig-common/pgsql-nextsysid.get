@@ -1,0 +1,28 @@
+# File:		pgsql-nextsysid.get
+# Changes:
+#	20010224 Ola Lundqvist <opal@debian.org>
+#	20011022 Luca De Vitis <luca@debian.org>
+#		Allowed reinclusion.
+#	        Changed the piped commands with a single psql command using -A -q -t
+#	20020116 Ola Lundqvist <opal@debian.org>
+#		Documented the reinclusion.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Fixed getting of next system id.
+#	20020126 Ola Lundqvist <opal@debian.org>
+#		Removed the reiclusion ability. It will recalculate now.
+# Needs:	$pgsqlcmd  - the base sql command.
+#		$systemdb  - the system db to use (optional)
+#		psql
+# Description:	Gets a password from 
+# Sets:		$nextsysid = select max(usesysid) from pg_shadow; + 1
+#		$status = {error, get}
+
+nextsysid=
+status=error
+error=""
+
+if $pgsqlcmd -d $systemdb -c "select max(usesysid) from pg_shadow;" > /dev/null 2>&1 ; then
+    status=get
+    tmpid=$($pgsqlcmd -d $systemdb -c "select max(usesysid) from pg_shadow;" | grep "^[[:space:]]*[0-9][0-9]*[[:space:]]*$")
+    nextsysid=$((1 + $tmpid))
+fi
